@@ -36,9 +36,11 @@ DEFAULTS = {
     "doubao":   {"model": "doubao-seed-2-1-pro-260628", "env": "ARK_API_KEY", "video": True, "provisional": True},
 }
 # v0.2：删除 L1-vision（抽帧层）；doubao 在 L1-video 为 provisional 被评模型
+# claude/gpt（wodex，不吃视频）以抽帧图片序列近似参赛 L1-video（input_mode=sampled_frames，
+# 帧由 pipeline/frames_for_video_layer.py 预生成到 items/<id>/vframes/）
 LAYER_MODELS = {"L0": ["claude", "gpt", "qwen", "kimi", "deepseek", "doubao"],
                 "L1-text": ["claude", "gpt", "qwen", "kimi", "deepseek"],
-                "L1-video": ["qwen", "kimi", "doubao"]}
+                "L1-video": ["claude", "gpt", "qwen", "kimi", "doubao"]}
 # doubao 出现在 L0 仅为给其 provisional L1-video 提供同模型盲答基线（读人增益要同模型对比）
 
 
@@ -56,8 +58,11 @@ def _b64(p: Path) -> str:
 
 
 def _small_jpg(p: Path) -> Path:
-    """wodex WAF 限制：把图压成 ≤480 宽 jpg（结果缓存在源文件旁 .wodex.jpg）。"""
+    """wodex WAF 限制：把图压成 ≤480 宽 jpg（结果缓存在源文件旁 .wodex.jpg）。
+    已是 ≤60KB 的 jpg（如 vframes/ 预压缩帧）直接透传，不重编码。"""
     p = Path(p)
+    if p.suffix.lower() in (".jpg", ".jpeg") and p.stat().st_size <= 60 * 1024:
+        return p
     out = p.with_suffix(".wodex.jpg")
     if not out.exists() or out.stat().st_mtime < p.stat().st_mtime:
         import imageio_ffmpeg, subprocess
@@ -94,16 +99,24 @@ def build_request(name: str, spec: dict, temperature: float = 0.7, max_tokens: i
         for label, p in spec.get("images", []):
             content.append({"type": "text", "text": label})
             content.append({"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{_b64(_small_jpg(p))}"}})
-        # wodex 不支持视频输入（claude/gpt 本就不吃视频）
-        body = {"model": mid, "temperature": temperature, "max_tokens": max(max_tokens, 8192),
+        # wodex 不支持视频输入（claude/gpt 本就不吃视频）；L1-video 由 runner 组装 vframes 帧序列近似。
+        # 多图上限实测（2026-08-22）：claude-opus-5 / gpt-5.6-sol 单请求 80 张 360 宽 jpg（payload 1.38MB）均通过。
+        # 注意：wodex 已拒绝 claude-opus-5 的 temperature 参数（400 "`temperature` is deprecated for this model"），
+        # wodex 分支统一不带 temperature。
+        body = {"model": mid, "max_tokens": max(max_tokens, 8192),
                 "messages": [{"role": "system", "content": spec["system"]},
                              {"role": "user", "content": content}]}
-        # 赛规最高档思考：wodex 实测（2026-08-22）走 OpenAI 风格 reasoning_effort——
-        # claude-opus-5 带 reasoning_effort 后响应出现 message.reasoning_content（Anthropic 风格
-        # {"thinking":{"type":"enabled","budget_tokens":N}} 被网关静默忽略，usage/输出与 baseline 完全一致）；
-        # gpt-5.6-sol 对 high/xhigh 均不报错，但 usage 无 reasoning 细分且 completion tokens 几乎不变，
-        # 档位是否真透传存疑（详见 README「wodex 思考档位」）。max_tokens 提到 ≥8192 给思维链留空间。
-        body["reasoning_effort"] = "high"
+        # 赛规最高档思考（wodex 网关 2026-08-22 晚已变更行为）：
+        # claude-opus-5：reasoning_effort 会被网关翻成 thinking.enabled 而遭拒
+        # （400 "thinking.enabled is not supported… Use thinking.adaptive and output_config.effort"），
+        # 实测改传 {"thinking":{"type":"adaptive"}} + {"output_config":{"effort":"high"}} 通过（usage_source=anthropic 证实透传）；
+        # gpt-5.6-sol：仍走 OpenAI 风格 reasoning_effort（e2e 实测 usage 有 reasoning_tokens 细分）。
+        # max_tokens 提到 ≥8192 给思维链留空间。
+        if name == "claude":
+            body["thinking"] = {"type": "adaptive"}
+            body["output_config"] = {"effort": "high"}
+        else:
+            body["reasoning_effort"] = "high"
         return (_wodex_url(), {"Authorization": f"Bearer {os.environ['WODEX_API_KEY']}",
                                "Content-Type": "application/json", "User-Agent": WODEX_UA}, body)
     if name == "claude":
@@ -125,6 +138,9 @@ def build_request(name: str, spec: dict, temperature: float = 0.7, max_tokens: i
     if name == "kimi":
         body["temperature"] = 1  # kimi-k3 reasoning 模型只允许 temperature=1
         body["max_tokens"] = max(body["max_tokens"], 16384)  # reasoning 吃 token，太小只吐 reasoning_content
+        if spec.get("video"):
+            # 批跑预演（2026-08-22 F5）实测：视频题 reasoning 独吞 16384 直接截断（content 空、无 JSON），提到 32768
+            body["max_tokens"] = max(body["max_tokens"], 32768)
         body["reasoning_effort"] = "max"  # 赛规最高档思考：k3 顶层 reasoning_effort ∈ low/high/max（默认即 max，显式固定）
         if spec.get("video"):
             # moonshot 视频输入实测（2026-08-22）：video_url 直发 data:video/mp4;base64 即可通过

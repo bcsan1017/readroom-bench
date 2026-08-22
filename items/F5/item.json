@@ -13,10 +13,11 @@
   "street_at_allin": "turn",
   "layers": {
     "L0": {
-      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手全下 $7,225 入 $8,750 底池）。\n你的底牌：Kh Qd。\n下注线：\n  - turn（Ks 4h 8h Jh）：Villain(Washburn) jams $7,225 into $8,750 on the turn; Hero faces $7,225；前序街完整下注线 recap 未提供\n当前公共牌：Ks 4h 8h Jh（turn）。\n对手全下前底池：$8,750；对手全下额：$7,225；你需跟注：$7,225。\n跟注后总底池：$23,200；所需胜率（跟注额 ÷ (底池+跟注额)）= 31.1%。"
+      "text": "牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：SB，本手开始筹码 $20,050。对手（Villain）位置：UTG+1，本手开始筹码 $11,300。\n你的底牌：Kh Qd。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：hero raise $675; other fold; other fold; villain call $675\n  - flop（Ks 4h 8h）：hero bet $1,050; villain raise $3,600; hero call $3,600\n  - turn（Jh）：villain allin $7,225\n当前公共牌：Ks 4h 8h Jh（turn）。\n对手全下前底池：$8,750；对手全下额：$7,225；你需跟注：$7,225。\n跟注后总底池：$23,200；所需胜率（跟注额 ÷ (底池+跟注额)）= 31.1%。",
+      "source": "regen_from_truth_v1"
     },
     "L1-text": {
-      "timeline_text": "t=0.0s [other] hands=多名玩家将手放在自己的底牌上; note=翻前阶段，多名玩家在桌前准备看牌\nt=4.0s [other] hands=穿黑色连帽衫戴黑帽的玩家将自己的底牌向前推出弃牌；紫发戴眼镜的玩家双手放在自己的底牌上; note=翻前多名玩家陆续弃牌\nt=5.0s [other] posture=穿蓝色花衬衫的玩家双臂交叉抱在胸前; note=翻前弃牌阶段\nt=6.0s [other] hands=穿黑色连帽衫戴黑帽的玩家右手整理自己面前的筹码堆; note=翻前弃牌阶段\nt=8.0s [other] hands=紫发戴眼镜的玩家将自己的底牌向前推出弃牌; note=翻前弃牌阶段\nt=9.0s [hero] gaze=视线从自己的底牌移向桌面; posture=左肘搭在桌沿，身体前倾; hands=双手放在自己的底牌上，将底牌向自己方向拉了一下; note=翻前hero看自己的底牌\nt=12.0s [villain] gaze=低头看向自己的底牌; posture=双臂交叉放在桌沿; hands=右手将自己的底牌向前推出弃牌; note=翻前villain弃牌\nt=14.0s [hero] gaze=低头看向桌面; posture=身体进一步前倾，低头; hands=双手按在自己的底牌上; note=翻前hero准备行动\nt=16.0s [hero] gaze=视线从桌面抬起，看向右侧; hands=右手抬起，整理自己衬衫领口的麦克风; speech=开始说话，持续约2秒; note=翻前hero开口说话\nt=18.0s [hero] gaze=低头看向自己面前的筹码堆; hands=右手伸向自己面前的筹码堆，拨弄筹码; chips=右手从筹码堆中分出数枚筹码; note=翻前hero准备下注\nt=21.0s [hero] chips=右手将分出的筹码向前推出到下注区; note=翻前hero完成下注\nt=23.5s [other] hands=庄家伸手将下注区的筹码收拢到一起; note=翻前下注后庄家收筹\nt=27.0s [other] hands=穿黄色T恤的女玩家将自己的底牌向前推出弃牌，随后右手抬起整理头发; note=翻前剩余玩家陆续弃牌\nt=29.0s [other] posture=穿蓝色花衬衫的玩家双臂交叉抱在胸前; hands=双手捏着自己的底牌，将底牌拿起查看后放回桌面; note=翻前行动阶段\nt=34.0s [other] posture=穿黑色连帽衫戴黑帽的玩家身体向后靠在椅背上; speech=开始和身旁穿黄色T恤的女玩家说话; note=翻前旁观玩家交谈\nt=37.0s [other] hands=穿蓝色花衬衫的玩家右手从筹码堆中分出筹码，向前推出; chips=将筹码推出到下注区完成跟注; note=翻前该玩家跟注\nt=41.0s [other] hands=庄家的手从牌堆中依次取出三张公共牌，摆放到桌面公共牌区; note=翻牌圈dealer发出三张公共牌\nt=45.0s [hero] gaze=低头看向公共牌区; chips=右手拿起一枚黄色筹码，向前推出到下注区; note=翻牌圈hero下注\nt=52.0s [other] hands=穿黑色连帽衫戴黑帽的玩家右手拿起桌上的水瓶; note=翻牌圈行动阶段，旁观玩家拿起水瓶\nt=54.0s [hero] posture=左手抬起，手肘撑在桌沿，左手捂住嘴部; note=翻牌圈对手下注后hero做出反应\nt=55.0s [other] hands=穿黑色连帽衫戴黑帽的玩家举起水瓶喝水; note=翻牌圈行动阶段\nt=58.0s [hero] hands=右手从筹码堆中拿起一枚黄色筹码; note=翻牌圈hero准备跟注\nt=59.5s [hero] chips=右手将黄色筹码向前推出到下注区; note=翻牌圈hero完成跟注\nt=61.0s [hero] posture=左手再次抬起捂住嘴部; note=翻牌圈hero跟注后保持思考姿态\nt=62.0s [other] hands=庄家伸手将下注区的筹码收拢到一起; note=翻牌圈下注后庄家收筹\nt=67.0s [villain] posture=身体前倾，左肘搭在桌沿; hands=右手抬起，手指碰了一下自己的鼻子后放下; note=转牌发牌前villain调整姿态\nt=69.0s [other] hands=庄家的手从牌堆中取出一张转牌，摆放到公共牌区; note=t=70s锚点，dealer发出转牌\nt=72.0s [villain] gaze=视线看向公共牌区; posture=双臂交叉放在桌沿，身体前倾; hands=右手搭在自己的筹码堆上，手指拨弄筹码; note=转牌发出后villain准备行动\nt=73.0s [villain] chips=将自己面前的整摞筹码向前推出; note=t=73s锚点，villain全下\nt=74.0s [hero] gaze=视线从公共牌区移向villain的筹码方向; posture=左手从嘴部放下，搭在桌沿; hands=右手在自己面前的桌面上轻拍了一下; note=villain全下后hero做出反应\nt=76.0s [hero] posture=左手抬起，手指碰了一下自己的鼻子后放下; note=villain全下后hero长考，调整姿态\nt=77.0s [other] hands=穿黑色连帽衫戴黑帽的玩家左手握着水瓶，右手抬起摊开，做手势; speech=开口说话; note=hero长考期间旁观玩家交谈\nt=80.0s [other] hands=右手抬起碰了一下自己的嘴部，随后再次摊开做手势; speech=持续说话; note=hero长考期间旁观玩家持续交谈\nt=81.5s [hero] gaze=视线看向桌面公共牌区; posture=左手手肘撑在桌沿，左手捂住嘴部，保持前倾姿态; hands=右手搭在自己的筹码堆上，手指拨弄筹码; note=villain全下后hero持续长考\nt=84.0s [other] hands=穿黑色外套带挑染的女玩家右手搭在自己的筹码堆上，手指拨弄筹码; speech=开口说话; note=hero长考期间其他玩家交谈\nt=87.0s [other] hands=穿黑色连帽衫戴黑帽的玩家双手交握放在水瓶上，随后右手抬起做手势; speech=持续说话; note=hero长考接近结束时旁观玩家仍在交谈\nt=89.0s [hero] speech=开口宣布决定; chips=将跟注所需的筹码向前推出; note=t=89s锚点，hero call\nt=90.0s [other] hands=庄家伸手将底池所有筹码收拢到一起; chips=将筹码推给获胜方; note=t=90s锚点，dealer将底池判给获胜方",
+      "timeline_text": "[0.0–41.0s] 翻前发牌与下注（关注:both）：翻前阶段0-41s，双方持续进行桌谈，0.0s 有人开口说\"no one's going to believe me\"（语气自然），约0.0s villain说\"so he's gonna play super tight the rest of the game\"（调侃语气）。约12s hero低头看底牌，身体前倾双肘撑桌，从筹码堆拨出数枚筹码放入盲注位；约13.5s hero低头凑近收拢自己的底牌确认，随后坐直，桌边有人说\"open it up\"（语气随意），桌边有人说\"he'll just fold king queen off he'll fold into a win and be like are you in for five or ten\"（闲聊语气），桌边有人说\"five\"（语气随意），桌边有人说\"okay so he'll fold into a little win\"（闲聊语气），hero说\"every day i'm in for five maybe i must have lost\"（闲聊语气），桌边有人说\"you got stacked and had to buy back it was it was tuesday when you came back for like thirty grand or whatever\"（闲聊语气），桌边有人说\"he loves this\"（语气随意），约22s hero将一摞共650的筹码推入底池完成翻前加注。轮到villain行动时，他先双臂交叉碰了碰鼻子，随后约34s前倾身体拨弄筹码，约39s将筹码推入底池完成翻前跟注。\n[41.0–70.0s] 翻牌圈行动（关注:both）：翻牌圈41-70s，约46s hero从筹码堆捏起高面值筹码，将1050筹码推入底池完成翻牌下注。villain约52s他身体前倾，手指按在底牌边缘查看底牌，随后完成翻牌加注；hero随即向右侧倚靠，左手捂住嘴部，约60s hero将2550筹码推入底池完成翻牌跟注。跟注后hero保持左肘搭桌、左手托住左侧脸颊的姿态等待转牌，期间继续说话，villain最后回应「i believe」。\n[70.0–89.0s] 转牌圈行动至对手全下（关注:both）：转牌圈70-89s，hero保持左肘撑桌、左手托腮的姿态，右手手指轻敲桌面等待行动，中途左手放下轻挥桌面表示check后又抬回托腮。约82s villain双肘撑桌身体前倾，手指搭在筹码堆边缘，视线在公共牌和筹码堆间移动准备筹码，约89s villain将身前大部分筹码堆一次性推入底池，完成转牌圈7225筹码的全下，桌上其他玩家同步说出「all in」，有人说\"all in\"。",
       "timeline_file": "timeline.jsonl",
       "is_mock": false,
       "human_verified": false
@@ -73,19 +74,6 @@
   },
   "truth_file": "truth.json",
   "video_variant": "colleague_hided_recut",
-  "table_players": [
-    {
-      "role": "other_1",
-      "stack": 6150.0
-    },
-    {
-      "role": "other_2",
-      "stack": 19850.0
-    }
-  ],
-  "internal_names": {
-    "other_1": "HELLMUTH",
-    "other_2": "MATUSOW"
-  },
+  "table_players": [],
   "table_players_source": "doubao_raw_frame（待人工确认）"
 }

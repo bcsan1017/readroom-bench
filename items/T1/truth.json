@@ -21,7 +21,9 @@
   "actual": {
     "hero_action": "fold",
     "villain_showed": null,
-    "note": "recap: hero_actual_action=fold (error); think=long (8+ minutes, longest tank of series); allin_type=unknown"
+    "note": "recap: hero_actual_action=fold (error); think=long (8+ minutes, longest tank of series); allin_type=unknown",
+    "hero_invested_usd": null,
+    "hero_result_usd": null
   },
   "players": {
     "hero": "Phil Hellmuth",
@@ -29,9 +31,112 @@
   },
   "difficulty_tier": "TBD (按 L0 基线分档)",
   "prefill_source": {
-    "table_size": "doubao",
-    "players_in_hand": "doubao"
+    "table_size": "doubao"
   },
-  "table_size": 1,
-  "players_in_hand": 3
+  "table_size": 7,
+  "table_size_note": "待确认：豆包面板/桌边两个口径都数不清，请点「原片跳转」人工数",
+  "betting_line": {
+    "preflop": {
+      "board": "",
+      "actions": [
+        {
+          "t": 22.5,
+          "actor": "villain",
+          "action": "call",
+          "amount": 75,
+          "source": "doubao"
+        },
+        {
+          "t": 24.5,
+          "actor": "other",
+          "action": "call",
+          "amount": 75,
+          "source": "doubao"
+        },
+        {
+          "t": 28,
+          "actor": "hero",
+          "action": "check",
+          "amount": null,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "flop": {
+      "board": "Js 8h 6s",
+      "actions": [
+        {
+          "t": 37,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 300,
+          "source": "doubao"
+        },
+        {
+          "t": 39,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 43,
+          "actor": "hero",
+          "action": "call",
+          "amount": 300,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "turn": {
+      "board": "6d",
+      "actions": [
+        {
+          "t": 50,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 300,
+          "source": "doubao"
+        },
+        {
+          "t": 57,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 900,
+          "source": "doubao"
+        },
+        {
+          "t": 60,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 12950,
+          "source": "doubao"
+        },
+        {
+          "t": 345,
+          "actor": "hero",
+          "action": "fold",
+          "amount": null,
+          "source": "human"
+        }
+      ],
+      "l0_text": "Villain(3Coin) instantly jams $12,950 on the turn; Hero faces $12,050；前序街完整下注线 recap 未提供",
+      "source": "video_extracted_v2"
+    },
+    "river": {
+      "board": "",
+      "actions": [],
+      "l0_text": null,
+      "source": null
+    }
+  },
+  "hero_position": "UTG",
+  "villain_position": "SB",
+  "hero_stack_start": 20500,
+  "villain_stack_start": 13325,
+  "human_verified_truth": true
 }

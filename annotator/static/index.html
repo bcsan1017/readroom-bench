@@ -35,13 +35,14 @@
     <!-- 1. 手牌信息核对 -->
     <div class="panel active" id="panel-truth">
       <div class="panel-head">
-        <h2>手牌信息核对（含位置/筹码/按街下注线） <span id="truth-verified-badge" class="badge hidden">已人工确认</span></h2>
+        <h2>手牌信息核对（含位置/筹码/按街下注线） <span id="truth-verified-badge" class="badge hidden">已人工确认</span> <a id="src-link" class="src-link hidden" href="#" target="_blank" rel="noopener">原片跳转 ↗</a></h2>
         <div class="btns">
           <button id="btn-recompute">重算真值</button>
           <button id="btn-truth-save" class="primary">确认无误保存</button>
         </div>
       </div>
-      <div id="truth-form" class="form-grid"></div>
+      <h3 class="section-title tier-a-title">A · 必填区（人工确认核心：位置 / 开局筹码 / 桌上人数 / 分街下注线）</h3>
+      <div id="truth-form-a" class="form-grid tier-a"></div>
       <h3 class="section-title">在座玩家与筹码（豆包读原片开局帧预填，待人工确认；姓名列仅供核对，不进模型输入层）
         <button id="btn-tp-add" style="margin-left:10px">加一行</button></h3>
       <div class="table-wrap" style="max-width:560px">
@@ -50,8 +51,14 @@
           <tbody id="tp-tbody"></tbody>
         </table>
       </div>
-      <h3 class="section-title">下注线（按街分块，来自视频提取 + 已知信息，可编辑，随上方按钮一并保存）</h3>
+      <h3 class="section-title">下注线（按街分块：动作+金额为主，时间列弱化；唯一编辑入口，行动时间线页由此派生）</h3>
       <div id="bl-blocks"></div>
+      <details id="truth-b-details">
+        <summary class="section-title">B · 确认区（预填自 candidates/切片核对，已双重核对，扫一眼即可 —— 点开可改）<span id="truth-b-preview" class="b-preview"></span></summary>
+        <div id="truth-form-b" class="form-grid"></div>
+      </details>
+      <h3 class="section-title tier-c-title">C · 只读区（程序计算字段，点「重算真值」后保存自动重算）</h3>
+      <div id="truth-form-c" class="form-grid tier-c"></div>
       <div id="truth-msg" class="msg"></div>
       <div class="panel-head" style="margin-top:18px">
         <h2>L0 手牌全文（位置/筹码/下注线/赔率）<span id="l0-verified-badge" class="badge hidden">已人工确认</span></h2>
@@ -64,20 +71,16 @@
       <div id="l0-msg" class="msg"></div>
     </div>
 
-    <!-- 1.5 行动时间线 -->
+    <!-- 1.5 行动时间线（只读派生视图） -->
     <div class="panel" id="panel-action">
       <div class="panel-head">
-        <h2>行动时间线（下注动作 ↔ 视频秒）</h2>
-        <div class="btns">
-          <button id="btn-at-add-now">在当前播放时间新建动作</button>
-          <button id="btn-at-save" class="primary">保存（标记已校准）</button>
-        </div>
+        <h2>行动时间线（只读）</h2>
       </div>
-      <p class="meta-line">由豆包看全程视频提取（黄色=初稿，绿色=人工）。左右拖动时间旁的 ⇔ 手柄微调秒数（视频实时跟随）；点击行跳视频。</p>
+      <p class="meta-line">本页由手牌核对页的分街下注线自动生成，请在核对页编辑。点击行跳视频。</p>
       <div class="table-wrap">
         <table id="at-table">
           <thead><tr>
-            <th>时间(秒)</th><th>街</th><th>角色</th><th>动作</th><th>金额($)</th><th>来源</th><th>操作</th>
+            <th>时间(秒)</th><th>街</th><th>角色</th><th>动作</th><th>金额($)</th><th>来源</th>
           </tr></thead>
           <tbody id="at-tbody"></tbody>
         </table>

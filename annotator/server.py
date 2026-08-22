@@ -122,6 +122,45 @@ def normalize_event(e: dict) -> dict:
     return out
 
 
+BLOCK_KEYS = ("t_start", "t_end", "anchor", "who_focus", "summary", "key_speech", "source", "human_verified")
+
+
+def is_block(e: dict) -> bool:
+    return isinstance(e, dict) and ("t_start" in e or "anchor" in e or "summary" in e)
+
+
+def normalize_block(e: dict) -> dict:
+    """聚类块行：{t_start,t_end,anchor,who_focus,summary,key_speech,source,human_verified}"""
+    out = {}
+    for k, d in (("t_start", 0.0), ("t_end", 0.0)):
+        try:
+            out[k] = float(e.get(k, d))
+        except (TypeError, ValueError):
+            out[k] = d
+    if out["t_end"] < out["t_start"]:
+        out["t_end"] = out["t_start"]
+    out["anchor"] = str(e.get("anchor", "") or "")
+    wf = e.get("who_focus", "villain")
+    out["who_focus"] = wf if wf in ("villain", "hero", "both") else "villain"
+    out["summary"] = str(e.get("summary", "") or "")
+    ks = e.get("key_speech")
+    out["key_speech"] = [str(x) for x in ks if str(x).strip()] if isinstance(ks, list) else []
+    src = e.get("source", "doubao")
+    out["source"] = src if src in ("doubao", "human") else "doubao"
+    out["human_verified"] = bool(e.get("human_verified", False))
+    if e.get("banned_words_hit"):
+        out["banned_words_hit"] = e["banned_words_hit"]
+    return out
+
+
+def blocks_txt(blocks: list) -> str:
+    lines = []
+    for b in blocks:
+        # 台词已融合进 summary；key_speech 仅作数据索引，不再单独渲染
+        lines.append(f"[{b['t_start']:.1f}–{b['t_end']:.1f}s] {b['anchor']}（关注:{b['who_focus']}）：{b['summary']}")
+    return "\n".join(lines) + "\n"
+
+
 def normalize_action(e: dict) -> dict:
     """行动时间线行校验/补默认。"""
     out = {}
@@ -168,6 +207,44 @@ def parse_banned() -> list:
     return out
 
 
+BET_ACTS = ("check", "bet", "raise", "call", "fold", "allin")
+
+
+def regen_action_timeline(d: Path, bl: dict) -> int:
+    """核对页保存 betting_line 时同步落盘 action_timeline.jsonl（runner/时间轴锚点消费方兼容）。
+
+    下注类动作全部来自 betting_line（唯一编辑入口）；原文件里的非下注行
+    （deal/showdown/pot_awarded）保留不动，按 t 重新排序合并。source 继承。
+    """
+    p = d / "action_timeline.jsonl"
+    keep = [e for e in load_jsonl(p) if isinstance(e, dict) and e.get("action") not in BET_ACTS]
+    rows = []
+    for st in ACT_STREETS:
+        blk = bl.get(st)
+        if not isinstance(blk, dict):
+            continue
+        for a in blk.get("actions") or []:
+            if not isinstance(a, dict):
+                continue
+            try:
+                t = None if a.get("t") in (None, "") else round(float(a["t"]), 1)
+            except (TypeError, ValueError):
+                t = None
+            amt = a.get("amount")
+            rows.append({"t": t, "street": st,
+                         "actor": a.get("actor") if a.get("actor") in ACT_ACTORS else "other",
+                         "action": a.get("action") if a.get("action") in BET_ACTS else "check",
+                         "amount": float(amt) if isinstance(amt, (int, float)) else None,
+                         "source": a.get("source") if a.get("source") in ("doubao", "human") else "human",
+                         "human_verified": True})
+    merged = keep + rows
+    srank = {s: i for i, s in enumerate(ACT_STREETS)}
+    merged.sort(key=lambda e: (e.get("t") is None, e.get("t") if e.get("t") is not None else 0.0,
+                               srank.get(e.get("street"), 0)))
+    atomic_write_text(p, dump_jsonl(merged))
+    return len(merged)
+
+
 def merge_truth_defaults(obj: dict, d: Path) -> None:
     """truth.json 缺的展示字段用 hand.json / item.json / betting_line_extracted.json 合成默认值。
 
@@ -184,8 +261,16 @@ def merge_truth_defaults(obj: dict, d: Path) -> None:
     item_obj = load_json(d / "item.json", {}) or {}
     obj["_table_players"] = item_obj.get("table_players") or []
     obj["_internal_names"] = item_obj.get("internal_names") or {}
-    if obj.get("table_size") in (None, "") and obj["_table_players"]:
-        obj["table_size"] = len(obj["_table_players"])
+    # 原片跳转链接：youtube_id + 该手起始秒（hand.json，缺则查 clips_manifest_merged.json）
+    yid = ((hand.get("source") or {}).get("youtube_id"))
+    t0 = (hand.get("timing_abs_sec") or {}).get("clip_start")
+    if not (yid and isinstance(t0, (int, float))):
+        for row in load_json(ROOT / "data" / "clips_manifest_merged.json", []) or []:
+            if isinstance(row, dict) and row.get("id") == d.name:
+                yid = yid or row.get("youtube_id")
+                t0 = t0 if isinstance(t0, (int, float)) else row.get("start_sec")
+                break
+    obj["_source_url"] = f"https://youtu.be/{yid}?t={int(t0)}" if yid and isinstance(t0, (int, float)) else None
     if not isinstance(obj.get("betting_line"), dict):
         obj["betting_line"] = build_betting_line_blocks(hand, load_json(d / "betting_line_extracted.json", {}) or {})
 
@@ -344,9 +429,12 @@ class Handler(BaseHTTPRequestHandler):
         body = self.read_body_json()
         if not isinstance(body, dict):
             return self.send_json({"error": "body 必须是 JSON 对象"}, 400)
-        # _table_players / _internal_names 写进 item.json（存储只有角色+筹码；姓名独立、不进模型输入层）
+        # _ 前缀键是服务端合成的展示字段，不落 truth.json；
+        # 其中 _table_players / _internal_names 写进 item.json（存储只有角色+筹码；姓名独立、不进模型输入层）
         tp = body.pop("_table_players", None)
         names = body.pop("_internal_names", None)
+        for k in [k for k in body if k.startswith("_")]:
+            body.pop(k)
         if tp is not None or names is not None:
             item_p = d / "item.json"
             item_obj = load_json(item_p, None)
@@ -366,7 +454,10 @@ class Handler(BaseHTTPRequestHandler):
         if p.exists() and not bak.exists():
             shutil.copy2(p, bak)
         atomic_write_json(p, body)
-        return self.send_json({"ok": True})
+        n_at = None
+        if isinstance(body.get("betting_line"), dict):
+            n_at = regen_action_timeline(d, body["betting_line"])
+        return self.send_json({"ok": True, "n_action_timeline": n_at})
 
     def api_recompute(self, method, item_id, d):
         if method != "POST":
@@ -400,19 +491,31 @@ class Handler(BaseHTTPRequestHandler):
         jsonl_p = d / "timeline.jsonl"
         meta_p = d / "timeline_meta.json"
         if method == "GET":
-            events = [normalize_event(e) for e in load_jsonl(jsonl_p) if isinstance(e, dict)]
+            raw = [e for e in load_jsonl(jsonl_p) if isinstance(e, dict)]
+            fmt = "blocks" if any(is_block(e) for e in raw) else "rows"
+            events = [normalize_block(e) if fmt == "blocks" else normalize_event(e) for e in raw]
             meta = load_json(meta_p, None)
-            return self.send_json({"events": events, "meta": meta})
+            return self.send_json({"events": events, "meta": meta, "format": fmt})
         body = self.read_body_json()
         if not isinstance(body, dict) or not isinstance(body.get("events"), list):
             return self.send_json({"error": "body 需为 {events: [...]}"}, 400)
-        events = [normalize_event(e) for e in body["events"] if isinstance(e, dict)]
-        events.sort(key=lambda e: e["t"])
-        for e in events:
-            e["human_verified"] = True
-        atomic_write_text(jsonl_p, dump_jsonl(events))
-        txt = timeline_txt(events)
-        atomic_write_text(d / "timeline.txt", txt)
+        raw = [e for e in body["events"] if isinstance(e, dict)]
+        if any(is_block(e) for e in raw):
+            events = [normalize_block(e) for e in raw]
+            events.sort(key=lambda e: e["t_start"])
+            for e in events:
+                e["human_verified"] = True
+            atomic_write_text(jsonl_p, dump_jsonl(events))
+            txt = blocks_txt(events)
+            atomic_write_text(d / "timeline.txt", txt)
+        else:
+            events = [normalize_event(e) for e in raw]
+            events.sort(key=lambda e: e["t"])
+            for e in events:
+                e["human_verified"] = True
+            atomic_write_text(jsonl_p, dump_jsonl(events))
+            txt = timeline_txt(events)
+            atomic_write_text(d / "timeline.txt", txt)
         meta = load_json(meta_p, None)
         if not isinstance(meta, dict):
             meta = {"model": None, "generated_at": None, "banned_hits": []}
@@ -568,7 +671,10 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", MIME.get(target.suffix, "application/octet-stream"))
         self.send_header("Content-Length", str(len(data)))
-        self.send_header("Cache-Control", "no-store")
+        # 防浏览器缓存旧 JS/CSS（Byron 遇到过疑似缓存问题）
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
         self.end_headers()
         if not head:
             try:

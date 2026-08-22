@@ -1,42 +1,42 @@
 {
   "hand_id": "F5",
-  "source": "video_extracted",
+  "source": "video_extracted_v2_all_seats",
   "model": "doubao-seed-2-1-pro-260628",
-  "generated_at": "2026-08-22T12:58:15+0800",
-  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
-  "streets_new_vs_l0": [
-    "preflop",
-    "flop"
-  ],
+  "generated_at": "2026-08-22T17:58:57",
+  "note": "全席位下注线（v2.2）：human 行保留；other_N 区分座位（对应 item.json table_players）",
   "betting_line": [
     {
       "street": "preflop",
       "board": "",
-      "actions": "hero raise $650; other fold; other fold; villain call $475",
+      "actions": "hero raise $650; other_1 fold; other_2 fold; villain call $475",
       "events": [
         {
-          "t": 21.5,
+          "t": 22.0,
           "actor": "hero",
           "action": "raise",
-          "amount": 650.0
+          "amount": 650.0,
+          "source": "doubao"
         },
         {
           "t": 24.0,
-          "actor": "other",
+          "actor": "other_1",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 27.5,
-          "actor": "other",
+          "t": 27.0,
+          "actor": "other_2",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 39.5,
+          "t": 39.0,
           "actor": "villain",
           "action": "call",
-          "amount": 475.0
+          "amount": 475.0,
+          "source": "doubao"
         }
       ]
     },
@@ -49,19 +49,22 @@
           "t": 46.0,
           "actor": "hero",
           "action": "bet",
-          "amount": 1050.0
+          "amount": 1050.0,
+          "source": "doubao"
         },
         {
-          "t": 53.5,
+          "t": 53.0,
           "actor": "villain",
           "action": "raise",
-          "amount": 3600.0
+          "amount": 3600.0,
+          "source": "doubao"
         },
         {
           "t": 60.0,
           "actor": "hero",
           "action": "call",
-          "amount": 2550.0
+          "amount": 2550.0,
+          "source": "doubao"
         }
       ]
     },
@@ -71,16 +74,39 @@
       "actions": "villain allin $7,225; hero call $7,225",
       "events": [
         {
-          "t": 88.5,
+          "t": 89.0,
           "actor": "villain",
           "action": "allin",
-          "amount": 7225.0
+          "amount": 7225.0,
+          "source": "doubao"
         },
         {
-          "t": 89.0,
+          "t": 101.0,
           "actor": "hero",
           "action": "call",
-          "amount": 7225.0
+          "amount": 7225.0,
+          "source": "doubao"
+        }
+      ]
+    },
+    {
+      "street": "river",
+      "board": "",
+      "actions": "hero check; villain check",
+      "events": [
+        {
+          "t": 107.0,
+          "actor": "hero",
+          "action": "check",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 110.0,
+          "actor": "villain",
+          "action": "check",
+          "amount": null,
+          "source": "doubao"
         }
       ]
     }

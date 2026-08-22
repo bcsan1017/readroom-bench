@@ -48,7 +48,7 @@ def board_by_street(board: str) -> dict:
 
 # ---------------- v2：全程提取 ----------------
 
-def build_prompt(hand: dict, dur: float, fps: float) -> tuple[str, str]:
+def build_prompt(hand: dict, dur: float, fps: float, skeleton: str = "") -> tuple[str, str]:
     system = (
         "你是一名扑克视频动作提取员。你将看到一段德州扑克电视节目的剪辑视频（完整一手牌，按给定 fps 抽帧，"
         "第 n 帧对应 n/fps 秒）。任务：提取这手牌从发底牌到收池的完整行动序列。\n"
@@ -64,7 +64,10 @@ def build_prompt(hand: dict, dur: float, fps: float) -> tuple[str, str]:
         "5. 末尾包含 showdown（若有亮牌）和 pot_awarded（筹码推给赢家）。\n"
         "6. 下方给出的'已知锚点'是可靠事实，输出必须与之一致（金额以锚点为准）。\n"
         "7. 输出里绝不出现任何真实姓名，只用 hero/villain/other。\n"
-        "8. 只输出 JSON 行，不要 markdown 围栏、不要解释。")
+        "8. 只输出 JSON 行，不要 markdown 围栏、不要解释。\n"
+        "9. 在所有动作行之后，额外输出两行人物外观描述 JSON：{\"desc\": \"hero\", \"text\": \"<座位方位+外观特征>\"} "
+        "和 {\"desc\": \"villain\", \"text\": \"<座位方位+外观特征>\"}。外观特征写画面可见事实"
+        "（衣着颜色、帽子、眼镜、发型、体型、坐在画面哪一侧等），禁止出现真实姓名，禁止心理推断。")
     players = hand.get("players", {})
     bs = board_by_street(hand.get("board", ""))
     anchors = []
@@ -85,9 +88,124 @@ def build_prompt(hand: dict, dur: float, fps: float) -> tuple[str, str]:
     user = (f"视频约 {dur:.0f} 秒，抽帧 fps={fps:g}。\n"
             f"玩家识别（仅用于在画面里认人，输出禁止出现姓名）：hero = {players.get('hero')}，"
             f"villain = {players.get('villain')}；参考已知锚点里双方的下注关系判断座位。\n"
-            "已知锚点：\n" + "\n".join(anchors) +
-            "\n请输出这手牌完整动作序列的 JSON 行。")
+            "已知锚点：\n" + "\n".join(anchors) + "\n" + skeleton +
+            "请输出这手牌完整动作序列的 JSON 行（末尾附 hero/villain 两行外观描述）。")
     return system, user
+
+
+def prior_skeleton(hd: Path, hand: dict) -> tuple[list[dict], str]:
+    """旧动作序列骨架：优先 truth.json betting_line（含人工 source=human 行），否则旧 action_timeline.jsonl。
+
+    返回 (骨架下注行列表（按旧 t 排序，含 source）, prompt 骨架文本)。
+    旧 t 基于旧剪辑已失效，只用于确定动作顺序；重定位后 human 行只允许更新 t。
+    """
+    rows: list[dict] = []
+    truth = load_json(hd / "truth.json") if (hd / "truth.json").exists() else {}
+    bl = truth.get("betting_line") if isinstance(truth, dict) else None
+    if isinstance(bl, dict):
+        for st in STREETS:
+            blk = bl.get(st)
+            if not isinstance(blk, dict):
+                continue
+            acts = [a for a in (blk.get("actions") or []) if isinstance(a, dict) and a.get("action") in BET_ACTS]
+            acts.sort(key=lambda a: a.get("t") if isinstance(a.get("t"), (int, float)) else 1e9)
+            for a in acts:
+                amt = a.get("amount")
+                rows.append({"street": st, "actor": a.get("actor", "other"), "action": a["action"],
+                             "amount": float(amt) if isinstance(amt, (int, float)) else None,
+                             "source": a.get("source", "doubao")})
+    else:
+        old = [e for e in _load_jsonl(hd / "action_timeline.jsonl") if e.get("action") in BET_ACTS]
+        old.sort(key=lambda e: (SRANK.get(e.get("street"), 0),
+                                e.get("t") if isinstance(e.get("t"), (int, float)) else 1e9))
+        for e in old:
+            amt = e.get("amount")
+            rows.append({"street": e.get("street"), "actor": e.get("actor", "other"), "action": e["action"],
+                         "amount": float(amt) if isinstance(amt, (int, float)) else None,
+                         "source": e.get("source", "doubao")})
+    if not rows:
+        return [], ""
+    lines = []
+    for i, r in enumerate(rows):
+        amt = f" ${r['amount']:,.0f}" if r.get("amount") else ""
+        lines.append(f"  {i + 1}. [{r['street']}] {r['actor']} {r['action']}{amt}")
+    txt = ("已知这手牌完整的下注动作序列（顺序/actor/action/金额可靠；其时间来自旧剪辑版视频，对本视频无效）：\n"
+           + "\n".join(lines) +
+           "\n请在本视频中为上述每个动作重新定位 t：输出的下注动作必须与该序列一一对应"
+           "（street/actor/action/amount 保持一致，不增不减不改序），并补齐各街 deal 以及结尾 showdown/pot_awarded。\n")
+    return rows, txt
+
+
+def _load_jsonl(p: Path) -> list[dict]:
+    out = []
+    if not p.exists():
+        return out
+    for line in p.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            d = json.loads(line)
+        except Exception:
+            continue
+        if isinstance(d, dict):
+            out.append(d)
+    return out
+
+
+def parse_descs(text: str) -> dict:
+    out = {}
+    for m in re.finditer(r"\{[^{}]*\}", text):
+        try:
+            d = json.loads(m.group(0))
+        except Exception:
+            continue
+        if d.get("desc") in ("hero", "villain") and str(d.get("text", "")).strip():
+            out[d["desc"]] = str(d["text"]).strip()
+    return out
+
+
+def merge_human_rows(evs: list[dict], skeleton: list[dict], fixes: list[str]) -> list[dict]:
+    """human 行保护：动作/金额/actor 绝不覆盖，只把 t 更新为新视频定位值。
+
+    骨架内第 k 个 (street,actor,action) 相同的 human 行，对齐新事件里同组第 k 个下注行：
+    该事件除 t 外整行还原为 human 行内容，source=human、human_verified=True。
+    没匹配上则按相邻骨架行的新 t 内插补一行（WARNING）。
+    """
+    humans = [(i, r) for i, r in enumerate(skeleton) if r.get("source") == "human"]
+    if not humans:
+        return evs
+    keyf = lambda r: (r.get("street"), r.get("actor"), r.get("action"))
+    claimed: set[int] = set()
+    for idx, hr in humans:
+        k = sum(1 for r in skeleton[:idx] if keyf(r) == keyf(hr))  # 同组序号
+        cand = [j for j, e in enumerate(evs)
+                if j not in claimed and e.get("action") in BET_ACTS and keyf(e) == keyf(hr)]
+        if len(cand) > k:
+            j = cand[k]
+            e = evs[j]
+            e.update({"actor": hr["actor"], "action": hr["action"], "amount": hr.get("amount"),
+                      "source": "human", "human_verified": True})
+            claimed.add(j)
+            fixes.append(f"human 行保护：[{hr['street']}] {hr['actor']} {hr['action']} → t={e['t']}（仅更新 t，其余保留）")
+        else:
+            # 相邻骨架行的新 t 内插
+            t_est = None
+            for prev in reversed(skeleton[:idx]):
+                pk = sum(1 for r in skeleton[:skeleton.index(prev)] if keyf(r) == keyf(prev))
+                pc = [e for e in evs if e.get("action") in BET_ACTS and keyf(e) == keyf(prev)]
+                if len(pc) > pk:
+                    t_est = pc[pk]["t"] + 0.5
+                    break
+            if t_est is None:
+                deal = next((e for e in evs if e["street"] == hr["street"] and e["action"] == "deal"), None)
+                t_est = (deal["t"] + 1.0) if deal else 0.0
+            evs.append({"t": round(t_est, 1), "street": hr["street"], "actor": hr["actor"],
+                        "action": hr["action"], "amount": hr.get("amount"),
+                        "source": "human", "human_verified": True})
+            fixes.append(f"WARNING human 行未在新提取中匹配到，按相邻锚点内插 t={round(t_est, 1)}：[{hr['street']}] {hr['actor']} {hr['action']}")
+    evs.sort(key=lambda e: e["t"])
+    return evs
 
 
 def parse_events(text: str, dur: float) -> list[dict]:
@@ -226,7 +344,8 @@ def extract_full(hd: Path, hand: dict, fps: float, dur: float, stem: str) -> tup
     from runner import providers as P
     from .timeline import low_fps_video
     vid = low_fps_video(hd, fps, stem)
-    system, user = build_prompt(hand, dur, fps)
+    skeleton, sk_txt = prior_skeleton(hd, hand)
+    system, user = build_prompt(hand, dur, fps, sk_txt)
     with Timer("action_timeline.doubao_full"):
         text, usage = P.ark_call(
             [{"role": "system", "content": system},
@@ -235,7 +354,14 @@ def extract_full(hd: Path, hand: dict, fps: float, dur: float, stem: str) -> tup
     evs = parse_events(text, dur)
     if not evs:
         raise RuntimeError(f"doubao 输出解析为空; raw head: {text[:300]}")
+    descs = parse_descs(text)
+    if descs:
+        (hd / "player_desc.json").write_text(json.dumps(
+            {**descs, "model": "doubao", "generated_at": now_iso()}, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8")
+        print(f"[action_timeline] player_desc.json: hero/villain 外观描述已保存 ({list(descs)})", file=sys.stderr)
     evs, fixes = validate_repair(evs, hand)
+    evs = merge_human_rows(evs, skeleton, fixes)
     return evs, fixes, usage
 
 

@@ -1,0 +1,32 @@
+{
+ "item_id": "T2",
+ "layer": "L1-text",
+ "model": "gpt",
+ "url": "https://api.wodex.ai/v1/chat/completions",
+ "headers": {
+  "Authorization": "<redacted>",
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+ },
+ "body": {
+  "model": "gpt-5.6-sol",
+  "max_tokens": 8192,
+  "messages": [
+   {
+    "role": "system",
+    "content": "\" 切分拼装） -->\n\n<!-- changelog\n2026-08-22 批跑前终审：\n- 补 cues.direction / weight 语义定义（原 prompt 未说明 strong/weak 指什么，模型只能猜）；\n- recognized 补充\"单独统计、如实标注不构成不利\"，降低瞒报动机；\n- 其余检查通过：输出 schema 与框架 v0.2 §4 逐字段一致；全文无模型特化措辞；无诱导 call/fold 的表述；\n  中文 prompt + 英文牌局术语（call/fold/all-in/Hero/Villain/river）口径统一；cues 已强制具体时间点+可观察事实。\n-->"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "下面是这手牌的牌理信息（桌况、双方位置与筹码、你的底牌、完整下注线、公共牌、底池、跟注额、所需赔率）：\n\n<hand>\n牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：UTG，本手开始筹码 $81,375。对手（Villain）位置：SB，本手开始筹码 $145,600。\n你的底牌：Jh Jc。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：villain raise $500; hero raise $2,300; villain raise $6,000; hero call\n  - flop（2s 4d Tc）：villain bet $3,100; hero call\n  - turn（Kd）：villain bet $13,500; hero call\n  - river（8h）：villain allin $58,775\n当前公共牌：2s 4d Tc Kd 8h（river）。\n对手全下前底池：$45,300；对手全下额：$58,775；你需跟注：$58,775。\n跟注后总底池：$162,850；所需胜率（跟注额 ÷ (底池+跟注额)）= 36.1%。\n</hand>\n\n以下是另一位观察者记录的这一整手牌（发牌→收池）中对手（villain）与你（hero）的客观行为时间轴（t 为相对片段起点的秒数；片段覆盖整手，对手在 t≈94.0s 全下，你在 t≈96.5s 宣布决定）：\n<timeline>\n[0.0–38.0s] 翻前发牌与下注（关注:both）：约0.5s hero收到手牌后双手交握于胸前，视线看向自己的手牌区域。约2.0s villain双肘撑桌身体前倾，双手放在底牌上方整理手牌，视线转向左侧hero方向。约4.5s hero低头看向筹码堆，拿起一枚筹码向前推出；约8.3s 桌边有人说\"How much?\"（平缓）；约9.0s villain身体前倾右肘撑桌，伸手拨弄筹码并分出数枚，桌边有人说\"Five hundred.\"（平缓），约12.0s将筹码推入底池完成$2200加注，约12.4s villain说\"Twenty three.\"（平缓）。约18.0s hero面向villain方向，捧起一摞筹码推出完成加注，约19.4s hero说\"Six thousand.\"（平缓）；约27.0s hero保持前倾坐姿，视线在hero和自身筹码堆间来回移动，右手反复敲击绿色筹码堆顶部，同时说出约2秒的话语，约31.5s分出数枚高面值筹码推出完成跟注，约33.2s hero说\"Call.\"（平缓）。约33.5s hero看向dealer方向，右手食指轻点桌沿等待其他玩家行动。\n[38.0–59.5s] 翻牌圈行动（关注:both）：约40.1s 桌边有人说\"Nick how you doing uh did uh we have a flight at 8 30 tonight, yeah?\"（中速）。约41.0s flop公共牌发出后，villain直起上身靠回椅背，左手拉扯衣领，视线看向公共牌。约43.0s hero视线从公共牌移向villain，右手搭在筹码堆边缘轻碰筹码，说出约3秒的话语。约43.9s 桌边有人说\"Uh yeah, yeah I believe so.\"（中速）。约45.1s 桌边有人说\"Yeah.\"（简短）。约46.3s 桌边有人说\"I think it starts boarding at 8.\"（中速）。约47.4s 桌边有人说\"This place is literally like.\"（中速）。约49.0s villain视线从公共牌移向自身筹码堆，拿起两枚黄色高面值筹码向前推出，完成$3100下注。约49.8s 桌边有人说\"[unclear]\"（模糊）。约50.3s villain开口说\"3100.\"（中速）。约52.0s hero低头看了一眼推出的筹码后抬眼看向villain，右手停在筹码堆旁、手指悬在筹码上方观察下注额，约56.5s分出三枚黄色筹码向前推出，与villain的下注筹码对齐完成跟注。约57.3s 桌边荷官看到hero操作说说\"Call.\"（简短）。\n[59.5–82.5s] 转牌圈行动（关注:both）：约61.0s转牌发出后，hero左肘撑在桌沿，左手扶住墨镜左侧镜腿，右手放在绿色筹码堆上逐枚摩挲筹码边缘，视线紧盯转牌公共牌。约67.0s 对手视线在自身筹码堆和公共牌间切换，数出一摞不同颜色的筹码向前推出到下注区。约70.9s桌边有人说\"Thirteen fives.\"（语速平缓）。约74.0s hero身体向左侧转动、左臂搭在邻座椅背上，先看向左侧无关玩家再转回对手方向，右手将面前绿色筹码拢成整齐一摞，约75.2s hero开口道[unclear]（音量微弱）。约78.5s villain转回身体正对牌桌，从整理好的筹码摞中分出一摞推出滑入底池完成转牌圈跟注，约79.5s左肘重新撑回桌沿，左手手掌托住左侧脸颊，看向dealer方向等待河牌。\n[82.5–94.0s] 河牌圈行动至对手全下（关注:both）：约84.0s河牌发出后，hero保持左手托腮的坐姿，视线持续落在河牌公共牌上未移动，右手手指连续4次轻敲面前绿色筹码堆顶部。约89.0s villain保持左手手肘撑桌托腮的姿势，右手搭在绿色筹码上触碰筹码堆，佩戴红色反光墨镜，面部其余部分被头套和墨镜遮挡，未观察到说话动作。约92.0s 对手上身稍向前倾，视线从公共牌移向自身筹码堆，右手伸入多色筹码堆分出一大摞筹码，用力向前推出到下注区中央，对应villain的全下行动。\n[94.0–123.4s] 对手全下后的长考期（关注:both）：约94.0s vhero短暂不在画面中，约96.0s回到画面后保持左手手肘撑桌托腮的姿势，右手搭在绿色筹码上保持触碰筹码堆的状态，佩戴红色反光墨镜。约97.4s villain说出推出allin荷官说出“ninety thousand”；约104.0s hero保持托腮姿势微微前倾，右手从筹码堆移开平放在底牌旁桌沿，视线从公共牌移向对手面部，墨镜后的视线正对hero、下颌微抬，等待hero决策。约105.5s hero与villain对视约2秒，右手放在筹码堆上捏住一枚筹码边缘，约106.0s视线移向底池，将捏着的筹码向前推出与全下筹码对齐。约111.9s hero说出“i don't know i mean i've got the king ten again”，约119.4s说出“does ×× give a not really”。\n</timeline>\n\n请综合牌理与你能观察到的对手线索，给出你**此刻跟注的概率 p_call**（0–1 的实数，表示在你的信念下跟注为正确决策的主观概率；不是\"你会不会跟\"的二元回答），并列出你依据的具体可观察线索。\n\n严格按以下 JSON schema 输出：\n{\n  \"p_call\": <0..1 float>,\n  \"action\": \"call\" | \"fold\",            // 与 p_call ≥ 0.5 一致\n  \"cues\": [\n    {\"t\": <秒，相对片段起点，数字>, \"who\": \"villain\" | \"hero\" | \"other\", \"type\": \"gaze\"|\"posture\"|\"hands\"|\"speech\"|\"chips\"|\"face\", \"observed\": \"<你实际观察到的客观事实，不要写情绪词>\", \"direction\": \"strong\" | \"weak\" | \"neutral\", \"weight\": <0..1>}\n  ],\n  \"rationale\": \"<≤150 字>\",\n  \"recognized\": <true|false>            // 你是否认出这手牌、这集节目或这些选手；认出请如实标 true\n}\n\n注意：\n- 若本题没有给你任何视觉/时间轴信息（仅牌理），cues 可为空数组，但不要编造观察。\n- cues 中每条必须指向具体时间点与可观察事实（例如\"推注后双手交叉抱胸、视线落在公共牌\"），禁止使用情绪推断词（紧张/自信/心虚/放松等）。\n- cues.direction 指该线索指向的**对手牌力方向**：strong=指向对手成牌强，weak=指向对手弱牌/诈唬，neutral=无明确指向；weight（0–1）为该线索在你本次决策中的依赖程度。\n- recognized：只要你认出这手牌、这集节目或任一选手（或已知道这手牌的结果），就如实标 true；标 true 的题只会被单独统计，如实标注不构成任何不利。\n- 只输出 JSON。"
+     }
+    ]
+   }
+  ],
+  "reasoning_effort": "high"
+ },
+ "media_refs": []
+}

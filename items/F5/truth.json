@@ -1,37 +1,135 @@
 {
-  "item_id": "F5",
-  "hero_cards": "KhQd",
-  "villain_cards": "7h6h",
-  "board": "Ks4h8hJh",
-  "hero_equity": 0.13636363636363635,
-  "win": 0.13636363636363635,
-  "tie": 0.0,
-  "lose": 0.8636363636363636,
-  "method": "enumerate",
-  "n": 44,
-  "street": "turn",
-  "required_equity": 0.3114224137931034,
-  "correct_call": false,
-  "ev_call_bb": -81.22727272727273,
-  "ev_fold_bb": 0.0,
-  "pot_before_allin": 8750,
-  "pot_after_allin": 15975,
-  "to_call": 7225,
-  "bb": 50,
-  "actual": {
-    "hero_action": "call",
-    "villain_showed": null,
-    "note": "recap: hero_actual_action=call (lost both runs); think=medium ('thought for a bit'); allin_type=unknown"
+ "item_id": "F5",
+ "hero_cards": "KhQd",
+ "villain_cards": "7h6h",
+ "board": "Ks4h8hJh",
+ "hero_equity": 0.13636363636363635,
+ "win": 0.13636363636363635,
+ "tie": 0.0,
+ "lose": 0.8636363636363636,
+ "method": "enumerate",
+ "n": 44,
+ "street": "turn",
+ "required_equity": 0.3114224137931034,
+ "correct_call": false,
+ "ev_call_bb": -81.22727272727273,
+ "ev_fold_bb": 0.0,
+ "pot_before_allin": 8750,
+ "pot_after_allin": 15975,
+ "to_call": 7225,
+ "bb": 50,
+ "actual": {
+  "hero_action": "call",
+  "villain_showed": null,
+  "note": "recap: hero_actual_action=call (lost both runs); think=medium ('thought for a bit'); allin_type=unknown",
+  "hero_invested_usd": null,
+  "hero_result_usd": null
+ },
+ "players": {
+  "hero": "Kane Kalas",
+  "villain": "DJ Washburn"
+ },
+ "difficulty_tier": "TBD (按 L0 基线分档)",
+ "prefill_source": {
+  "table_size": "doubao"
+ },
+ "table_size": 7,
+ "table_size_note": "待确认：面板行数=3 vs 桌边人头=7，取较大值预填，请对原片核对",
+ "betting_line": {
+  "preflop": {
+   "board": "",
+   "actions": [
+    {
+     "t": 22,
+     "actor": "hero",
+     "action": "raise",
+     "amount": 675,
+     "source": "doubao"
+    },
+    {
+     "t": 24,
+     "actor": "other",
+     "action": "fold",
+     "amount": null,
+     "source": "doubao"
+    },
+    {
+     "t": 27,
+     "actor": "other",
+     "action": "fold",
+     "amount": null,
+     "source": "doubao"
+    },
+    {
+     "t": 39,
+     "actor": "villain",
+     "action": "call",
+     "amount": 675,
+     "source": "doubao"
+    }
+   ],
+   "l0_text": null,
+   "source": "video_extracted_v2"
   },
-  "players": {
-    "hero": "Kane Kalas",
-    "villain": "DJ Washburn"
+  "flop": {
+   "board": "Ks 4h 8h",
+   "actions": [
+    {
+     "t": 46,
+     "actor": "hero",
+     "action": "bet",
+     "amount": 1050,
+     "source": "doubao"
+    },
+    {
+     "t": 53,
+     "actor": "villain",
+     "action": "raise",
+     "amount": 3600,
+     "source": "doubao"
+    },
+    {
+     "t": 60,
+     "actor": "hero",
+     "action": "call",
+     "amount": 3600,
+     "source": "doubao"
+    }
+   ],
+   "l0_text": null,
+   "source": "video_extracted_v2"
   },
-  "difficulty_tier": "TBD (按 L0 基线分档)",
-  "prefill_source": {
-    "table_size": "doubao",
-    "players_in_hand": "doubao"
+  "turn": {
+   "board": "Jh",
+   "actions": [
+    {
+     "t": 89,
+     "actor": "villain",
+     "action": "allin",
+     "amount": 7225,
+     "source": "doubao"
+    },
+    {
+     "t": 119,
+     "actor": "hero",
+     "action": "call",
+     "amount": 7225,
+     "source": "doubao"
+    }
+   ],
+   "l0_text": "Villain(Washburn) jams $7,225 into $8,750 on the turn; Hero faces $7,225；前序街完整下注线 recap 未提供",
+   "source": "video_extracted_v2"
   },
-  "table_size": 2,
-  "players_in_hand": 2
+  "river": {
+   "board": "",
+   "actions": [],
+   "l0_text": null,
+   "source": "video_extracted_v2"
+  }
+ },
+ "hero_position": "SB",
+ "villain_position": "UTG+1",
+ "hero_stack_start": 20050,
+ "villain_stack_start": 11300,
+ "human_verified_truth": true
 }

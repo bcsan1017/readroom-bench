@@ -1,55 +1,63 @@
 {
   "hand_id": "F2",
-  "source": "video_extracted",
+  "source": "video_extracted_v2_all_seats",
   "model": "doubao-seed-2-1-pro-260628",
-  "generated_at": "2026-08-22T12:57:57+0800",
-  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
-  "streets_new_vs_l0": [
-    "preflop",
-    "flop",
-    "turn"
-  ],
+  "generated_at": "2026-08-22T17:58:57",
+  "note": "全席位下注线（v2.2）：human 行保留；other_N 区分座位（对应 item.json table_players）",
   "betting_line": [
     {
       "street": "preflop",
       "board": "",
-      "actions": "other call $100; hero raise; villain call; other fold; other fold; hero call",
+      "actions": "other_1 call $100; hero raise $600; villain raise $1,800; villain call; other_2 fold; other_1 fold; hero call",
       "events": [
         {
-          "t": 12.5,
-          "actor": "other",
+          "t": 13.0,
+          "actor": "other_1",
           "action": "call",
-          "amount": 100.0
+          "amount": 100.0,
+          "source": "doubao"
         },
         {
-          "t": 19.5,
+          "t": 20.0,
           "actor": "hero",
           "action": "raise",
-          "amount": null
+          "amount": 600.0,
+          "source": "doubao"
         },
         {
-          "t": 25.0,
+          "t": 26.0,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 1800.0,
+          "source": "doubao"
+        },
+        {
+          "t": 26.0,
           "actor": "villain",
           "action": "call",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 37.5,
-          "actor": "other",
+          "t": 37.0,
+          "actor": "other_2",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 42.5,
-          "actor": "other",
+          "t": 42.0,
+          "actor": "other_1",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
           "t": 47.0,
           "actor": "hero",
           "action": "call",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         }
       ]
     },
@@ -59,16 +67,18 @@
       "actions": "villain check; hero check",
       "events": [
         {
-          "t": 62.0,
+          "t": 58.0,
           "actor": "villain",
           "action": "check",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 63.0,
+          "t": 62.0,
           "actor": "hero",
           "action": "check",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         }
       ]
     },
@@ -78,16 +88,18 @@
       "actions": "hero bet $2,000; villain call $2,000",
       "events": [
         {
-          "t": 74.5,
+          "t": 74.0,
           "actor": "hero",
           "action": "bet",
-          "amount": 2000.0
+          "amount": 2000.0,
+          "source": "doubao"
         },
         {
-          "t": 80.5,
+          "t": 80.0,
           "actor": "villain",
           "action": "call",
-          "amount": 2000.0
+          "amount": 2000.0,
+          "source": "doubao"
         }
       ]
     },
@@ -97,22 +109,25 @@
       "actions": "hero check; villain allin $19,850; hero fold",
       "events": [
         {
-          "t": 87.0,
+          "t": 88.0,
           "actor": "hero",
           "action": "check",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 91.0,
+          "t": 92.0,
           "actor": "villain",
           "action": "allin",
-          "amount": 19850.0
+          "amount": 19850.0,
+          "source": "doubao"
         },
         {
-          "t": 91.0,
+          "t": null,
           "actor": "hero",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "human"
         }
       ]
     }

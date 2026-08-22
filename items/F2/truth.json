@@ -3,17 +3,17 @@
   "hero_cards": "As8c",
   "villain_cards": "KcQs",
   "board": "Ad8hQdQh4c",
-  "hero_equity": 0.0,
-  "win": 0.0,
-  "tie": 0.0,
-  "lose": 1.0,
+  "hero_equity": 0,
+  "win": 0,
+  "tie": 0,
+  "lose": 1,
   "method": "showdown",
   "n": 1,
   "street": "river",
   "required_equity": 0.41877637130801687,
   "correct_call": false,
-  "ev_call_bb": -397.0,
-  "ev_fold_bb": 0.0,
+  "ev_call_bb": -397,
+  "ev_fold_bb": 0,
   "pot_before_allin": 7700,
   "pot_after_allin": 27550,
   "to_call": 19850,
@@ -21,7 +21,9 @@
   "actual": {
     "hero_action": "fold",
     "villain_showed": null,
-    "note": "recap: hero_actual_action=fold (correct); think=long (shot back in chair, asked exact count, tanked); allin_type=unknown"
+    "note": "recap: hero_actual_action=fold (correct); think=long (shot back in chair, asked exact count, tanked); allin_type=unknown",
+    "hero_invested_usd": null,
+    "hero_result_usd": null
   },
   "players": {
     "hero": "Jennifer Tilly",
@@ -29,9 +31,134 @@
   },
   "difficulty_tier": "TBD (按 L0 基线分档)",
   "prefill_source": {
-    "table_size": "doubao",
-    "players_in_hand": "doubao"
+    "table_size": "doubao"
   },
-  "table_size": 2,
-  "players_in_hand": 3
+  "table_size": 7,
+  "table_size_note": "待确认：面板行数=1 vs 桌边人头=7，取较大值预填，请对原片核对",
+  "hero_position": "SB",
+  "villain_position": "BB",
+  "hero_stack_start": 35500,
+  "villain_stack_start": 23650,
+  "betting_line": {
+    "preflop": {
+      "board": "",
+      "actions": [
+        {
+          "t": 13,
+          "actor": "other",
+          "action": "call",
+          "amount": 100,
+          "source": "doubao"
+        },
+        {
+          "t": 20,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 600,
+          "source": "doubao"
+        },
+        {
+          "t": 26,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 1800,
+          "source": "doubao"
+        },
+        {
+          "t": 37,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 42,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 47,
+          "actor": "hero",
+          "action": "call",
+          "amount": null,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "flop": {
+      "board": "Ad 8h Qd",
+      "actions": [
+        {
+          "t": 58,
+          "actor": "villain",
+          "action": "check",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 62,
+          "actor": "hero",
+          "action": "check",
+          "amount": null,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "turn": {
+      "board": "Qh",
+      "actions": [
+        {
+          "t": 74,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 2000,
+          "source": "doubao"
+        },
+        {
+          "t": 80,
+          "actor": "villain",
+          "action": "call",
+          "amount": 2000,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "river": {
+      "board": "4c",
+      "actions": [
+        {
+          "t": 88,
+          "actor": "hero",
+          "action": "check",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 92,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 19850,
+          "source": "doubao"
+        },
+        {
+          "t": null,
+          "actor": "hero",
+          "action": "fold",
+          "amount": null,
+          "source": "human"
+        }
+      ],
+      "l0_text": "Villain(Texas Mike) jams $19,850 on the river; Hero faces $19,850；前序街完整下注线 recap 未提供",
+      "source": "video_extracted_v2"
+    }
+  },
+  "human_verified_truth": true
 }

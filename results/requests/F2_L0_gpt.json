@@ -1,0 +1,32 @@
+{
+ "item_id": "F2",
+ "layer": "L0",
+ "model": "gpt",
+ "url": "https://api.wodex.ai/v1/chat/completions",
+ "headers": {
+  "Authorization": "<redacted>",
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+ },
+ "body": {
+  "model": "gpt-5.6-sol",
+  "max_tokens": 8192,
+  "messages": [
+   {
+    "role": "system",
+    "content": "\" 切分拼装） -->\n\n<!-- changelog\n2026-08-22 批跑前终审：\n- 补 cues.direction / weight 语义定义（原 prompt 未说明 strong/weak 指什么，模型只能猜）；\n- recognized 补充\"单独统计、如实标注不构成不利\"，降低瞒报动机；\n- 其余检查通过：输出 schema 与框架 v0.2 §4 逐字段一致；全文无模型特化措辞；无诱导 call/fold 的表述；\n  中文 prompt + 英文牌局术语（call/fold/all-in/Hero/Villain/river）口径统一；cues 已强制具体时间点+可观察事实。\n-->"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "下面是这手牌的牌理信息（桌况、双方位置与筹码、你的底牌、完整下注线、公共牌、底池、跟注额、所需赔率）：\n\n<hand>\n牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：SB，本手开始筹码 $35,500。对手（Villain）位置：BB，本手开始筹码 $23,650。\n你的底牌：As 8c。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：other call $100; hero raise $600; villain raise $1,800; other fold; other fold; hero call\n  - flop（Ad 8h Qd）：villain check; hero check\n  - turn（Qh）：hero bet $2,000; villain call $2,000\n  - river（4c）：hero check; villain allin $19,850\n当前公共牌：Ad 8h Qd Qh 4c（river）。\n对手全下前底池：$7,700；对手全下额：$19,850；你需跟注：$19,850。\n跟注后总底池：$47,400；所需胜率（跟注额 ÷ (底池+跟注额)）= 41.9%。\n</hand>\n\n（本题仅提供牌理信息，无行为线索。）\n\n请综合牌理与你能观察到的对手线索，给出你**此刻跟注的概率 p_call**（0–1 的实数，表示在你的信念下跟注为正确决策的主观概率；不是\"你会不会跟\"的二元回答），并列出你依据的具体可观察线索。\n\n严格按以下 JSON schema 输出：\n{\n  \"p_call\": <0..1 float>,\n  \"action\": \"call\" | \"fold\",            // 与 p_call ≥ 0.5 一致\n  \"cues\": [\n    {\"t\": <秒，相对片段起点，数字>, \"who\": \"villain\" | \"hero\" | \"other\", \"type\": \"gaze\"|\"posture\"|\"hands\"|\"speech\"|\"chips\"|\"face\", \"observed\": \"<你实际观察到的客观事实，不要写情绪词>\", \"direction\": \"strong\" | \"weak\" | \"neutral\", \"weight\": <0..1>}\n  ],\n  \"rationale\": \"<≤150 字>\",\n  \"recognized\": <true|false>            // 你是否认出这手牌、这集节目或这些选手；认出请如实标 true\n}\n\n注意：\n- 若本题没有给你任何视觉/时间轴信息（仅牌理），cues 可为空数组，但不要编造观察。\n- cues 中每条必须指向具体时间点与可观察事实（例如\"推注后双手交叉抱胸、视线落在公共牌\"），禁止使用情绪推断词（紧张/自信/心虚/放松等）。\n- cues.direction 指该线索指向的**对手牌力方向**：strong=指向对手成牌强，weak=指向对手弱牌/诈唬，neutral=无明确指向；weight（0–1）为该线索在你本次决策中的依赖程度。\n- recognized：只要你认出这手牌、这集节目或任一选手（或已知道这手牌的结果），就如实标 true；标 true 的题只会被单独统计，如实标注不构成任何不利。\n- 只输出 JSON。"
+     }
+    ]
+   }
+  ],
+  "reasoning_effort": "high"
+ },
+ "media_refs": []
+}

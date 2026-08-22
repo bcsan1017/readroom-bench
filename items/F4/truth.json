@@ -3,17 +3,17 @@
   "hero_cards": "QhQc",
   "villain_cards": "Ac7d",
   "board": "Ah6d5h8h3c",
-  "hero_equity": 0.0,
-  "win": 0.0,
-  "tie": 0.0,
-  "lose": 1.0,
+  "hero_equity": 0,
+  "win": 0,
+  "tie": 0,
+  "lose": 1,
   "method": "showdown",
   "n": 1,
   "street": "river",
   "required_equity": 0.3538175046554935,
   "correct_call": false,
-  "ev_call_bb": -95.0,
-  "ev_fold_bb": 0.0,
+  "ev_call_bb": -95,
+  "ev_fold_bb": 0,
   "pot_before_allin": 3925,
   "pot_after_allin": 8675,
   "to_call": 4750,
@@ -21,7 +21,9 @@
   "actual": {
     "hero_action": "call",
     "villain_showed": null,
-    "note": "recap: hero_actual_action=call (lost, felted); think=long ('thought long and hard'); allin_type=unknown"
+    "note": "recap: hero_actual_action=call (lost, felted); think=long ('thought long and hard'); allin_type=unknown",
+    "hero_invested_usd": null,
+    "hero_result_usd": null
   },
   "players": {
     "hero": "Phillip 'P3' Hellmuth III",
@@ -30,16 +32,165 @@
   "difficulty_tier": "TBD (按 L0 基线分档)",
   "prefill_source": {
     "table_size": "doubao",
-    "players_in_hand": "doubao",
     "hero_stack_start": "doubao",
     "villain_stack_start": "doubao",
     "hero_position": "doubao",
     "villain_position": "doubao"
   },
-  "table_size": 2,
-  "players_in_hand": 4,
-  "hero_stack_start": 6550.0,
-  "villain_stack_start": 8325.0,
-  "hero_position": "UG",
-  "villain_position": "+1"
+  "table_size": 7,
+  "hero_stack_start": 6600,
+  "villain_stack_start": 8325,
+  "hero_position": "UTG",
+  "villain_position": "UTG+1",
+  "table_size_note": "待确认：面板行数=2 vs 桌边人头=数不清，取较大值预填，请对原片核对",
+  "betting_line": {
+    "preflop": {
+      "board": "",
+      "actions": [
+        {
+          "t": 7,
+          "actor": "hero",
+          "action": "call",
+          "amount": 50,
+          "source": "doubao"
+        },
+        {
+          "t": 21,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 150,
+          "source": "doubao"
+        },
+        {
+          "t": 29,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 33,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 39,
+          "actor": "other",
+          "action": "call",
+          "amount": 150,
+          "source": "doubao"
+        },
+        {
+          "t": 44,
+          "actor": "hero",
+          "action": "call",
+          "amount": 150,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "flop": {
+      "board": "Ah 6d 5h",
+      "actions": [
+        {
+          "t": 55,
+          "actor": "other",
+          "action": "check",
+          "amount": null,
+          "source": "human"
+        },
+        {
+          "t": 60,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 300,
+          "source": "doubao"
+        },
+        {
+          "t": 77,
+          "actor": "villain",
+          "action": "call",
+          "amount": 300,
+          "source": "doubao"
+        },
+        {
+          "t": 80,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 83,
+          "actor": "hero",
+          "action": "call",
+          "amount": null,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "turn": {
+      "board": "8h",
+      "actions": [
+        {
+          "t": 99,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 650,
+          "source": "doubao"
+        },
+        {
+          "t": 121,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 1400,
+          "source": "doubao"
+        },
+        {
+          "t": 139,
+          "actor": "hero",
+          "action": "call",
+          "amount": 1400,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "river": {
+      "board": "3c",
+      "actions": [
+        {
+          "t": 148,
+          "actor": "hero",
+          "action": "check",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 150,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 4750,
+          "source": "doubao"
+        },
+        {
+          "t": 192,
+          "actor": "hero",
+          "action": "call",
+          "amount": 4750,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": "Villain(3Coin) jams the river, covering; Hero faces $4,750；前序街完整下注线 recap 未提供",
+      "source": "video_extracted_v2"
+    }
+  },
+  "human_verified_truth": true
 }

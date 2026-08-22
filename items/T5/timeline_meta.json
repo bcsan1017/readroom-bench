@@ -1,13 +1,13 @@
 {
   "model": "doubao-seed-2-1-pro-260628",
-  "generated_at": "2026-08-22T12:24:19",
-  "human_verified": false,
-  "n_events": 44,
+  "generated_at": "2026-08-22T17:01:41",
+  "human_verified": true,
+  "n_events": 6,
   "banned_hits": [],
   "usage": {
-    "completion_tokens": 3177,
-    "prompt_tokens": 86305,
-    "total_tokens": 89482,
+    "completion_tokens": 3669,
+    "prompt_tokens": 86961,
+    "total_tokens": 90630,
     "prompt_tokens_details": {
       "cached_tokens": 0
     },
@@ -16,6 +16,16 @@
     }
   },
   "video_fps": 2.0,
-  "clip_duration": 187.06,
-  "video_variant": "colleague_hided_recut"
+  "clip_duration": 333.79,
+  "video_variant": "colleague_hided_recut",
+  "n_events_all": 55,
+  "filter": "villain_all + hero_ops(hands/chips/speech)",
+  "decision_window": [
+    180.0,
+    320.0
+  ],
+  "window_densified": true,
+  "table_talk": 25,
+  "format": "blocks",
+  "n_detail": 123
 }

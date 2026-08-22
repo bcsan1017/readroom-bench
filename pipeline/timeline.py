@@ -37,7 +37,8 @@ def low_fps_video(hd: Path, fps: float, stem: str = "clip_masked") -> Path:
     vid = hd / f"{stem}_{fps:g}fps.mp4"
     if not vid.exists():
         run([ffmpeg_exe(), "-y", "-hide_banner", "-loglevel", "error", "-i", str(hd / f"{stem}.mp4"),
-             "-vf", f"fps={fps},scale=960:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "24", "-an", str(vid)])
+             "-vf", f"fps={fps},scale=960:-2", "-c:v", "libx264", "-preset", "veryfast", "-crf", "24",
+             "-ac", "1", "-c:a", "aac", "-b:a", "48k", str(vid)])  # 保留音轨（mono 48k）：台词是重要观察信号
     return vid
 
 
@@ -83,16 +84,34 @@ def anchor_times(hd: Path) -> tuple[float | None, float | None]:
     return allin_t, announce_t
 
 
+def player_desc(hd: Path) -> dict:
+    """action_timeline 重跑时由豆包生成的 hero/villain 座位方位+外观特征（player_desc.json）。"""
+    p = hd / "player_desc.json"
+    if not p.exists():
+        return {}
+    try:
+        d = json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    return {k: str(d[k]) for k in ("hero", "villain") if isinstance(d.get(k), str) and d[k].strip()}
+
+
 def user_text(hand: dict, dur: float, anchors: str = "", allin_t: float | None = None,
-              announce_t: float | None = None) -> str:
+              announce_t: float | None = None, desc: dict | None = None) -> str:
     cam = hand.get("camera", {})
     pos = {"split_left": "分屏左侧", "split_right": "分屏右侧"}
-    if cam.get("hero_seat_crop") or cam.get("villain_seat_crop"):
+    if desc and desc.get("hero") and desc.get("villain"):
+        seat = (f"人物识别：hero（主角，面对全下做决定的一方）＝{desc['hero']}；"
+                f"villain（对手，全下的一方）＝{desc['villain']}。")
+    elif cam.get("hero_seat_crop") or cam.get("villain_seat_crop"):
         seat = (f"决胜时段为分屏画面：hero（主角，待决者）在{pos.get(cam.get('hero_seat_crop'), '左侧')}，"
                 f"villain（对手，全下者）在{pos.get(cam.get('villain_seat_crop'), '右侧')}。")
     else:
         seat = ("hero（主角，待决者）与 villain（对手，全下者）的画面位置未标定，请从动作判断：推出全下筹码的是 villain，"
                 "随后长考并宣布决定的是 hero。")
+    seat += ("观察对象＝villain 的全部行为＋hero 的操作动作（下注/看牌/筹码/言语，即 hands/chips/speech 至少一项非 -）；"
+             "不记录 hero 自身神态表情，不记录 other。who 对照上述外观特征判定为 villain/hero/both。"
+             "观察内容需覆盖 gaze/posture/hands/speech/chips/face 六个字段（各字段都要有事件出现，不要集中在 hands 一列）。")
     if allin_t is None:
         allin_t = hand["timing_abs_sec"]["villain_allin"] - hand["timing_abs_sec"]["clip_start"]
     if announce_t is None:
@@ -180,7 +199,7 @@ def main(argv=None):
         with Timer("timeline.doubao"):
             text, usage = P.ark_call(
                 [{"role": "system", "content": prompt_system()},
-                 {"role": "user", "content": P.video_content(vid, a.fps, user_text(hand, dur, anchors, allin_t, announce_t))}],
+                 {"role": "user", "content": P.video_content(vid, a.fps, user_text(hand, dur, anchors, allin_t, announce_t, player_desc(hd)))}],
                 max_tokens=8000, temperature=0.2)
         events = parse_events(text, dur)
         model, source = P.model_id("doubao"), "doubao"

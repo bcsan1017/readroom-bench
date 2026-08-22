@@ -21,7 +21,9 @@
   "actual": {
     "hero_action": "call",
     "villain_showed": null,
-    "note": "recap: hero_actual_action=call (won); think=long (tanked, then called); allin_type=unknown"
+    "note": "recap: hero_actual_action=call (won); think=long (tanked, then called); allin_type=unknown",
+    "hero_invested_usd": null,
+    "hero_result_usd": null
   },
   "players": {
     "hero": "Dan 'Jungleman' Cates",
@@ -30,14 +32,115 @@
   "difficulty_tier": "TBD (按 L0 基线分档)",
   "prefill_source": {
     "table_size": "doubao",
-    "players_in_hand": "doubao",
     "hero_stack_start": "doubao",
     "villain_stack_start": "doubao",
     "villain_position": "doubao"
   },
-  "table_size": 2,
-  "players_in_hand": 4,
-  "hero_stack_start": 81275.0,
-  "villain_stack_start": 145100.0,
-  "villain_position": "SB"
+  "table_size": 7,
+  "hero_stack_start": 81375,
+  "villain_stack_start": 145600,
+  "villain_position": "SB",
+  "table_size_note": "待确认：面板行数=3 vs 桌边人头=4，取较大值预填，请对原片核对",
+  "betting_line": {
+    "preflop": {
+      "board": "",
+      "actions": [
+        {
+          "t": 5,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 500,
+          "source": "doubao"
+        },
+        {
+          "t": 12,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 2300,
+          "source": "doubao"
+        },
+        {
+          "t": 19,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 6000,
+          "source": "doubao"
+        },
+        {
+          "t": 32,
+          "actor": "hero",
+          "action": "call",
+          "amount": null,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "flop": {
+      "board": "2s 4d Tc",
+      "actions": [
+        {
+          "t": 50,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 3100,
+          "source": "doubao"
+        },
+        {
+          "t": 57,
+          "actor": "hero",
+          "action": "call",
+          "amount": null,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "turn": {
+      "board": "Kd",
+      "actions": [
+        {
+          "t": 70,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 13500,
+          "source": "doubao"
+        },
+        {
+          "t": 79,
+          "actor": "hero",
+          "action": "call",
+          "amount": null,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "river": {
+      "board": "8h",
+      "actions": [
+        {
+          "t": 94,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 58775,
+          "source": "doubao"
+        },
+        {
+          "t": 129,
+          "actor": "hero",
+          "action": "call",
+          "amount": 58775,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": "Villain(Texas Mike) jams on the river, covering Hero's $58,775；前序街完整下注线 recap 未提供",
+      "source": "video_extracted_v2"
+    }
+  },
+  "hero_position": "UTG",
+  "human_verified_truth": true
 }

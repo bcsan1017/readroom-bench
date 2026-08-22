@@ -13,10 +13,11 @@
   "street_at_allin": "river",
   "layers": {
     "L0": {
-      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手全下额盖过你的剩余筹码；$58,775 为有效额）。\n你的底牌：Jh Jc。\n下注线：\n  - river（2s 4d Tc Kd 8h）：Villain(Texas Mike) jams on the river, covering Hero's $58,775；前序街完整下注线 recap 未提供\n当前公共牌：2s 4d Tc Kd 8h（river）。\n对手全下前底池：$45,300；对手全下额：$58,775；你需跟注：$58,775（跟注后你剩 $0）。\n跟注后总底池：$162,850；所需胜率（跟注额 ÷ (底池+跟注额)）= 36.1%。"
+      "text": "牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：UTG，本手开始筹码 $81,375。对手（Villain）位置：SB，本手开始筹码 $145,600。\n你的底牌：Jh Jc。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：villain raise $500; hero raise $2,300; villain raise $6,000; hero call\n  - flop（2s 4d Tc）：villain bet $3,100; hero call\n  - turn（Kd）：villain bet $13,500; hero call\n  - river（8h）：villain allin $58,775\n当前公共牌：2s 4d Tc Kd 8h（river）。\n对手全下前底池：$45,300；对手全下额：$58,775；你需跟注：$58,775。\n跟注后总底池：$162,850；所需胜率（跟注额 ÷ (底池+跟注额)）= 36.1%。",
+      "source": "regen_from_truth_v1"
     },
     "L1-text": {
-      "timeline_text": "t=0.0s [other] hands=右手放在牌桌上，左手抬起; note=发牌员开始发牌，画面初始可见黑衣女士与花衣男士\nt=0.5s [other] hands=右手收回，双手在身前交握; note=黑衣女士调整手部姿态\nt=2.5s [other] hands=右手放在自己的筹码堆上; note=镜头切到戴橙色T字帽的玩家\nt=4.5s [other] hands=右手将筹码向前推出; chips=推出数枚筹码到桌面前方; note=戴橙色T字帽的玩家完成下注动作\nt=8.5s [other] posture=左臂横放在身前，右肘撑在桌沿; hands=右手伸向自己的筹码堆; note=镜头切到戴浅色鲨鱼帽的玩家\nt=9.5s [other] hands=右手拨动身前的筹码; chips=调整身前筹码位置; note=戴浅色鲨鱼帽的玩家整理筹码\nt=12.0s [other] hands=右手将筹码向前推出; chips=推出一摞筹码到桌面前方; note=戴浅色鲨鱼帽的玩家完成下注动作\nt=13.0s [other] hands=右手放在自己的筹码堆上; note=镜头切回戴橙色T字帽的玩家\nt=17.5s [other] hands=右手拿起筹码，向前推出一摞筹码; chips=推出一摞筹码到桌面前方; note=戴橙色T字帽的玩家完成加注动作\nt=27.0s [villain] gaze=视线从桌面移向对面玩家; posture=保持坐姿，左臂横放身前; hands=右手放在自己的筹码堆上，手指轻敲筹码; note=戴浅色鲨鱼帽的villain在对手加注后开始思考\nt=31.0s [villain] gaze=视线落回桌面; hands=右手拿起筹码，向前推出; chips=推出数枚筹码到桌面前方; note=villain完成跟注动作\nt=33.5s [other] hands=右手向前推出一枚筹码; chips=推出一枚筹码到桌面前方; note=戴橙色T字帽的玩家放入跟注筹码\nt=36.0s [other] hands=双手手指交握放在身前; note=黑衣女士双手交握，等待翻牌\nt=37.5s [other] hands=右手将三张公共牌依次摆到桌面中央; note=dealer发出翻牌三张公共牌\nt=41.0s [villain] gaze=看向桌面公共牌方向; hands=右手抬起，调整了一下墨镜位置后放回桌面; note=翻牌发出后villain调整墨镜\nt=42.0s [other] gaze=转头看向身旁的villain; posture=身体靠向椅背; hands=右手搭在桌沿; speech=开口说话，时长约2秒; note=戴黑帽穿黑黄外套的玩家侧头说话\nt=49.5s [hero] gaze=低头看向自己身前的筹码; hands=右手拿起数枚黄色筹码，向前推出; chips=推出三枚黄色高值筹码到桌面前方; note=hero在翻牌圈完成下注动作\nt=51.0s [hero] gaze=转头看向左侧的玩家; hands=右手放回自己的筹码堆旁; speech=开口说话，时长约1秒; note=hero下注后开口说话\nt=54.5s [villain] gaze=看向桌面前方的下注筹码; hands=右手拿起数枚筹码，向前推出; chips=推出三枚黄色高值筹码到桌面前方; note=villain完成翻牌圈跟注动作\nt=57.0s [hero] hands=右手向前推出一枚筹码; chips=推出一枚筹码补齐跟注额; note=hero放入跟注的差额筹码\nt=57.5s [villain] posture=左肘撑在桌沿，左手托住左侧脸颊; hands=右手放回自己的筹码堆旁; note=villain跟注后调整为托腮姿态\nt=59.0s [other] hands=右手将转牌公共牌摆到桌面中央; note=dealer发出转牌公共牌\nt=66.0s [hero] gaze=低头看向自己身前的筹码; hands=右手拨弄自己的筹码堆，拿起一摞筹码; chips=拿起一摞包含多色的筹码; note=转牌发出后hero整理筹码准备下注\nt=69.5s [hero] hands=右手将拿起的筹码向前推出; chips=推出一摞多色筹码到桌面前方; note=hero在转牌圈完成下注动作\nt=74.0s [other] gaze=转头看向自己身侧方向; posture=身体向后靠向椅背，左手抬起搭在椅边; hands=右手从桌沿收回; note=戴黑帽穿黑黄外套的玩家转身侧对牌桌\nt=75.0s [villain] gaze=低头看向自己的双手; hands=双手在身前交叠，手指捏合筹码; chips=手指间捏着数枚筹码; note=villain在hero转牌下注后开始思考\nt=78.0s [villain] gaze=视线转向桌面前方; hands=右手将捏着的筹码向前推出; chips=推出一摞黄色高值筹码到桌面前方; note=villain完成转牌圈加注动作\nt=79.0s [villain] posture=左肘撑在桌沿，左手托住左侧脸颊; hands=右手放回自己的筹码堆旁; note=villain加注后恢复托腮姿态\nt=82.0s [other] hands=右手将河牌公共牌摆到桌面中央; note=dealer发出河牌公共牌，对应锚点t=83.0s river发牌\nt=83.5s [other] gaze=转头看向hero方向; posture=身体转回正对牌桌，双手交叠放在身前; note=戴黑帽穿黑黄外套的玩家转回牌桌方向\nt=85.0s [other] hands=右手将桌面前方的零散筹码拢到一起; chips=收拢桌面前方的零散筹码; note=dealer整理底池筹码\nt=92.0s [hero] gaze=低头看向自己身前的筹码; hands=右手伸向自己的筹码堆，拿起一摞深色筹码; chips=拿起一摞深色高值筹码; note=河牌发出后hero准备行动\nt=93.5s [villain] chips=将身前所有筹码向前推出; note=villain推出全下筹码，对应锚点t≈94s villain allin\nt=96.0s [hero] gaze=视线看向villain方向; hands=右手保持在筹码堆旁; speech=开口说话; note=hero开口宣布决定，对应锚点t≈96.5s hero call\nt=96.5s [other] hands=伸手将底池筹码向获胜方方向收拢; chips=收拢全部底池筹码; note=dealer开始收池，对应锚点t=96.5s pot_awarded",
+      "timeline_text": "[0.0–38.0s] 翻前发牌与下注（关注:both）：约0.5s hero收到手牌后双手交握于胸前，视线看向自己的手牌区域。约2.0s villain双肘撑桌身体前倾，双手放在底牌上方整理手牌，视线转向左侧hero方向。约4.5s hero低头看向筹码堆，拿起一枚筹码向前推出；约8.3s 桌边有人说\"How much?\"（平缓）；约9.0s villain身体前倾右肘撑桌，伸手拨弄筹码并分出数枚，桌边有人说\"Five hundred.\"（平缓），约12.0s将筹码推入底池完成$2200加注，约12.4s villain说\"Twenty three.\"（平缓）。约18.0s hero面向villain方向，捧起一摞筹码推出完成加注，约19.4s hero说\"Six thousand.\"（平缓）；约27.0s hero保持前倾坐姿，视线在hero和自身筹码堆间来回移动，右手反复敲击绿色筹码堆顶部，同时说出约2秒的话语，约31.5s分出数枚高面值筹码推出完成跟注，约33.2s hero说\"Call.\"（平缓）。约33.5s hero看向dealer方向，右手食指轻点桌沿等待其他玩家行动。\n[38.0–59.5s] 翻牌圈行动（关注:both）：约40.1s 桌边有人说\"Nick how you doing uh did uh we have a flight at 8 30 tonight, yeah?\"（中速）。约41.0s flop公共牌发出后，villain直起上身靠回椅背，左手拉扯衣领，视线看向公共牌。约43.0s hero视线从公共牌移向villain，右手搭在筹码堆边缘轻碰筹码，说出约3秒的话语。约43.9s 桌边有人说\"Uh yeah, yeah I believe so.\"（中速）。约45.1s 桌边有人说\"Yeah.\"（简短）。约46.3s 桌边有人说\"I think it starts boarding at 8.\"（中速）。约47.4s 桌边有人说\"This place is literally like.\"（中速）。约49.0s villain视线从公共牌移向自身筹码堆，拿起两枚黄色高面值筹码向前推出，完成$3100下注。约49.8s 桌边有人说\"[unclear]\"（模糊）。约50.3s villain开口说\"3100.\"（中速）。约52.0s hero低头看了一眼推出的筹码后抬眼看向villain，右手停在筹码堆旁、手指悬在筹码上方观察下注额，约56.5s分出三枚黄色筹码向前推出，与villain的下注筹码对齐完成跟注。约57.3s 桌边荷官看到hero操作说说\"Call.\"（简短）。\n[59.5–82.5s] 转牌圈行动（关注:both）：约61.0s转牌发出后，hero左肘撑在桌沿，左手扶住墨镜左侧镜腿，右手放在绿色筹码堆上逐枚摩挲筹码边缘，视线紧盯转牌公共牌。约67.0s 对手视线在自身筹码堆和公共牌间切换，数出一摞不同颜色的筹码向前推出到下注区。约70.9s桌边有人说\"Thirteen fives.\"（语速平缓）。约74.0s hero身体向左侧转动、左臂搭在邻座椅背上，先看向左侧无关玩家再转回对手方向，右手将面前绿色筹码拢成整齐一摞，约75.2s hero开口道[unclear]（音量微弱）。约78.5s villain转回身体正对牌桌，从整理好的筹码摞中分出一摞推出滑入底池完成转牌圈跟注，约79.5s左肘重新撑回桌沿，左手手掌托住左侧脸颊，看向dealer方向等待河牌。\n[82.5–94.0s] 河牌圈行动至对手全下（关注:both）：约84.0s河牌发出后，hero保持左手托腮的坐姿，视线持续落在河牌公共牌上未移动，右手手指连续4次轻敲面前绿色筹码堆顶部。约89.0s villain保持左手手肘撑桌托腮的姿势，右手搭在绿色筹码上触碰筹码堆，佩戴红色反光墨镜，面部其余部分被头套和墨镜遮挡，未观察到说话动作。约92.0s 对手上身稍向前倾，视线从公共牌移向自身筹码堆，右手伸入多色筹码堆分出一大摞筹码，用力向前推出到下注区中央，对应villain的全下行动。\n[94.0–123.4s] 对手全下后的长考期（关注:both）：约94.0s vhero短暂不在画面中，约96.0s回到画面后保持左手手肘撑桌托腮的姿势，右手搭在绿色筹码上保持触碰筹码堆的状态，佩戴红色反光墨镜。约97.4s villain说出推出allin荷官说出“ninety thousand”；约104.0s hero保持托腮姿势微微前倾，右手从筹码堆移开平放在底牌旁桌沿，视线从公共牌移向对手面部，墨镜后的视线正对hero、下颌微抬，等待hero决策。约105.5s hero与villain对视约2秒，右手放在筹码堆上捏住一枚筹码边缘，约106.0s视线移向底池，将捏着的筹码向前推出与全下筹码对齐。约111.9s hero说出“i don't know i mean i've got the king ten again”，约119.4s说出“does ×× give a not really”。",
       "timeline_file": "timeline.jsonl",
       "is_mock": false,
       "human_verified": false
@@ -73,19 +74,6 @@
   },
   "truth_file": "truth.json",
   "video_variant": "colleague_hided_recut",
-  "table_players": [
-    {
-      "role": "villain",
-      "stack": 145100.0
-    },
-    {
-      "role": "hero",
-      "stack": 81275.0
-    }
-  ],
-  "internal_names": {
-    "villain": "TEXAS MIKE",
-    "hero": "JUNGLEMAN"
-  },
+  "table_players": [],
   "table_players_source": "doubao_raw_frame（待人工确认）"
 }

@@ -21,7 +21,9 @@
   "actual": {
     "hero_action": "call",
     "villain_showed": null,
-    "note": "recap: hero_actual_action=call (lost $94K pot); think=long (hit the tank); allin_type=unknown"
+    "note": "recap: hero_actual_action=call (lost $94K pot); think=long (hit the tank); allin_type=unknown",
+    "hero_invested_usd": null,
+    "hero_result_usd": null
   },
   "players": {
     "hero": "Dan 'Jungleman' Cates",
@@ -30,12 +32,151 @@
   "difficulty_tier": "TBD (按 L0 基线分档)",
   "prefill_source": {
     "table_size": "doubao",
-    "players_in_hand": "doubao",
     "villain_stack_start": "doubao",
     "villain_position": "doubao"
   },
-  "table_size": 2,
-  "players_in_hand": 4,
-  "villain_stack_start": 46550.0,
-  "villain_position": "HJ"
+  "table_size": 7,
+  "villain_stack_start": 46950,
+  "villain_position": "HJ",
+  "table_size_note": "待确认：面板行数=1 vs 桌边人头=6，取较大值预填，请对原片核对",
+  "hero_position": "BB",
+  "hero_stack_start": 61100,
+  "betting_line": {
+    "preflop": {
+      "board": "",
+      "actions": [
+        {
+          "t": 9.5,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 400.0,
+          "source": "doubao"
+        },
+        {
+          "t": 11.5,
+          "actor": "other_1",
+          "action": "call",
+          "amount": 400.0,
+          "source": "doubao"
+        },
+        {
+          "t": 14.5,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "human"
+        },
+        {
+          "t": 18.5,
+          "actor": "other_3",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 28.0,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 2500.0,
+          "source": "doubao"
+        },
+        {
+          "t": 43.0,
+          "actor": "other_4",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 44.5,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 5600.0,
+          "source": "doubao"
+        },
+        {
+          "t": 66.0,
+          "actor": "other_1",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 76.5,
+          "actor": "hero",
+          "action": "call",
+          "amount": 5600.0,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "flop": {
+      "board": "3h 2h 3s",
+      "actions": [
+        {
+          "t": 100.0,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 2600.0,
+          "source": "doubao"
+        },
+        {
+          "t": 110.5,
+          "actor": "hero",
+          "action": "call",
+          "amount": 2600.0,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "turn": {
+      "board": "Kd",
+      "actions": [
+        {
+          "t": 127.0,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 8400.0,
+          "source": "doubao"
+        },
+        {
+          "t": 154.5,
+          "actor": "hero",
+          "action": "call",
+          "amount": 8400.0,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "river": {
+      "board": "Kc",
+      "actions": [
+        {
+          "t": 167.0,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 30350.0,
+          "source": "doubao"
+        },
+        {
+          "t": 179.0,
+          "actor": "hero",
+          "action": "call",
+          "amount": 30350.0,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": "Villain(Texas Mike) jams $30,350 on the river; Hero faces $30,350；前序街完整下注线 recap 未提供",
+      "source": "video_extracted_v2"
+    }
+  },
+  "human_verified_truth": true,
+  "villain_stack_start_raw": "46550+400",
+  "hero_stack_start_raw": "58600+2500"
 }

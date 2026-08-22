@@ -1,67 +1,77 @@
 {
   "hand_id": "F1",
-  "source": "video_extracted",
+  "source": "video_extracted_v2_all_seats",
   "model": "doubao-seed-2-1-pro-260628",
-  "generated_at": "2026-08-22T12:56:58+0800",
-  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
-  "streets_new_vs_l0": [
-    "preflop",
-    "flop",
-    "turn"
-  ],
+  "generated_at": "2026-08-22T17:58:57",
+  "note": "全席位下注线（v2.2）：human 行保留；other_N 区分座位（对应 item.json table_players）",
   "betting_line": [
     {
       "street": "preflop",
       "board": "",
-      "actions": "other raise $400; other call $400; other fold; hero raise $2,450; other fold; villain raise $5,200; other fold; hero call $3,100",
+      "actions": "villain raise $400; other_1 call $400; other fold; other_3 fold; hero raise $2,500; other_4 fold; villain raise $5,600; other_1 fold; hero call $5,600",
       "events": [
         {
-          "t": 9.0,
-          "actor": "other",
+          "t": 9.5,
+          "actor": "villain",
           "action": "raise",
-          "amount": 400.0
+          "amount": 400.0,
+          "source": "doubao"
+        },
+        {
+          "t": 11.5,
+          "actor": "other_1",
+          "action": "call",
+          "amount": 400.0,
+          "source": "doubao"
         },
         {
           "t": 14.5,
           "actor": "other",
-          "action": "call",
-          "amount": 400.0
+          "action": "fold",
+          "amount": null,
+          "source": "human"
         },
         {
           "t": 18.5,
-          "actor": "other",
+          "actor": "other_3",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 27.5,
+          "t": 28.0,
           "actor": "hero",
           "action": "raise",
-          "amount": 2450.0
+          "amount": 2500.0,
+          "source": "doubao"
         },
         {
-          "t": 29.0,
-          "actor": "other",
+          "t": 43.0,
+          "actor": "other_4",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 42.5,
+          "t": 44.5,
           "actor": "villain",
           "action": "raise",
-          "amount": 5200.0
+          "amount": 5600.0,
+          "source": "doubao"
         },
         {
           "t": 66.0,
-          "actor": "other",
+          "actor": "other_1",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
           "t": 76.5,
           "actor": "hero",
           "action": "call",
-          "amount": 3100.0
+          "amount": 5600.0,
+          "source": "doubao"
         }
       ]
     },
@@ -74,13 +84,15 @@
           "t": 100.0,
           "actor": "villain",
           "action": "bet",
-          "amount": 2600.0
+          "amount": 2600.0,
+          "source": "doubao"
         },
         {
           "t": 110.5,
           "actor": "hero",
           "action": "call",
-          "amount": 2600.0
+          "amount": 2600.0,
+          "source": "doubao"
         }
       ]
     },
@@ -90,16 +102,18 @@
       "actions": "villain bet $8,400; hero call $8,400",
       "events": [
         {
-          "t": 127.5,
+          "t": 127.0,
           "actor": "villain",
           "action": "bet",
-          "amount": 8400.0
+          "amount": 8400.0,
+          "source": "doubao"
         },
         {
           "t": 154.5,
           "actor": "hero",
           "action": "call",
-          "amount": 8400.0
+          "amount": 8400.0,
+          "source": "doubao"
         }
       ]
     },
@@ -112,13 +126,15 @@
           "t": 167.0,
           "actor": "villain",
           "action": "allin",
-          "amount": 30350.0
+          "amount": 30350.0,
+          "source": "doubao"
         },
         {
-          "t": 168.0,
+          "t": 179.0,
           "actor": "hero",
           "action": "call",
-          "amount": 30350.0
+          "amount": 30350.0,
+          "source": "doubao"
         }
       ]
     }

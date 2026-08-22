@@ -65,8 +65,9 @@ def bootstrap_ci(values_by_item: dict, stat, n=1000, seed=0, alpha=0.05):
     return samples[int(alpha / 2 * n)], samples[min(n - 1, int((1 - alpha / 2) * n))]
 
 
-def aggregate(records: list[dict], truths: dict) -> dict:
-    """records: runner jsonl 行；truths: item_id -> truth。返回 (model, layer) -> 指标 dict。"""
+def aggregate(records: list[dict], truths: dict, exclude_recognized: bool = True) -> dict:
+    """records: runner jsonl 行；truths: item_id -> truth。返回 (model, layer) -> 指标 dict。
+    exclude_recognized=False 时为全量口径（recognized 不剔除，仅计数）——终版报表双轨呈现用。"""
     groups = defaultdict(lambda: defaultdict(list))  # (model,layer) -> item -> [p...]
     recognized = defaultdict(set); failures = defaultdict(int); n_trials = defaultdict(int)
     for r in records:
@@ -78,7 +79,7 @@ def aggregate(records: list[dict], truths: dict) -> dict:
         groups[k][r["item_id"]].append(float(r["parsed"]["p_call"]))
     out = {}
     for k, by_item in groups.items():
-        items = [i for i in by_item if i not in recognized[k] and i in truths]
+        items = [i for i in by_item if (not exclude_recognized or i not in recognized[k]) and i in truths]
         if not items:
             out[k] = {"n_items": 0, "note": "all items excluded/missing truth"}; continue
         pm = {i: sum(by_item[i]) / len(by_item[i]) for i in items}

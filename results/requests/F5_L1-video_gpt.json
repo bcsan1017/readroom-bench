@@ -1,0 +1,369 @@
+{
+ "item_id": "F5",
+ "layer": "L1-video",
+ "model": "gpt",
+ "url": "https://api.wodex.ai/v1/chat/completions",
+ "headers": {
+  "Authorization": "<redacted>",
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+ },
+ "body": {
+  "model": "gpt-5.6-sol",
+  "max_tokens": 8192,
+  "messages": [
+   {
+    "role": "system",
+    "content": "\" 切分拼装） -->\n\n<!-- changelog\n2026-08-22 批跑前终审：\n- 补 cues.direction / weight 语义定义（原 prompt 未说明 strong/weak 指什么，模型只能猜）；\n- recognized 补充\"单独统计、如实标注不构成不利\"，降低瞒报动机；\n- 其余检查通过：输出 schema 与框架 v0.2 §4 逐字段一致；全文无模型特化措辞；无诱导 call/fold 的表述；\n  中文 prompt + 英文牌局术语（call/fold/all-in/Hero/Villain/river）口径统一；cues 已强制具体时间点+可观察事实。\n-->"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "下面是这手牌的牌理信息（桌况、双方位置与筹码、你的底牌、完整下注线、公共牌、底池、跟注额、所需赔率）：\n\n<hand>\n牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：SB，本手开始筹码 $20,050。对手（Villain）位置：UTG+1，本手开始筹码 $11,300。\n你的底牌：Kh Qd。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：hero raise $675; other fold; other fold; villain call $675\n  - flop（Ks 4h 8h）：hero bet $1,050; villain raise $3,600; hero call $3,600\n  - turn（Jh）：villain allin $7,225\n当前公共牌：Ks 4h 8h Jh（turn）。\n对手全下前底池：$8,750；对手全下额：$7,225；你需跟注：$7,225。\n跟注后总底池：$23,200；所需胜率（跟注额 ÷ (底池+跟注额)）= 31.1%。\n</hand>\n\n随附 24 张按时间顺序抽取的视频帧（全景画面，每帧前的文字标注该帧时间戳 t）：帧序列覆盖这一整手牌（发牌→收池，共 90.8s；决策关键段抽帧更密），对手在 t≈73.0s 全下，你在 t≈89.0s 宣布决定。请以\"宣布之前\"可见的信息作答。屏幕上的节目 UI（底牌、姓名、胜率、底池面板）已被黑块遮挡，请勿猜测被遮内容。\n\n请综合牌理与你能观察到的对手线索，给出你**此刻跟注的概率 p_call**（0–1 的实数，表示在你的信念下跟注为正确决策的主观概率；不是\"你会不会跟\"的二元回答），并列出你依据的具体可观察线索。\n\n严格按以下 JSON schema 输出：\n{\n  \"p_call\": <0..1 float>,\n  \"action\": \"call\" | \"fold\",            // 与 p_call ≥ 0.5 一致\n  \"cues\": [\n    {\"t\": <秒，相对片段起点，数字>, \"who\": \"villain\" | \"hero\" | \"other\", \"type\": \"gaze\"|\"posture\"|\"hands\"|\"speech\"|\"chips\"|\"face\", \"observed\": \"<你实际观察到的客观事实，不要写情绪词>\", \"direction\": \"strong\" | \"weak\" | \"neutral\", \"weight\": <0..1>}\n  ],\n  \"rationale\": \"<≤150 字>\",\n  \"recognized\": <true|false>            // 你是否认出这手牌、这集节目或这些选手；认出请如实标 true\n}\n\n注意：\n- 若本题没有给你任何视觉/时间轴信息（仅牌理），cues 可为空数组，但不要编造观察。\n- cues 中每条必须指向具体时间点与可观察事实（例如\"推注后双手交叉抱胸、视线落在公共牌\"），禁止使用情绪推断词（紧张/自信/心虚/放松等）。\n- cues.direction 指该线索指向的**对手牌力方向**：strong=指向对手成牌强，weak=指向对手弱牌/诈唬，neutral=无明确指向；weight（0–1）为该线索在你本次决策中的依赖程度。\n- recognized：只要你认出这手牌、这集节目或任一选手（或已知道这手牌的结果），就如实标 true；标 true 的题只会被单独统计，如实标注不构成任何不利。\n- 只输出 JSON。"
+     },
+     {
+      "type": "text",
+      "text": "t=0s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 17771 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=6s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 20407 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=12s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19167 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=18s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 18399 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=24s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 16259 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=30s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 17579 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=36s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 18843 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=42s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 10407 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=48s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19871 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=54s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 16091 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=60s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 20407 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=66s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19659 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=68s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19679 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=70s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 13211 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=72s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19739 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=74s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19759 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=76s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19819 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=78s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 21419 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=80s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 21287 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=82s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 19911 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=84s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 18951 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=86s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 18675 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=88s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 20999 chars>"
+      }
+     },
+     {
+      "type": "text",
+      "text": "t=89s:"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "<data:image/jpeg;base64;base64 omitted, 21107 chars>"
+      }
+     }
+    ]
+   }
+  ],
+  "reasoning_effort": "high"
+ },
+ "media_refs": [
+  {
+   "file": "items/F5/vframes/f000_t0000.0.jpg",
+   "sha256": "d07de33152f3447a88a03711aa43fc27c7825e3fe547fb1a14378f8e54249348"
+  },
+  {
+   "file": "items/F5/vframes/f001_t0006.0.jpg",
+   "sha256": "0a82986eb9f6860a04e8c65190cc5ede402ac189ee5a54b5dc9db5c5f0035130"
+  },
+  {
+   "file": "items/F5/vframes/f002_t0012.0.jpg",
+   "sha256": "cd83a282d627350263722cbb640d7c3c7b25faebd2b467fb3a82c46e646d47c8"
+  },
+  {
+   "file": "items/F5/vframes/f003_t0018.0.jpg",
+   "sha256": "7cb51b5df99c663e743ada1aeadb2439940f92312253ce966c09aa7f2c1d600d"
+  },
+  {
+   "file": "items/F5/vframes/f004_t0024.0.jpg",
+   "sha256": "34a4aa63dd4b31c5f79f36541d9a61befbff84e638e296322b2956507e1c6667"
+  },
+  {
+   "file": "items/F5/vframes/f005_t0030.0.jpg",
+   "sha256": "9a41f343ae273a94044908cebd19b091000c29070351c834aed736be98e207bd"
+  },
+  {
+   "file": "items/F5/vframes/f006_t0036.0.jpg",
+   "sha256": "b059659a6924bd2e021bc94c1536a7be6b752883fdc0756a6ac170c764287a1e"
+  },
+  {
+   "file": "items/F5/vframes/f007_t0042.0.jpg",
+   "sha256": "6e4a91b296f526ad3fbf191ebcd548f4c6cacf9b588747f197b62fa22918ebea"
+  },
+  {
+   "file": "items/F5/vframes/f008_t0048.0.jpg",
+   "sha256": "3e728a982e8501faa8695837b7d31badda5a327c9c04bf33d6eb97709ea44ff8"
+  },
+  {
+   "file": "items/F5/vframes/f009_t0054.0.jpg",
+   "sha256": "0e261bffcb05e0044c456ba0ecf48d6972f130559b58bb7fc25382dd9c76b0c0"
+  },
+  {
+   "file": "items/F5/vframes/f010_t0060.0.jpg",
+   "sha256": "393355c0535df5a22e74309d993a4aaa379d08ee2d6c7ac94e60bc58b972a47a"
+  },
+  {
+   "file": "items/F5/vframes/f011_t0066.0.jpg",
+   "sha256": "8d4d606ff4d6a9a4feb46acb636661831851ccf93179c25f90cb2875a04495d5"
+  },
+  {
+   "file": "items/F5/vframes/f012_t0068.0.jpg",
+   "sha256": "1a0134ee662db6956e1557e941200907deca850d72b0a5e6a99d802be9fe741d"
+  },
+  {
+   "file": "items/F5/vframes/f013_t0070.0.jpg",
+   "sha256": "74456008b11d7c647db1485a226c330b77ab3fa4964da2241ed8dc43950f6865"
+  },
+  {
+   "file": "items/F5/vframes/f014_t0072.0.jpg",
+   "sha256": "f5466d7883e3b641dfbed84b5f420d5074a20c795d33de1988061a6426999461"
+  },
+  {
+   "file": "items/F5/vframes/f015_t0074.0.jpg",
+   "sha256": "76053147158074fb0875b63b71fb77bee7fc6b236611d5ce49fbd16d088e6b6c"
+  },
+  {
+   "file": "items/F5/vframes/f016_t0076.0.jpg",
+   "sha256": "9a848609591a71401ee4cf849302a405efa0520bf96eb4f81b32593d8417455e"
+  },
+  {
+   "file": "items/F5/vframes/f017_t0078.0.jpg",
+   "sha256": "178253d07044e6dbf359f388fe02c98b489e599f92ee5211e32d93e7643e0f64"
+  },
+  {
+   "file": "items/F5/vframes/f018_t0080.0.jpg",
+   "sha256": "1503901eee83928532e530432539086dc2350077bf301bdba1f49afb47cdb9e6"
+  },
+  {
+   "file": "items/F5/vframes/f019_t0082.0.jpg",
+   "sha256": "c2ec26cea61b7447cc6f2821fd956fd7094f1a3ccef0c0be0f0b4e432c8b6f2c"
+  },
+  {
+   "file": "items/F5/vframes/f020_t0084.0.jpg",
+   "sha256": "82e79c959357637972bcc3a57e1efb899ad426d1d3fbca55932a1bd771fd4460"
+  },
+  {
+   "file": "items/F5/vframes/f021_t0086.0.jpg",
+   "sha256": "7ecd6f58e5babee4f13b0637862fea9dc8785c11cfbc7466a7e52e79d4e219f1"
+  },
+  {
+   "file": "items/F5/vframes/f022_t0088.0.jpg",
+   "sha256": "f397e8e1f83d1edcbdaaa9548c7a48350182fc0e0c64dd9e204637ebf646637b"
+  },
+  {
+   "file": "items/F5/vframes/f023_t0089.0.jpg",
+   "sha256": "9819bb7b1db61665ea57d5cb3f4f48b3df32ec48c6ebfeddd9806a7132ede96c"
+  }
+ ]
+}

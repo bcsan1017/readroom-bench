@@ -1,0 +1,34 @@
+{
+ "item_id": "T4",
+ "layer": "L1-text",
+ "model": "deepseek",
+ "url": "https://gateway.synapse.geeknull.cn/v1/chat/completions",
+ "headers": {
+  "Authorization": "<redacted>",
+  "Content-Type": "application/json"
+ },
+ "body": {
+  "model": "deepseek-v4-pro",
+  "temperature": 0.7,
+  "max_tokens": 32768,
+  "messages": [
+   {
+    "role": "system",
+    "content": "\" 切分拼装） -->\n\n<!-- changelog\n2026-08-22 批跑前终审：\n- 补 cues.direction / weight 语义定义（原 prompt 未说明 strong/weak 指什么，模型只能猜）；\n- recognized 补充\"单独统计、如实标注不构成不利\"，降低瞒报动机；\n- 其余检查通过：输出 schema 与框架 v0.2 §4 逐字段一致；全文无模型特化措辞；无诱导 call/fold 的表述；\n  中文 prompt + 英文牌局术语（call/fold/all-in/Hero/Villain/river）口径统一；cues 已强制具体时间点+可观察事实。\n-->"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "下面是这手牌的牌理信息（桌况、双方位置与筹码、你的底牌、完整下注线、公共牌、底池、跟注额、所需赔率）：\n\n<hand>\n牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：UTG+1，本手开始筹码 $16,625。对手（Villain）位置：BB，本手开始筹码 $23,825。\n你的底牌：Qs Th。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：hero raise $300; other fold; villain call $300\n  - flop（Td 4d Ks）：hero bet $300; villain raise $1,200; hero call $900\n  - turn（8c）：villain bet $3,300; hero call $3,300\n  - river（3s）：villain allin $11,825\n当前公共牌：Td 4d Ks 8c 3s（river）。\n对手全下前底池：$9,775；对手全下额：$11,825；你需跟注：$11,825。\n跟注后总底池：$33,425；所需胜率（跟注额 ÷ (底池+跟注额)）= 35.4%。\n</hand>\n\n以下是另一位观察者记录的这一整手牌（发牌→收池）中对手（villain）与你（hero）的客观行为时间轴（t 为相对片段起点的秒数；片段覆盖整手，对手在 t≈129.0s 全下，你在 t≈157.0s 宣布决定）：\n<timeline>\n[0.0–43.5s] 翻前发牌与下注（关注:both）：0-43.5s为翻前发牌与下注阶段，闲聊过程中，hero加注到300。villain call\n[43.5–88.0s] 翻牌圈行动（关注:both）：43.5-88.0s为翻牌圈行动阶段，大家继续闲聊，内容涉及牌局输赢、次日行程安排、家庭相关话题。闲聊中桌边有人说\"if mike doesn't hit you've got\"，桌边有人说\"both of you guys cost me ten grand\"，桌边有人说\"it's the same like it could have gone the other way where if you ran it once and and\"，桌边有人说\"that's the weird thing you see that too no that's the truth\"，桌边有人说\"if you ran it once and the second board came up the first time\"，桌边有人说\"are you playing tomorrow\"，桌边有人说\"no i'm i'm taking off tomorrow\"，桌边有人说\"t only invited me to play for his two days but honestly i raised my i have a sixteen year old son that i raised by myself and he's home by i get back anyway so yeah\"，桌边有人说\"×× you got me last time\"，桌边有人说\"can we uh can we call the wife and ask if you can stay an extra day with it\"，桌边有人说\"there is no wife trust me if there was a wife i'd probably i'd probably move here\"。约51.0s villain双肘撑在牌桌边缘身体前倾，双手放在身前反复搓动手指；约63.0s villain从身前筹码堆拿起数枚筹码，约64.0s将筹码推出到下注区完成下注；约84.0s hero身体前倾，额头向下靠近牌桌，右手放在牌桌边缘放出筹码call。\n[88.0–128.5s] 转牌圈行动（关注:both）：88.0-128.5s为转牌圈行动阶段，双方闲聊内容涉及Phil的家人相关话题。约92.5s villain从身前筹码堆拿起一摞筹码，约93.5s将整摞筹码推出到下注区完成下注，同时持续说话，villain说\"this one's this one's gonna be for you\"，桌边有人说\"it's like what i'm watching phil with his son i mean you're thirty four so it's a little bit different\"，桌边有人说\"phil's wife slash phil the third's mother is one of the top one percent most special people in the world\"，桌边有人说\"because anybody could put up with phil for thirty\"，桌边有人说\"you're not wrong mike you're not wrong\"，桌边有人说\"she is a very very special person\"，桌边有人说\"infinite patience\"，桌边有人说\"×× how to feel there to have the whole ×× family uh history dynamic there while uh you were deciding\"；约123.0s hero call。\n[128.5–157.0s] 河牌圈行动至对手全下（关注:both）：128.5-157.0s为河牌圈行动至对手全下阶段，约129.0s荷官发出河牌公共牌。约144.5s villain右手放在身前筹码上，手指反复拨动筹码同时持续说话，对手说\"the synopsis is that phil's wife is a saint\"（语气自然）；约147.5s villain左手放在自己的底牌上，手指按住底牌边缘同时持续说话，hero说\"well i mean we can assume that right\"（语气自然）；约156.5s 对手左手右手从身前筹码堆拿起数枚筹码，宣布allin。\n</timeline>\n\n请综合牌理与你能观察到的对手线索，给出你**此刻跟注的概率 p_call**（0–1 的实数，表示在你的信念下跟注为正确决策的主观概率；不是\"你会不会跟\"的二元回答），并列出你依据的具体可观察线索。\n\n严格按以下 JSON schema 输出：\n{\n  \"p_call\": <0..1 float>,\n  \"action\": \"call\" | \"fold\",            // 与 p_call ≥ 0.5 一致\n  \"cues\": [\n    {\"t\": <秒，相对片段起点，数字>, \"who\": \"villain\" | \"hero\" | \"other\", \"type\": \"gaze\"|\"posture\"|\"hands\"|\"speech\"|\"chips\"|\"face\", \"observed\": \"<你实际观察到的客观事实，不要写情绪词>\", \"direction\": \"strong\" | \"weak\" | \"neutral\", \"weight\": <0..1>}\n  ],\n  \"rationale\": \"<≤150 字>\",\n  \"recognized\": <true|false>            // 你是否认出这手牌、这集节目或这些选手；认出请如实标 true\n}\n\n注意：\n- 若本题没有给你任何视觉/时间轴信息（仅牌理），cues 可为空数组，但不要编造观察。\n- cues 中每条必须指向具体时间点与可观察事实（例如\"推注后双手交叉抱胸、视线落在公共牌\"），禁止使用情绪推断词（紧张/自信/心虚/放松等）。\n- cues.direction 指该线索指向的**对手牌力方向**：strong=指向对手成牌强，weak=指向对手弱牌/诈唬，neutral=无明确指向；weight（0–1）为该线索在你本次决策中的依赖程度。\n- recognized：只要你认出这手牌、这集节目或任一选手（或已知道这手牌的结果），就如实标 true；标 true 的题只会被单独统计，如实标注不构成任何不利。\n- 只输出 JSON。"
+     }
+    ]
+   }
+  ],
+  "thinking": {
+   "type": "enabled"
+  }
+ },
+ "media_refs": []
+}

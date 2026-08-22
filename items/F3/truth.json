@@ -21,7 +21,9 @@
   "actual": {
     "hero_action": "call",
     "villain_showed": null,
-    "note": "recap: hero_actual_action=call (lost both runs); think=short ('quickly called'); allin_type=unknown"
+    "note": "recap: hero_actual_action=call (lost both runs); think=short ('quickly called'); allin_type=unknown",
+    "hero_invested_usd": null,
+    "hero_result_usd": null
   },
   "players": {
     "hero": "Xuan Liu",
@@ -30,14 +32,107 @@
   "difficulty_tier": "TBD (按 L0 基线分档)",
   "prefill_source": {
     "table_size": "doubao",
-    "players_in_hand": "doubao",
     "hero_stack_start": "doubao",
     "villain_stack_start": "doubao",
     "hero_position": "doubao"
   },
-  "table_size": 2,
-  "players_in_hand": 2,
-  "hero_stack_start": 39825.0,
-  "villain_stack_start": 39275.0,
-  "hero_position": "CO"
+  "table_size": 7,
+  "hero_stack_start": 40225,
+  "villain_stack_start": 39375,
+  "hero_position": "CO",
+  "table_size_note": "待确认：面板行数=7 vs 桌边人头=6，取较大值预填，请对原片核对",
+  "villain_position": "UTG",
+  "betting_line": {
+    "preflop": {
+      "board": "",
+      "actions": [
+        {
+          "t": 2,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 400,
+          "source": "human"
+        },
+        {
+          "t": 16,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 800,
+          "source": "doubao"
+        },
+        {
+          "t": 35,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 1400,
+          "source": "doubao"
+        },
+        {
+          "t": 43,
+          "actor": "villain",
+          "action": "call",
+          "amount": 1400,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted"
+    },
+    "flop": {
+      "board": "Js 2h 9h",
+      "actions": [
+        {
+          "t": 67,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 1500,
+          "source": "doubao"
+        },
+        {
+          "t": 107,
+          "actor": "villain",
+          "action": "call",
+          "amount": 1500,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted"
+    },
+    "turn": {
+      "board": "7s",
+      "actions": [
+        {
+          "t": 165,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 8000,
+          "source": "doubao"
+        },
+        {
+          "t": 285.5,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 36475,
+          "source": "doubao"
+        },
+        {
+          "t": 287,
+          "actor": "hero",
+          "action": "call",
+          "amount": 28475,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": "Hero bets $8,000 on the turn; Villain(Cates) check-raises all-in $36,475; Hero faces $28,475；前序街完整下注线 recap 未提供",
+      "source": "video_extracted"
+    },
+    "river": {
+      "board": "",
+      "actions": [],
+      "l0_text": null,
+      "source": null
+    }
+  },
+  "human_verified_truth": true
 }

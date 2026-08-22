@@ -4,6 +4,10 @@
 本仓库实现端到端工具链，并用 1 手真实牌（`items/hand_0001`，整手切片）完成**真实 API 跑通**：
 豆包时间轴初稿 → deepseek-v4-pro L0/L1-text 各 3 trial → 豆包（provisional）L1-video 3 trial → 豆包幻觉 judge → EV 报表。
 
+## 批跑结果（已就绪）
+
+正式批跑已完成，结果随仓库分发：[`results/final_report.md`](results/final_report.md)（EV 主表、读人增益、幻觉核验、recognized 双轨口径）、`results/final_runs_merged.jsonl`（全部 trial 原始输出）、`results/hallucination.jsonl` 与 `results/cue_audit_sample.md`（cue 级 judge 核验与人工抽检）、`results/requests/`（各模型各层请求体存档，凭证已脱敏、base64 已剥离）、`results/judge/`（judge 逐题记录）。对外呈现见 [`presentation/external.html`](presentation/external.html) 与 [`presentation/schema.html`](presentation/schema.html)。
+
 ## 数据获取（视频素材不随仓库分发）
 
 视频素材（YouTube 片段的切片/打码产物 `clip_*.mp4`、抽帧图片）因版权原因**不随本仓库分发**。仓库提供完整复现所需的全部元数据与工具链：
@@ -12,7 +16,7 @@
 - `items/<hand_id>/hand.json`：手牌事实与 `timing_abs_sec`（相对原视频的绝对秒）；
 - 复现步骤：`pipeline/fetch.py` 按 manifest 用 yt-dlp 下载窗口并 ffmpeg 精确切片 → `pipeline/mask.py` 按 `configs/mask_*.json` 与 `hand.json mask_windows` 打码 → `pipeline/timeline.py` 生成时间轴初稿（或直接使用仓库内已校准的 `items/*/timeline.jsonl`）→ `pipeline/build_item.py` 组装评测输入。一键入口见下方 `run_all.sh`。
 
-> 注：批跑结果与 published-results 待今日晚些更新。
+另注：`items/*/item.json` 的公开版不含内部对照用的真名字段（`internal_names`）。
 
 ## 一键跑通
 
@@ -98,6 +102,18 @@ v0.2 批跑前冒烟（2026-08-22）新增：
 
 22. **wodex 思考档位（赛规"最高档思考"）实测**：claude-opus-5 只认 OpenAI 风格顶层 `reasoning_effort`——带上后响应出现 `message.reasoning_content`；Anthropic 风格 `thinking:{type:"enabled",budget_tokens:N}` 被网关**静默忽略**（usage 与输出和 baseline 完全一致）。gpt-5.6-sol 对 `reasoning_effort:"high"/"xhigh"` 均不报错，但 usage 无 reasoning 细分、completion tokens 几乎不变，**无法证实档位真透传**——只能按"网关默认档位"对待。providers.py wodex 分支统一带 `reasoning_effort:"high"`，正式报告需注明 gpt 档位存疑这一限制。
 23. **kimi-k3 视频输入：base64 data URL 直发即通**（T2 2fps 96.5s ≈2.8MB mp4，base64 后 body ≈3.8MB，prompt ≈34.7k tokens，实测通过）；moonshot 不认 `video_url.fps` 字段（kimi 分支已剥掉，仅 qwen/doubao 传 fps）；更大视频才需 `POST /v1/files`（purpose=video）→ `ms://<file_id>` 引用。k3 顶层 `reasoning_effort` 默认即 `max`，providers 已显式固定（temperature 恒为 1）。
+
+L1-video 抽帧参赛通路（2026-08-22 晚）新增：
+
+24. **claude/gpt 以抽帧序列近似参赛 L1-video**（`input_mode: sampled_frames` 落 runs 记录；qwen/kimi/doubao 保持 `native_video`）。wodex 多图上限实测：claude-opus-5 与 gpt-5.6-sol 单请求 **80 张** 360 宽 jpg（payload 1.38MB）均通过（10/20/30/40/50/60/80 张逐级实测全过）——此前"1MB 被 WAF 拦"是单张大 PNG 的情况，多张小 jpg 不触发。抽帧规则按定稿执行：决策窗口（all-in 前 5s→宣布）每 2s 一帧、窗口外每 6s 一帧、全景单视角、源 `clip_hided.mp4`、360 宽 q4 jpg（~15KB/张）；安全上限 60 帧，超限自动等比拉大间隔（`pipeline/frames_for_video_layer.py`，10 手实测 15–51 帧均未触发适配）。帧序列每帧前插时间戳文本 `t=12s:`；prompt 用新增 `L1-video-frames` block。T2 端到端实测 claude/gpt 各 1 trial 均 ok（JSON 解析+schema 通过）。
+25. **wodex 网关行为变更（2026-08-22 晚，覆盖决策 22）**：claude-opus-5 现拒绝 `temperature`（400 "deprecated for this model"），且 `reasoning_effort` 被网关翻成 `thinking.enabled` 而遭拒——改传 `{"thinking":{"type":"adaptive"}}` + `{"output_config":{"effort":"high"}}` 实测通过（usage_source=anthropic 证实透传）。gpt-5.6-sol 仍走 `reasoning_effort:"high"`（e2e usage 出现 reasoning_tokens 细分，档位透传较此前可信）。wodex 分支已统一不带 temperature。
+
+26. **正式批跑数据勘误（2026-08-23 凌晨）**：e3fd320 从 truth 重生成全部 L0 时曾把 hero 对 all-in 的实际响应写进决策街下注线（待预测标签泄露），批跑总控发现后在 regen_l0.py 增加 trim_decision_street 修复并全量重生成；F5 幻影翻前 raise、T3 时间轴 150s fold 主语经 Byron 裁定修正（f89f05b）。旧 runs 全部作废（final_runs_stale.jsonl）。freeze_check 同时认 human_verified / human_verified_truth 两个标记名。
+27. **rationale 超长处置（246e21a）**：截断保存 + rationale_truncated 标记，不再判 trial 失败（rationale 不进任何指标）；--retry-failed 重发注入随机会话标识行（nonce_injected 标记）破网关响应缓存（synapse 实测对 byte 级相同请求回放坏响应）。
+28. **recognized 高比例处置（终版报表定案）**：L1 层 recognized 比例 30–54%（L0 近零，触发源是画面/引语而非题面）。报表双轨呈现——主数字全量口径、括号内剔除口径对照（剔除后有效题数 5–6，CI 无意义，不再独挑主榜）；新增"认出优势检验"（recognized true/false 两组方向正确率与 EV 对比）作为回应污染质疑的证据（scoring/final_report.py §4）。
+29. **幻觉 judge 增量化（scoring/judge_incremental.py）**：按 item 分文件（results/judge/<id>.jsonl）状态化去重、可多轮补增量、3 并发；judge max_tokens 提至 16000（批跑规模下单题 cue 数 ~80）。抽检清单由 scoring/cue_audit.py 分层生成（每模型×层 ≥2 条、judge=false 优先、总量 15%）。
+
+30. **judge 身份倒置问题（2026-08-23 04:2x 发现，未解决）**：豆包 judge 核验 cue 时把 hero/villain 归属系统性判反（T2 A/B 复测：身份锚定强化 prompt 后仍倒置），导致幻觉率 79–92% 为严重高估。终版报表已在披露 7 降级该列为"存疑上界"；v0.1 已知问题"judge 判 false 比例高需人工复核"实为同一根因。后续方向：给 judge 提供锚定帧（allin 时刻截图+框选）或换 judge 模型，人工抽检清单（judge=false 优先）已备好。
 
 ## 已知问题 / 待办
 

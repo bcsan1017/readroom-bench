@@ -60,6 +60,8 @@ input.banned-hit { border-color: var(--red); background: #2c1a1a; color: #f0b0ac
 .badge { background: var(--green); color: #0b1a12; padding: 1px 8px; border-radius: 10px;
   font-size: 12px; font-weight: 600; }
 .badge.gray { background: var(--bg3); color: var(--fg-dim); }
+.src-link { color: var(--accent); font-size: 13px; font-weight: 400; margin-left: 6px; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+.src-link:hover { border-bottom-style: solid; }
 .hidden { display: none !important; }
 .msg { margin-top: 10px; min-height: 20px; }
 .msg.ok { color: var(--green); }
@@ -88,7 +90,7 @@ td input.amt-input { width: 76px; }
 td textarea.ev-text { display: block; width: 100%; min-width: 240px; margin: 0;
   font: 12.5px/1.45 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   background: transparent; color: var(--fg); border: 1px solid transparent; border-radius: 4px;
-  padding: 1px 5px; resize: none; overflow: hidden; field-sizing: content; }
+  padding: 1px 5px; resize: none; overflow: visible; min-height: 1.6em; line-height: 1.45; }
 td textarea.ev-text:hover { border-color: var(--border); }
 td textarea.ev-text:focus { outline: none; border-color: var(--accent); background: var(--bg2); }
 td textarea.ev-text.banned-hit { border-color: var(--red); background: #2c1a1a; color: #f0b0ac; }
@@ -134,3 +136,29 @@ td .evidence { color: var(--fg-dim); font-size: 12px; max-width: 260px;
   color: var(--fg-dim); cursor: ew-resize; user-select: none; touch-action: none;
   border: 1px dashed var(--border); }
 .drag-handle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* 核对页三档分区 */
+.tier-a-title { color: var(--accent); font-size: 15px; }
+.form-grid.tier-a { border: 1px solid var(--accent); border-radius: 8px; padding: 10px 12px; background: #1a2432; }
+.form-grid.tier-a .field label { color: var(--fg); }
+.tier-c-title { color: var(--fg-dim); font-weight: 500; }
+.form-grid.tier-c { opacity: .65; }
+#truth-b-details { margin: 18px 0 6px; }
+#truth-b-details > summary { cursor: pointer; list-style: revert; }
+#truth-b-details[open] > summary .b-preview { display: none; }
+#truth-b-details .form-grid { margin-top: 8px; }
+.b-preview { color: var(--fg); font-weight: 400; font-size: 12.5px; }
+/* 下注线时间列弱化 */
+.bl-block input.t-dim { opacity: .45; border-style: dashed; }
+.bl-block input.t-dim:focus { opacity: 1; }
+
+/* 时间轴聚类块 */
+.anchor-input { width: 100%; font-weight: 600; box-sizing: border-box; }
+.blk-wf { margin-top: 4px; }
+.t-sep { color: #888; }
+textarea.blk-summary { width: 100%; box-sizing: border-box; }
+.blk-speech-label { margin-top: 6px; font-size: 12px; color: #8a6d00; }
+textarea.blk-speech { width: 100%; box-sizing: border-box; background: #fff7d6;
+  border: 1px solid #e6c200; border-radius: 4px; font-family: inherit; font-size: 13px; padding: 4px 6px; }
+.blk-banned { margin-top: 4px; padding: 2px 6px; background: #fff3bf; color: #8a6d00;
+  border-radius: 4px; font-size: 12px; }

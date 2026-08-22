@@ -1,49 +1,56 @@
 {
   "hand_id": "T2",
-  "source": "video_extracted",
+  "source": "video_extracted_v2_all_seats",
   "model": "doubao-seed-2-1-pro-260628",
-  "generated_at": "2026-08-22T12:57:35+0800",
-  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
-  "streets_new_vs_l0": [
-    "preflop",
-    "flop",
-    "turn"
-  ],
+  "generated_at": "2026-08-22T17:58:57",
+  "note": "全席位下注线（v2.2）：human 行保留；other_N 区分座位（对应 item.json table_players）",
   "betting_line": [
     {
       "street": "preflop",
       "board": "",
-      "actions": "other raise; other raise $2,200; villain raise $5,500; hero call; other fold",
+      "actions": "other_1 raise; other_2 raise $2,200; villain raise $5,500; hero call; other_1 fold; other_2 fold",
       "events": [
         {
           "t": 5.0,
-          "actor": "other",
+          "actor": "other_1",
           "action": "raise",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
           "t": 12.0,
-          "actor": "other",
+          "actor": "other_2",
           "action": "raise",
-          "amount": 2200.0
+          "amount": 2200.0,
+          "source": "doubao"
         },
         {
           "t": 19.0,
           "actor": "villain",
           "action": "raise",
-          "amount": 5500.0
+          "amount": 5500.0,
+          "source": "doubao"
         },
         {
           "t": 32.0,
           "actor": "hero",
           "action": "call",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         },
         {
-          "t": 33.0,
-          "actor": "other",
+          "t": 35.0,
+          "actor": "other_1",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 35.0,
+          "actor": "other_2",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
         }
       ]
     },
@@ -56,13 +63,15 @@
           "t": 50.0,
           "actor": "villain",
           "action": "bet",
-          "amount": 3100.0
+          "amount": 3100.0,
+          "source": "doubao"
         },
         {
-          "t": 56.0,
+          "t": 57.0,
           "actor": "hero",
           "action": "call",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         }
       ]
     },
@@ -75,13 +84,15 @@
           "t": 70.0,
           "actor": "villain",
           "action": "bet",
-          "amount": 13500.0
+          "amount": 13500.0,
+          "source": "doubao"
         },
         {
           "t": 79.0,
           "actor": "hero",
           "action": "call",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         }
       ]
     },
@@ -94,13 +105,15 @@
           "t": 94.0,
           "actor": "villain",
           "action": "allin",
-          "amount": 58775.0
+          "amount": 58775.0,
+          "source": "doubao"
         },
         {
-          "t": 96.0,
+          "t": 106.0,
           "actor": "hero",
           "action": "call",
-          "amount": 58775.0
+          "amount": 58775.0,
+          "source": "doubao"
         }
       ]
     }

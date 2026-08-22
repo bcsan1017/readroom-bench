@@ -1,43 +1,153 @@
 {
-  "item_id": "T5",
-  "hero_cards": "AcTc",
-  "villain_cards": "Jd9d",
-  "board": "Ts8s4d8hKd",
-  "hero_equity": 1.0,
-  "win": 1.0,
-  "tie": 0.0,
-  "lose": 0.0,
-  "method": "showdown",
-  "n": 1,
-  "street": "river",
-  "required_equity": 0.3991520290732889,
-  "correct_call": true,
-  "ev_call_bb": 496.0,
-  "ev_fold_bb": 0.0,
-  "pot_before_allin": 8325,
-  "pot_after_allin": 24800,
-  "to_call": 16475,
-  "bb": 50,
-  "actual": {
-    "hero_action": "fold",
-    "villain_showed": null,
-    "note": "recap: hero_actual_action=fold (error, decided by flipping a card protector); think=long (deep tank, card-protector flip); allin_type=unknown"
+ "item_id": "T5",
+ "hero_cards": "AcTc",
+ "villain_cards": "Jd9d",
+ "board": "Ts8s4d8hKd",
+ "hero_equity": 1,
+ "win": 1,
+ "tie": 0,
+ "lose": 0,
+ "method": "showdown",
+ "n": 1,
+ "street": "river",
+ "required_equity": 0.3991520290732889,
+ "correct_call": true,
+ "ev_call_bb": 496,
+ "ev_fold_bb": 0,
+ "pot_before_allin": 8325,
+ "pot_after_allin": 24800,
+ "to_call": 16475,
+ "bb": 50,
+ "actual": {
+  "hero_action": "fold",
+  "villain_showed": null,
+  "note": "recap: hero_actual_action=fold (error, decided by flipping a card protector); think=long (deep tank, card-protector flip); allin_type=unknown",
+  "hero_invested_usd": null,
+  "hero_result_usd": null
+ },
+ "players": {
+  "hero": "Xuan Liu",
+  "villain": "Dan 'Jungleman' Cates"
+ },
+ "difficulty_tier": "TBD (按 L0 基线分档)",
+ "prefill_source": {
+  "table_size": "doubao",
+  "hero_stack_start": "doubao",
+  "villain_stack_start": "doubao",
+  "hero_position": "doubao"
+ },
+ "table_size": 7,
+ "hero_stack_start": 20575,
+ "villain_stack_start": 26725,
+ "hero_position": "UTG+1",
+ "table_size_note": "待确认：豆包面板/桌边两个口径都数不清，请点「原片跳转」人工数",
+ "betting_line": {
+  "preflop": {
+   "board": "",
+   "actions": [
+    {
+     "t": 8,
+     "actor": "hero",
+     "action": "raise",
+     "amount": 400,
+     "source": "doubao"
+    },
+    {
+     "t": 27,
+     "actor": "villain",
+     "action": "call",
+     "amount": 300,
+     "source": "doubao"
+    }
+   ],
+   "l0_text": null,
+   "source": "video_extracted_v2"
   },
-  "players": {
-    "hero": "Xuan Liu",
-    "villain": "Dan 'Jungleman' Cates"
+  "flop": {
+   "board": "Ts 8s 4d",
+   "actions": [
+    {
+     "t": 36,
+     "actor": "villain",
+     "action": "check",
+     "amount": null,
+     "source": "human"
+    },
+    {
+     "t": 43,
+     "actor": "hero",
+     "action": "bet",
+     "amount": 400,
+     "source": "doubao"
+    },
+    {
+     "t": 61,
+     "actor": "villain",
+     "action": "raise",
+     "amount": 1500,
+     "source": "doubao"
+    },
+    {
+     "t": 96,
+     "actor": "hero",
+     "action": "raise",
+     "amount": 3700,
+     "source": "doubao"
+    },
+    {
+     "t": 123,
+     "actor": "villain",
+     "action": "call",
+     "amount": 3700,
+     "source": "doubao"
+    }
+   ],
+   "l0_text": null,
+   "source": "video_extracted_v2"
   },
-  "difficulty_tier": "TBD (按 L0 基线分档)",
-  "prefill_source": {
-    "table_size": "doubao",
-    "players_in_hand": "doubao",
-    "hero_stack_start": "doubao",
-    "villain_stack_start": "doubao",
-    "hero_position": "doubao"
+  "turn": {
+   "board": "8h",
+   "actions": [
+    {
+     "t": 134,
+     "actor": "villain",
+     "action": "check",
+     "amount": null,
+     "source": "doubao"
+    },
+    {
+     "t": 146,
+     "actor": "hero",
+     "action": "check",
+     "amount": null,
+     "source": "doubao"
+    }
+   ],
+   "l0_text": null,
+   "source": "video_extracted_v2"
   },
-  "table_size": 7,
-  "players_in_hand": 2,
-  "hero_stack_start": 20575.0,
-  "villain_stack_start": 26725.0,
-  "hero_position": "+1"
+  "river": {
+   "board": "Kd",
+   "actions": [
+    {
+     "t": 185,
+     "actor": "villain",
+     "action": "allin",
+     "amount": 16475,
+     "source": "doubao"
+    },
+    {
+     "t": 334,
+     "actor": "hero",
+     "action": "fold",
+     "amount": null,
+     "source": "doubao"
+    }
+   ],
+   "l0_text": "Villain(Cates) overbet-jams the river, covering Hero's $16,475 (pot $8,325)；前序街完整下注线 recap 未提供",
+   "source": "video_extracted_v2"
+  }
+ },
+ "villain_position": "UTG",
+ "human_verified_truth": true
 }

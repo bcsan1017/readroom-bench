@@ -63,10 +63,10 @@ def l0_text(item: dict) -> str:
     raise KeyError(f"item {item.get('item_id')}: 无法从 layers.L0 取得 L0 文本（结构已变？请更新 runner.run.l0_text）")
 
 
-def build_spec(item: dict, item_dir: Path, layer: str, max_images: int | None = None) -> dict:
+def build_spec(item: dict, item_dir: Path, layer: str, max_images: int | None = None, model: str | None = None) -> dict:
     pp = prompt_parts(); L = item["layers"]; tm = item["timing"]
     block = pp["blocks"][layer]
-    images, video, video_fps = [], None, None
+    images, video, video_fps, input_mode = [], None, None, None
     if layer == "L1-text":
         block = block.replace("{TIMELINE_TEXT}", L["L1-text"]["timeline_text"] or "(空)")
     elif layer == "L1-vision":
@@ -78,12 +78,26 @@ def build_spec(item: dict, item_dir: Path, layer: str, max_images: int | None = 
             images.append((f"[t={f['t']:.1f}s 对手脸部]", item_dir / f["villain_face"]))
         block = block.replace("{N_IMAGES}", str(len(images)))
     elif layer == "L1-video":
-        video = item_dir / L["L1-video"]["clip"]
-        video_fps = L["L1-video"]["fps"]
-        block = block.replace("{CLIP_DUR}", f"{L['L1-video']['duration_sec']:.1f}").replace("{VIDEO_FPS}", str(L["L1-video"]["fps"]))
+        # 不吃视频的被评模型（claude/gpt via wodex）：以预生成的抽帧序列近似参赛
+        if model is not None and not P.DEFAULTS[model].get("video"):
+            mf_path = item_dir / "vframes" / "manifest.json"
+            if not mf_path.exists():
+                raise FileNotFoundError(f"{item['item_id']}: 缺 vframes/manifest.json，先跑 python -m pipeline.frames_for_video_layer --items {item['item_id']}")
+            mf = json.loads(mf_path.read_text(encoding="utf-8"))
+            for f in mf["frames"]:
+                images.append((f"t={f['t']:g}s:", item_dir / f["file"]))
+            block = pp["blocks"]["L1-video-frames"]
+            block = block.replace("{N_FRAMES}", str(mf["n_frames"])).replace("{CLIP_DUR}", f"{L['L1-video']['duration_sec']:.1f}")
+            input_mode = "sampled_frames"
+        else:
+            video = item_dir / L["L1-video"]["clip"]
+            video_fps = L["L1-video"]["fps"]
+            block = block.replace("{CLIP_DUR}", f"{L['L1-video']['duration_sec']:.1f}").replace("{VIDEO_FPS}", str(L["L1-video"]["fps"]))
+            input_mode = "native_video"
     block = block.replace("{ALLIN_T}", f"{tm['allin_t']:.1f}").replace("{ANNOUNCE_T}", f"{tm['announce_t']:.1f}")
     user = pp["user"].replace("{L0_TEXT}", l0_text(item)).replace("{LAYER_BLOCK}", block)
-    return {"system": pp["system"], "user_text": user, "images": images, "video": video, "video_fps": video_fps}
+    return {"system": pp["system"], "user_text": user, "images": images, "video": video, "video_fps": video_fps,
+            "input_mode": input_mode}
 
 
 CUE_TYPES = {"gaze", "posture", "hands", "speech", "chips", "face"}
@@ -111,8 +125,7 @@ def validate(obj) -> list[str]:
                 errs.append(f"cue[{i}] malformed")
     if not isinstance(obj.get("rationale"), str):
         errs.append("rationale missing")
-    elif len(obj["rationale"]) > 200:
-        errs.append("rationale too long")
+    # rationale 超长不判失败：run_one 里截断保存并标 rationale_truncated（2026-08-23 处置变更）
     if not isinstance(obj.get("recognized"), bool):
         errs.append("recognized not bool")
     return errs
@@ -165,7 +178,9 @@ def freeze_check(item_dirs: list[Path]) -> list[str]:
     for d in item_dirs:
         tf = d / "truth.json"
         try:
-            verified = bool(json.loads(tf.read_text(encoding="utf-8")).get("human_verified"))
+            t = json.loads(tf.read_text(encoding="utf-8"))
+            # annotator 落盘的标记名是 human_verified_truth（README 标注工具①）；两个名字都认
+            verified = bool(t.get("human_verified") or t.get("human_verified_truth"))
         except Exception:
             verified = False
         if not verified:
@@ -200,14 +215,26 @@ def run_one(task: dict, a, gap_locks: dict) -> dict:
     use_mock = a.mock or not P.has_key(m)
     attempts = 1
     try:
-        spec = build_spec(item, d, layer, a.max_images)
+        spec = build_spec(item, d, layer, a.max_images, model=m)
+        if spec.get("input_mode"):
+            rec["input_mode"] = spec["input_mode"]
         if use_mock:
             rng = random.Random(f"{a.seed}:{item['item_id']}:{layer}:{m}:{trial}")
             obj = mock_output(rng, layer, item); raw = json.dumps(obj, ensure_ascii=False); usage = {"mock": True}
         else:
-            spec_t = {**spec, "user_text": spec["user_text"] + f"\n\n[trial-id: {trial}]（本行仅用于避免网关对相同请求的缓存，请忽略）"}
+            nonce = f"[trial-id: {trial}]"
+            if a.retry_failed:
+                # --retry-failed 重发若与原请求逐字节相同会命中网关响应缓存（synapse 实测 byte 级回放坏响应），
+                # 附加一行随机会话标识破缓存；行内无任何牌局信息，语义不变（模型被要求忽略本行）
+                salt = "".join(random.choices("abcdefghijklmnopqrstuvwxyz0123456789", k=8))
+                nonce += f"\n（会话标识：{salt}，请忽略本行）"
+                rec["nonce_injected"] = True
+            spec_t = {**spec, "user_text": spec["user_text"] + f"\n\n{nonce}（本行仅用于避免网关对相同请求的缓存，请忽略）"}
             raw, usage, attempts = call_with_retry(m, spec_t, gap_locks.get(gateway_of(m)))
             obj = parse_json(raw)
+        if isinstance(obj, dict) and isinstance(obj.get("rationale"), str) and len(obj["rationale"]) > 200:
+            obj["rationale"] = obj["rationale"][:200]
+            rec["rationale_truncated"] = True
         errs = validate(obj)
         rec.update(ok=not errs or errs == ["action inconsistent with p_call (p_call wins)"],
                    raw=raw, parsed=obj, schema_errors=errs, usage=usage, mock=use_mock)
@@ -262,7 +289,7 @@ def main(argv=None):
                 if layer not in item["layers"] or m not in P.LAYER_MODELS.get(layer, []):
                     continue
                 if a.dry_run:
-                    spec = build_spec(item, d, layer, a.max_images)
+                    spec = build_spec(item, d, layer, a.max_images, model=m)
                     url, headers, body = P.build_request(m, spec)
                     txt = json.dumps(json.loads(json.dumps(body)), ensure_ascii=False)
                     txt = re.sub(r"base64,[A-Za-z0-9+/=]{40,}", "base64,<...>", txt)

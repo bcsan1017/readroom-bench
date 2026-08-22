@@ -1,0 +1,37 @@
+{
+ "item_id": "F2",
+ "layer": "L1-text",
+ "model": "claude",
+ "url": "https://api.wodex.ai/v1/chat/completions",
+ "headers": {
+  "Authorization": "<redacted>",
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+ },
+ "body": {
+  "model": "claude-opus-5",
+  "max_tokens": 8192,
+  "messages": [
+   {
+    "role": "system",
+    "content": "\" 切分拼装） -->\n\n<!-- changelog\n2026-08-22 批跑前终审：\n- 补 cues.direction / weight 语义定义（原 prompt 未说明 strong/weak 指什么，模型只能猜）；\n- recognized 补充\"单独统计、如实标注不构成不利\"，降低瞒报动机；\n- 其余检查通过：输出 schema 与框架 v0.2 §4 逐字段一致；全文无模型特化措辞；无诱导 call/fold 的表述；\n  中文 prompt + 英文牌局术语（call/fold/all-in/Hero/Villain/river）口径统一；cues 已强制具体时间点+可观察事实。\n-->"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "下面是这手牌的牌理信息（桌况、双方位置与筹码、你的底牌、完整下注线、公共牌、底池、跟注额、所需赔率）：\n\n<hand>\n牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：SB，本手开始筹码 $35,500。对手（Villain）位置：BB，本手开始筹码 $23,650。\n你的底牌：As 8c。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：other call $100; hero raise $600; villain raise $1,800; other fold; other fold; hero call\n  - flop（Ad 8h Qd）：villain check; hero check\n  - turn（Qh）：hero bet $2,000; villain call $2,000\n  - river（4c）：hero check; villain allin $19,850\n当前公共牌：Ad 8h Qd Qh 4c（river）。\n对手全下前底池：$7,700；对手全下额：$19,850；你需跟注：$19,850。\n跟注后总底池：$47,400；所需胜率（跟注额 ÷ (底池+跟注额)）= 41.9%。\n</hand>\n\n以下是另一位观察者记录的这一整手牌（发牌→收池）中对手（villain）与你（hero）的客观行为时间轴（t 为相对片段起点的秒数；片段覆盖整手，对手在 t≈88.0s 全下，你在 t≈90.0s 宣布决定）：\n<timeline>\n[0.0–55.0s] 翻前发牌与下注（关注:both）：约0s 翻前发牌阶段，两人初始均坐直，hero双手搭桌沿看向villain，villain双手放在自己底牌上看向手牌，约0.0s 有人说\"half today because it is taxing\"（平稳）；约2.4s 有人说\"sitting in the middle of these two it's fun\"（轻松）；约4.5s 有人说\"best most fun seat I've ever had at a poker\"（快速）；约6.7s 有人说\"it sucks your energy\"（平缓）；约7s villain拿起底牌查看，约9.0s 有人说\"yeah it's not very\"（随意）；约11.0s 有人说\"believe it or not I was exhausted\"（平缓）；约12.6s 有人说\"one hundred one hundred\"（快速）；约13.7s 有人说\"one hundred I call thank you table\"（轻松）；约14s放回底牌后靠向椅背看向hero，嘴角上扬露齿。约16.7s hero说\"I'm gonna have to raise here I'm afraid\"（带停顿）；约17s hero坐直与其他玩家交流，约19s前倾推出一摞黄色筹码做raise，约19.1s hero说\"yeah make it six hundred\"（干脆）；约20.8s 桌边其他人说\"raise to six hundred\"（清晰）；约24s 对手前倾推出一摞深色筹码跟注，约24.9s 对手说\"I'm afraid I'm\"（无奈）；约26.3s 有人说\"not having a very good day over here\"（语调低）；约31.3s 有人说\"it's like this it's like this spot this situation right here\"（感慨）；其余玩家弃牌后，约34s hero收回自己的牌，约34.3s 有人说\"great chip day yet but you've had a great day\"（平缓）；约36.9s 有人说\"phil like phil this is like fold like this is like all day\"（快速）；约40.7s 有人说\"king quince good fold\"（赞许）；约43s villain再次拿起底牌查看后放回，约43.1s 有人说\"i mean just like you know it's all day that's that's what are you gonna do\"（随意）；约46s hero推出几枚黄色筹码跟注，约46.4s 有人说\"that's a philly fold\"（调侃）；约47.4s 有人说\"eighteen hundred\"（清晰）；约48s villain伸手将底池散落筹码拢成一堆，约48.2s 有人说\"let me get this rolling so we can play another hand\"（催促）；约51.2s 有人说\"oh\"（轻呼）；约53.7s 桌边其他人说\"hands up\"（指令）。\n[55.0–66.0s] 翻牌圈行动（关注:both）：约56.2s 有人开口说\"chris, i've got chewing gum if you want some, bud.\"（语气随意）；约57s 翻牌公共牌发出后，hero坐直、双手十指交叉放在自己牌前，看向桌面公共牌并开口说话快速的“check”；约58.9s 桌边hero说\"check, check.\"（语气简短）；约60.7s 桌边有人说\"is it poison gum that makes these two guys go home or what?\"（语带调侃）；约63.2s 有人开口说\"it won't hurt, it won't hurt, my shaman gave it to me.\"（语气安抚）。\n[66.0–84.0s] 转牌圈行动（关注:both）：约66.0s 桌边有人说\"send me.\"（短促）；约66.4s 桌边有人说\"Oh, the shaman that told you to fold just now?\"（探询）。约68s 转牌公共牌发出后，约68.1s 桌边有人说\"Yep, yep.\"（肯定）；约68.7s 桌边有人说\"Well, he didn't tell me to fold, he said if you can't raise, I'll do something else.\"（平缓）；约73s hero前倾推出一枚黄色筹码后又追加多枚筹码，下注2000，约75.3s 荷官开口说\"Two thousand.\"（清晰）。约80s villain前倾推出两枚黄色筹码，跟注2000。\n[84.0–92.0s] 河牌圈行动至对手全下（关注:both）：约84.2s 桌边有人说\"Oh, apparently Phil Helmuth is a genius on this one.\"（语速适中）。约87s 河牌公共牌发出后，hero坐直、双手十指交叉放在自己牌前看向公共牌，villain左手放在自己筹码堆上、右手搭在桌沿，视线落在面前牌桌区域，未说话；约87.0s 桌边有人说\"Bullshit.\"（语气随意）。约88s hero双手不碰筹码保持静止，选择check；约88.9s 桌边有人说\"I'm kind of steaming.\"（带情绪）。约90.0s 桌边有人说\"Me too.\"（简短附和）；约90.6s villain开口说\"All in.\"（干脆指令）。约91s villain前倾，将整摞深色筹码全部推入底池，做出allin动作。\n[92.0–171.5s] 对手全下后的长考期（关注:both）：约93s villain全下后，hero向后靠在椅背上、双手撑在椅面，开口说话约5秒，约98s前倾对着villain摊手持续说话；此阶段villain保持微笑状态，约103s转头看向hero后又转向左侧，左手轻敲桌沿开口回应约2秒，露齿微笑。约109s hero前倾触碰自己的筹码持续说话，约120s左手托住左脸颊停止说话进入思考；约122s起villain前倾整理自己剩余筹码，将黄色筹码摞成三摞、深色筹码拢堆，又陆续将3枚黄色筹码和数枚深色筹码放到下注区旁码齐，整理过程持续至约136s停止。约134s hero放下托腮的手坐直，看向villain整理筹码的动作，约137s拿起自己的底牌查看并开口说话约7秒；约145s hero将自己的两张牌向前推出扣在桌面，做出开牌动作观察对手表情。villain约145s保持微笑，约147s转头看向hero打开的牌，开口说话约3秒，约150s转向右侧绿花衬衫玩家，双手摊开持续说话；约154s 对手对着hero摆手说话约4秒，随后靠回椅背。约167s hero前倾拿起自己弃掉的牌翻开查看，开口说话约2秒；约168s villain亮出自己的底牌进入摊牌阶段，hero开口说\"ok i know you're bluffing me but you know what it's my birthday\"。\n</timeline>\n\n请综合牌理与你能观察到的对手线索，给出你**此刻跟注的概率 p_call**（0–1 的实数，表示在你的信念下跟注为正确决策的主观概率；不是\"你会不会跟\"的二元回答），并列出你依据的具体可观察线索。\n\n严格按以下 JSON schema 输出：\n{\n  \"p_call\": <0..1 float>,\n  \"action\": \"call\" | \"fold\",            // 与 p_call ≥ 0.5 一致\n  \"cues\": [\n    {\"t\": <秒，相对片段起点，数字>, \"who\": \"villain\" | \"hero\" | \"other\", \"type\": \"gaze\"|\"posture\"|\"hands\"|\"speech\"|\"chips\"|\"face\", \"observed\": \"<你实际观察到的客观事实，不要写情绪词>\", \"direction\": \"strong\" | \"weak\" | \"neutral\", \"weight\": <0..1>}\n  ],\n  \"rationale\": \"<≤150 字>\",\n  \"recognized\": <true|false>            // 你是否认出这手牌、这集节目或这些选手；认出请如实标 true\n}\n\n注意：\n- 若本题没有给你任何视觉/时间轴信息（仅牌理），cues 可为空数组，但不要编造观察。\n- cues 中每条必须指向具体时间点与可观察事实（例如\"推注后双手交叉抱胸、视线落在公共牌\"），禁止使用情绪推断词（紧张/自信/心虚/放松等）。\n- cues.direction 指该线索指向的**对手牌力方向**：strong=指向对手成牌强，weak=指向对手弱牌/诈唬，neutral=无明确指向；weight（0–1）为该线索在你本次决策中的依赖程度。\n- recognized：只要你认出这手牌、这集节目或任一选手（或已知道这手牌的结果），就如实标 true；标 true 的题只会被单独统计，如实标注不构成任何不利。\n- 只输出 JSON。"
+     }
+    ]
+   }
+  ],
+  "thinking": {
+   "type": "adaptive"
+  },
+  "output_config": {
+   "effort": "high"
+  }
+ },
+ "media_refs": []
+}

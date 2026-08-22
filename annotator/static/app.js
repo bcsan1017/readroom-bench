@@ -8,7 +8,6 @@ const state = {
   banned: [],
   truth: null,
   tlEvents: [],
-  atEvents: [],
   tlMeta: null,
   mask: null,
   hallu: [],
@@ -136,46 +135,46 @@ async function loadItem(id) {
   const info = state.items.find((x) => x.id === id) || {};
   $("#video-missing").classList.toggle("hidden", !!info.has_video);
   video.src = "/video/" + id + ".mp4";
-  await Promise.all([loadTruth(), loadL0(), loadActionTL(), loadTimeline(), loadMask()]);
+  await Promise.all([loadTruth(), loadL0(), loadTimeline(), loadMask()]);
   renderCue(); // cue 面板高亮当前 item 无关，但统计不变；只需重绘一次即可
 }
 
 // ---------------- 1. 手牌信息核对 ----------------
 const POSITIONS = ["", "UTG", "UTG+1", "UTG+2", "LJ", "HJ", "CO", "BTN", "SB", "BB", "straddle"];
 const TRUTH_FIELDS = [
-  { path: "item_id", label: "条目编号", ro: true },
+  { path: "item_id", label: "条目编号", ro: true, tier: "C" },
   // 人数（豆包预填，待人工确认；数不清留空）
-  { path: "table_size", label: "桌上人数（豆包预填，待确认）", num: true },
-  { path: "players_in_hand", label: "本手入池人数（豆包预填，待确认）", num: true },
+  { path: "table_size", label: "桌上人数（=发牌时在座几人，豆包预填待确认）", num: true, tier: "A" },
+  { path: "table_size_note", label: "人数备注（面板行数 vs 桌边人头 校验结果）", wide: true, tier: "A" },
   // 位置与开局筹码（Byron 要求：独立可编辑字段，放最上方）
-  { path: "hero_position", label: "主角位置（UTG/HJ/CO/BTN/SB/BB…）", datalist: POSITIONS },
-  { path: "villain_position", label: "对手位置（UTG/HJ/CO/BTN/SB/BB…）", datalist: POSITIONS },
-  { path: "hero_stack_start", label: "主角开局筹码($)", num: true },
-  { path: "villain_stack_start", label: "对手开局筹码($)", num: true },
-  { path: "hero_cards", label: "主角底牌" },
-  { path: "villain_cards", label: "对手底牌" },
-  { path: "board", label: "公共牌" },
-  { path: "pot_before_allin", label: "全下前底池($)", num: true },
-  { path: "to_call", label: "需跟注($)", num: true },
-  { path: "bb", label: "大盲($)", num: true },
-  { path: "players.hero", label: "主角姓名" },
-  { path: "players.villain", label: "对手姓名" },
-  { path: "actual.hero_action", label: "实际行动", sel: ["", "call", "fold"], selMap: { "": "（未填）", call: "跟注", fold: "弃牌" } },
-  { path: "actual.hero_invested_usd", label: "实际投入($)", num: true },
-  { path: "actual.hero_result_usd", label: "实际盈亏($)", num: true },
-  { path: "actual.note", label: "实际结果备注", wide: true },
-  { path: "difficulty_tier", label: "难度档" },
-  { path: "street", label: "全下所在街", ro: true, roMap: "street" },
-  { path: "method", label: "胜率算法", ro: true },
-  { path: "hero_equity", label: "主角胜率", ro: true },
-  { path: "win", label: "赢概率", ro: true },
-  { path: "tie", label: "平概率", ro: true },
-  { path: "lose", label: "输概率", ro: true },
-  { path: "required_equity", label: "所需胜率", ro: true },
-  { path: "correct_call", label: "正解=跟注？", ro: true },
-  { path: "ev_call_bb", label: "跟注EV(bb)", ro: true },
-  { path: "ev_fold_bb", label: "弃牌EV(bb)", ro: true },
-  { path: "pot_after_allin", label: "跟注后总底池($)", ro: true },
+  { path: "hero_position", label: "主角位置（UTG/HJ/CO/BTN/SB/BB…）", datalist: POSITIONS, tier: "A" },
+  { path: "villain_position", label: "对手位置（UTG/HJ/CO/BTN/SB/BB…）", datalist: POSITIONS, tier: "A" },
+  { path: "hero_stack_start", label: "主角开局筹码($)（可填加法式如 12000+350）", sum: true, tier: "A" },
+  { path: "villain_stack_start", label: "对手开局筹码($)（可填加法式如 12000+350）", sum: true, tier: "A" },
+  { path: "hero_cards", label: "主角底牌", tier: "B" },
+  { path: "villain_cards", label: "对手底牌", tier: "B" },
+  { path: "board", label: "公共牌（各街 board 见下注线分块）", tier: "B" },
+  { path: "pot_before_allin", label: "全下前底池($)", num: true, tier: "B" },
+  { path: "to_call", label: "需跟注($)", num: true, tier: "B" },
+  { path: "bb", label: "大盲($)", num: true, tier: "B" },
+  { path: "players.hero", label: "主角姓名", tier: "B" },
+  { path: "players.villain", label: "对手姓名", tier: "B" },
+  { path: "actual.hero_action", label: "实际行动", sel: ["", "call", "fold"], selMap: { "": "（未填）", call: "跟注", fold: "弃牌" }, tier: "B" },
+  { path: "actual.hero_invested_usd", label: "实际投入($)", num: true, tier: "B" },
+  { path: "actual.hero_result_usd", label: "实际盈亏($)", num: true, tier: "B" },
+  { path: "actual.note", label: "实际结果备注", wide: true, tier: "B" },
+  { path: "difficulty_tier", label: "难度档", tier: "B" },
+  { path: "street", label: "全下所在街", ro: true, roMap: "street" , tier: "C" },
+  { path: "method", label: "胜率算法", ro: true , tier: "C" },
+  { path: "hero_equity", label: "主角胜率", ro: true , tier: "C" },
+  { path: "win", label: "赢概率", ro: true , tier: "C" },
+  { path: "tie", label: "平概率", ro: true , tier: "C" },
+  { path: "lose", label: "输概率", ro: true , tier: "C" },
+  { path: "required_equity", label: "所需胜率", ro: true , tier: "C" },
+  { path: "correct_call", label: "正解=跟注？", ro: true , tier: "C" },
+  { path: "ev_call_bb", label: "跟注EV(bb)", ro: true , tier: "C" },
+  { path: "ev_fold_bb", label: "弃牌EV(bb)", ro: true , tier: "C" },
+  { path: "pot_after_allin", label: "跟注后总底池($)", ro: true , tier: "C" },
 ];
 function getPath(obj, path) {
   return path.split(".").reduce((o, k) => (o == null ? undefined : o[k]), obj);
@@ -191,8 +190,8 @@ function setPath(obj, path, val) {
 }
 
 async function loadTruth() {
-  const form = $("#truth-form");
-  form.replaceChildren();
+  const forms = { A: $("#truth-form-a"), B: $("#truth-form-b"), C: $("#truth-form-c") };
+  for (const f of Object.values(forms)) f.replaceChildren();
   state.truth = null;
   try {
     state.truth = await api(`/api/item/${state.itemId}/truth`);
@@ -203,6 +202,14 @@ async function loadTruth() {
   }
   setMsg("#truth-msg", "");
   $("#truth-verified-badge").classList.toggle("hidden", !state.truth.human_verified_truth);
+  const srcA = $("#src-link");
+  if (state.truth._source_url) {
+    srcA.href = state.truth._source_url;
+    srcA.title = "新窗口打开原片对应时间点，人工核对人数/筹码";
+    srcA.classList.remove("hidden");
+  } else {
+    srcA.classList.add("hidden");
+  }
   for (const f of TRUTH_FIELDS) {
     const v = getPath(state.truth, f.path);
     const id = "tf-" + f.path.replace(/\./g, "-");
@@ -231,13 +238,28 @@ async function loadTruth() {
     const fieldDiv = el("div", { class: "field" + (f.wide ? " wide" : "") },
       el("label", { text: f.label }), input);
     if (input._dl) fieldDiv.append(input._dl);
-    form.append(fieldDiv);
+    (forms[f.tier] || forms.B).append(fieldDiv);
   }
+  renderBPreview();
   state.tablePlayers = Array.isArray(state.truth._table_players) ? state.truth._table_players : [];
   state.internalNames = (state.truth._internal_names && typeof state.truth._internal_names === "object")
     ? state.truth._internal_names : {};
   renderTablePlayers();
   renderBettingLine();
+  renderActionTL();
+}
+
+function renderBPreview() {
+  const t = state.truth || {};
+  const act = (t.actual || {}).hero_action;
+  const parts = [
+    "底牌 " + (t.hero_cards || "?") + " vs " + (t.villain_cards || "?"),
+    "公共牌 " + (t.board || "?"),
+    "底池 $" + (t.pot_before_allin != null ? t.pot_before_allin : "?"),
+    "需跟注 $" + (t.to_call != null ? t.to_call : "?"),
+    "实际 " + (act === "call" ? "跟注" : act === "fold" ? "弃牌" : "?"),
+  ];
+  $("#truth-b-preview").textContent = "　" + parts.join(" ｜ ");
 }
 
 // ---- 在座玩家与筹码（存 item.json：table_players 角色+筹码；internal_names 姓名仅核对） ----
@@ -311,14 +333,14 @@ function renderBettingLine() {
         if (["INPUT", "SELECT", "BUTTON", "OPTION"].includes(e.target.tagName)) return;
         if (a.t != null) seekTo(Number(a.t));
       } });
-      tr.append(el("td", null, el("input", { class: "t-input", type: "text",
-        value: a.t == null ? "" : String(a.t),
-        oninput: (e) => { const n = Number(e.target.value); a.t = e.target.value === "" || isNaN(n) ? null : Math.round(n * 10) / 10; } })));
       tr.append(el("td", null, selCN(["hero", "villain", "other"], "actor", a.actor || "hero", (e) => { a.actor = e.target.value; })));
       tr.append(el("td", null, selCN(BL_ACTIONS, "action", a.action || "check", (e) => { a.action = e.target.value; })));
       tr.append(el("td", null, el("input", { class: "amt-input", type: "text",
         value: a.amount == null ? "" : String(a.amount),
         oninput: (e) => { const n = Number(e.target.value); a.amount = e.target.value === "" || isNaN(n) ? null : n; } })));
+      tr.append(el("td", null, el("input", { class: "t-input t-dim", type: "text", title: "时间（秒，弱化显示）",
+        value: a.t == null ? "" : String(a.t),
+        oninput: (e) => { const n = Number(e.target.value); a.t = e.target.value === "" || isNaN(n) ? null : Math.round(n * 10) / 10; } })));
       tr.append(el("td", null,
         el("button", { text: "▶", title: "视频跳到该时刻", onclick: (e) => { e.stopPropagation(); if (a.t != null) seekTo(Number(a.t)); } }),
         " ",
@@ -327,7 +349,7 @@ function renderBettingLine() {
     });
     const table = el("table", null,
       el("thead", null, el("tr", null,
-        ...["时间(秒)", "角色", "动作", "金额($)", "操作"].map((h) => el("th", { text: h })))),
+        ...["角色", "动作", "金额($)", "时间(秒)", "操作"].map((h) => el("th", { text: h })))),
       tbody);
     const block = el("div", { class: "bl-block" }, head);
     if (blk.actions.length) block.append(table);
@@ -344,7 +366,14 @@ function collectTruthForm() {
   for (const f of TRUTH_FIELDS) {
     if (f.ro) continue;
     const raw = truthFormValue(f.path);
-    if (f.num) {
+    if (f.sum) {
+      // 加法表达式字符串："12000+350+25" → 求和存数；其他内容原样存
+      if (raw === "") setPath(t, f.path, null);
+      else if (/^[\d\s.,+]+$/.test(raw) ) {
+        const total = raw.split("+").reduce((a, x) => a + (Number(x.replace(/[,\s]/g, "")) || 0), 0);
+        setPath(t, f.path, total);
+      } else setPath(t, f.path, raw);
+    } else if (f.num) {
       const n = Number(raw);
       setPath(t, f.path, raw === "" ? null : (isNaN(n) ? raw : n));
     } else {
@@ -353,7 +382,6 @@ function collectTruthForm() {
   }
   t._table_players = state.tablePlayers || [];
   t._internal_names = state.internalNames || {};
-  if (t._table_players.length) t.table_size = t._table_players.length; // 桌上人数由玩家表长度导出
   return t;
 }
 $("#btn-recompute").addEventListener("click", async () => {
@@ -389,7 +417,8 @@ $("#btn-truth-save").addEventListener("click", async () => {
     await postJSON(`/api/item/${state.itemId}/truth`, t);
     state.truth = t;
     $("#truth-verified-badge").classList.remove("hidden");
-    setMsg("#truth-msg", "已保存 truth.json（首次保存自动备份 truth.json.bak）", true);
+    renderActionTL();
+    setMsg("#truth-msg", "已保存 truth.json（首次保存自动备份 truth.json.bak；行动时间线已同步落盘）", true);
   } catch (e) {
     setMsg("#truth-msg", "保存失败：" + e.message, false);
   }
@@ -419,116 +448,44 @@ $("#btn-l0-save").addEventListener("click", async () => {
   }
 });
 
-// ---------------- 1c. 行动时间线 ----------------
+// ---------------- 1c. 行动时间线（只读派生视图：truth.betting_line 平铺） ----------------
 const ACT_STREETS = ["preflop", "flop", "turn", "river"];
 const ACT_ACTORS = ["hero", "villain", "dealer", "other"];
 const ACT_ACTIONS = ["deal", "check", "bet", "raise", "call", "fold", "allin", "showdown", "pot_awarded"];
 
-async function loadActionTL() {
-  state.atEvents = [];
-  try {
-    const data = await api(`/api/item/${state.itemId}/action_timeline`);
-    state.atEvents = data.events || [];
-  } catch (e) {
-    setMsg("#at-msg", "行动时间线加载失败：" + e.message, false);
-  }
-  renderActionTL();
-}
-function selEl(options, value, onchange) {
-  const s = el("select", { onchange });
-  for (const o of options) s.append(el("option", { value: o, text: o }));
-  s.value = value;
-  return s;
-}
 function renderActionTL() {
   const tbody = $("#at-tbody");
   tbody.replaceChildren();
-  state.atEvents.forEach((ev, i) => {
-    const tr = el("tr", {
-      onclick: (e) => {
-        if (["INPUT", "SELECT", "BUTTON", "OPTION"].includes(e.target.tagName)) return;
-        if (ev.t != null) seekTo(Number(ev.t), tr);
-      },
-    });
-    // t：可输入 + ⇔ 拖动手柄（拖动时视频实时跟随）
-    const tIn = el("input", { class: "t-input", type: "text",
-      value: ev.t == null ? "" : String(ev.t),
-      oninput: (e) => { const n = Number(e.target.value); if (e.target.value !== "" && !isNaN(n)) ev.t = Math.round(n * 10) / 10; } });
-    const handle = el("span", { class: "drag-handle", text: "⇔", title: "左右拖动微调秒数" });
-    handle.addEventListener("pointerdown", (e) => {
-      e.preventDefault(); e.stopPropagation();
-      handle.setPointerCapture(e.pointerId);
-      const x0 = e.clientX, t0 = Number(ev.t) || 0;
-      const onMove = (me) => {
-        let t = t0 + (me.clientX - x0) * 0.05; // 20px = 1s
-        t = Math.max(0, Math.min(video.duration || 1e9, t));
-        ev.t = Math.round(t * 10) / 10;
-        tIn.value = String(ev.t);
-        video.currentTime = ev.t;
-      };
-      const onUp = () => {
-        handle.removeEventListener("pointermove", onMove);
-        handle.removeEventListener("pointerup", onUp);
-      };
-      handle.addEventListener("pointermove", onMove);
-      handle.addEventListener("pointerup", onUp);
-    });
-    tr.append(el("td", { class: "t-cell" }, tIn, handle));
-    tr.append(el("td", null, selCN(ACT_STREETS, "street", ev.street, (e) => { ev.street = e.target.value; })));
-    tr.append(el("td", null, selCN(ACT_ACTORS, "actor", ev.actor, (e) => { ev.actor = e.target.value; })));
-    tr.append(el("td", null, selCN(ACT_ACTIONS, "action", ev.action, (e) => { ev.action = e.target.value; })));
-    tr.append(el("td", null, el("input", { class: "amt-input", type: "text",
-      value: ev.amount == null ? "" : String(ev.amount),
-      oninput: (e) => { const n = Number(e.target.value); ev.amount = e.target.value === "" || isNaN(n) ? null : n; } })));
+  const bl = (state.truth && state.truth.betting_line) || {};
+  const rows = [];
+  for (const st of ACT_STREETS) {
+    const blk = bl[st];
+    if (!blk || !Array.isArray(blk.actions)) continue;
+    for (const a of blk.actions) rows.push({ ...a, street: st });
+  }
+  rows.sort((a, b) => {
+    const ta = a.t == null ? Infinity : Number(a.t);
+    const tb = b.t == null ? Infinity : Number(b.t);
+    if (ta !== tb) return ta - tb;
+    return ACT_STREETS.indexOf(a.street) - ACT_STREETS.indexOf(b.street);
+  });
+  for (const ev of rows) {
+    const tr = el("tr", { onclick: () => { if (ev.t != null) seekTo(Number(ev.t), tr); } });
+    tr.append(el("td", { text: ev.t == null ? "-" : fmtT(ev.t) }));
+    tr.append(el("td", { text: cn("street", ev.street) }));
+    tr.append(el("td", { text: cn("actor", ev.actor || "other") }));
+    tr.append(el("td", { text: cn("action", ev.action || "check") }));
+    tr.append(el("td", { text: ev.amount == null ? "-" : String(ev.amount) }));
     tr.append(el("td", null, el("span", {
       class: ev.source === "human" ? "src-human" : "src-doubao",
       text: cn("source", ev.source === "human" ? "human" : "doubao"),
     })));
-    tr.append(el("td", null,
-      el("button", { text: "▶", title: "视频跳到 t", onclick: (e) => { e.stopPropagation(); if (ev.t != null) seekTo(Number(ev.t), tr); } }),
-      " ",
-      el("button", { text: "取当前", title: "把 t 设为当前播放时间", onclick: (e) => {
-        e.stopPropagation();
-        ev.t = Math.round((video.currentTime || 0) * 10) / 10;
-        ev.source = "human";
-        renderActionTL();
-      } }),
-      " ",
-      el("button", { text: "插行", title: "在此行后插入", onclick: (e) => {
-        e.stopPropagation();
-        state.atEvents.splice(i + 1, 0, { t: ev.t, street: ev.street, actor: "hero", action: "check",
-          amount: null, source: "human", human_verified: false });
-        renderActionTL();
-      } }),
-      " ",
-      el("button", { class: "danger", text: "删", onclick: (e) => {
-        e.stopPropagation();
-        state.atEvents.splice(i, 1);
-        renderActionTL();
-      } }),
-    ));
     tbody.append(tr);
-  });
-  if (!state.atEvents.length) {
-    tbody.append(el("tr", null, el("td", { colspan: "7", text: "（无 action_timeline.jsonl，可用上方按钮新建，或跑 python -m pipeline.action_timeline --hand <id>）" })));
+  }
+  if (!rows.length) {
+    tbody.append(el("tr", null, el("td", { colspan: "6", text: "（分街下注线为空，请到手牌核对页编辑）" })));
   }
 }
-$("#btn-at-add-now").addEventListener("click", () => {
-  const t = Math.round((video.currentTime || 0) * 10) / 10;
-  const ev = { t, street: "preflop", actor: "hero", action: "check", amount: null, source: "human", human_verified: false };
-  const idx = state.atEvents.findIndex((x) => x.t != null && Number(x.t) > t);
-  if (idx === -1) state.atEvents.push(ev); else state.atEvents.splice(idx, 0, ev);
-  renderActionTL();
-});
-$("#btn-at-save").addEventListener("click", async () => {
-  try {
-    const res = await postJSON(`/api/item/${state.itemId}/action_timeline`, { events: state.atEvents });
-    setMsg("#at-msg", `已保存 ${res.n_events} 条动作到 action_timeline.jsonl（已标记人工校准）`, true);
-    await loadActionTL();
-  } catch (e) {
-    setMsg("#at-msg", "保存失败：" + e.message, false);
-  }
-});
 
 // ---------------- 2. 时间轴校准 ----------------
 async function loadTimeline() {
@@ -538,6 +495,7 @@ async function loadTimeline() {
     const data = await api(`/api/item/${state.itemId}/timeline`);
     state.tlEvents = data.events || [];
     state.tlMeta = data.meta;
+    state.tlFormat = data.format || "rows";
   } catch (e) {
     setMsg("#tl-msg", "时间轴加载失败：" + e.message, false);
   }
@@ -549,7 +507,8 @@ function tlMetaLine() {
   const parts = [
     "模型：" + (m.model || "未知"),
     "生成时间：" + (m.generated_at || "未知"),
-    "事件数：" + (m.n_events != null ? m.n_events : state.tlEvents.length),
+    (state.tlFormat === "blocks" ? "块数：" : "事件数：") + (m.n_events != null ? m.n_events : state.tlEvents.length)
+      + (m.n_detail != null ? `（细粒度 ${m.n_detail} 行存 timeline_detail.jsonl）` : ""),
     m.human_verified ? "✅ 已人工校准" : "⚠️ 未人工校准",
   ];
   if (m.banned_hits && m.banned_hits.length) parts.push("生成期禁用词命中：" + m.banned_hits.length);
@@ -583,8 +542,86 @@ function textToEv(text, ev) {
   for (const k of FIELDS6) ev[k] = (k in vals && String(vals[k]).trim() !== "") ? vals[k].trim() : "-";
   ev.note = (("note" in vals) && String(vals.note).trim() !== "") ? vals.note.trim() : "";
 }
+function newBlock(t) {
+  const t0 = Math.round(t * 10) / 10;
+  return { t_start: t0, t_end: t0 + 5, anchor: "", who_focus: "villain", summary: "",
+    key_speech: [], source: "human", human_verified: false };
+}
+function setTlHead(cols) {
+  const tr = document.querySelector("#tl-table thead tr");
+  tr.replaceChildren(...cols.map(([txt, cls]) => el("th", cls ? { class: cls, text: txt } : { text: txt })));
+}
+function summaryRows(v) {
+  return Math.max(2, Math.ceil(String(v).length / 46) + String(v).split("\n").length - 1);
+}
+// 块状渲染：每块 = 时间范围 + 锚点标题 + 可编辑聚合文本（台词已织入叙述）+ ▶播放该段
+function renderBlocks() {
+  setTlHead([["时间段(秒)"], ["锚点 / 关注"], ["聚合叙述（含台词，可编辑）", "th-content"], ["来源"], ["操作"]]);
+  const tbody = $("#tl-tbody");
+  tbody.replaceChildren();
+  state.tlEvents.forEach((b, i) => {
+    const tr = el("tr", {
+      onclick: (e) => {
+        if (["INPUT", "SELECT", "BUTTON", "OPTION", "TEXTAREA"].includes(e.target.tagName)) return;
+        seekTo(Number(b.t_start), tr);
+      },
+    });
+    // 时间范围
+    const t1 = el("input", { class: "t-input", type: "text", value: String(b.t_start),
+      oninput: (e) => { const n = Number(e.target.value); if (!isNaN(n)) b.t_start = n; } });
+    const t2 = el("input", { class: "t-input", type: "text", value: String(b.t_end),
+      oninput: (e) => { const n = Number(e.target.value); if (!isNaN(n)) b.t_end = n; } });
+    tr.append(el("td", null, t1, el("span", { class: "t-sep", text: " – " }), t2));
+    // 锚点标题 + 关注对象
+    const anc = el("input", { class: "anchor-input", type: "text", value: b.anchor,
+      oninput: (e) => { b.anchor = e.target.value; } });
+    const wf = selCN(["villain", "hero", "both"], "who", b.who_focus, (e) => { b.who_focus = e.target.value; });
+    tr.append(el("td", null, anc, el("div", { class: "blk-wf" }, wf)));
+    // 聚合叙述（显式 rows textarea，台词在叙述文本内）＋ banned 标记
+    const cell = el("td", null);
+    const ta = el("textarea", { class: "ev-text blk-summary", spellcheck: "false",
+      oninput: (e) => { b.summary = e.target.value; e.target.rows = summaryRows(e.target.value); validateBanned(); } });
+    ta.value = b.summary;
+    ta.rows = summaryRows(ta.value);
+    ta.dataset.row = String(i);
+    cell.append(ta);
+    if (b.banned_words_hit && b.banned_words_hit.length) {
+      cell.append(el("div", { class: "blk-banned", text: "⚠ 生成期禁用词命中：" + b.banned_words_hit.join(" / ") }));
+    }
+    // 台词已融合进聚合叙述（key_speech 仅作数据索引保留，不再单独渲染/编辑）
+    tr.append(cell);
+    // 来源
+    tr.append(el("td", null, el("span", {
+      class: b.source === "human" ? "src-human" : "src-doubao",
+      text: cn("source", b.source === "human" ? "human" : "doubao"),
+    })));
+    // 操作
+    tr.append(el("td", null,
+      el("button", { text: "▶", title: "播放该段（跳到 t_start）", onclick: (e) => { e.stopPropagation(); seekTo(Number(b.t_start), tr); } }),
+      " ",
+      el("button", { text: "插块", title: "在此块后插入", onclick: (e) => {
+        e.stopPropagation();
+        state.tlEvents.splice(i + 1, 0, newBlock(Number(b.t_end) || 0));
+        renderTimeline();
+      } }),
+      " ",
+      el("button", { class: "danger", text: "删", onclick: (e) => {
+        e.stopPropagation();
+        state.tlEvents.splice(i, 1);
+        renderTimeline();
+      } }),
+    ));
+    tbody.append(tr);
+  });
+  if (!state.tlEvents.length) {
+    tbody.append(el("tr", null, el("td", { colspan: "5", text: "（无聚类块，可用上方按钮新建）" })));
+  }
+  validateBanned();
+}
 function renderTimeline() {
   $("#tl-meta").textContent = tlMetaLine();
+  if (state.tlFormat === "blocks") { renderBlocks(); return; }
+  setTlHead([["时间(秒)"], ["谁"], ["观察内容（每行一条「字段: 内容」，可直接编辑）", "th-content"], ["来源"], ["操作"]]);
   const tbody = $("#tl-tbody");
   tbody.replaceChildren();
   state.tlEvents.forEach((ev, i) => {
@@ -601,9 +638,10 @@ function renderTimeline() {
     // who（显示中文，存英文）
     tr.append(el("td", null, selCN(["villain", "hero", "both", "other"], "who", ev.who, (e) => { ev.who = e.target.value; })));
     // 观察内容：单个自动伸缩 textarea，「字段: 内容」一行一条，完整可见可编辑
-    const ta = el("textarea", { class: "ev-text", rows: "1", spellcheck: "false",
-      oninput: (e) => { textToEv(e.target.value, ev); autosize(e.target); validateBanned(); } });
+    const ta = el("textarea", { class: "ev-text", spellcheck: "false",
+      oninput: (e) => { textToEv(e.target.value, ev); e.target.rows = Math.max(1, e.target.value.split("\n").length); autosize(e.target); validateBanned(); } });
     ta.value = evToText(ev);
+    ta.rows = Math.max(1, ta.value.split("\n").length);
     ta.dataset.row = String(i);
     tr.append(el("td", null, ta));
     // source
@@ -641,7 +679,8 @@ function validateBanned() {
   const warn = $("#tl-banned-warn");
   const hits = [];
   document.querySelectorAll("#tl-tbody textarea.ev-text").forEach((inp) => {
-    const words = checkBanned(inp.value);
+    const val = state.tlFormat === "blocks" ? inp.value.replace(/「[^」]*」/g, "") : inp.value;
+    const words = checkBanned(val);
     inp.classList.toggle("banned-hit", words.length > 0);
     if (words.length) hits.push(`第${Number(inp.dataset.row) + 1}行: ${words.join("/")}`);
   });
@@ -654,16 +693,27 @@ function validateBanned() {
   return hits.length === 0;
 }
 $("#btn-tl-add-now").addEventListener("click", () => {
+  if (state.tlFormat === "blocks") {
+    const b = newBlock(video.currentTime || 0);
+    const idx = state.tlEvents.findIndex((x) => Number(x.t_start) > b.t_start);
+    if (idx === -1) state.tlEvents.push(b); else state.tlEvents.splice(idx, 0, b);
+    renderTimeline();
+    return;
+  }
   const ev = newEvent(video.currentTime || 0);
   const idx = state.tlEvents.findIndex((x) => Number(x.t) > ev.t);
   if (idx === -1) state.tlEvents.push(ev); else state.tlEvents.splice(idx, 0, ev);
   renderTimeline();
 });
 $("#btn-tl-save").addEventListener("click", async () => {
-  if (!validateBanned() && !confirm("存在禁用词命中，确定仍要保存？")) return;
+  if (!validateBanned() && !confirm("存在禁用词命中，确定仍要保存？")) {
+    setMsg("#tl-msg", "未保存：存在禁用词命中（已取消）", false);
+    return;
+  }
   try {
     const res = await postJSON(`/api/item/${state.itemId}/timeline`, { events: state.tlEvents });
-    setMsg("#tl-msg", `已保存 ${res.n_events} 条事件（timeline.jsonl + timeline.txt${res.item_json_synced ? " + item.json 已同步" : ""}，已标记人工校准）`, true);
+    const unit = state.tlFormat === "blocks" ? "个聚类块" : "条事件";
+    setMsg("#tl-msg", `已保存 ${res.n_events} ${unit}（timeline.jsonl + timeline.txt${res.item_json_synced ? " + item.json 已同步" : ""}，已标记人工校准）`, true);
     await loadTimeline();
   } catch (e) {
     setMsg("#tl-msg", "保存失败：" + e.message, false);

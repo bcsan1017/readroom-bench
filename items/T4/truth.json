@@ -21,7 +21,9 @@
   "actual": {
     "hero_action": "call",
     "villain_showed": null,
-    "note": "recap: hero_actual_action=call (won); think=short (hero quick; villain tanked); allin_type=unknown"
+    "note": "recap: hero_actual_action=call (won); think=short (hero quick; villain tanked); allin_type=unknown",
+    "hero_invested_usd": null,
+    "hero_result_usd": null
   },
   "players": {
     "hero": "Kelly Lucas (=Kelly Minkin)",
@@ -30,12 +32,114 @@
   "difficulty_tier": "TBD (按 L0 基线分档)",
   "prefill_source": {
     "table_size": "doubao",
-    "players_in_hand": "doubao",
     "hero_stack_start": "doubao",
     "hero_position": "doubao"
   },
-  "table_size": 3,
-  "players_in_hand": 2,
-  "hero_stack_start": 16325.0,
-  "hero_position": "+1"
+  "table_size": 7,
+  "hero_stack_start": 16625,
+  "hero_position": "UTG+1",
+  "table_size_note": "待确认：面板行数=2 vs 桌边人头=数不清，取较大值预填，请对原片核对",
+  "betting_line": {
+    "preflop": {
+      "board": "",
+      "actions": [
+        {
+          "t": 4,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 300,
+          "source": "doubao"
+        },
+        {
+          "t": 30,
+          "actor": "other",
+          "action": "fold",
+          "amount": null,
+          "source": "doubao"
+        },
+        {
+          "t": 35,
+          "actor": "villain",
+          "action": "call",
+          "amount": 300,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "flop": {
+      "board": "Td 4d Ks",
+      "actions": [
+        {
+          "t": 50,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 300,
+          "source": "doubao"
+        },
+        {
+          "t": 64,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 1200,
+          "source": "doubao"
+        },
+        {
+          "t": 83.5,
+          "actor": "hero",
+          "action": "call",
+          "amount": 900,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "turn": {
+      "board": "8c",
+      "actions": [
+        {
+          "t": 93.5,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 3300,
+          "source": "doubao"
+        },
+        {
+          "t": 124,
+          "actor": "hero",
+          "action": "call",
+          "amount": 3300,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": null,
+      "source": "video_extracted_v2"
+    },
+    "river": {
+      "board": "3s",
+      "actions": [
+        {
+          "t": 157,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 11825,
+          "source": "doubao"
+        },
+        {
+          "t": 158,
+          "actor": "hero",
+          "action": "call",
+          "amount": 11825,
+          "source": "doubao"
+        }
+      ],
+      "l0_text": "Villain(Washburn) tanks then jams the river; Hero faces $11,825；前序街完整下注线 recap 未提供",
+      "source": "video_extracted_v2"
+    }
+  },
+  "villain_position": "BB",
+  "villain_stack_start": 23825,
+  "human_verified_truth": true
 }

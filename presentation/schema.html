@@ -1,0 +1,90 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>破壁者考试 · 评测体系速览</title><style>
+:root{--bg:#0B0E14;--fg:#E8EDF5;--blue:#5EA2FF;--cyan:#3DDCD3;--dim:#8A8F98;--red:#E5484D;--card:#12161f;--border:#232a38}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 -apple-system,"PingFang SC",sans-serif;padding:32px 20px}
+main{max-width:900px;margin:0 auto}h1{color:var(--blue);font-size:26px;margin:0 0 4px}
+.sub{color:var(--dim);margin-bottom:28px}h2{color:var(--cyan);font-size:18px;margin:34px 0 10px;border-bottom:1px solid var(--border);padding-bottom:6px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:10px 0}
+pre{background:#0d1119;border:1px solid var(--border);border-radius:8px;padding:12px;overflow-x:auto;font-size:12.5px;line-height:1.5;white-space:pre-wrap;color:#c9d4e3}
+table{border-collapse:collapse;width:100%;font-size:13.5px}th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}th{color:var(--cyan);background:#0d1119}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
+.step{background:var(--card);border:1px solid var(--blue);border-radius:8px;padding:8px 14px}.arr{color:var(--dim)}
+.k{color:var(--blue);font-weight:600}.good{color:var(--cyan)}.bad{color:var(--red)}
+details summary{cursor:pointer;color:var(--blue);margin:6px 0}
+.formula{background:#0d1119;border-left:3px solid var(--cyan);padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:14px}
+.note{color:var(--dim);font-size:13px}
+</style></head><body><main>
+<h1>破壁者考试 · 评测体系速览</h1>
+<div class="sub">readroom-bench 技术内页 · 数据冻结 freeze-v1 · 全部内容来自真实冻结数据</div>
+
+<h2>一、评测链（一图流）</h2>
+<div class="flow"><span class="step">10 手真实牌局<br><span class="note">对手全下→主角待决</span></span><span class="arr">→</span>
+<span class="step">三层输入<br><span class="note">蒙眼 / 听转述 / 亲眼看</span></span><span class="arr">→</span>
+<span class="step">5 模型 ×3 次作答<br><span class="note">p_call 概率 + 依据线索</span></span><span class="arr">→</span>
+<span class="step">对答案<br><span class="note">摊牌底牌 → 程序枚举胜率</span></span><span class="arr">→</span>
+<span class="step">计分<br><span class="note">EV(bb) 主分，纯程序</span></span></div>
+
+<h2>二、三层输入 Schema（五家同一份 prompt）</h2>
+<table><tr><th>层</th><th>输入内容</th><th>参赛模型</th></tr>
+<tr><td class="k">L0 蒙着眼</td><td>牌理文本：桌况 / 位置筹码 / 底牌 / 分街下注线（裁至对手全下为止，<b>决策后行动不出现</b>）/ 赔率</td><td>全部 5 家</td></tr>
+<tr><td class="k">L1-text 听转述</td><td>L0 + 行为时间轴（人工校准的聚类块：对手全部行为+主角操作+现场对话，织入叙述）</td><td>全部 5 家</td></tr>
+<tr><td class="k">L1-video 亲眼看</td><td>L0 + 整手打码视频（Qwen/Kimi 原生视频；Claude/GPT 时间戳抽帧序列，input_mode 落库区分；DeepSeek 无视觉不参加）</td><td>4 家</td></tr></table>
+<details><summary>▸ 展开：F1 的真实 L0 输入全文</summary><pre>牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。
+你（Hero）位置：BB，本手开始筹码 $61,100。对手（Villain）位置：HJ，本手开始筹码 $46,950。
+你的底牌：Ad Qc。
+下注线（人工核对分街；加注金额=加注到的总额）：
+  - preflop：villain raise $400; other_1 call $400; other fold; other_3 fold; hero raise $2,500; other_4 fold; villain raise $5,600; other_1 fold; hero call $5,600
+  - flop（3h 2h 3s）：villain bet $2,600; hero call $2,600
+  - turn（Kd）：villain bet $8,400; hero call $8,400
+  - river（Kc）：villain allin $30,350
+当前公共牌：3h 2h 3s Kd Kc（river）。
+对手全下前底池：$33,775；对手全下额：$30,350；你需跟注：$30,350。
+跟注后总底池：$94,475；所需胜率（跟注额 ÷ (底池+跟注额)）= 32.1%。</pre></details>
+<details><summary>▸ 展开：F1 的 L1-text 时间轴节选（前 800 字）</summary><pre>[0.0–88.0s] 翻前发牌与下注（关注:both）：翻前发牌阶段，约3.5s villain低头查看底牌，坐姿双前臂搭桌沿，右手触碰筹码；约8.5s他调整为左肘撑桌左手托腮，右手拨弄筹码，约9.5s推出筹码完成$400加注，随后放下托腮的手，右手继续拨弄筹码。约20.0s hero保持左肘撑桌左手托额姿态，右手搭在筹码边缘，约27.5s数出3枚黄色高值筹码，约28.0s推出筹码完成$2500加注，随后放下托额的手身体微后靠看向villain。约30.5s villain双臂交叉，右手拨弄绿色筹码思考，约41.5s数出加注筹码，约44.5s推出筹码完成$5600加注；约50.0s hero恢复左肘撑桌左手托脸姿态，右手轻敲筹码思考，约75.5s身体前倾数出跟注筹码，约76.5s推出筹码完成$5600跟注，约79.5s villain抬手用手背蹭了下鼻子。期间对话：0.0s 有人说&quot;to come to the Arizona State Poker Championships $1000 buy-in (语速适中)&quot;；4.1s 有人说&quot;Wow (带惊叹语气)&quot;；5.4s 有人说&quot;There were like 1400 people in it (语速平缓)&quot;；7.8s 有人说&quot;Four people in a hand, somebody could have kings (语速适中)&quot;；9.4s 有人说&quot;A hundred percent (干脆肯定)&quot;；10.6s 有人说&quot;Or again (简短)&quot;；11.9s 有人说&quot;Oh yeah (带恍然语气)&quot;；13.4s 有人说&quot;Yeah (简短附和)&quot;；14.4s 有人说&quot;There was definitely a squirrel in the tree (语速适中)&quot;；16.2s 有人说&quot;The thing i…</pre></details>
+
+<h2>三、输出 Schema（强制 JSON）</h2>
+<pre>{
+  "p_call":     0..1，跟注为正确决策的主观概率（主指标来源）
+  "action":     "call"|"fold"，与 p_call≥0.5 一致
+  "cues":       [{t 秒, who, type, observed 客观事实, direction 强/弱/中性, weight}]
+                ← 每条可核验，禁情绪词；幻觉率的靶子
+  "rationale":  ≤150 字
+  "recognized": 是否认出这手牌/选手（污染自报，标 true 的题单独统计剔除）
+}</pre>
+
+<h2>四、计分（纯程序，零模型参与主分）</h2>
+<div class="formula"><b class="k">主分 EV(bb)</b> ＝ p_call × EV(call)，EV(call)=(胜率×终池−跟注额)/bb<br>
+<span class="note">口径 avg@3（每题 3 次取均值，评可靠性不评运气上限）；排名唯一依据</span></div>
+<div class="formula"><b class="k">读人增益</b> ＝ EV(L1) − EV(L0)　<span class="note">头条数字：多"看见"一层，多赚/少亏多少</span></div>
+<table><tr><th>附录诊断（不参与排名）</th><th>回答什么</th></tr>
+<tr><td>Brier 分</td><td>概率报得准不准（抓"瞎自信"）</td></tr>
+<tr><td>与牌手一致率</td><td>和当事职业牌手做了同样决定吗</td></tr>
+<tr><td>幻觉率</td><td>它说"看到手在抖"——画面里真的有吗（judge 三档 + 人工抽检）</td></tr>
+<tr><td>trial 稳定性</td><td>同题 3 次答案漂不漂</td></tr></table>
+
+<h2>五、真实 Case 演示：F1（$94,475 大池）</h2>
+<div class="card">
+<b>牌局</b>：主角 Ad Qc，对手河牌全下 $30,350，所需胜率 32.1%<br>
+<b>真值</b>：对手 Ks Tc 河牌成葫芦，主角胜率 <b class="bad">0%</b> → 正确答案 fold（correct_call=False）<br>
+<b>职业牌手实际</b>：<span class="bad">call，输掉 $94,475</span>（当日争议手）<br>
+<b>Claude · L0（蒙眼层）输出</b>：</div>
+<pre>{
+ &quot;p_call&quot;: 0.32,
+ &quot;action&quot;: &quot;fold&quot;,
+ &quot;cues&quot;: [],
+ &quot;rationale&quot;: &quot;仅凭牌理，无行为线索。河牌成双K，我的A高无听牌，仅诈唬才能赢。对手连续三条街下注且河牌全下，代表范围偏两对以上。所需胜率32.1%，我方只赢纯诈唬，概率估计低于此线。&quot;,
+ &quot;recognized&quot;: false
+}</pre>
+<div class="card"><b>打分</b>：EV(call)=−607 bb；soft 得分 = 0.32 × (−607) = <b class="bad">−194.2 bb</b>；Brier=(0.32−0)²=0.102<br>
+<span class="good">看点：只凭牌理，模型判 fold 躲开了职业牌手踩中的大坑——L1 层它看了对手表演之后，会更坚定，还是被带偏？</span></div>
+
+<h2>六、评测集质量保障（对评委的弹药）</h2>
+<table><tr><th>防线</th><th>抓到了什么</th></tr>
+<tr><td>真值三重保障</td><td>RFID 客观底牌 + 程序枚举胜率 + 人工逐项核验（HLE-verify 式）</td></tr>
+<tr><td>送分题过滤</td><td>trivial 判定口径成文，替换 6 手无区分度样本</td></tr>
+<tr><td>人工审查</td><td>发现 8/10 手 L0 与校准真值不同步 → 生成器重写为 truth 纯函数</td></tr>
+<tr><td>交叉核验</td><td>批跑前抓到 L0 泄题（决策后行动混入题面）→ 修复后才开跑</td></tr>
+<tr><td>污染控制</td><td>recognized 自报 + 剔除统计（已实测能抓到：deepseek 对名场面手自报认出）</td></tr>
+<tr><td>指标抗刷</td><td>proper scoring：最优策略=报告真实信念（回应"指标成目标即失效"）</td></tr></table>
+<div class="note" style="margin-top:28px">生成于批跑进行中 · 结果矩阵见 final_report.md（跑完自动产出）</div>
+</main></body></html>

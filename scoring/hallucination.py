@@ -44,7 +44,7 @@ def judge_item(item_id: str, cues: list, items_dir: Path) -> list[dict]:
         text, usage = P.ark_call(
             [{"role": "system", "content": judge_prompt_system()},
              {"role": "user", "content": P.video_content(vid, fps, "\n".join(lines))}],
-            max_tokens=6000, temperature=0.0)
+            max_tokens=16000, temperature=0.0)  # 批跑规模下每题 cue 数 ×3，6000 会截断判定数组
     import re
     m = re.search(r"\[.*\]", text, re.S)
     verdicts = {}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>破壁者考试</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0B0E14;
+    --bg-card: #10151F;
+    --fg: #E8EDF5;
+    --dim: #8A8F98;
+    --blue: #5EA2FF;
+    --teal: #3DDCD3;
+    --red: #E5484D;
+    --line: #1D2530;
+  }
+  html, body { height: 100%; background: var(--bg); color: var(--fg);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    overflow: hidden; }
+  /* 极简星点背景 */
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 22%, rgba(232,237,245,.35) 50%, transparent 51%),
+      radial-gradient(1px 1px at 78% 12%, rgba(232,237,245,.22) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 62% 78%, rgba(94,162,255,.25) 50%, transparent 51%),
+      radial-gradient(1px 1px at 32% 64%, rgba(232,237,245,.18) 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 52%, rgba(61,220,211,.20) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 45% 8%, rgba(232,237,245,.25) 50%, transparent 51%),
+      radial-gradient(1px 1px at 8% 82%, rgba(94,162,255,.20) 50%, transparent 51%),
+      radial-gradient(1px 1px at 94% 88%, rgba(232,237,245,.18) 50%, transparent 51%),
+      radial-gradient(1px 1px at 55% 42%, rgba(232,237,245,.12) 50%, transparent 51%),
+      radial-gradient(1px 1px at 22% 44%, rgba(61,220,211,.14) 50%, transparent 51%);
+  }
+  .slide { position: absolute; inset: 0; display: none; flex-direction: column;
+    justify-content: center; padding: 6vh 8vw; z-index: 1; }
+  .slide.active { display: flex; }
+  .kicker { color: var(--blue); font-size: clamp(14px, 1.6vw, 22px); letter-spacing: .35em;
+    margin-bottom: 2.5vh; font-weight: 600; }
+  h1 { font-size: clamp(34px, 5vw, 80px); line-height: 1.3; font-weight: 800; margin-bottom: 3.5vh; }
+  h1 .hl { color: var(--blue); }
+  h1 .num { color: var(--teal); }
+  h1 .err { color: var(--red); }
+  .sub { font-size: clamp(16px, 1.9vw, 28px); color: var(--dim); line-height: 1.75; max-width: 62em; }
+  .sub strong { color: var(--fg); }
+  .sub .num { color: var(--teal); font-weight: 700; }
+  .big-claim { font-size: clamp(22px, 2.8vw, 42px); line-height: 1.55; font-weight: 700; margin-top: 4vh; }
+  .big-claim .hl { color: var(--blue); }
+  .big-claim .num { color: var(--teal); }
+  .cols { display: flex; gap: 2.5vw; margin-top: 4vh; flex-wrap: wrap; }
+  .card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 3vh 2vw; flex: 1; min-width: 240px; }
+  .card h3 { font-size: clamp(16px, 1.7vw, 24px); color: var(--blue); margin-bottom: 1.5vh; }
+  .card p { font-size: clamp(14px, 1.5vw, 21px); color: var(--dim); line-height: 1.65; }
+  .card p strong { color: var(--fg); }
+  table { border-collapse: collapse; margin-top: 3.5vh; width: 100%;
+    font-size: clamp(13px, 1.5vw, 22px); }
+  th, td { border: 1px solid var(--line); padding: 1.4vh 1.2vw; text-align: center; }
+  th { background: var(--bg-card); color: var(--blue); font-weight: 700; }
+  td { color: var(--fg); }
+  td.dim { color: var(--dim); }
+  .slot { color: var(--dim); font-style: italic; }
+  .slot-badge { display: inline-block; background: rgba(94,162,255,.10); color: var(--blue);
+    border: 1px dashed var(--blue); border-radius: 8px; padding: .3em .8em;
+    font-size: clamp(12px, 1.2vw, 17px); font-style: normal; margin-left: .6em; vertical-align: middle; }
+  .foot { position: absolute; bottom: 3vh; right: 8vw; color: var(--dim);
+    font-size: clamp(12px, 1.1vw, 15px); z-index: 2; }
+  .hint { position: absolute; bottom: 3vh; left: 8vw; color: var(--dim);
+    font-size: clamp(12px, 1.1vw, 15px); opacity: .6; z-index: 2; }
+  ul.plain { list-style: none; margin-top: 3vh; }
+  ul.plain li { font-size: clamp(16px, 1.9vw, 28px); line-height: 1.65; padding: 1.2vh 0 1.2vh 1.5em;
+    position: relative; color: var(--dim); }
+  ul.plain li::before { content: "▸"; position: absolute; left: 0; color: var(--blue); }
+  ul.plain li strong { color: var(--fg); }
+  ul.plain li .num { color: var(--teal); font-weight: 700; }
+  ul.plain li .err { color: var(--red); }
+  .note { margin-top: 3vh; font-size: clamp(13px, 1.3vw, 18px); color: var(--dim); line-height: 1.65; }
+  .note strong { color: var(--fg); }
+  .note .num { color: var(--teal); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- 1 面壁钩子 -->
+<section class="slide active">
+  <div class="kicker">破壁者考试 · WALLBREAKER BENCH</div>
+  <h1>人类对抗神级文明的最后武器，<br>是把意图<span class="hl">藏在脑子里</span>。</h1>
+  <p class="sub">《三体》里，三体人能监听人类的一切信息，却看不懂谎言。<br>
+  于是人类选出面壁者，把真实计划藏进内心——那是唯一监听不到的地方。</p>
+  <p class="big-claim">而能从一个人全部外在行为里，<br>推演出他内心真实计划的人——叫<span class="hl">破壁人</span>。</p>
+</section>
+
+<!-- 2 转折 -->
+<section class="slide">
+  <div class="kicker">今天</div>
+  <h1>它无所不知。<br>但它敢为自己的判断，<span class="hl">付出多少代价？</span></h1>
+  <p class="sub">AI 读过 80 亿人写下的一切。<br>
+  但当一个活人看着它，把谎话说得天衣无缝——<br>
+  <strong>它是真的看穿了，还是只是在背答案？</strong></p>
+  <p class="big-claim">以前的考试，让它选 ABCD。<br>
+  这一次，我们让它<span class="hl">付出真实的代价</span>。</p>
+</section>
+
+<!-- 3 命题 -->
+<section class="slide">
+  <div class="kicker">命题</div>
+  <h1>于是我们造了第一份<br>「<span class="hl">破壁者考试</span>」</h1>
+  <p class="sub">给 AI 看一段真人影像——这个人正在全力隐藏自己的意图。两个问题：<br>
+  <strong>他在骗你吗？你敢为自己的判断付出多少代价？</strong></p>
+  <p class="big-claim">我们第一次给「AI 会不会看人」<br><span class="hl">打出了一个分数</span>。</p>
+</section>
+
+<!-- 4 为什么从牌桌开考 -->
+<section class="slide">
+  <div class="kicker">为什么从牌桌开考</div>
+  <h1>考破壁，需要一间<span class="hl">完美的实验室</span></h1>
+  <div class="cols">
+    <div class="card"><h3>意图被刻意隐藏</h3><p>每一手牌，都有人用<strong>全部演技</strong>把真相藏起来</p></div>
+    <div class="card"><h3>答案当场揭晓</h3><p>几分钟后摊开的牌<strong>自动公布谁在说谎</strong>，不需要任何人评判</p></div>
+    <div class="card"><h3>代价真实</h3><p>读对读错，当场用<strong>真金白银</strong>计价</p></div>
+  </div>
+  <p class="note">同时满足这三条的场景，牌桌是地球上最小、最干净的一间。<br>
+  它只是<strong>第一个考场</strong>——谈判、面试、审讯，是后续维度。</p>
+</section>
+
+<!-- 5 那道 91% 的题 -->
+<section class="slide">
+  <div class="kicker">考题长这样</div>
+  <h1>握着 <span class="num">91%</span> 会赢的牌，他盯着对面看了 8 分钟——最后<span class="err">放弃了</span>。</h1>
+  <p class="sub">一位拿过多次世界冠军的老牌选手。对面把全部筹码推了进来——<br>
+  真有好牌，还是虚张声势？他选择不赌。<br>
+  桌子里的上帝视角早已记下答案：<strong>他本来会赢。</strong></p>
+  <p class="big-claim">连人类最强的破壁人都会看走眼。这样的题我们备了 <span class="num">20</span> 道：<br>
+  光靠算就能答对的全部扔掉，<span class="num">5</span> 道连当事职业选手本人都判断错了。</p>
+</section>
+
+<!-- 6 考试设计（三种给法） -->
+<section class="slide">
+  <div class="kicker">考试怎么考</div>
+  <h1>同一道题，考三遍：<br>蒙着眼 · 听转述 · <span class="hl">亲眼看</span></h1>
+  <div class="cols">
+    <div class="card"><h3>蒙着眼</h3><p>只给数字：牌面、出价、输赢的账<br><strong>纯算账，看不到人</strong></p></div>
+    <div class="card"><h3>听转述</h3><p>加一份客观行为记录："他停顿了 8 秒""他把筹码推得很快"<br><strong>别人替它看了人</strong></p></div>
+    <div class="card"><h3>亲眼看</h3><p>直接给视频<br><strong>自己盯着那个人</strong></p></div>
+  </div>
+  <p class="big-claim">亲眼看过之后比蒙着眼<span class="hl">多赚的每一块钱</span>，<br>就是"会看人"这件事的真实价值。</p>
+</section>
+
+<!-- 7 评分 -->
+<section class="slide">
+  <div class="kicker">评分标准</div>
+  <h1>破壁成功的标准不是猜对，<br>是敢<span class="hl">付出多少代价</span></h1>
+  <ul class="plain">
+    <li>别的评测问 AI"看见了什么"，我们问它"<strong>敢付出多少代价</strong>"——判断必须变成一个敢负责的数字，用钱结算对错</li>
+    <li>它的判断<strong>值多少钱</strong>：多赚的、避开的坑，全部折算成钱——一条数学公式一秒算完，全程没有人打分、也没有 AI 裁判</li>
+    <li>专抓<strong>"瞎自信"</strong>：话说得越死、错得越狠，扣分越重——选择题永远测不出这个</li>
+    <li>不告诉 AI 任何人名、战绩、对方的牌——<strong>它只能靠看人</strong></li>
+  </ul>
+  <p class="note">主分数由一套固定的程序公式算出，没有任何 AI 参与打分；每道题问三遍，取平均成绩。</p>
+</section>
+
+<!-- 8 结果（槽位） -->
+<section class="slide">
+  <div class="kicker">结果</div>
+  <h1>有 AI 真的从画面里<span class="hl">读到了东西</span></h1>
+  <p class="sub">「亲眼看」的冠军：原生看视频的 <strong>Kimi</strong>——<span class="num">107</span> 分/题，比蒙着眼多赚 <span class="num">+18.7</span>。<br>
+  计分单位是牌桌的基础注：分数 = 它的判断平均每道题<strong>多赚多少</strong>。</p>
+  <table>
+    <tr><th>模型</th><th>蒙着眼</th><th>听转述</th><th>亲眼看</th><th>看视频比蒙眼多赚</th></tr>
+    <tr><td>Kimi K3</td><td>88</td><td>40</td><td><span class="num">107</span></td><td><span class="num">+18.7</span></td></tr>
+    <tr><td>Claude Opus 5</td><td>81</td><td>72</td><td>47 *</td><td><span class="err">−33.9</span></td></tr>
+    <tr><td>Qwen3.8-Max</td><td>57</td><td>51</td><td>63</td><td>+6.1</td></tr>
+    <tr><td>GPT-5.6 Sol</td><td>16</td><td>19</td><td>36 *</td><td>+20.2</td></tr>
+    <tr><td>DeepSeek V4 Pro</td><td>55</td><td>58</td><td class="dim">—</td><td class="dim">—</td></tr>
+  </table>
+  <p class="note">* Claude / GPT 不支持视频输入，看的是"连环画"（抽帧近似）。反转故事：Claude 看了画面反而<span class="err">每题亏 34</span>——
+  看连环画的亏了；或者说，<strong>它被对面的表演骗到了</strong>。<br>
+  全知满分 <span class="num">342</span>，最好的 AI 只拿到 <span class="num">107</span>（31%）——<strong>考题远没被做穿</strong>。
+  （首批 10 道题、每题问三遍的终跑成绩；判分零 AI 参与）</p>
+</section>
+
+<!-- 9 假破壁（槽位） -->
+<section class="slide">
+  <div class="kicker">假破壁</div>
+  <h1>它说"我看到他手在抖"——<br><span class="err">画面里真的有吗？</span></h1>
+  <ul class="plain">
+    <li>AI 的每条依据都必须带<strong>时间点 + 看得见的事实</strong>，机器对照原视频<strong>逐条查证</strong>（判定口径随产物公开）</li>
+    <li>初步自动判定显示：模型引用的<span class="err">大量"我看到…"线索，在画面中无法得到证实</span></li>
+    <li>但我们的判定器自检发现了<strong>它自身的身份识别缺陷</strong>，因此不发布具体数字——<strong>连裁判也要被审判，这就是我们对"经得起检验"的理解</strong></li>
+  </ul>
+</section>
+
+<!-- 10 收尾升维 -->
+<section class="slide">
+  <div class="kicker">这只是开始</div>
+  <h1>面壁与破壁的博弈，<br><span class="hl">每天都在发生</span></h1>
+  <p class="sub">谈判桌上、面试间里、交易所内——每个人都在藏，每个人都想看穿。<br>
+  AI 要进入人类社会替你做决策，<strong>必须先通过破壁者考试</strong>。</p>
+  <p class="big-claim">这，是第一份<span class="hl">成绩单</span>。</p>
+  <p class="note">牌桌只是第一个考场，谈判、面试、审讯在后面。<br>
+  全部产物开放：工具链 + 标注平台 + 全部作答记录 + 每道题的标准答案。</p>
+</section>
+
+<div class="hint">← → 翻页 · F 全屏</div>
+<div class="foot"><span id="pageno">1</span> / <span id="total">10</span></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let cur = 0;
+  document.getElementById('total').textContent = slides.length;
+  function show(i) {
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, j) => s.classList.toggle('active', j === cur));
+    document.getElementById('pageno').textContent = cur + 1;
+  }
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(e.key)) { e.preventDefault(); show(cur + 1); }
+    else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(cur - 1); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(slides.length - 1);
+    else if (e.key === 'f' || e.key === 'F') {
+      document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+    }
+  });
+  document.addEventListener('click', e => {
+    if (e.clientX > window.innerWidth / 2) show(cur + 1); else show(cur - 1);
+  });
+</script>
+</body>
+</html>

@@ -1,36 +1,35 @@
 {
   "hand_id": "F3",
-  "source": "video_extracted",
+  "source": "video_extracted_v2_all_seats",
   "model": "doubao-seed-2-1-pro-260628",
-  "generated_at": "2026-08-22T12:58:13+0800",
-  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
-  "streets_new_vs_l0": [
-    "preflop",
-    "flop"
-  ],
+  "generated_at": "2026-08-22T17:58:57",
+  "note": "全席位下注线（v2.2）：human 行保留；other_N 区分座位（对应 item.json table_players）",
   "betting_line": [
     {
       "street": "preflop",
       "board": "",
-      "actions": "villain raise $700; hero raise $1,000; other fold",
+      "actions": "villain raise $700; hero raise $1,000; other_1 fold",
       "events": [
         {
           "t": 16.0,
           "actor": "villain",
           "action": "raise",
-          "amount": 700.0
+          "amount": 700.0,
+          "source": "doubao"
         },
         {
           "t": 35.0,
           "actor": "hero",
           "action": "raise",
-          "amount": 1000.0
+          "amount": 1000.0,
+          "source": "doubao"
         },
         {
           "t": 43.0,
-          "actor": "other",
+          "actor": "other_1",
           "action": "fold",
-          "amount": null
+          "amount": null,
+          "source": "doubao"
         }
       ]
     },
@@ -43,13 +42,15 @@
           "t": 67.0,
           "actor": "hero",
           "action": "bet",
-          "amount": 1600.0
+          "amount": 1600.0,
+          "source": "doubao"
         },
         {
           "t": 107.0,
           "actor": "villain",
           "action": "call",
-          "amount": 1600.0
+          "amount": 1600.0,
+          "source": "doubao"
         }
       ]
     },
@@ -62,19 +63,22 @@
           "t": 165.0,
           "actor": "hero",
           "action": "bet",
-          "amount": 8000.0
+          "amount": 8000.0,
+          "source": "doubao"
         },
         {
           "t": 285.5,
           "actor": "villain",
           "action": "allin",
-          "amount": 36475.0
+          "amount": 36475.0,
+          "source": "doubao"
         },
         {
           "t": 287.0,
           "actor": "hero",
           "action": "call",
-          "amount": 28475.0
+          "amount": 28475.0,
+          "source": "doubao"
         }
       ]
     }

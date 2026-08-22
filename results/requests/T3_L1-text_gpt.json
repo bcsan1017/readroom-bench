@@ -1,0 +1,32 @@
+{
+ "item_id": "T3",
+ "layer": "L1-text",
+ "model": "gpt",
+ "url": "https://api.wodex.ai/v1/chat/completions",
+ "headers": {
+  "Authorization": "<redacted>",
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+ },
+ "body": {
+  "model": "gpt-5.6-sol",
+  "max_tokens": 8192,
+  "messages": [
+   {
+    "role": "system",
+    "content": "\" 切分拼装） -->\n\n<!-- changelog\n2026-08-22 批跑前终审：\n- 补 cues.direction / weight 语义定义（原 prompt 未说明 strong/weak 指什么，模型只能猜）；\n- recognized 补充\"单独统计、如实标注不构成不利\"，降低瞒报动机；\n- 其余检查通过：输出 schema 与框架 v0.2 §4 逐字段一致；全文无模型特化措辞；无诱导 call/fold 的表述；\n  中文 prompt + 英文牌局术语（call/fold/all-in/Hero/Villain/river）口径统一；cues 已强制具体时间点+可观察事实。\n-->"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "下面是这手牌的牌理信息（桌况、双方位置与筹码、你的底牌、完整下注线、公共牌、底池、跟注额、所需赔率）：\n\n<hand>\n牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：SB，本手开始筹码 $4,574。对手（Villain）位置：UTG，本手开始筹码 $4,650。\n你的底牌：Td 9c。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：other call $50; other raise $150; hero call $150; villain raise $350; other call $300; other fold; hero call $300\n  - flop（6d 7s 9h）：hero check; villain bet $600; other raise $1,200; hero call $1,200; villain call $1,200\n  - turn（2c）：hero check; villain check; other check\n  - river（Kc）：hero check; villain allin $3,100; other fold\n当前公共牌：6d 7s 9h 2c Kc（river）。\n对手全下前底池：$4,700；对手全下额：$3,100；你需跟注：$3,100。\n跟注后总底池：$10,900；所需胜率（跟注额 ÷ (底池+跟注额)）= 28.4%。\n</hand>\n\n以下是另一位观察者记录的这一整手牌（发牌→收池）中对手（villain）与你（hero）的客观行为时间轴（t 为相对片段起点的秒数；片段覆盖整手，对手在 t≈131.0s 全下，你在 t≈132.0s 宣布决定）：\n<timeline>\n[0.0–61.0s] 翻前发牌与下注（关注:both）：0-61s为翻前发牌与下注阶段，约0s 有人坐在座位双肘搭桌沿，边说话边做手势，先后说出\"she'll bluff you out of your money\"、\"she'll bust you she's bluff three ×× and busted them several times and then three ×× when you need help from legal you call her too\"等桌谈内容，约4s villain看向某人，抬手做手势加入对话，说出\"i'm one of her customers starting next week\"。约10s hero低头查看自己的底牌，约15s拿起一枚筹码，桌边有人说\"i'm gonna call i'm gonna call fifty\"，约17.5s推出筹码完成下注，随后说出\"go ahead mike what the fuck is going okay\"；桌边有人说\"you acted out of turn is what happened\"，约18s villain推出多枚筹码完成raise $200，期间说出\"it's so suspicious\"，对手说\"don't even make a statement i'm raising\"，桌边有人说\"raise to three fifty\"，约33s转头看向左侧白衣男性，夹着一枚筹码做手势交谈，约37s甩出筹码完成call $300，随后说出\"jeez i'm afraid mike i'm afraid after all that acting mike just might do something\"、\"i can't help it my hand's too good\"。约40.5s 有人拿起多枚筹码，约46s推出筹码完成call $300，之后先后说出\"he folded what are you doing mike what is happening i've never seen you do that in your life\"、\"you cost philip and i three hundred each oh wait must be double up\"，约553.5shero抬手跟注。\n[61.0–102.0s] 翻牌圈行动（关注:both）：61-102s为翻牌圈行动阶段，约61.3s 荷官说出「three players check」，约65s hero伸手敲桌子说check，约68.5s 对手身体前倾掀起底牌一角查看，约71s放回底牌后伸手拿取筹码，约73s推出多枚筹码完成bet $600，随后说出「six hundred」。约78.5s 有人身体前倾，伸手拿起多枚筹码，约81s分两次推出筹码完成raise $1200，hero随机在87s左右说出「twelve hundred」「call」后，有人接着说出「what is going on here i ran into my own son we've been waiting a long time to play a big pot」。约88s 对手推出筹码完成call $600，约90s 有人说出「three ×× versus the ××」，villain说出「that's good tv」，随后对手说出「check」「to the mount rushmore i check」。\n[102.0–117.0s] 转牌圈行动（关注:both）：102-117s为转牌圈行动阶段，约105.4s villain开口说\"i mean i can't bet this i have to check\"，约108s hero开口说\"check check\"，约112.3s 有人开口说\"it's just not the hand i want it equals any other two cards really\"，所有人过牌\n[117.0–130.0s] 河牌圈行动至对手全下（关注:villain）：117-130s为河牌圈行动至对手全下阶段，约123s villain坐在座位双肘搭桌沿，双手交握放在筹码堆前，看向hero方向；约125.5s villain低头看向自己的筹码堆，右手肘搭桌沿、右手抵在脸颊边，左手伸向筹码堆将筹码摞齐，约126.8s对手说\"one time\"，约129s villain左手将一整摞绿色筹码向前推出到下注区，完成all-in $3100。\n[130.0–157.6s] 对手全下后的长考期（关注:both）：130-157.6s为对手全下后的长考期，约131s hero开口说\"one time we're already done phil i'm not the sharpest knife in the drawer excuse me mike i'm not but i did mean one time\"；约132s villain双手交叠放在桌沿，看向其他人等待决定；约134s 其他人身体前倾双肘搭桌沿，手指轻触筹码低头思考，约141s villain转头看向左侧白衣男性，抬手做手势后交握双手，开口交谈，约143.8s 其他人开口说\"this is so brutal i can't say what i want to say because there's another person in the pot\"，约144s起保持身体转向白衣男性、双臂搭桌、双手交握的状态持续说话，未触碰身前筹码。约147s 其他人抬手捏手指后拨弄面前筹码，开口说\"i did that the other day and i'll never do that again i didn't say i showed what a moron\"，约150s 其他玩家（other）身体向后靠离开桌沿，掌心向上摊开后挥手，完成river fold；轮到hero决策\n</timeline>\n\n请综合牌理与你能观察到的对手线索，给出你**此刻跟注的概率 p_call**（0–1 的实数，表示在你的信念下跟注为正确决策的主观概率；不是\"你会不会跟\"的二元回答），并列出你依据的具体可观察线索。\n\n严格按以下 JSON schema 输出：\n{\n  \"p_call\": <0..1 float>,\n  \"action\": \"call\" | \"fold\",            // 与 p_call ≥ 0.5 一致\n  \"cues\": [\n    {\"t\": <秒，相对片段起点，数字>, \"who\": \"villain\" | \"hero\" | \"other\", \"type\": \"gaze\"|\"posture\"|\"hands\"|\"speech\"|\"chips\"|\"face\", \"observed\": \"<你实际观察到的客观事实，不要写情绪词>\", \"direction\": \"strong\" | \"weak\" | \"neutral\", \"weight\": <0..1>}\n  ],\n  \"rationale\": \"<≤150 字>\",\n  \"recognized\": <true|false>            // 你是否认出这手牌、这集节目或这些选手；认出请如实标 true\n}\n\n注意：\n- 若本题没有给你任何视觉/时间轴信息（仅牌理），cues 可为空数组，但不要编造观察。\n- cues 中每条必须指向具体时间点与可观察事实（例如\"推注后双手交叉抱胸、视线落在公共牌\"），禁止使用情绪推断词（紧张/自信/心虚/放松等）。\n- cues.direction 指该线索指向的**对手牌力方向**：strong=指向对手成牌强，weak=指向对手弱牌/诈唬，neutral=无明确指向；weight（0–1）为该线索在你本次决策中的依赖程度。\n- recognized：只要你认出这手牌、这集节目或任一选手（或已知道这手牌的结果），就如实标 true；标 true 的题只会被单独统计，如实标注不构成任何不利。\n- 只输出 JSON。"
+     }
+    ]
+   }
+  ],
+  "reasoning_effort": "high"
+ },
+ "media_refs": []
+}

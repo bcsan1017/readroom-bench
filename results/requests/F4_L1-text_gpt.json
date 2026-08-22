@@ -1,0 +1,32 @@
+{
+ "item_id": "F4",
+ "layer": "L1-text",
+ "model": "gpt",
+ "url": "https://api.wodex.ai/v1/chat/completions",
+ "headers": {
+  "Authorization": "<redacted>",
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+ },
+ "body": {
+  "model": "gpt-5.6-sol",
+  "max_tokens": 8192,
+  "messages": [
+   {
+    "role": "system",
+    "content": "\" 切分拼装） -->\n\n<!-- changelog\n2026-08-22 批跑前终审：\n- 补 cues.direction / weight 语义定义（原 prompt 未说明 strong/weak 指什么，模型只能猜）；\n- recognized 补充\"单独统计、如实标注不构成不利\"，降低瞒报动机；\n- 其余检查通过：输出 schema 与框架 v0.2 §4 逐字段一致；全文无模型特化措辞；无诱导 call/fold 的表述；\n  中文 prompt + 英文牌局术语（call/fold/all-in/Hero/Villain/river）口径统一；cues 已强制具体时间点+可观察事实。\n-->"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "下面是这手牌的牌理信息（桌况、双方位置与筹码、你的底牌、完整下注线、公共牌、底池、跟注额、所需赔率）：\n\n<hand>\n牌局：NLHE cash，7 人桌，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：UTG，本手开始筹码 $6,600。对手（Villain）位置：UTG+1，本手开始筹码 $8,325。\n你的底牌：Qh Qc。\n下注线（人工核对分街；加注金额=加注到的总额）：\n  - preflop：hero call $50; villain raise $150; other fold; other fold; other call $150; hero call $150\n  - flop（Ah 6d 5h）：other check; hero bet $300; villain call $300; other fold; hero call\n  - turn（8h）：hero bet $650; villain raise $1,400; hero call $1,400\n  - river（3c）：hero check; villain allin $4,750\n当前公共牌：Ah 6d 5h 8h 3c（river）。\n对手全下前底池：$3,925；对手全下额：$4,750；你需跟注：$4,750。\n跟注后总底池：$13,425；所需胜率（跟注额 ÷ (底池+跟注额)）= 35.4%。\n</hand>\n\n以下是另一位观察者记录的这一整手牌（发牌→收池）中对手（villain）与你（hero）的客观行为时间轴（t 为相对片段起点的秒数；片段覆盖整手，对手在 t≈148.0s 全下，你在 t≈150.0s 宣布决定）：\n<timeline>\n[0.0–50.5s] 翻前发牌与下注（关注:both）：约0s-50.5s为翻前发牌与下注阶段，镜头1.5s切到villain侧，villain双肘撑桌前倾，右手放在底牌边缘，与hero围绕买入、过往牌局、赛事回忆持续闲聊。桌边有人说\"i added on i mean might be in twenty five\"，桌边有人说\"he added on he had sixteen grand in front of him and added on\"，桌边有人说\"there aren't many greens call\"。约8s hero视线移向筹码堆，右手逐枚拨动清点黑色筹码，约11s停止清点，双手十指交叉按在底牌上，并说\"call\"，有人说\"no i'm in for twenty i'm in for twenty\"，有人问\"what were you in originally for\"，有人答\"fifteen and i had to add on five\"，有人问\"i don't remember him ever being down do you\"，有人答\"yeah i was down\"，有人说\"okay bluffed him\"，有人说\"yeah he bluffed it off\"。约22s 有人拿起一枚黑色筹码在指间转动，有人说\"and then at that point i knew that mike and i were gonna get chris washburn and you know what\"，有人说\"i saw you didn't do it\"，有人说\"and you know what chris washburn got mike\"，有人说\"chris didn't get me i got me\"，有人说\"you got me yeah yeah\"，有人说\"it works if i don't have a set there\"，有人说\"i knew you had a set too\"，有人说\"like i'm just an idiot\"。约36s镜头切到hero侧，hero坐直后前倾，40s时低头看底牌，右手握拳抵在嘴前，有人说\"i gotta say the two with you two two of my favorite tournaments ever were the the two tournament champions the one you guys won back to back years as a senior in high school and freshman in college watching the phil one i i really that one was entertaining when annie wins\"。约44s villain向前推出筹码完成call。\n[50.5–84.5s] 翻牌圈行动（关注:both）：约50.5s-84.5s为翻牌圈行动阶段，约53.5s hero坐直看向桌面公共牌区，约57.5s身体微前倾，右手伸向身前筹码堆搭在筹码上。约60s villain向前推出300筹码完成bet，下注后约63.5s左肘撑桌左手托腮看向画面右侧，约66s前倾身体，双手放在底牌上将牌向自己方向拉动少许。双方在该阶段持续围绕过往锦标赛经历闲聊，有人开口说\"now that tournament champions where i finish third to mike and hoyt we made a three way deal it took like five hundred thousand each but\"，桌边有人回应\"yeah\"，有人接着说\"that one killed me because i'm because i've had a good read on mike and hoyt always overplayed his hands so i just knew it was a matter of time i took the chip lead and i was just waiting for them to give me the money\"，桌边有人接话\"and you got it\"，有人继续说\"i had a read on on hoyt okay so like hoyt\"，随后有人穿插回应并提及牌局中Mike的手牌情况，开口说\"no mike got in with of course mike got in with ace queen against ace king for all the\"。\n[84.5–145.5s] 转牌圈行动（关注:villain）：约84.5s-145.5s为转牌圈行动阶段，约93s hero左肘撑桌，左手食指抵在太阳穴位置思考，报出下注额\"six fifty\"（语气平稳），金额为650后，约99s向前推出650筹码完成bet。对手raise并说道\"fourteen hundred\"（语气自然），\"sick no\"（语气自然），约110s villain前倾身体右肘撑桌，右手放在底牌上轻敲牌面，询问下注额\"what did you just bet\"（语气随意）后约114s拿起一摞绿色筹码，逐枚摆到桌沿清点。期间hero约125s保持左肘撑桌左手托腮姿态。约139s hero向前推出750筹码完成call。\n[145.5–150.0s] 河牌圈行动至对手全下（关注:both）：约145.5s-150s为河牌圈行动阶段，约147s河牌发出，hero保持左手托腮姿态，右手搭在底牌边缘看向刚发出的河牌快速过牌说check。该时段villain大部分身体被遮挡，仅露出帽子边缘，，约148.5s villain说\"i'm all in\"，hero随即回应\"但内容被消音。\n[150.0–192.0s] 对手全下后的长考期（关注:villain）：约150s-192s为villain全下后的hero长考期，约150s villain将身前剩余所有筹码向前推出。全下后villain多次短暂离开画面补密，约158s双臂交叠放在桌沿前倾身体看向hero，约161s转向右侧玩家说话，露出笑容，手腕可见手表与多串饰品，手臂有纹身，白色长胡须露出，面部其余部分被帽檐遮挡，期间双方持续闲聊过往赛事片段、牌局相关内容，桌边有人说\"but i you know the truth the matter hoyt was right i won because\"（语气未标注），桌边有人说\"you still tilted\"（语气未标注），桌边有人说\"i will be if i lose this hand\"（语气未标注），桌边有人说\"third of grand once is fine not thirty grand each day\"（语气未标注），桌边有人说\"so you saying there's a chance\"（语气未标注）。约166.5s villain抬右手指了一下后收回，双手交握说话，约170.5s前倾身体将额头靠近交叠的手臂，约175.5s分屏镜头显示双方，villain保持双臂交叠前倾姿态看向桌面，hero保持托腮姿态持续思考，桌边有人说\"you know i'm the only poker player in the world that's ever had a five minute uh\"（语气未标注），桌边有人说\"clip on espn like you know how they do those like not thirty for thirties but like they do like\"（语气未标注）。约188s villain直起上身，右手按在桌沿向hero方向转动身体，约190.5s hero放下托腮的左手，握拳抵在嘴前，右手伸向筹码堆准备宣布决定。\n</timeline>\n\n请综合牌理与你能观察到的对手线索，给出你**此刻跟注的概率 p_call**（0–1 的实数，表示在你的信念下跟注为正确决策的主观概率；不是\"你会不会跟\"的二元回答），并列出你依据的具体可观察线索。\n\n严格按以下 JSON schema 输出：\n{\n  \"p_call\": <0..1 float>,\n  \"action\": \"call\" | \"fold\",            // 与 p_call ≥ 0.5 一致\n  \"cues\": [\n    {\"t\": <秒，相对片段起点，数字>, \"who\": \"villain\" | \"hero\" | \"other\", \"type\": \"gaze\"|\"posture\"|\"hands\"|\"speech\"|\"chips\"|\"face\", \"observed\": \"<你实际观察到的客观事实，不要写情绪词>\", \"direction\": \"strong\" | \"weak\" | \"neutral\", \"weight\": <0..1>}\n  ],\n  \"rationale\": \"<≤150 字>\",\n  \"recognized\": <true|false>            // 你是否认出这手牌、这集节目或这些选手；认出请如实标 true\n}\n\n注意：\n- 若本题没有给你任何视觉/时间轴信息（仅牌理），cues 可为空数组，但不要编造观察。\n- cues 中每条必须指向具体时间点与可观察事实（例如\"推注后双手交叉抱胸、视线落在公共牌\"），禁止使用情绪推断词（紧张/自信/心虚/放松等）。\n- cues.direction 指该线索指向的**对手牌力方向**：strong=指向对手成牌强，weak=指向对手弱牌/诈唬，neutral=无明确指向；weight（0–1）为该线索在你本次决策中的依赖程度。\n- recognized：只要你认出这手牌、这集节目或任一选手（或已知道这手牌的结果），就如实标 true；标 true 的题只会被单独统计，如实标注不构成任何不利。\n- 只输出 JSON。"
+     }
+    ]
+   }
+  ],
+  "reasoning_effort": "high"
+ },
+ "media_refs": []
+}
