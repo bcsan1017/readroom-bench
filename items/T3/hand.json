@@ -1,0 +1,61 @@
+{
+  "hand_id": "T3",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 23,
+    "youtube_id": "hpWIoK1lu9Q",
+    "youtube_url": "https://www.youtube.com/watch?v=hpWIoK1lu9Q",
+    "recap_url": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-23-recap-51241.htm",
+    "chapter": "recap section 'It Gonna Do What It Do' (2nd hand of episode)",
+    "note": "Table talk by villain induced the fold; Phil Hellmuth folded a weaker pair earlier in hand"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero 剩余筹码未知（recap 未给）",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 297.0,
+    "clip_end": 642.0,
+    "villain_allin": 557.0,
+    "hero_announce": 620.0
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手全下额 $3,100 小于你的剩余筹码"
+  },
+  "players": {
+    "hero": "Phillip 'P3' Hellmuth III",
+    "villain": "Randy '3Coin' Sadler"
+  },
+  "hero_cards": "Td9c",
+  "villain_cards": "As8c",
+  "board": "6d7s9h2cKc",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "river",
+      "board": "6d 7s 9h 2c Kc",
+      "actions": "Villain(3Coin) all-in $3,100 on the river; Hero faces $3,100；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 4700,
+  "allin_amount": 3100,
+  "hero_to_call": 3100,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "fold",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=fold (error, talked out of best hand); think=long ('I need to think about this'); allin_type=unknown"
+  },
+  "recap_pot_bet": "3Coin all-in $3,100; call $3,100 to win ~$10,900"
+}

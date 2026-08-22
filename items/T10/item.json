@@ -1,0 +1,76 @@
+{
+  "item_id": "T10",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "Cs1ftCcWLng",
+    "clip_abs_sec": [
+      16.0,
+      175.0
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "preflop",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手 5-bet jam $26,775 total（你 4-bet $6,300 后需再跟 $20,475））。\n你的底牌：9h 9c。\n下注线：\n  - preflop：Preflop: Hero raises (4-bet) to $6,300; Villain(Cates) 5-bet jams $26,775 total; Hero faces $20,475 more；前序街完整下注线 recap 未提供\n当前无公共牌（preflop 全下）。\n对手全下前底池：$13,400；对手全下额：$26,775；你需跟注：$20,475。\n跟注后总底池：$54,350；所需胜率（跟注额 ÷ (底池+跟注额)）= 37.7%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] hands=右手整理面前筹码，左手放在底牌上; note=preflop发牌阶段，戴浅色帽子的玩家整理筹码\nt=2.0s [other] gaze=视线看向自己面前的牌桌区域; posture=坐在牌椅上，左臂搭在牌桌边缘; hands=右手从面前筹码堆中拿起一枚筹码向前推出; chips=将一枚筹码推入底池; note=+1位玩家完成call $100动作\nt=5.0s [other] gaze=视线看向自己面前的牌桌区域; posture=坐在牌椅上，双臂放在牌桌边缘; hands=双手从面前筹码堆中数出筹码向前推出; chips=将数枚筹码推入底池; note=HJ位玩家完成raise to $500动作\nt=9.0s [other] gaze=视线看向自己面前的牌桌区域; posture=坐在牌椅上，双臂放在牌桌边缘; hands=双手从面前筹码堆中拿起筹码向前推出; chips=将筹码推入底池; note=CO位玩家完成call $500动作\nt=13.0s [other] gaze=视线看向自己面前的手机; posture=坐在牌椅上，身体前倾; hands=左手抬起将麦克风凑到嘴边，右手握持手机; speech=对着麦克风说话; note=BB位女玩家在行动轮次中对着麦克风说话\nt=16.0s [other] gaze=视线看向自己面前的手机; posture=坐在牌椅上; hands=左手放下麦克风，双手握持手机; speech=停止说话; note=BB位女玩家结束说话，继续操作手机\nt=19.0s [other] gaze=视线看向自己面前的牌桌区域; posture=坐在牌椅上; hands=双手拉开身侧的包，将手机放入包中; note=BB位女玩家将手机收进包内\nt=24.0s [hero] gaze=视线看向自己面前的底牌; posture=坐在牌椅上，身体前倾，左前臂搭在牌桌边缘; hands=右手从面前筹码堆中拿起筹码向前推出; chips=将多枚高面值筹码推入底池; note=SB位hero完成3-bet $2800动作\nt=28.0s [hero] gaze=视线转向左侧的HJ位玩家; posture=坐在牌椅上，左臂弯曲横在身前，右手放在牌桌边缘; note=hero完成3-bet后看向HJ位的villain\nt=33.0s [other] gaze=视线看向自己面前的底牌; posture=坐在牌椅上，身体前倾; hands=双手捏起自己面前的底牌查看; speech=持续说话; note=BB位女玩家查看自己的底牌\nt=38.0s [other] gaze=视线看向牌桌中央的底池区域; posture=坐在牌椅上，身体前倾; hands=双手将底牌向前推出; note=BB位女玩家完成fold动作，弃掉底牌\nt=55.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上; hands=右手将自己的底牌向前推出弃掉; note=+1位玩家完成fold动作\nt=57.5s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上，双臂放在牌桌边缘; hands=双手将自己的底牌向前推出弃掉; note=CO位玩家完成fold动作\nt=60.0s [villain] gaze=视线看向自己面前的筹码堆; posture=坐在牌椅上，双臂放在牌桌边缘; hands=右手伸向自己面前的筹码堆，拨数筹码; chips=数出多枚筹码; note=villain在hero 3-bet后，开始数筹码准备4-bet\nt=64.0s [villain] gaze=视线看向牌桌中央; posture=坐在牌椅上，双臂放在牌桌边缘; hands=右手将数好的筹码向前推出; chips=将一摞筹码推入底池; note=villain完成4-bet to $6300动作\nt=66.0s [hero] gaze=视线看向自己右侧的牌桌区域; posture=坐在牌椅上，身体向后靠，随后直起身; hands=双手抓着自己外套的领口，将外套向上拉起; speech=开口说话; note=hero面对villain的4-bet，开始穿外套并说话\nt=75.0s [hero] gaze=视线看向自己面前的牌桌区域; posture=坐在牌椅上，穿好黑色带黄条纹外套，双臂放在牌桌边缘; hands=右手拉平外套衣襟，随后双手交叠放在牌桌上; speech=持续说话; note=hero穿好外套，继续处于思考状态\nt=83.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上，身体前倾; hands=左手抬起放在嘴边，右手放在牌桌边缘拨弄筹码; chips=右手手指反复拨动面前的单枚筹码; note=CO位年长玩家在旁观对局，手部有拨筹码的小动作\nt=89.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上，身体前倾; hands=左手抬起，手肘撑在牌桌边缘，左手托住左侧脸颊; note=戴浅色帽子的玩家将左手撑在脸颊处，旁观对局\nt=96.0s [villain] gaze=视线看向牌桌中央; posture=坐在牌椅上，双臂放在牌桌边缘; hands=右手将面前剩余的全部筹码向前推出; chips=将所有筹码一次性推入底池; note=villain完成all-in $26775动作\nt=99.0s [hero] gaze=视线看向牌桌中央的筹码堆; posture=坐在牌椅上，身体前倾，双臂放在牌桌边缘; hands=右手放在牌桌边缘，手指轻敲桌面; speech=持续说话; note=hero面对villain的all-in，处于长考状态\nt=100.0s [hero] gaze=视线看向dealer方向; posture=坐在牌椅上，身体前倾; speech=开口宣布跟注; note=hero宣布call，跟注villain的all-in\nt=102.0s [other] gaze=视线看向hero与villain的底牌区域; posture=坐在牌椅上; hands=左手从牌沓中取牌，右手将双方的底牌翻开摊在桌面上; note=dealer翻开hero与villain的底牌，准备发公共牌\nt=103.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上，身体前倾; hands=左手放在自己的筹码堆上，右手抬起托住下巴; speech=持续说话; note=BB位女玩家托着下巴，旁观摊牌结果\nt=110.0s [other] gaze=视线看向hero方向; posture=坐在牌椅上; hands=左手从脸颊处放下，搭在牌桌边缘，右手指向hero方向; speech=对着hero方向说话; note=戴浅色帽子的玩家放下撑脸的手，指向hero说话\nt=111.0s [hero] gaze=视线转向右侧的BB位女玩家; posture=坐在牌椅上，双臂放在牌桌边缘; hands=双臂交叉放在身前，随后右手伸出摊开; speech=对着女玩家方向说话; note=hero转头和身旁女玩家交流，手部做出摊开的动作\nt=119.0s [other] gaze=视线看向牌桌中央的公共牌区域; posture=站在牌桌旁; hands=左手持牌沓，右手依次将三张公共牌发到牌桌中央; note=dealer发出flop三张公共牌\nt=121.0s [other] gaze=视线看向牌桌中央的公共牌; posture=坐在牌椅上，身体前倾; hands=左手摊开，掌心向上，右手握持几枚筹码; speech=持续说话; chips=右手手指捏着筹码转动; note=BB位女玩家看到flop后，摊开左手说话，手部转动筹码\nt=124.0s [hero] gaze=视线看向牌桌中央的公共牌; posture=坐在牌椅上，身体前倾; hands=右手抬起摊开，掌心向上，做出手势; speech=开口说话; note=hero看到flop后，抬手做手势说话\nt=126.0s [other] gaze=视线看向牌桌中央; posture=站在牌桌旁; hands=左手持牌沓，右手将第四张公共牌发到牌桌中央; note=dealer发出turn公共牌\nt=127.0s [hero] gaze=视线看向牌桌中央的turn牌; posture=坐在牌椅上; hands=右手握拳轻敲一下牌桌，随后放回牌桌边缘; note=hero看到turn牌后，轻敲桌面\nt=131.0s [other] gaze=视线看向牌桌中央; posture=站在牌桌旁; hands=左手持牌沓，右手将第五张公共牌发到牌桌中央; note=dealer发出river公共牌\nt=132.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上，身体前倾; hands=右手伸向牌桌中央的底池筹码; note=戴浅色帽子的玩家伸手准备触碰底池筹码\nt=133.0s [other] gaze=视线看向底池筹码; posture=站在牌桌旁; hands=双手将底池的筹码推向villain方向; chips=将全部底池筹码推到villain面前; note=dealer将底池筹码判给获胜的villain\nt=138.0s [hero] gaze=视线看向自己面前的牌桌区域; posture=坐在牌椅上，身体前倾; hands=双手伸向dealer推过来的筹码，开始整理筹码; chips=双手将面前的筹码摞齐; note=hero开始整理自己剩余的筹码\nt=140.0s [villain] gaze=视线看向dealer推过来的筹码; posture=坐在牌椅上，身体前倾; hands=双手伸向底池方向，和dealer一同整理赢下的筹码; chips=双手将筹码扒到自己面前，开始码放; note=villain收揽赢下的底池筹码，开始整理\nt=147.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上，身体转向右侧; hands=右手伸向身后拿取物品; note=戴浅色帽子的玩家侧身拿取身后物品，准备下一手牌\nt=149.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上，手肘撑在牌桌边缘; hands=右手将一枚筹码扔到底池区域，随后手肘撑桌，右手托住脸颊; chips=将一枚筹码推入底池; note=+1位亚裔玩家扔出筹码，随后撑脸旁观\nt=154.0s [other] gaze=视线看向牌桌中央; posture=坐在牌椅上; hands=右手从自己的筹码堆中拿起一枚筹码，向前扔入底池; chips=将一枚筹码推入底池; note=BB位女玩家扔出筹码，准备下一手牌",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_automask_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 159.0,
+      "clip_full_fps": "clip_automask.mp4",
+      "raw_full_fps_ref": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 96.0,
+    "announce_t": 100.0,
+    "clip_duration": 159.0
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "automask_v1"
+}

@@ -1,0 +1,76 @@
+{
+  "item_id": "F6",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "hyQuR-r-Owg",
+    "clip_abs_sec": [
+      2434.7,
+      2553.0
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "river",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手全下 $14,025）。\n你的底牌：Ac 7d。\n下注线：\n  - river（Qd 7s 4h Td Qh）：Villain(Cates) jams $14,025 on the river after the board pairs; Hero faces $14,025；前序街完整下注线 recap 未提供\n当前公共牌：Qd 7s 4h Td Qh（river）。\n对手全下前底池：$18,300；对手全下额：$14,025；你需跟注：$14,025。\n跟注后总底池：$46,350；所需胜率（跟注额 ÷ (底池+跟注额)）= 30.3%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] hands=双手交叠放在自己的底牌区域; note=手牌开始，画面初始可见左侧亮片上衣女玩家、戴BET RIVERS黑帽男玩家、前景戴眼镜黑上衣男玩家\nt=1.0s [other] hands=左手抬起至下巴处，手肘撑在桌沿; note=戴BET RIVERS黑帽男玩家调整手部姿态\nt=1.5s [other] gaze=亮片上衣女玩家视线从桌面抬起，转向画面右侧; hands=亮片上衣女玩家右手从交叠状态移开，左手搭在底牌上；戴BET RIVERS黑帽男玩家右手拨弄身前筹码; note=翻前行动阶段，亮片上衣女玩家弃牌前调整姿态\nt=2.5s [other] posture=亮片上衣女玩家身体向画面左侧转动; hands=亮片上衣女玩家左手拉扯自己的亮片外搭，调整衣物; note=亮片上衣女玩家弃牌后整理衣物\nt=3.5s [other] gaze=前景戴眼镜黑上衣男玩家转头看向画面左侧; hands=前景戴眼镜黑上衣男玩家右手向前伸出，将弃牌推到桌中; note=前景戴眼镜黑上衣男玩家收走弃牌\nt=5.0s [other] hands=戴BET RIVERS黑帽男玩家右手将一枚筹码推出至底池区域; chips=推出1枚筹码跟注; note=翻前HJ位玩家call $100\nt=6.0s [other] posture=镜头切换至牌桌另一侧，可见戴白帽黑上衣男玩家、戴LUCKY黑帽白上衣男玩家; hands=戴白帽黑上衣男玩家双手放在自己的底牌上，将牌向前推出弃牌; note=翻前CO位玩家弃牌\nt=7.5s [other] gaze=戴白帽黑上衣男玩家转头看向画面右侧; hands=戴白帽黑上衣男玩家右臂搭在椅背上，左手放在桌沿; note=戴白帽黑上衣男玩家弃牌后调整姿态\nt=10.0s [other] hands=戴白帽黑上衣男玩家右手从桌沿抬起，拿起身侧的红酒杯; note=戴白帽黑上衣男玩家拿起酒杯\nt=11.0s [other] posture=镜头拉远，可见反戴黑帽白上衣男玩家、花色上衣女玩家; hands=戴LUCKY黑帽白上衣男玩家右手将一枚筹码推出至底池区域; chips=推出1枚筹码跟注; note=翻前庄位玩家call $100\nt=12.5s [other] gaze=花色上衣女玩家视线看向桌面底池方向; posture=花色上衣女玩家左手抬起，手肘撑在桌沿，手托住下巴; note=翻前行动轮到SB位玩家\nt=17.5s [other] hands=反戴黑帽白上衣男玩家右手将数枚筹码推出至底池区域; chips=推出多枚筹码加注至$600; note=翻前SB位玩家raise to $600\nt=18.5s [other] hands=花色上衣女玩家右手拨弄身前的一枚筹码; note=翻前行动轮到BB位女玩家\nt=25.0s [other] hands=花色上衣女玩家右手将底牌向前推出弃牌；右侧戴黑帽黑外套男玩家双手将自己的底牌拿起查看后放回; note=BB位女玩家弃牌，UB位玩家查看底牌\nt=27.5s [other] posture=镜头切回初始侧，亮片上衣女玩家手持红酒杯; hands=戴BET RIVERS黑帽男玩家右手持续拨弄身前筹码; note=翻前行动回到HJ位玩家\nt=31.5s [other] hands=戴BET RIVERS黑帽男玩家右手将自己的底牌向前推出弃牌; note=HJ位玩家fold，行动轮到庄位玩家\nt=38.5s [other] hands=戴LUCKY黑帽白上衣男玩家右手将一摞筹码推出至底池区域; chips=推出一摞筹码3-bet至$2300; note=翻前庄位玩家3-bet $2300\nt=40.5s [other] gaze=花色上衣女玩家转头看向画面左侧的反戴黑帽白上衣男玩家; hands=花色上衣女玩家右手抬起整理自己的头发; note=翻前行动回到SB位玩家\nt=42.5s [other] gaze=反戴黑帽白上衣男玩家转头看向画面左侧的戴LUCKY黑帽白上衣男玩家; hands=戴白帽黑上衣男玩家右手从下巴处移开，双手交握放在桌沿; note=SB位玩家思考4-bet\nt=48.0s [other] hands=反戴黑帽白上衣男玩家右手将数枚筹码推出至底池区域; chips=推出多枚筹码4-bet至$4000; note=翻前SB位玩家4-bet $4000\nt=50.0s [other] gaze=花色上衣女玩家抬头笑，视线扫过桌面; hands=花色上衣女玩家右手从下巴处移开，放下搭在桌沿; note=4-bet后桌面玩家互动\nt=53.5s [other] hands=戴LUCKY黑帽白上衣男玩家右手将数枚黄色筹码推出至底池区域; chips=推出黄色筹码跟注$1700; note=翻前庄位玩家call $1700，底池成型\nt=57.0s [other] hands=戴LUCKY黑帽白上衣男玩家双手放在自己的底牌上，将牌收拢; note=翻前行动结束，准备发翻牌\nt=61.0s [other] hands=荷官右手依次发出三张翻牌，摊开在桌面公共牌区域; note=dealer发出翻牌三张公共牌\nt=65.0s [other] hands=反戴黑帽白上衣男玩家右手轻敲桌面; note=翻牌圈SB位玩家check\nt=69.5s [other] hands=戴LUCKY黑帽白上衣男玩家右手轻敲桌面; note=翻牌圈庄位玩家check，准备发转牌\nt=72.0s [other] hands=荷官右手发出转牌，摊开在公共牌区域; note=dealer发出转牌公共牌\nt=74.0s [other] gaze=花色上衣女玩家视线低头看向桌面; hands=花色上衣女玩家双手交握放在桌沿; note=转牌圈行动轮到SB位玩家\nt=80.5s [other] hands=反戴黑帽白上衣男玩家右手将三枚黄色筹码推出至底池区域; chips=推出三枚黄色筹码下注$5000; note=转牌圈SB位玩家bet $5000\nt=87.5s [other] hands=戴LUCKY黑帽白上衣男玩家右手将一摞黑色筹码推出至底池区域; chips=推出黑色筹码跟注$5000; note=转牌圈庄位玩家call $5000，准备发河牌\nt=91.5s [other] hands=荷官右手发出河牌，摊开在公共牌区域; note=锚点：dealer发出河牌公共牌\nt=96.0s [other] hands=花色上衣女玩家右手抬起整理额前头发，随后将头发拨到耳后; note=河牌发出后旁观女玩家整理头发\nt=98.0s [villain] gaze=视线看向自己身前的底牌/筹码区域，未抬头; posture=左肘撑在桌沿，左手托住左侧脸颊/耳朵位置; hands=右手放在身前筹码堆旁，手指搭在筹码上; note=河牌圈villain准备全下，处于行动前状态\nt=101.0s [villain] hands=右手将身前所有剩余筹码向前推出至底池区域; chips=推出全部剩余筹码，完成全下$14025; note=锚点：villain在河牌全下$14025\nt=102.0s [hero] gaze=视线从桌面公共牌/底池方向转向villain推出的筹码，再落回自己的筹码区域; posture=身体保持坐姿，右肘仍撑在桌沿，手托下巴的姿态未变; hands=右手手指从筹码上移开，随后拿起一枚黄色筹码在指间捏动; note=villain全下后hero进入长考，手部开始小动作\nt=103.5s [hero] gaze=视线从自己的筹码区域抬起，看向对面的villain; hands=右手将捏着的黄色筹码向前推出，同时把其余跟注所需筹码一并推到底池; chips=推出跟注所需的$14025筹码; note=锚点：hero在长考后call $14025\nt=105.0s [villain] gaze=视线看向hero推出的筹码，随后看向自己的底牌; posture=左肘从桌沿放下，身体微微前倾; hands=右手拿起自己的两张底牌，举到身前展示给桌面; note=hero跟注后villain亮出自己的底牌\nt=107.5s [villain] gaze=视线看向荷官方向; hands=右手将亮出的底牌摊开放在桌面上，掌心向上摊开示意; note=villain亮牌后等待结果\nt=109.5s [hero] gaze=视线看向自己的底牌，随后看向底池筹码; hands=右手将自己的底牌翻开摊在桌面上; note=hero亮出自己的底牌\nt=111.0s [other] gaze=亮片上衣女玩家手持红酒杯，视线看向底池方向; note=亮牌后镜头切到旁观玩家\nt=112.5s [other] hands=荷官双手将底池内的筹码向hero方向收拢; chips=将底池所有筹码推到hero身前; note=锚点：dealer将底池 awarded 给获胜的hero\nt=116.5s [villain] gaze=视线看向桌面的筹码/自己的牌; posture=身体向后靠回椅背，双臂交叉放在胸前; note=收池后villain后靠椅背而坐，双手交叉\nt=117.5s [hero] gaze=视线看向荷官推过来的筹码; hands=双手放在桌沿，开始整理赢下的筹码; chips=收拢荷官推来的底池筹码; note=hero开始收揽赢下的筹码，手牌结束",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_automask_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 118.30000000000018,
+      "clip_full_fps": "clip_automask.mp4",
+      "raw_full_fps_ref": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 101.0,
+    "announce_t": 105.0,
+    "clip_duration": 118.30000000000018
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "automask_v1"
+}

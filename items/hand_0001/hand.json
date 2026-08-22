@@ -1,0 +1,87 @@
+{
+  "hand_id": "hand_0001",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 28,
+    "youtube_id": "7uTMKGaG0Aw",
+    "download_window": [
+      "07:30",
+      "12:00"
+    ],
+    "recap_url": "https://www.pokernews.com/news/2026/07/hellmuths-home-game-episode-28-recap-52024.htm",
+    "note": "recap 标题：Deeb Pushes Around Young Hellmuth"
+  },
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数（抽帧人工定位）。切片=整手：发牌后首个牌桌镜头(468, b-roll 后) → Deeb 收池完成、583s 转场卡之前",
+    "river_dealt": 548.0,
+    "hero_check_river": 550.5,
+    "villain_allin": 557.0,
+    "hero_first_look": 559.0,
+    "hero_announce": 575.5,
+    "clip_start": 468.0,
+    "clip_end": 582.5,
+    "hand_start": 468.0,
+    "pot_awarded": 581.0
+  },
+  "camera": {
+    "layout": "split",
+    "hero_seat_crop": "split_left",
+    "villain_seat_crop": "split_right"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with $50 big-blind ante; no straddle this hand",
+    "bb": 50,
+    "players": 7,
+    "hero_position": "UTG",
+    "villain_position": "HJ",
+    "hero_stack_start": 7900,
+    "villain_stack_start": 25000
+  },
+  "hero_cards": "AhKd",
+  "villain_cards": "Ts9s",
+  "board": "8dAd2c7cQd",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "preflop",
+      "actions": "Hero(UTG) limps $50; Villain(HJ) raises to $200; folds; Hero calls $150"
+    },
+    {
+      "street": "flop",
+      "board": "8d Ad 2c",
+      "actions": "Hero bets $300; Villain raises to $800; Hero calls"
+    },
+    {
+      "street": "turn",
+      "board": "7c",
+      "actions": "Hero checks; Villain bets $1,500; Hero calls"
+    },
+    {
+      "street": "river",
+      "board": "Qd",
+      "actions": "Hero checks; Villain bets $5,450 (all-in to call: covers Hero's remaining $5,450)"
+    }
+  ],
+  "pot_before_allin": 5125,
+  "allin_amount": 5450,
+  "hero_to_call": 5450,
+  "hero_stack_behind": 5450,
+  "villain_stack_behind": 15975,
+  "actual": {
+    "hero_action": "fold",
+    "hero_invested_usd": 2550,
+    "hero_result_usd": -2550,
+    "villain_showed": false,
+    "note": "Deeb 未亮牌；T9s 由节目 RFID 叠层读取"
+  },
+  "mask_windows": {
+    "_doc": "按切片相对秒开启 config 里 enabled=false 的区域：[t0,t1] 列表",
+    "player_panels_tall": [
+      [
+        0.0,
+        28.0
+      ]
+    ]
+  }
+}

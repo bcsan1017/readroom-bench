@@ -1,0 +1,31 @@
+{
+  "item_id": "T7",
+  "hero_cards": "AcKd",
+  "villain_cards": "QhTc",
+  "board": "Ad8c4d9c4s",
+  "hero_equity": 1.0,
+  "win": 1.0,
+  "tie": 0.0,
+  "lose": 0.0,
+  "method": "showdown",
+  "n": 1,
+  "street": "river",
+  "required_equity": 0.2681755829903978,
+  "correct_call": true,
+  "ev_call_bb": 1067.0,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 33800,
+  "pot_after_allin": 53350,
+  "to_call": 19550,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (won $53,350); think=long（实测 tank ~80s：jam~1576abs → call~1655abs；'I'm not happy about this'+要计数）; allin_type=chips（看片确认：推筹码，面板 ALL IN $19,550）"
+  },
+  "players": {
+    "hero": "Jennifer Tilly",
+    "villain": "'Texas' Mike Moncek"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)"
+}

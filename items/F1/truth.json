@@ -1,0 +1,41 @@
+{
+  "item_id": "F1",
+  "hero_cards": "AdQc",
+  "villain_cards": "KsTc",
+  "board": "3h2h3sKdKc",
+  "hero_equity": 0.0,
+  "win": 0.0,
+  "tie": 0.0,
+  "lose": 1.0,
+  "method": "showdown",
+  "n": 1,
+  "street": "river",
+  "required_equity": 0.32124900767398784,
+  "correct_call": false,
+  "ev_call_bb": -607.0,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 33775,
+  "pot_after_allin": 64125,
+  "to_call": 30350,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost $94K pot); think=long (hit the tank); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Dan 'Jungleman' Cates",
+    "villain": "'Texas' Mike Moncek"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)",
+  "prefill_source": {
+    "table_size": "doubao",
+    "players_in_hand": "doubao",
+    "villain_stack_start": "doubao",
+    "villain_position": "doubao"
+  },
+  "table_size": 2,
+  "players_in_hand": 4,
+  "villain_stack_start": 46550.0,
+  "villain_position": "HJ"
+}

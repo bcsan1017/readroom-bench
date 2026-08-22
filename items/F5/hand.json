@@ -1,0 +1,61 @@
+{
+  "hand_id": "F5",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 25,
+    "youtube_id": "LrNUV_Y8WfA",
+    "youtube_url": "https://www.youtube.com/watch?v=LrNUV_Y8WfA",
+    "recap_url": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-25-recap-51295.htm",
+    "chapter": "recap section 'Running It Twice' (5th hand of episode)",
+    "note": "Biggest pot of that day"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero 剩余筹码未知（recap 未给）",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 2003.0,
+    "clip_end": 2158.0,
+    "villain_allin": 2093.0,
+    "hero_announce": 2124.0
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手全下 $7,225 入 $8,750 底池"
+  },
+  "players": {
+    "hero": "Kane Kalas",
+    "villain": "DJ Washburn"
+  },
+  "hero_cards": "KhQd",
+  "villain_cards": "7h6h",
+  "board": "Ks4h8hJh",
+  "street_at_allin": "turn",
+  "betting_line": [
+    {
+      "street": "turn",
+      "board": "Ks 4h 8h Jh",
+      "actions": "Villain(Washburn) jams $7,225 into $8,750 on the turn; Hero faces $7,225；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 8750,
+  "allin_amount": 7225,
+  "hero_to_call": 7225,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost both runs); think=medium ('thought for a bit'); allin_type=unknown"
+  },
+  "recap_pot_bet": "Washburn jams $7,225 into $8,750; pot $23,200"
+}

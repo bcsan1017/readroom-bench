@@ -1,0 +1,88 @@
+{
+  "hand_id": "F5",
+  "source": "video_extracted",
+  "model": "doubao-seed-2-1-pro-260628",
+  "generated_at": "2026-08-22T12:58:15+0800",
+  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
+  "streets_new_vs_l0": [
+    "preflop",
+    "flop"
+  ],
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "hero raise $650; other fold; other fold; villain call $475",
+      "events": [
+        {
+          "t": 21.5,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 650.0
+        },
+        {
+          "t": 24.0,
+          "actor": "other",
+          "action": "fold",
+          "amount": null
+        },
+        {
+          "t": 27.5,
+          "actor": "other",
+          "action": "fold",
+          "amount": null
+        },
+        {
+          "t": 39.5,
+          "actor": "villain",
+          "action": "call",
+          "amount": 475.0
+        }
+      ]
+    },
+    {
+      "street": "flop",
+      "board": "Ks 4h 8h",
+      "actions": "hero bet $1,050; villain raise $3,600; hero call $2,550",
+      "events": [
+        {
+          "t": 46.0,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 1050.0
+        },
+        {
+          "t": 53.5,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 3600.0
+        },
+        {
+          "t": 60.0,
+          "actor": "hero",
+          "action": "call",
+          "amount": 2550.0
+        }
+      ]
+    },
+    {
+      "street": "turn",
+      "board": "Jh",
+      "actions": "villain allin $7,225; hero call $7,225",
+      "events": [
+        {
+          "t": 88.5,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 7225.0
+        },
+        {
+          "t": 89.0,
+          "actor": "hero",
+          "action": "call",
+          "amount": 7225.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "hand_id": "F1",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 15,
+    "youtube_id": "ohZ_QSDcXI8",
+    "youtube_url": "https://www.youtube.com/watch?v=ohZ_QSDcXI8",
+    "recap_url": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-15-recap-50774.htm",
+    "chapter": "recap section 'Texas Mike vs. Cates in $94K Pot!' (late in episode)",
+    "note": "TM was in for record $148K at this point of session"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero 剩余筹码未知（recap 未给）",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 2008,
+    "clip_end": 2266,
+    "villain_allin": 2174,
+    "hero_announce": 2237
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手全下 $30,350，你的剩余筹码更多"
+  },
+  "players": {
+    "hero": "Dan 'Jungleman' Cates",
+    "villain": "'Texas' Mike Moncek"
+  },
+  "hero_cards": "AdQc",
+  "villain_cards": "KsTc",
+  "board": "3h2h3sKdKc",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "river",
+      "board": "3h 2h 3s Kd Kc",
+      "actions": "Villain(Texas Mike) jams $30,350 on the river; Hero faces $30,350；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 33775,
+  "allin_amount": 30350,
+  "hero_to_call": 30350,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost $94K pot); think=long (hit the tank); allin_type=unknown"
+  },
+  "recap_pot_bet": "TM jams $30,350; pot $94,475"
+}

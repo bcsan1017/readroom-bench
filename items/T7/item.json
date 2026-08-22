@@ -1,0 +1,76 @@
+{
+  "item_id": "T7",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "ohZ_QSDcXI8",
+    "clip_abs_sec": [
+      1405.0,
+      1668.5
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "river",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手全下 $19,550）。\n你的底牌：Ac Kd。\n下注线：\n  - river（Ad 8c 4d 9c 4s）：Villain(Texas Mike) jams $19,550 on the river; Hero faces $19,550；前序街完整下注线 recap 未提供\n当前公共牌：Ad 8c 4d 9c 4s（river）。\n对手全下前底池：$33,800；对手全下额：$19,550；你需跟注：$19,550。\n跟注后总底池：$72,900；所需胜率（跟注额 ÷ (底池+跟注额)）= 26.8%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] ; note=初始镜头展示牌桌全景，各玩家就位\nt=1.5s [other] ; note=镜头切至牌桌另一侧，发牌员开始向各玩家分发底牌\nt=2.5s [other] hands=穿粉色短袖的女性双手放在自己的底牌上，穿黑色短袖外搭的女性右手触碰自己的底牌，戴黑色帽子穿黑黄条纹上衣的男性双手放在自己的底牌上; note=发牌过程中各玩家接触自己的底牌\nt=5.0s [other] hands=戴浅棕色宽檐帽留白胡子的男性右手搭在自己底牌上，戴橙色帽子穿黑色短袖的男性双手放在自己的底牌上; note=镜头切至牌桌另一侧，展示剩余玩家接到底牌\nt=6.5s [other] ; note=特写镜头展示底牌被拿起查看\nt=9.0s [other] gaze=戴橙色帽子的男性低头看向自己的底牌方向; posture=戴浅棕色宽檐帽的男性左肘撑在桌沿，左手托住下巴; hands=戴橙色帽子的男性双手放在自己的底牌上; note=翻前行动阶段，戴橙色帽子的男性开始操作底牌\nt=10.0s [other] gaze=戴橙色帽子的男性抬头看向左侧的长发女性; hands=戴橙色帽子的男性右手抬起做出手势后放回桌面; speech=戴橙色帽子的男性开口说话，持续约2秒; note=翻前加注前，戴橙色帽子的男性与邻座交流\nt=13.5s [other] gaze=戴橙色帽子的男性低头看向桌面; hands=戴浅棕色宽檐帽的男性右手拨动自己面前的筹码; chips=戴浅棕色宽檐帽的男性将数枚筹码向前推出; note=翻前CO位玩家跟注，推出筹码\nt=18.0s [other] chips=戴橙色帽子的男性将一摞筹码向前推出; note=翻前庄位玩家加注，推出加注筹码\nt=21.5s [other] posture=穿黑色短袖外搭的女性身体前倾，双肘撑在桌沿; hands=穿黑色短袖外搭的女性双手交握放在身前; note=翻前小盲位3bet前，该玩家调整姿态\nt=26.5s [other] chips=穿黑色短袖外搭的女性将多枚筹码向前推出; note=翻前小盲位3bet，推出3bet筹码\nt=28.0s [other] posture=戴黑色帽子穿黑黄条纹上衣的男性身体后靠，离开桌沿; hands=戴黑色帽子穿黑黄条纹上衣的男性将自己的底牌向前推出; note=翻前大盲位玩家弃牌，推出底牌\nt=29.5s [other] gaze=穿豹纹花纹外套反戴帽子的男性低头看向自己的底牌; hands=穿豹纹花纹外套的男性双手放在自己的底牌上; note=翻前行动轮到枪口位玩家，该玩家查看底牌\nt=31.5s [other] hands=穿豹纹花纹外套的男性将自己的底牌拿起后向前推出; note=枪口位玩家弃牌，推出底牌\nt=33.5s [other] hands=穿黑色连帽衫的男性拿起自己的底牌查看; note=翻前行动轮到hijack位玩家，该玩家查看底牌\nt=35.0s [other] hands=穿黑色连帽衫的男性将自己的底牌向前推出; note=hijack位玩家弃牌，推出底牌\nt=37.0s [other] gaze=戴浅棕色宽檐帽的男性低头看向自己面前的筹码; posture=戴浅棕色宽檐帽的男性左手仍托住下巴; hands=戴浅棕色宽檐帽的男性右手拨动自己面前的筹码; note=翻前行动回到CO位玩家，该玩家清点筹码\nt=38.5s [other] gaze=戴黑色帽子穿黑黄条纹上衣的男性看向左侧穿粉色短袖的女性; hands=戴黑色帽子穿黑黄条纹上衣的男性抬起双手，掌心向上做出摊手手势; speech=戴黑色帽子穿黑黄条纹上衣的男性开口说话; note=翻前CO位思考期间，邻座玩家开口交流\nt=43.5s [other] gaze=戴黑色帽子穿黑黄条纹上衣的男性转回视线看向牌桌中央; posture=戴黑色帽子穿黑黄条纹上衣的男性将双手放回桌沿; speech=戴黑色帽子穿黑黄条纹上衣的男性停止说话; note=交流结束，该玩家恢复坐姿\nt=55.5s [other] gaze=戴浅棕色宽檐帽的男性转头看向右侧的戴橙色帽子的男性; posture=戴浅棕色宽檐帽的男性将托住下巴的左手放下，搭在桌沿; note=CO位玩家思考期间转头看向庄位玩家\nt=56.5s [other] gaze=戴橙色帽子的男性转头看向左侧，右手抬起触碰自己的鼻子; hands=戴橙色帽子的男性右手触碰鼻子后放回桌面; note=庄位玩家做出摸鼻动作\nt=63.0s [other] gaze=戴黑色帽子穿黑黄条纹上衣的男性再次抬起双手做出手势; speech=戴黑色帽子穿黑黄条纹上衣的男性再次开口说话; note=CO位长考期间，该玩家再次开口交流\nt=74.5s [other] hands=戴浅棕色宽檐帽的男性将自己的底牌向前推出; note=CO位玩家弃牌，推出底牌\nt=79.5s [other] hands=戴橙色帽子的男性右手拿起一枚筹码，在指间转动; note=翻前行动回到庄位玩家，该玩家把玩筹码\nt=81.0s [other] chips=戴橙色帽子的男性将数枚筹码向前推出; note=庄位玩家跟注，推出跟注筹码\nt=83.5s [other] hands=穿黑色短袖外搭的女性双手放在自己的底牌上，将底牌向自己方向拉动; note=翻前行动结束，小盲位玩家收回自己的底牌\nt=87.5s [other] ; note=dealer发出翻牌三张公共牌\nt=91.0s [villain] gaze=看向牌桌中央的公共牌; posture=身体前倾，双肘撑在桌沿; hands=双手交握放在自己的底牌前方; note=翻牌发出后，villain处于行动位，观察牌面\nt=98.0s [villain] ; note=villain在翻牌圈check，行动轮到hero\nt=100.5s [hero] gaze=低头看向自己面前的筹码; hands=右手放在自己的筹码堆上，拨动筹码; note=翻牌圈hero行动，清点筹码准备下注\nt=108.5s [hero] chips=将数枚筹码向前推出至底池; note=hero在翻牌圈下注，推出下注筹码\nt=115.0s [villain] gaze=看向右侧的戴黑色帽子的男性; hands=右手从筹码堆中拿起一枚筹码; note=翻牌圈hero下注后，villain拿起筹码思考\nt=124.0s [villain] chips=将手中的筹码向前推出至底池; note=villain在翻牌圈跟注，推出跟注筹码\nt=128.5s [other] ; note=dealer发出转牌公共牌\nt=131.0s [villain] gaze=看向牌桌中央的公共牌; posture=仍保持双肘撑桌的前倾姿态; hands=双手交握，手指转动手中的筹码; note=转牌发出后，villain处于行动位，把玩筹码思考\nt=140.0s [villain] chips=右手从筹码堆中分出一摞筹码，向前推出至底池; note=villain在转牌圈下注，推出下注筹码\nt=144.5s [hero] gaze=看向牌桌中央的底池; posture=左肘撑在桌沿，左手托住下巴; note=转牌圈villain下注后，hero托腮思考\nt=151.5s [hero] chips=将数枚筹码向前推出至底池; note=hero在转牌圈跟注，推出跟注筹码\nt=155.0s [other] ; note=dealer发出河牌公共牌，锚点：river发牌\nt=157.5s [villain] gaze=看向牌桌中央的河牌; posture=仍保持双肘撑桌的前倾姿态; hands=右手放在自己的筹码堆旁，手指轻敲桌面; note=河牌发出后，villain处于行动位，轻敲桌面\nt=161.0s [villain] ; note=villain在河牌圈check，行动轮到hero\nt=163.5s [hero] gaze=低头看向自己面前的筹码; hands=右手放在自己的筹码堆上，拨动筹码; note=河牌圈hero行动，清点筹码\nt=169.0s [hero] chips=将自己面前的所有剩余筹码向前推出至底池; note=锚点：t≈171s villain全下前，hero推出全部筹码完成全下动作（此处按动作实际发生时间记录，全下动作由hero执行）\nt=171.0s [villain] gaze=低头看向hero推出的筹码堆; posture=身体进一步前倾，靠近桌面; hands=右手放在自己的筹码堆上，手指捏住一枚筹码; note=锚点：t≈171s 全下后，villain开始长考，捏住筹码\nt=175.0s [villain] hands=左手抬起，食指抵在自己的下巴处; note=长考过程中，villain将左手放在下巴处\nt=177.0s [other] hands=发牌员伸手整理底池中的筹码，将筹码码齐; note=全下后发牌员整理底池筹码\nt=189.0s [villain] gaze=看向左侧的hero; hands=左手从下巴处移开，掌心向上做出摊手手势; speech=开口说话，持续约3秒; note=长考期间villain与hero交流，做出摊手手势\nt=192.0s [villain] hands=左手重新放回下巴处; speech=停止说话; note=交流结束，villain恢复思考姿态\nt=193.5s [other] posture=戴黑色帽子穿黑黄条纹上衣的男性双肘撑在桌沿，双手捂住脸部; note=邻座玩家做出捂脸动作，关注牌局\nt=204.0s [other] posture=戴黑色帽子穿黑黄条纹上衣的男性将双手从脸部移开，十指交握放在嘴前; note=该玩家调整手部姿态\nt=206.5s [villain] gaze=看向hero方向; hands=双手交握放在桌沿，手指转动手中的筹码; speech=再次开口说话; note=长考后期villain继续说话，转动筹码\nt=211.0s [other] posture=穿豹纹花纹外套的男性手肘撑在桌沿，手撑住头部；穿黑色连帽衫的男性手肘撑在桌沿，手撑住头部; face=穿黑色连帽衫的男性嘴角上扬; note=镜头切至牌桌另一侧，其他玩家关注牌局\nt=213.0s [other] posture=穿黑色连帽衫的男性抬手抓了抓自己的头发后放回桌沿; note=该玩家做出抓头发动作\nt=217.5s [villain] hands=右手伸向自己的筹码堆，捏住一摞筹码; note=长考结束前，villain捏住筹码准备行动\nt=225.0s [other] posture=穿豹纹花纹外套的男性用手揉了揉眼睛; note=其他玩家继续关注牌局\nt=233.0s [other] posture=穿黑色连帽衫的男性双手抓住自己的连帽衫衣领，将衣领向上拉至嘴部位置; note=该玩家拉动衣领遮挡嘴部\nt=236.0s [villain] chips=将手中的筹码向前推出至底池; note=锚点：t≈250s hero宣布决定前，villain推出跟注筹码（此处按动作实际发生时间记录，跟注动作由villain执行）\nt=250.0s [other] hands=发牌员伸手将villain推出的筹码拉入底池码齐; note=锚点：t≈250s 跟注后，发牌员整理筹码\nt=251.5s [hero] hands=右手伸出，手指指向villain方向; speech=开口说话; note=跟注后hero开口说话，指向对手\nt=254.5s [villain] hands=右手抬起捂住自己的嘴; note=亮牌前villain捂嘴\nt=256.0s [other] posture=戴黑色帽子穿黑黄条纹上衣的男性身体前倾，右手放在自己的筹码堆上; note=亮牌阶段邻座玩家前倾关注\nt=259.5s [other] posture=戴黑色帽子穿黑黄条纹上衣的男性抬起双手鼓掌; note=亮牌结果出现后，该玩家鼓掌\nt=260.0s [other] chips=发牌员将底池中的全部筹码推至获胜玩家面前; note=锚点：t≈260s dealer将底池 awarded 给获胜方\nt=261.0s [other] hands=戴浅棕色宽檐帽的男性伸出右拳，与戴橙色帽子的男性碰拳; note=收池后两位玩家碰拳互动",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_automask_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 263.5,
+      "clip_full_fps": "clip_automask.mp4",
+      "raw_full_fps_ref": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 171.0,
+    "announce_t": 250.0,
+    "clip_duration": 263.5
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "automask_v1"
+}

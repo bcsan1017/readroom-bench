@@ -1,0 +1,102 @@
+{
+  "hand_id": "T5",
+  "source": "video_extracted",
+  "model": "doubao-seed-2-1-pro-260628",
+  "generated_at": "2026-08-22T12:57:52+0800",
+  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
+  "streets_new_vs_l0": [
+    "preflop",
+    "flop",
+    "turn"
+  ],
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "hero raise $400; villain call $300",
+      "events": [
+        {
+          "t": 9.0,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 400.0
+        },
+        {
+          "t": 27.0,
+          "actor": "villain",
+          "action": "call",
+          "amount": 300.0
+        }
+      ]
+    },
+    {
+      "street": "flop",
+      "board": "Ts 8s 4d",
+      "actions": "hero bet $400; villain raise $1,500; hero raise $3,300; villain call $2,200",
+      "events": [
+        {
+          "t": 43.0,
+          "actor": "hero",
+          "action": "bet",
+          "amount": 400.0
+        },
+        {
+          "t": 60.0,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 1500.0
+        },
+        {
+          "t": 95.0,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 3300.0
+        },
+        {
+          "t": 123.0,
+          "actor": "villain",
+          "action": "call",
+          "amount": 2200.0
+        }
+      ]
+    },
+    {
+      "street": "turn",
+      "board": "8h",
+      "actions": "hero check; villain check",
+      "events": [
+        {
+          "t": 146.0,
+          "actor": "hero",
+          "action": "check",
+          "amount": null
+        },
+        {
+          "t": 147.0,
+          "actor": "villain",
+          "action": "check",
+          "amount": null
+        }
+      ]
+    },
+    {
+      "street": "river",
+      "board": "Kd",
+      "actions": "villain allin $16,475; hero fold",
+      "events": [
+        {
+          "t": 185.0,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 16475.0
+        },
+        {
+          "t": 186.0,
+          "actor": "hero",
+          "action": "fold",
+          "amount": null
+        }
+      ]
+    }
+  ]
+}

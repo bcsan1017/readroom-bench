@@ -1,0 +1,61 @@
+{
+  "hand_id": "F4",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 22,
+    "youtube_id": "5ZOUgMDKYTs",
+    "youtube_url": "https://www.youtube.com/watch?v=5ZOUgMDKYTs",
+    "recap_url": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-22-recap-51199.htm",
+    "chapter": "recap section 'P3 Felted in First Hand' (1st hand of episode)",
+    "note": ""
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": null,
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 9.0,
+    "clip_end": 217.0,
+    "villain_allin": 176.0,
+    "hero_announce": 204.5
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手全下额盖过你的剩余筹码（跟注即 felted）"
+  },
+  "players": {
+    "hero": "Phillip 'P3' Hellmuth III",
+    "villain": "Randy '3Coin' Sadler"
+  },
+  "hero_cards": "QhQc",
+  "villain_cards": "Ac7d",
+  "board": "Ah6d5h8h3c",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "river",
+      "board": "Ah 6d 5h 8h 3c",
+      "actions": "Villain(3Coin) jams the river, covering; Hero faces $4,750；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 3925,
+  "allin_amount": 4750,
+  "hero_to_call": 4750,
+  "hero_stack_behind": 4750,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost, felted); think=long ('thought long and hard'); allin_type=unknown"
+  },
+  "recap_pot_bet": "3Coin jams covering; call off $4,750; pot $13,425"
+}

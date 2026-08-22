@@ -1,0 +1,78 @@
+{
+  "item_id": "T6",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "7uTMKGaG0Aw",
+    "clip_abs_sec": [
+      468.0,
+      582.5
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）；T6=hand_0001 同一手（Ep28 Nick vs Deeb），本目录为正式 item id，时间轴/真值自 hand_0001 复制（时间基准相同）"
+  },
+  "street_at_allin": "river",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，7 人桌，盲注 $25/$50 with $50 big-blind ante; no straddle this hand（1 bb = $50）。\n你（Hero）位置：UTG，本手开始筹码 $7,900。对手（Villain）位置：HJ，本手开始筹码 $25,000（对手盖过你）。\n你的底牌：Ah Kd。\n下注线：\n  - preflop：Hero(UTG) limps $50; Villain(HJ) raises to $200; folds; Hero calls $150\n  - flop（8d Ad 2c）：Hero bets $300; Villain raises to $800; Hero calls\n  - turn（7c）：Hero checks; Villain bets $1,500; Hero calls\n  - river（Qd）：Hero checks; Villain bets $5,450 (all-in to call: covers Hero's remaining $5,450)\n当前公共牌：8d Ad 2c 7c Qd（river）。\n对手全下前底池：$5,125；对手全下额：$5,450；你需跟注：$5,450（跟注后你剩 $0）。\n跟注后总底池：$16,025；所需胜率（跟注额 ÷ (底池+跟注额)）= 34.0%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [hero] gaze=看向自己面前的底牌; posture=坐姿，身体朝向牌桌; hands=双手放在自己的底牌上，手指触碰牌面; note=preflop发牌阶段，hero正在接触自己的底牌\nt=0.0s [villain] gaze=低头看向自己面前的底牌; posture=坐姿，身体朝向牌桌; hands=双手放在自己的底牌上，手指触碰牌面; note=preflop发牌阶段，villain正在接触自己的底牌\nt=0.5s [other] gaze=看向hero方向; posture=坐姿，身体朝向牌桌; hands=右手抬起，手指触碰自己的眼镜; note=preflop发牌阶段，邻座戴眼镜玩家调整眼镜\nt=1.5s [villain] gaze=低头看向桌面; posture=身体前倾，低头; hands=左手覆盖在自己的底牌上，右手放在底牌左侧; note=preflop发牌阶段，villain将底牌按在桌面上\nt=2.5s [villain] gaze=抬头看向邻座戴眼镜玩家; posture=身体坐直; hands=右手从底牌上移开，搭在自己左臂上; note=preflop发牌阶段，villain完成看牌后坐直\nt=5.0s [villain] gaze=看向自己的筹码堆; posture=坐姿; hands=右手从左臂上移开，伸向自己的筹码堆; chips=右手拿起一枚筹码，向前推出; note=preflop阶段，hero call $50后，villain拿起筹码准备加注\nt=6.0s [other] gaze=看向牌桌中央; posture=坐姿，身体向后靠在椅背上; hands=右手放在自己的底牌上，左手搭在桌沿; face=面带笑容; note=镜头切换到桌对面的白帽玩家与白T恤黑帽玩家\nt=6.5s [other] gaze=视线朝向牌桌; posture=坐姿; hands=左手捂住嘴，右手放在自己的底牌上; note=白T恤黑帽玩家用左手捂住嘴部\nt=8.5s [other] gaze=看向自己的筹码堆; posture=坐姿; hands=右手从嘴部移开，伸向筹码堆; chips=右手拿起筹码向前推出; note=preflop阶段，villain raise $200时推出筹码\nt=10.0s [other] gaze=看向自己面前的底牌; posture=坐姿，左手撑住左侧脸颊，手肘撑在桌沿; hands=右手放在自己的底牌上，手指触碰牌面; note=镜头切换到白外套黑帽玩家与花上衣女玩家\nt=14.5s [other] gaze=视线转向邻座玩家; posture=坐姿; hands=右手将自己的底牌向前推出; note=preflop阶段，other fold时将底牌弃掉\nt=16.0s [other] gaze=看向牌桌中央; posture=坐姿; hands=右手整理自己的底牌，左手抬起整理头发; note=镜头切换到黑外套黑帽玩家与花上衣女玩家\nt=18.0s [other] gaze=看向自己身侧; posture=上半身转向左侧; hands=左手拿起桌上的水瓶，右手将底牌弃掉; note=花上衣女玩家弃牌后拿起水瓶\nt=19.5s [hero] gaze=看向自己面前的底牌; posture=坐姿; hands=右手拿起自己的底牌，查看后放回桌面; note=镜头切回hero与villain，hero查看自己的底牌\nt=21.5s [hero] gaze=视线转向左侧; posture=坐姿，左肘撑在桌沿; hands=左手抬起，手指托住自己的下巴; chips=右手放在自己的筹码堆上; note=preflop阶段，hero完成看牌后托住下巴思考\nt=24.0s [villain] gaze=看向邻座戴眼镜玩家; posture=坐姿; hands=右手伸向自己的筹码堆; speech=开口说话，持续约2秒; chips=右手拿起筹码; note=preflop阶段，hero call $150前villain与邻座玩家交流\nt=27.0s [villain] gaze=看向桌面; posture=坐姿; hands=右手将拿起的筹码向前推出; chips=将筹码推入底池; note=preflop阶段，hero call $150时推出跟注筹码\nt=28.5s [other] gaze=看向牌桌中央; posture=坐姿，面向牌桌; note=镜头切换为牌桌全景，dealer开始收整弃牌\nt=33.0s [other] gaze=看向桌面公共牌区域; posture=坐姿; hands=右手从牌堆中依次取出三张公共牌，翻开摆放在公共牌区; note=flop发牌，dealer依次发出三张flop公共牌\nt=36.5s [hero] gaze=看向公共牌区域; posture=保持左肘撑桌、左手托下巴的姿态; hands=右手放在自己的筹码堆上，手指拨弄筹码; note=flop发出后，hero注视公共牌，手指触碰筹码\nt=37.0s [villain] gaze=看向自己的筹码堆; posture=坐姿; hands=右手放在自己的筹码堆上，手指拨弄筹码; note=flop发出后，villain注视自己的筹码堆\nt=41.0s [villain] gaze=看向桌面; posture=坐姿; hands=右手将筹码向前推出; chips=将筹码推入底池; note=flop阶段，hero bet $300时推出下注筹码\nt=42.0s [other] gaze=看向牌桌中央; posture=坐姿; hands=右手放在自己的筹码堆上; chips=手指拨弄筹码; note=镜头切换到白帽玩家与白T恤黑帽玩家（villain）\nt=49.0s [villain] gaze=看向桌面; posture=坐姿; hands=右手从筹码堆中拿起多枚筹码，向前推出; chips=将一摞筹码推入底池; note=flop阶段，villain raise $800时推出加注筹码\nt=50.0s [hero] gaze=看向公共牌区域; posture=保持左手托下巴的姿态; hands=右手放在筹码堆上; note=flop加注后，镜头切回hero，hero保持思考姿态\nt=51.5s [hero] gaze=低头看向自己的底牌; posture=坐姿; hands=双手捏起自己的底牌，翻开查看约1秒后扣回; note=flop阶段，hero call前再次查看自己的底牌\nt=53.0s [villain] gaze=看向自己的底牌; posture=坐姿，左手搭在自己的右臂上; hands=右手放在自己的底牌上，手指触碰牌边; note=hero查看底牌时，villain触碰自己的底牌\nt=57.0s [villain] gaze=看向桌面; posture=坐姿; hands=右手将筹码向前推出; chips=将跟注筹码推入底池; note=flop阶段，hero call时推出跟注筹码\nt=58.5s [other] gaze=看向牌桌中央; posture=坐姿; note=镜头切换为牌桌全景，dealer收整筹码\nt=61.0s [other] gaze=看向公共牌区域; posture=坐姿; hands=右手从牌堆取出一张公共牌，翻开摆放在公共牌区; note=turn发牌，dealer发出turn公共牌\nt=62.5s [hero] gaze=看向公共牌区域; posture=保持左手托下巴的姿态; hands=右手放在筹码堆上; note=turn发出后，hero注视公共牌\nt=63.0s [villain] gaze=看向桌面; posture=坐姿，左手搭在右臂上; hands=右手轻敲桌面一次; note=turn阶段，hero check时villain轻敲桌面\nt=64.0s [other] gaze=看向牌桌中央; posture=坐姿; hands=右手放在筹码堆上; speech=开口说话，持续约2秒; chips=手指拨弄筹码; note=镜头切换到白帽玩家与villain，白帽玩家开口说话\nt=67.0s [villain] gaze=看向桌面; posture=坐姿; hands=右手从筹码堆拿起多枚筹码，向前推出; chips=将一摞筹码推入底池; note=turn阶段，villain bet $1500时推出下注筹码\nt=68.5s [hero] gaze=看向公共牌区域; posture=保持左手托下巴的姿态; hands=右手放在筹码堆上，手指拨弄筹码; note=turn下注后，hero注视公共牌，手指拨弄筹码思考\nt=72.0s [other] gaze=看向牌桌中央; posture=坐姿，手肘撑在桌沿; hands=右手抬起比划手势，随后双手交握; speech=开口说话; note=镜头切换为牌桌全景，白外套黑帽玩家做手势说话\nt=77.5s [villain] gaze=看向hero方向; posture=坐姿; hands=双手交握放在桌沿; note=turn阶段，hero call后villain看向hero\nt=79.5s [other] gaze=看向公共牌区域; posture=坐姿; hands=右手从牌堆取出一张公共牌，翻开摆放在公共牌区; note=river发牌，dealer发出river公共牌\nt=81.5s [hero] gaze=看向公共牌区域; posture=保持左手托下巴的姿态; hands=右手放在筹码堆上; note=river发出后，hero注视公共牌\nt=82.5s [villain] gaze=看向桌面; posture=坐姿，左手搭在右臂上; hands=右手轻敲桌面一次; note=river阶段，hero check时villain轻敲桌面\nt=83.5s [villain] gaze=看向hero方向; posture=坐姿; hands=邻座玩家的手搭在自己的左手上，自己右手放在筹码堆上; chips=手指拨弄筹码; note=镜头切换为分屏，左侧为villain，右侧为hero，进入河牌全下后的长考段\nt=89.0s [villain] gaze=看向hero方向; posture=坐姿; hands=右手持续拨弄筹码; chips=将全下筹码向前推出; note=river阶段，villain allin $5450时推出全下筹码\nt=98.0s [hero] gaze=低头看向自己的底牌; posture=坐姿，身体微微前倾; hands=左手从右臂上移开，双手放在自己的底牌上; note=villain全下后，hero低头看向自己的底牌，双手覆盖在牌上\nt=100.0s [hero] gaze=低头看向桌面; posture=低头，帽檐遮挡视线; hands=双手按在自己的底牌上; speech=开口说话，持续约7秒; note=hero长考后开口说话，双手按住底牌\nt=103.0s [hero] gaze=抬头看向villain方向; posture=身体坐直; hands=双手仍按在底牌上; speech=持续说话; note=hero说话时抬头看向villain\nt=107.5s [hero] gaze=看向桌面; posture=坐姿; hands=右手将自己的底牌向前推出; note=river阶段，hero fold时将底牌弃掉\nt=109.0s [other] gaze=看向牌桌中央; posture=坐姿，双手交握放在桌沿; hands=右手拿起自己的底牌，向前推出弃掉; note=镜头切换到黑外套黑帽玩家，该玩家弃掉自己的底牌\nt=113.0s [other] gaze=看向底池; posture=坐姿; chips=dealer将底池筹码推给获胜方; note=river阶段，dealer将底池 awarded 给获胜玩家",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false,
+      "timeline_prompt_version": "v2",
+      "action_timeline_file": "action_timeline.jsonl"
+    },
+    "L1-video": {
+      "clip": "clip_automask_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 114.5,
+      "clip_full_fps": "clip_automask.mp4",
+      "raw_full_fps_ref": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 89.0,
+    "announce_t": 107.5,
+    "clip_duration": 114.5
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "automask_v1"
+}

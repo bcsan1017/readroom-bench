@@ -1,0 +1,61 @@
+{
+  "hand_id": "F2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 17,
+    "youtube_id": "ktr12z8J3Ho",
+    "youtube_url": "https://www.youtube.com/watch?v=ktr12z8J3Ho",
+    "recap_url": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-17-recap-50857.htm",
+    "chapter": "recap section 'It's My Birthday!' (3rd hand of episode)",
+    "note": "'I know you're bluffing... it's my birthday, I'm a pacifist' - she was wrong, TM showed the goods"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero 剩余筹码未知；是否被盖过未核实",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 1000.5,
+    "clip_end": 1193,
+    "villain_allin": 1116.5,
+    "hero_announce": 1172.5
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手全下 $19,850"
+  },
+  "players": {
+    "hero": "Jennifer Tilly",
+    "villain": "'Texas' Mike Moncek"
+  },
+  "hero_cards": "As8c",
+  "villain_cards": "KcQs",
+  "board": "Ad8hQdQh4c",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "river",
+      "board": "Ad 8h Qd Qh 4c",
+      "actions": "Villain(Texas Mike) jams $19,850 on the river; Hero faces $19,850；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 7700,
+  "allin_amount": 19850,
+  "hero_to_call": 19850,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "fold",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=fold (correct); think=long (shot back in chair, asked exact count, tanked); allin_type=unknown"
+  },
+  "recap_pot_bet": "TM jams $19,850; call would be $19,850 to win ~$47,400"
+}

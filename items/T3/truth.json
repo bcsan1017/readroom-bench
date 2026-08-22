@@ -1,0 +1,41 @@
+{
+  "item_id": "T3",
+  "hero_cards": "Td9c",
+  "villain_cards": "As8c",
+  "board": "6d7s9h2cKc",
+  "hero_equity": 1.0,
+  "win": 1.0,
+  "tie": 0.0,
+  "lose": 0.0,
+  "method": "showdown",
+  "n": 1,
+  "street": "river",
+  "required_equity": 0.28440366972477066,
+  "correct_call": true,
+  "ev_call_bb": 156.0,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 4700,
+  "pot_after_allin": 7800,
+  "to_call": 3100,
+  "bb": 50,
+  "actual": {
+    "hero_action": "fold",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=fold (error, talked out of best hand); think=long ('I need to think about this'); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Phillip 'P3' Hellmuth III",
+    "villain": "Randy '3Coin' Sadler"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)",
+  "prefill_source": {
+    "table_size": "doubao",
+    "players_in_hand": "doubao",
+    "hero_stack_start": "doubao",
+    "hero_position": "doubao"
+  },
+  "table_size": 4,
+  "players_in_hand": 6,
+  "hero_stack_start": 4900.0,
+  "hero_position": "+1"
+}

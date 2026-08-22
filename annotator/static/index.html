@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>读人 Bench 标注工具</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <span class="brand">读人 Bench · 标注/校准</span>
+  <label>Item：
+    <select id="item-select"></select>
+  </label>
+  <nav id="tabs">
+    <button class="tab active" data-tab="truth">手牌信息核对</button>
+    <button class="tab" data-tab="action">行动时间线</button>
+    <button class="tab" data-tab="timeline">时间轴校准</button>
+    <button class="tab" data-tab="mask">遮罩检查</button>
+    <button class="tab" data-tab="cue">cue 核验</button>
+  </nav>
+  <span id="global-msg"></span>
+</header>
+
+<main id="layout">
+  <aside id="video-pane">
+    <video id="video" controls preload="metadata"></video>
+    <div id="video-info">
+      <span>当前时间：<b id="cur-time">0.0</b> s</span>
+      <span id="video-missing" class="warn hidden">无视频文件</span>
+    </div>
+  </aside>
+
+  <section id="content">
+    <!-- 1. 手牌信息核对 -->
+    <div class="panel active" id="panel-truth">
+      <div class="panel-head">
+        <h2>手牌信息核对（含位置/筹码/按街下注线） <span id="truth-verified-badge" class="badge hidden">已人工确认</span></h2>
+        <div class="btns">
+          <button id="btn-recompute">重算真值</button>
+          <button id="btn-truth-save" class="primary">确认无误保存</button>
+        </div>
+      </div>
+      <div id="truth-form" class="form-grid"></div>
+      <h3 class="section-title">在座玩家与筹码（豆包读原片开局帧预填，待人工确认；姓名列仅供核对，不进模型输入层）
+        <button id="btn-tp-add" style="margin-left:10px">加一行</button></h3>
+      <div class="table-wrap" style="max-width:560px">
+        <table id="tp-table">
+          <thead><tr><th>角色</th><th>姓名（仅核对用）</th><th>开局筹码($)</th><th>操作</th></tr></thead>
+          <tbody id="tp-tbody"></tbody>
+        </table>
+      </div>
+      <h3 class="section-title">下注线（按街分块，来自视频提取 + 已知信息，可编辑，随上方按钮一并保存）</h3>
+      <div id="bl-blocks"></div>
+      <div id="truth-msg" class="msg"></div>
+      <div class="panel-head" style="margin-top:18px">
+        <h2>L0 手牌全文（位置/筹码/下注线/赔率）<span id="l0-verified-badge" class="badge hidden">已人工确认</span></h2>
+        <div class="btns">
+          <button id="btn-l0-save" class="primary">保存 L0（写回 item.json）</button>
+        </div>
+      </div>
+      <p class="meta-line">这是发给被评模型的 L0 层原文（item.json → layers.L0.text）。核对位置（UTG/HJ）、筹码、完整下注线与赔率；改完保存。</p>
+      <textarea id="l0-text" rows="16" spellcheck="false"></textarea>
+      <div id="l0-msg" class="msg"></div>
+    </div>
+
+    <!-- 1.5 行动时间线 -->
+    <div class="panel" id="panel-action">
+      <div class="panel-head">
+        <h2>行动时间线（下注动作 ↔ 视频秒）</h2>
+        <div class="btns">
+          <button id="btn-at-add-now">在当前播放时间新建动作</button>
+          <button id="btn-at-save" class="primary">保存（标记已校准）</button>
+        </div>
+      </div>
+      <p class="meta-line">由豆包看全程视频提取（黄色=初稿，绿色=人工）。左右拖动时间旁的 ⇔ 手柄微调秒数（视频实时跟随）；点击行跳视频。</p>
+      <div class="table-wrap">
+        <table id="at-table">
+          <thead><tr>
+            <th>时间(秒)</th><th>街</th><th>角色</th><th>动作</th><th>金额($)</th><th>来源</th><th>操作</th>
+          </tr></thead>
+          <tbody id="at-tbody"></tbody>
+        </table>
+      </div>
+      <div id="at-msg" class="msg"></div>
+    </div>
+
+    <!-- 2. 时间轴校准 -->
+    <div class="panel" id="panel-timeline">
+      <div class="panel-head">
+        <h2>时间轴校准</h2>
+        <div class="btns">
+          <button id="btn-tl-add-now">跳到当前播放时间新建事件</button>
+          <button id="btn-tl-save" class="primary">保存（标记已校准）</button>
+        </div>
+      </div>
+      <div id="tl-meta" class="meta-line"></div>
+      <div id="tl-banned-warn" class="warn hidden"></div>
+      <div class="table-wrap">
+        <table id="tl-table">
+          <thead><tr>
+            <th>时间(秒)</th><th>谁</th><th class="th-content">观察内容（每行一条「字段: 内容」，可直接编辑）</th><th>来源</th><th>操作</th>
+          </tr></thead>
+          <tbody id="tl-tbody"></tbody>
+        </table>
+      </div>
+      <div id="tl-msg" class="msg"></div>
+    </div>
+
+    <!-- 3. 遮罩检查 -->
+    <div class="panel" id="panel-mask">
+      <div class="panel-head">
+        <h2>遮罩检查</h2>
+        <div class="btns">
+          <button id="btn-mask-save" class="primary">保存检查结果</button>
+        </div>
+      </div>
+      <div class="mask-controls">
+        <input id="mask-note" type="text" placeholder="泄露点备注（可选）">
+        <button id="btn-mask-mark">标记当前时间为泄露点</button>
+      </div>
+      <div class="mask-controls">
+        <label><input type="checkbox" id="mask-checked"> 本片已检查完毕</label>
+        <span id="mask-conclusion" class="meta-line"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="mask-table">
+          <thead><tr><th>时间(秒)</th><th>备注</th><th>操作</th></tr></thead>
+          <tbody id="mask-tbody"></tbody>
+        </table>
+      </div>
+      <div id="mask-msg" class="msg"></div>
+    </div>
+
+    <!-- 4. cue 核验 -->
+    <div class="panel" id="panel-cue">
+      <div class="panel-head">
+        <h2>cue 核验（幻觉复核）</h2>
+        <div class="btns">
+          <button id="btn-cue-reload">重新加载</button>
+          <button id="btn-cue-save" class="primary">保存复核结果</button>
+        </div>
+      </div>
+      <div id="cue-stats" class="stats"></div>
+      <div id="cue-groups"></div>
+      <div id="cue-msg" class="msg"></div>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

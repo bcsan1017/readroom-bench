@@ -1,0 +1,98 @@
+{
+  "hand_id": "T8",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 1,
+    "youtube_id": "0eoRd7AvZbY",
+    "youtube_url": "https://www.youtube.com/watch?v=0eoRd7AvZbY",
+    "recap_url": "https://www.pokernews.com/news/2025/07/hellmuths-home-game-episode-1-recap-49026.htm",
+    "chapter": "recap section 'The Tone Had Been Set'（当集报道第 1 手、剧中第 2 手，开场数分钟内）",
+    "note": "Hellmuth 口头 speech-play all-in，为系列定调之手；面板读数疑义：切片组读到 JTs 54% vs 99 46%，牌理应为 99 ~51:49 领先，疑似读反；truth 以 MC 48.5% 为准；call 额实测 $2,300"
+  },
+  "generated_from": "data/candidates.json（换血版）+ data/clips_manifest_merged.json（C/D 组），批量生产，字段待人工核对",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero(Cates) 剩余筹码未知；本手实际跑两次（run it twice），EV 按单次全额口径",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（C/D 组核对）",
+    "clip_start": 138.0,
+    "clip_end": 372.0,
+    "villain_allin": 240.0,
+    "hero_announce": 255.0
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手 jam $4,100 total，小于你的筹码"
+  },
+  "players": {
+    "hero": "Dan 'Jungleman' Cates",
+    "villain": "Phil Hellmuth"
+  },
+  "hero_cards": "JsTs",
+  "villain_cards": "9s9h",
+  "board": "",
+  "street_at_allin": "preflop",
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "Preflop: Hero 3-bets to $1,800; Villain(Hellmuth) jams $4,100 total; Hero faces $2,300 more；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "recap_pot_bet": "Cates 3-bet $1,800 后 Hellmuth jam $4,100；call ~$2,300 争 $8,950 池；跑两次（6s3h2c-Qs-3c / Kc5h8s-Ah-As）",
+  "pot_before_allin": 4350,
+  "allin_amount": 4100,
+  "hero_to_call": 2300,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call（正确；两次跑牌均输，Hellmuth 收 $8,950）; think=short（recap 无停顿描述）; allin_type=verbal（看片确认：'All right, I'm all in'，VTT 4:01 对时一致）"
+  },
+  "mask_windows": {
+    "_doc": "automask_v1（2026-08-22）：left_panel_rows 由 2fps 白卡/灰条特征检测自动生成（margin±1s，宁多勿漏）；winner_banner 为收池姓名横幅时段。同事精遮罩版到货整体替换时可忽略。",
+    "left_panel_rows": [
+      [
+        0.0,
+        149.0
+      ],
+      [
+        152.5,
+        155.0
+      ],
+      [
+        161.0,
+        165.0
+      ],
+      [
+        173.5,
+        177.5
+      ],
+      [
+        184.5,
+        187.0
+      ],
+      [
+        193.0,
+        195.0
+      ],
+      [
+        205.0,
+        207.5
+      ],
+      [
+        210.5,
+        216.5
+      ]
+    ]
+  }
+}

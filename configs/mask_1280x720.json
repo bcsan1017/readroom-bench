@@ -1,0 +1,101 @@
+{
+  "_doc": "Poker Night in America / Hellmuth's Home Game 2026 赛季 1280x720 画面打码模板。坐标 [x0,y0,x1,y1]，原点左上。mode: box=纯色填充, blur=高斯模糊。enabled=false 的区域默认不打。",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "default_mode": "box",
+  "box_color": "0x101010",
+  "blur_strength": 8,
+  "regions": [
+    {
+      "name": "player_panels_split",
+      "desc": "分屏时左下两位选手面板：底牌+姓名+筹码+胜率%",
+      "box": [
+        0,
+        465,
+        275,
+        695
+      ],
+      "enabled": true
+    },
+    {
+      "name": "board_pot_panel",
+      "desc": "右下公共牌图形+底池+盲注面板（L0 已给文字，打掉不损失）",
+      "box": [
+        955,
+        540,
+        1280,
+        665
+      ],
+      "enabled": true
+    },
+    {
+      "name": "top_left_logo",
+      "desc": "BetRivers 台标",
+      "box": [
+        25,
+        15,
+        245,
+        80
+      ],
+      "enabled": true
+    },
+    {
+      "name": "top_strip",
+      "desc": "顶部 outs/blinds/hand 条（出现即泄露对手牌 outs）；实测 y≈28–75、outs 牌图从 x≈610 起",
+      "box": [
+        560,
+        25,
+        1280,
+        78
+      ],
+      "enabled": true
+    },
+    {
+      "name": "center_logo_strip",
+      "desc": "分屏中缝竖排 BetRivers 字条",
+      "box": [
+        618,
+        0,
+        662,
+        720
+      ],
+      "enabled": true,
+      "mode": "blur"
+    },
+    {
+      "name": "player_panels_fulltable",
+      "desc": "全景镜头左侧多人面板（含所有人底牌）。仅全桌镜头切片需要，默认关；开启会遮住分屏主角脸",
+      "box": [
+        0,
+        120,
+        275,
+        695
+      ],
+      "enabled": false
+    },
+    {
+      "name": "bottom_left_straddle_tag",
+      "desc": "左下 SW/D 标签",
+      "box": [
+        0,
+        695,
+        80,
+        720
+      ],
+      "enabled": true
+    },
+    {
+      "name": "player_panels_tall",
+      "desc": "翻前多行选手面板+广角漂浮底牌标签（行从 y≈130 排到 y≈720）；由 hand.json mask_windows 按时间段开启",
+      "box": [
+        0,
+        120,
+        280,
+        720
+      ],
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "item_id": "F3",
+  "hero_cards": "JhJc",
+  "villain_cards": "Td8d",
+  "board": "Js2h9h7s",
+  "hero_equity": 0.22727272727272727,
+  "win": 0.22727272727272727,
+  "tie": 0.0,
+  "lose": 0.7727272727272727,
+  "method": "enumerate",
+  "n": 44,
+  "street": "turn",
+  "required_equity": 0.3610142630744849,
+  "correct_call": false,
+  "ev_call_bb": -210.97727272727275,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 21925,
+  "pot_after_allin": 50400,
+  "to_call": 28475,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost both runs); think=short ('quickly called'); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Xuan Liu",
+    "villain": "Dan 'Jungleman' Cates"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)",
+  "prefill_source": {
+    "table_size": "doubao",
+    "players_in_hand": "doubao",
+    "hero_stack_start": "doubao",
+    "villain_stack_start": "doubao",
+    "hero_position": "doubao"
+  },
+  "table_size": 2,
+  "players_in_hand": 2,
+  "hero_stack_start": 39825.0,
+  "villain_stack_start": 39275.0,
+  "hero_position": "CO"
+}

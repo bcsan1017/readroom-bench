@@ -1,0 +1,106 @@
+{
+  "hand_id": "T3",
+  "source": "video_extracted",
+  "model": "doubao-seed-2-1-pro-260628",
+  "generated_at": "2026-08-22T12:57:41+0800",
+  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
+  "streets_new_vs_l0": [
+    "preflop",
+    "flop"
+  ],
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "other call $50; villain raise $200; other call $125; other call $300; hero call $300; other call $200",
+      "events": [
+        {
+          "t": 5.0,
+          "actor": "other",
+          "action": "call",
+          "amount": 50.0
+        },
+        {
+          "t": 18.0,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 200.0
+        },
+        {
+          "t": 28.0,
+          "actor": "other",
+          "action": "call",
+          "amount": 125.0
+        },
+        {
+          "t": 38.0,
+          "actor": "other",
+          "action": "call",
+          "amount": 300.0
+        },
+        {
+          "t": 47.0,
+          "actor": "hero",
+          "action": "call",
+          "amount": 300.0
+        },
+        {
+          "t": 54.0,
+          "actor": "other",
+          "action": "call",
+          "amount": 200.0
+        }
+      ]
+    },
+    {
+      "street": "flop",
+      "board": "6d 7s 9h",
+      "actions": "other bet $600; hero raise $1,200; other call $600; villain fold",
+      "events": [
+        {
+          "t": 74.0,
+          "actor": "other",
+          "action": "bet",
+          "amount": 600.0
+        },
+        {
+          "t": 82.0,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 1200.0
+        },
+        {
+          "t": 86.0,
+          "actor": "other",
+          "action": "call",
+          "amount": 600.0
+        },
+        {
+          "t": 89.0,
+          "actor": "villain",
+          "action": "fold",
+          "amount": null
+        }
+      ]
+    },
+    {
+      "street": "river",
+      "board": "Kc",
+      "actions": "villain allin $3,100; hero fold",
+      "events": [
+        {
+          "t": 131.0,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 3100.0
+        },
+        {
+          "t": 133.0,
+          "actor": "hero",
+          "action": "fold",
+          "amount": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+# 媒体素材不入库（版权，见 README 数据获取）
+items/*/clip_*.mp4
+items/*/raw_window.mp4
+items/*/frames_raw/
+items/*/mask_check/
+clips_raw/
+clips_hided/
+results/requests_preview/

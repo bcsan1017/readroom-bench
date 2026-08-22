@@ -1,0 +1,91 @@
+{
+  "item_id": "T2",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "Cs1ftCcWLng",
+    "clip_abs_sec": [
+      1155,
+      1292
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "river",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手全下额盖过你的剩余筹码；$58,775 为有效额）。\n你的底牌：Jh Jc。\n下注线：\n  - river（2s 4d Tc Kd 8h）：Villain(Texas Mike) jams on the river, covering Hero's $58,775；前序街完整下注线 recap 未提供\n当前公共牌：2s 4d Tc Kd 8h（river）。\n对手全下前底池：$45,300；对手全下额：$58,775；你需跟注：$58,775（跟注后你剩 $0）。\n跟注后总底池：$162,850；所需胜率（跟注额 ÷ (底池+跟注额)）= 36.1%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] hands=右手放在牌桌上，左手抬起; note=发牌员开始发牌，画面初始可见黑衣女士与花衣男士\nt=0.5s [other] hands=右手收回，双手在身前交握; note=黑衣女士调整手部姿态\nt=2.5s [other] hands=右手放在自己的筹码堆上; note=镜头切到戴橙色T字帽的玩家\nt=4.5s [other] hands=右手将筹码向前推出; chips=推出数枚筹码到桌面前方; note=戴橙色T字帽的玩家完成下注动作\nt=8.5s [other] posture=左臂横放在身前，右肘撑在桌沿; hands=右手伸向自己的筹码堆; note=镜头切到戴浅色鲨鱼帽的玩家\nt=9.5s [other] hands=右手拨动身前的筹码; chips=调整身前筹码位置; note=戴浅色鲨鱼帽的玩家整理筹码\nt=12.0s [other] hands=右手将筹码向前推出; chips=推出一摞筹码到桌面前方; note=戴浅色鲨鱼帽的玩家完成下注动作\nt=13.0s [other] hands=右手放在自己的筹码堆上; note=镜头切回戴橙色T字帽的玩家\nt=17.5s [other] hands=右手拿起筹码，向前推出一摞筹码; chips=推出一摞筹码到桌面前方; note=戴橙色T字帽的玩家完成加注动作\nt=27.0s [villain] gaze=视线从桌面移向对面玩家; posture=保持坐姿，左臂横放身前; hands=右手放在自己的筹码堆上，手指轻敲筹码; note=戴浅色鲨鱼帽的villain在对手加注后开始思考\nt=31.0s [villain] gaze=视线落回桌面; hands=右手拿起筹码，向前推出; chips=推出数枚筹码到桌面前方; note=villain完成跟注动作\nt=33.5s [other] hands=右手向前推出一枚筹码; chips=推出一枚筹码到桌面前方; note=戴橙色T字帽的玩家放入跟注筹码\nt=36.0s [other] hands=双手手指交握放在身前; note=黑衣女士双手交握，等待翻牌\nt=37.5s [other] hands=右手将三张公共牌依次摆到桌面中央; note=dealer发出翻牌三张公共牌\nt=41.0s [villain] gaze=看向桌面公共牌方向; hands=右手抬起，调整了一下墨镜位置后放回桌面; note=翻牌发出后villain调整墨镜\nt=42.0s [other] gaze=转头看向身旁的villain; posture=身体靠向椅背; hands=右手搭在桌沿; speech=开口说话，时长约2秒; note=戴黑帽穿黑黄外套的玩家侧头说话\nt=49.5s [hero] gaze=低头看向自己身前的筹码; hands=右手拿起数枚黄色筹码，向前推出; chips=推出三枚黄色高值筹码到桌面前方; note=hero在翻牌圈完成下注动作\nt=51.0s [hero] gaze=转头看向左侧的玩家; hands=右手放回自己的筹码堆旁; speech=开口说话，时长约1秒; note=hero下注后开口说话\nt=54.5s [villain] gaze=看向桌面前方的下注筹码; hands=右手拿起数枚筹码，向前推出; chips=推出三枚黄色高值筹码到桌面前方; note=villain完成翻牌圈跟注动作\nt=57.0s [hero] hands=右手向前推出一枚筹码; chips=推出一枚筹码补齐跟注额; note=hero放入跟注的差额筹码\nt=57.5s [villain] posture=左肘撑在桌沿，左手托住左侧脸颊; hands=右手放回自己的筹码堆旁; note=villain跟注后调整为托腮姿态\nt=59.0s [other] hands=右手将转牌公共牌摆到桌面中央; note=dealer发出转牌公共牌\nt=66.0s [hero] gaze=低头看向自己身前的筹码; hands=右手拨弄自己的筹码堆，拿起一摞筹码; chips=拿起一摞包含多色的筹码; note=转牌发出后hero整理筹码准备下注\nt=69.5s [hero] hands=右手将拿起的筹码向前推出; chips=推出一摞多色筹码到桌面前方; note=hero在转牌圈完成下注动作\nt=74.0s [other] gaze=转头看向自己身侧方向; posture=身体向后靠向椅背，左手抬起搭在椅边; hands=右手从桌沿收回; note=戴黑帽穿黑黄外套的玩家转身侧对牌桌\nt=75.0s [villain] gaze=低头看向自己的双手; hands=双手在身前交叠，手指捏合筹码; chips=手指间捏着数枚筹码; note=villain在hero转牌下注后开始思考\nt=78.0s [villain] gaze=视线转向桌面前方; hands=右手将捏着的筹码向前推出; chips=推出一摞黄色高值筹码到桌面前方; note=villain完成转牌圈加注动作\nt=79.0s [villain] posture=左肘撑在桌沿，左手托住左侧脸颊; hands=右手放回自己的筹码堆旁; note=villain加注后恢复托腮姿态\nt=82.0s [other] hands=右手将河牌公共牌摆到桌面中央; note=dealer发出河牌公共牌，对应锚点t=83.0s river发牌\nt=83.5s [other] gaze=转头看向hero方向; posture=身体转回正对牌桌，双手交叠放在身前; note=戴黑帽穿黑黄外套的玩家转回牌桌方向\nt=85.0s [other] hands=右手将桌面前方的零散筹码拢到一起; chips=收拢桌面前方的零散筹码; note=dealer整理底池筹码\nt=92.0s [hero] gaze=低头看向自己身前的筹码; hands=右手伸向自己的筹码堆，拿起一摞深色筹码; chips=拿起一摞深色高值筹码; note=河牌发出后hero准备行动\nt=93.5s [villain] chips=将身前所有筹码向前推出; note=villain推出全下筹码，对应锚点t≈94s villain allin\nt=96.0s [hero] gaze=视线看向villain方向; hands=右手保持在筹码堆旁; speech=开口说话; note=hero开口宣布决定，对应锚点t≈96.5s hero call\nt=96.5s [other] hands=伸手将底池筹码向获胜方方向收拢; chips=收拢全部底池筹码; note=dealer开始收池，对应锚点t=96.5s pot_awarded",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_hided_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 96.5,
+      "clip_full_fps": "clip_hided.mp4",
+      "precut_masked_full_fps": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 94.0,
+    "announce_t": 96.5,
+    "clip_duration": 96.5
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "colleague_hided_recut",
+  "table_players": [
+    {
+      "role": "villain",
+      "stack": 145100.0
+    },
+    {
+      "role": "hero",
+      "stack": 81275.0
+    }
+  ],
+  "internal_names": {
+    "villain": "TEXAS MIKE",
+    "hero": "JUNGLEMAN"
+  },
+  "table_players_source": "doubao_raw_frame（待人工确认）"
+}

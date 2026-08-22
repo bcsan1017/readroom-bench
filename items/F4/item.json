@@ -1,0 +1,91 @@
+{
+  "item_id": "F4",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "5ZOUgMDKYTs",
+    "clip_abs_sec": [
+      9.0,
+      217.0
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "river",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手全下额盖过你的剩余筹码（跟注即 felted））。\n你的底牌：Qh Qc。\n下注线：\n  - river（Ah 6d 5h 8h 3c）：Villain(3Coin) jams the river, covering; Hero faces $4,750；前序街完整下注线 recap 未提供\n当前公共牌：Ah 6d 5h 8h 3c（river）。\n对手全下前底池：$3,925；对手全下额：$4,750；你需跟注：$4,750（跟注后你剩 $0）。\n跟注后总底池：$13,425；所需胜率（跟注额 ÷ (底池+跟注额)）= 35.4%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] hands=双手在桌面发牌区域整理牌张; note=发牌阶段，荷官开始发牌\nt=1.5s [other] posture=坐姿，身体朝向牌桌; hands=右手放在自己的底牌上，左手搭在桌沿; note=镜头切到牌桌左侧玩家区域\nt=2.0s [other] posture=坐姿，身体转向左侧; hands=左手抬起指向左侧，右手放在桌沿; note=花衬衫玩家做出指向动作\nt=2.5s [other] posture=坐姿，双肘撑在桌沿; hands=双手交叠放在自己的底牌上; note=镜头切到牌桌右侧玩家区域\nt=4.5s [other] gaze=低头看向自己的底牌; posture=坐姿，身体前倾; hands=右手拿起自己的底牌一角查看，随后放回桌面; note=黑T恤戴银链玩家查看底牌\nt=6.0s [other] gaze=低头看向自己的底牌; posture=坐姿，左臂搭在桌沿; hands=右手将一枚筹码向前推出; chips=向前推出1枚筹码; note=深蓝色连帽衫玩家放入筹码\nt=7.0s [other] posture=坐姿，身体朝向牌桌; hands=右手反复拨弄身前的1枚筹码; chips=右手反复拨弄身前的1枚筹码; note=镜头切回左侧玩家区域，白帽白胡子玩家拨弄筹码\nt=9.5s [other] posture=坐姿，身体朝向牌桌; hands=右手抬起调整眼镜; note=戴透明眼镜的黑衣服玩家调整眼镜\nt=10.5s [other] posture=坐姿，身体前倾; hands=双手将自己的底牌向前推了一下; note=白帽白胡子玩家移动自己的底牌\nt=11.5s [other] posture=坐姿，身体朝向牌桌; hands=右手撑在右侧脸颊处; note=戴透明眼镜的黑衣服玩家手撑脸颊\nt=13.0s [other] posture=坐姿，身体朝向牌桌; hands=双手拿起自己的底牌查看后放回桌面; note=白帽白胡子玩家再次查看底牌\nt=14.5s [other] posture=坐姿，身体转向正面朝向牌桌; hands=左手拉了一下自己的左袖口，右手放在桌沿; note=花衬衫玩家转回正面，整理袖口\nt=15.5s [other] posture=坐姿，身体朝向牌桌; hands=双手交叠放在身前，右手食指伸出指向自己左前方; note=白帽白胡子玩家做出指向动作\nt=17.0s [other] posture=坐姿，身体朝向牌桌; hands=右手抬起触碰自己的鼻子，随后移到右侧脸颊撑住头部; note=花衬衫玩家手撑头部\nt=18.5s [other] posture=坐姿，身体转向左侧; hands=左手食指指向左侧的白帽玩家; note=花衬衫玩家指向白帽玩家\nt=20.5s [other] posture=坐姿，身体朝向牌桌; hands=右手将2枚筹码向前推出; chips=向前推出2枚筹码; note=白帽白胡子玩家放入筹码\nt=22.5s [other] posture=坐姿，身体朝向牌桌; hands=右手将自己的底牌向前推出弃掉; note=花衬衫玩家弃掉底牌\nt=24.0s [other] posture=坐姿，身体朝向牌桌; hands=右手放在自己的底牌上，手指摩挲底牌边缘; note=镜头切到牌桌远端，粉红外套女玩家摩挲底牌\nt=29.5s [other] posture=坐姿，身体朝向牌桌; hands=右手将自己的底牌向前推出弃掉; note=粉红外套女玩家弃掉底牌\nt=32.0s [other] posture=坐姿，身体转向左侧; hands=右手将自己的底牌向前推出弃掉; note=戴黑帽穿黑外套的玩家弃掉底牌\nt=36.0s [other] posture=坐姿，左手撑住左侧脸颊; hands=右手拨弄身前的筹码; chips=右手拨弄身前的筹码; note=镜头切回右侧玩家区域，黑T恤戴银链玩家手撑脸颊拨弄筹码\nt=38.5s [other] posture=坐姿，左手撑住左侧脸颊; hands=右手将1枚筹码向前推出; chips=向前推出1枚筹码; note=黑T恤戴银链玩家放入筹码\nt=40.0s [other] posture=坐姿，身体前倾; hands=右手抬起放在自己的嘴前; note=深蓝色连帽衫玩家手放在嘴前\nt=42.5s [other] posture=坐姿，身体坐直; hands=双手交握放在身前; speech=开口说话，持续约2秒; note=黑T恤戴银链玩家坐直后开口说话\nt=43.0s [other] posture=坐姿，身体前倾; hands=右手将1枚筹码向前推出; chips=向前推出1枚筹码; note=深蓝色连帽衫玩家放入筹码\nt=46.5s [other] posture=坐姿，身体朝向牌桌; hands=右手食指指向戴白帽的玩家，随后收回; note=镜头切到全景，花衬衫玩家指向戴白帽玩家\nt=49.0s [other] posture=坐姿，身体朝向牌桌; hands=右手放在自己的右侧脸颊处; note=花衬衫玩家手撑脸颊\nt=50.0s [other] hands=双手在桌面发牌区域依次摆放三张公共牌; note=翻牌圈，荷官发出三张公共牌\nt=53.0s [other] gaze=看向桌面公共牌区域; posture=坐姿，双手交握放在身前; note=翻牌发出后，黑T恤戴银链玩家看向公共牌\nt=57.5s [other] gaze=低头看向自己身前的筹码; posture=坐姿，左臂搭在桌沿; hands=右手拿起身前的3枚筹码，向前推出; chips=向前推出3枚筹码; note=深蓝色连帽衫玩家下注，推出3枚筹码\nt=61.0s [other] gaze=低头看向自己的底牌; posture=坐姿，身体前倾; hands=双手放在自己的底牌上，将底牌掀起一角查看; note=黑T恤戴银链玩家查看自己的底牌\nt=63.5s [other] gaze=看向自己右侧的玩家; posture=坐姿，右手撑住右侧脸颊; note=镜头切回左侧，花衬衫玩家手撑脸颊看向右侧\nt=65.5s [other] gaze=低头看向自己的底牌; posture=坐姿，身体前倾; hands=右手放在自己的底牌上，将底牌掀起一角查看; note=白帽白胡子玩家查看自己的底牌\nt=70.5s [other] posture=坐姿，身体朝向牌桌; hands=右手抬起触碰自己的鼻子，随后放下，右手食指指向桌面; speech=开口说话，持续约3秒; note=戴黑帽穿黑外套的玩家边说话边做手势\nt=76.5s [other] posture=坐姿，身体朝向牌桌; hands=右手将数枚筹码向前推出; chips=向前推出数枚筹码; note=白帽白胡子玩家跟注，推出筹码\nt=78.0s [other] posture=坐姿，身体朝向牌桌; hands=右手拿起自己的底牌，向前推出弃掉; note=黑T恤戴银链玩家弃掉底牌\nt=81.5s [other] posture=坐姿，身体转向左侧; hands=左手放在自己的底牌上，右手搭在桌沿; speech=开口说话，持续约2秒; note=戴黑帽穿黑外套的玩家转头和左侧玩家说话\nt=84.0s [other] hands=右手在桌面发牌区域摆放第四张公共牌; note=转牌圈，荷官发出转牌\nt=86.0s [other] gaze=看向桌面公共牌区域; posture=坐姿，左臂搭在桌沿; note=转牌发出后，深蓝色连帽衫玩家看向公共牌\nt=89.5s [other] posture=坐姿，身体前倾; hands=右手放在身前的筹码堆上，拨弄筹码; speech=开口说话，持续约2秒; chips=右手拨弄身前的筹码; note=深蓝色连帽衫玩家拨弄筹码并说话\nt=97.5s [other] posture=坐姿，左臂横在身前，左手搭在右臂上; hands=右手拿起一摞筹码，向前推出; chips=向前推出一摞共6枚筹码; note=深蓝色连帽衫玩家下注，推出一摞筹码\nt=101.0s [other] gaze=看向桌面下注区域; posture=坐姿，右手食指抵在自己右侧太阳穴处; note=镜头切到左侧，花衬衫玩家手抵太阳穴看向桌面\nt=109.0s [other] gaze=看向自己左侧的玩家; posture=坐姿，身体靠向椅背; hands=右手抬起指向自己左侧，随后放下; speech=开口说话，持续约2秒; note=黑T恤戴银链玩家转头和左侧玩家说话\nt=110.5s [other] gaze=看向自己右侧的玩家; posture=坐姿，身体前倾; hands=右手放在自己的底牌上，将底牌掀起一角查看，随后放下; note=白帽白胡子玩家查看自己的底牌\nt=112.5s [other] posture=坐姿，左手撑住下巴; hands=右手抬起，手指捏合做出手势，随后放回下巴处; speech=开口说话，持续约4秒; note=花衬衫玩家手撑下巴，边说话边做手势\nt=115.0s [other] posture=坐姿，身体前倾; hands=右手从身前筹码堆中数出一摞绿色筹码，向前推出; chips=向前推出一摞绿色筹码; note=白帽白胡子玩家跟注，推出一摞绿色筹码\nt=121.5s [other] posture=坐姿，左手撑住下巴; face=嘴角上扬; note=花衬衫玩家看向桌面，嘴角上扬\nt=125.0s [other] posture=坐姿，身体前倾; hands=右手抬起撑住自己的右侧脸颊; note=镜头切回右侧，深蓝色连帽衫玩家手撑脸颊\nt=133.5s [other] posture=坐姿，身体转向左侧; hands=右手拿起桌边的玻璃杯，送到嘴边喝了一口，随后放回桌边; note=黑T恤戴银链玩家拿起玻璃杯喝水\nt=138.5s [other] posture=坐姿，身体前倾; hands=右手拿起1枚红色筹码，向前推出; chips=向前推出1枚红色筹码; note=深蓝色连帽衫玩家放入1枚筹码\nt=139.5s [other] posture=坐姿，右手撑住右侧脸颊; hands=左手手肘撑在桌沿; note=黑T恤戴银链玩家手撑脸颊\nt=143.0s [other] hands=双手在桌面发牌区域摆放第五张公共牌; note=河牌圈，荷官发出河牌，对应锚点t=145.5s dealer deal\nt=147.5s [villain] gaze=看向桌面公共牌区域; posture=坐姿，左手撑住下巴; hands=右手抬起做出摊手手势，随后将身前的全部筹码向前推出; chips=单手将身前所有筹码向前推出; note=villain全下，推出全部筹码，对应锚点t=148.0s villain allin\nt=149.5s [hero] gaze=看向villain推出的筹码区域; posture=坐姿，右手撑住右侧脸颊; speech=开口说话，持续约1秒; note=hero宣布跟注，对应锚点t=150.0s hero call $4750\nt=151.5s [other] hands=双手将底池中的筹码向获胜玩家方向收拢; chips=收拢底池筹码; note=荷官收池，对应锚点t=152.0s dealer pot_awarded",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_hided_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 152.7,
+      "clip_full_fps": "clip_hided.mp4",
+      "precut_masked_full_fps": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 148.0,
+    "announce_t": 150.0,
+    "clip_duration": 152.7
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "colleague_hided_recut",
+  "table_players": [
+    {
+      "role": "hero",
+      "stack": 6550.0
+    },
+    {
+      "role": "villain",
+      "stack": 8325.0
+    }
+  ],
+  "internal_names": {
+    "hero": "PHILLIP",
+    "villain": "3COIN"
+  },
+  "table_players_source": "doubao_raw_frame（待人工确认）"
+}

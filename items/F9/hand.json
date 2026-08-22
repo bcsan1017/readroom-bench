@@ -1,0 +1,70 @@
+{
+  "hand_id": "F9",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 20,
+    "youtube_id": "ifE0-Nfspso",
+    "youtube_url": "https://www.youtube.com/watch?v=ifE0-Nfspso",
+    "recap_url": "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-20-recap-51082.htm",
+    "chapter": "recap section 'Action Flop' (3rd hand of episode)",
+    "note": "Three-way all-in; hero decision is the last call-off - flag multiway when scoring"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "三人底池，真值按 hero vs 主 villain(JsJd) 双人口径计算，未扣除 3Coin 的 6h5h 死牌（两张红桃，会略高估 hero 胜率）；底池按 recap 总额 $26,100 折算",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 573,
+    "clip_end": 789,
+    "villain_allin": 684,
+    "hero_announce": 706
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "三人全下：P3 全下 $7,775、3Coin 跟进全下，hero 跟注共 $8,825（含边池）"
+  },
+  "players": {
+    "hero": "Mike Matusow",
+    "villain": "Phillip 'P3' Hellmuth III (+ Randy '3Coin' Sadler also all-in)"
+  },
+  "hero_cards": "Ah7h",
+  "villain_cards": "JsJd",
+  "board": "5sJh2h",
+  "street_at_allin": "flop",
+  "betting_line": [
+    {
+      "street": "flop",
+      "board": "5s Jh 2h",
+      "actions": "Flop: Villain(P3) all-in $7,775, 3Coin all-in behind; Hero faces $8,825 total (side pots)；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 8450,
+  "allin_amount": 7775,
+  "hero_to_call": 8825,
+  "hero_stack_behind": 8825,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost both runs); think=unknown; allin_type=unknown"
+  },
+  "recap_pot_bet": "P3 all-in $7,775, 3Coin all-in behind; hero calls off $8,825; pot $26,100",
+  "mask_windows": {
+    "_doc": "automask_v1（2026-08-22）：left_panel_rows 由 2fps 白卡/灰条特征检测自动生成（margin±1s，宁多勿漏）；winner_banner 为收池姓名横幅时段。同事精遮罩版到货整体替换时可忽略。",
+    "left_panel_rows": [
+      [
+        11.0,
+        192.5
+      ]
+    ]
+  }
+}

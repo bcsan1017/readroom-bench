@@ -1,0 +1,41 @@
+{
+  "item_id": "T4",
+  "hero_cards": "QsTh",
+  "villain_cards": "Qd9d",
+  "board": "Td4dKs8c3s",
+  "hero_equity": 1.0,
+  "win": 1.0,
+  "tie": 0.0,
+  "lose": 0.0,
+  "method": "showdown",
+  "n": 1,
+  "street": "river",
+  "required_equity": 0.3537771129394166,
+  "correct_call": true,
+  "ev_call_bb": 432.0,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 9775,
+  "pot_after_allin": 21600,
+  "to_call": 11825,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (won); think=short (hero quick; villain tanked); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Kelly Lucas (=Kelly Minkin)",
+    "villain": "DJ Washburn"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)",
+  "prefill_source": {
+    "table_size": "doubao",
+    "players_in_hand": "doubao",
+    "hero_stack_start": "doubao",
+    "hero_position": "doubao"
+  },
+  "table_size": 3,
+  "players_in_hand": 2,
+  "hero_stack_start": 16325.0,
+  "hero_position": "+1"
+}

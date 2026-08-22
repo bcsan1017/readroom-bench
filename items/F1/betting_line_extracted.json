@@ -1,0 +1,126 @@
+{
+  "hand_id": "F1",
+  "source": "video_extracted",
+  "model": "doubao-seed-2-1-pro-260628",
+  "generated_at": "2026-08-22T12:56:58+0800",
+  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
+  "streets_new_vs_l0": [
+    "preflop",
+    "flop",
+    "turn"
+  ],
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "other raise $400; other call $400; other fold; hero raise $2,450; other fold; villain raise $5,200; other fold; hero call $3,100",
+      "events": [
+        {
+          "t": 9.0,
+          "actor": "other",
+          "action": "raise",
+          "amount": 400.0
+        },
+        {
+          "t": 14.5,
+          "actor": "other",
+          "action": "call",
+          "amount": 400.0
+        },
+        {
+          "t": 18.5,
+          "actor": "other",
+          "action": "fold",
+          "amount": null
+        },
+        {
+          "t": 27.5,
+          "actor": "hero",
+          "action": "raise",
+          "amount": 2450.0
+        },
+        {
+          "t": 29.0,
+          "actor": "other",
+          "action": "fold",
+          "amount": null
+        },
+        {
+          "t": 42.5,
+          "actor": "villain",
+          "action": "raise",
+          "amount": 5200.0
+        },
+        {
+          "t": 66.0,
+          "actor": "other",
+          "action": "fold",
+          "amount": null
+        },
+        {
+          "t": 76.5,
+          "actor": "hero",
+          "action": "call",
+          "amount": 3100.0
+        }
+      ]
+    },
+    {
+      "street": "flop",
+      "board": "3h 2h 3s",
+      "actions": "villain bet $2,600; hero call $2,600",
+      "events": [
+        {
+          "t": 100.0,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 2600.0
+        },
+        {
+          "t": 110.5,
+          "actor": "hero",
+          "action": "call",
+          "amount": 2600.0
+        }
+      ]
+    },
+    {
+      "street": "turn",
+      "board": "Kd",
+      "actions": "villain bet $8,400; hero call $8,400",
+      "events": [
+        {
+          "t": 127.5,
+          "actor": "villain",
+          "action": "bet",
+          "amount": 8400.0
+        },
+        {
+          "t": 154.5,
+          "actor": "hero",
+          "action": "call",
+          "amount": 8400.0
+        }
+      ]
+    },
+    {
+      "street": "river",
+      "board": "Kc",
+      "actions": "villain allin $30,350; hero call $30,350",
+      "events": [
+        {
+          "t": 167.0,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 30350.0
+        },
+        {
+          "t": 168.0,
+          "actor": "hero",
+          "action": "call",
+          "amount": 30350.0
+        }
+      ]
+    }
+  ]
+}

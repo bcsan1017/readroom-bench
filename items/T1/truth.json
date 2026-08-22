@@ -1,0 +1,37 @@
+{
+  "item_id": "T1",
+  "hero_cards": "6h4h",
+  "villain_cards": "Jc8d",
+  "board": "Js8h6s6d",
+  "hero_equity": 0.9090909090909091,
+  "win": 0.9090909090909091,
+  "tie": 0.0,
+  "lose": 0.09090909090909091,
+  "method": "enumerate",
+  "n": 44,
+  "street": "turn",
+  "required_equity": 0.4438305709023941,
+  "correct_call": true,
+  "ev_call_bb": 252.6363636363636,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 3050,
+  "pot_after_allin": 15100,
+  "to_call": 12050,
+  "bb": 50,
+  "actual": {
+    "hero_action": "fold",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=fold (error); think=long (8+ minutes, longest tank of series); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Phil Hellmuth",
+    "villain": "Randy '3Coin' Sadler"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)",
+  "prefill_source": {
+    "table_size": "doubao",
+    "players_in_hand": "doubao"
+  },
+  "table_size": 1,
+  "players_in_hand": 3
+}

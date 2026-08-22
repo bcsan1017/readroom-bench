@@ -1,0 +1,106 @@
+{
+  "hand_id": "T1",
+  "source": "video_extracted",
+  "model": "doubao-seed-2-1-pro-260628",
+  "generated_at": "2026-08-22T12:57:29+0800",
+  "note": "豆包全程视频提取；allin 金额已与 L0 锚点硬对齐；其余金额以画面 UI 可读为准，null=画面不可读",
+  "streets_new_vs_l0": [
+    "preflop",
+    "flop"
+  ],
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "other call; other call; villain call; hero check",
+      "events": [
+        {
+          "t": 22.0,
+          "actor": "other",
+          "action": "call",
+          "amount": null
+        },
+        {
+          "t": 23.5,
+          "actor": "other",
+          "action": "call",
+          "amount": null
+        },
+        {
+          "t": 25.5,
+          "actor": "villain",
+          "action": "call",
+          "amount": null
+        },
+        {
+          "t": 26.5,
+          "actor": "hero",
+          "action": "check",
+          "amount": null
+        }
+      ]
+    },
+    {
+      "street": "flop",
+      "board": "Js 8h 6s",
+      "actions": "hero check; other bet $300; villain call $300; hero fold",
+      "events": [
+        {
+          "t": 38.5,
+          "actor": "hero",
+          "action": "check",
+          "amount": null
+        },
+        {
+          "t": 40.0,
+          "actor": "other",
+          "action": "bet",
+          "amount": 300.0
+        },
+        {
+          "t": 41.0,
+          "actor": "villain",
+          "action": "call",
+          "amount": 300.0
+        },
+        {
+          "t": 43.0,
+          "actor": "hero",
+          "action": "fold",
+          "amount": null
+        }
+      ]
+    },
+    {
+      "street": "turn",
+      "board": "6d",
+      "actions": "other check; villain allin $12,950; other fold; hero fold",
+      "events": [
+        {
+          "t": 49.5,
+          "actor": "other",
+          "action": "check",
+          "amount": null
+        },
+        {
+          "t": 57.0,
+          "actor": "villain",
+          "action": "allin",
+          "amount": 12950.0
+        },
+        {
+          "t": 63.0,
+          "actor": "other",
+          "action": "fold",
+          "amount": null
+        },
+        {
+          "t": 65.5,
+          "actor": "hero",
+          "action": "fold",
+          "amount": null
+        }
+      ]
+    }
+  ]
+}

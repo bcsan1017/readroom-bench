@@ -1,0 +1,61 @@
+{
+  "hand_id": "T5",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 3,
+    "youtube_id": "UDrb4M5MLKA",
+    "youtube_url": "https://www.youtube.com/watch?v=UDrb4M5MLKA",
+    "recap_url": "https://www.pokernews.com/news/2025/07/hellmuths-home-game-episodes-3-4-recap-49270.htm",
+    "chapter": "recap section 'Xuan Flips a Coin' (1st hand of Episode 3)",
+    "note": "Cates immediately tabled the bluff"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "recap 公共牌两张记为 8s（Ts 8s 4d 8s Kd），第 4 张按 8h 记；花色不影响本手胜率，需标注核对",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 6,
+    "clip_end": 354,
+    "villain_allin": 190,
+    "hero_announce": 344
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手超池全下盖过你的剩余筹码；$16,475 为有效额"
+  },
+  "players": {
+    "hero": "Xuan Liu",
+    "villain": "Dan 'Jungleman' Cates"
+  },
+  "hero_cards": "AcTc",
+  "villain_cards": "Jd9d",
+  "board": "Ts8s4d8hKd",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "river",
+      "board": "Ts 8s 4d 8h Kd",
+      "actions": "Villain(Cates) overbet-jams the river, covering Hero's $16,475 (pot $8,325)；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 8325,
+  "allin_amount": 16475,
+  "hero_to_call": 16475,
+  "hero_stack_behind": 16475,
+  "actual": {
+    "hero_action": "fold",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=fold (error, decided by flipping a card protector); think=long (deep tank, card-protector flip); allin_type=unknown"
+  },
+  "recap_pot_bet": "Cates overbet-jams covering hero's $16,475 into $8,325 pot"
+}

@@ -1,0 +1,101 @@
+{
+  "item_id": "T3",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "hpWIoK1lu9Q",
+    "clip_abs_sec": [
+      297.0,
+      642.0
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "river",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手全下额 $3,100 小于你的剩余筹码）。\n你的底牌：Td 9c。\n下注线：\n  - river（6d 7s 9h 2c Kc）：Villain(3Coin) all-in $3,100 on the river; Hero faces $3,100；前序街完整下注线 recap 未提供\n当前公共牌：6d 7s 9h 2c Kc（river）。\n对手全下前底池：$4,700；对手全下额：$3,100；你需跟注：$3,100。\n跟注后总底池：$10,900；所需胜率（跟注额 ÷ (底池+跟注额)）= 28.4%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] hands=右手发牌，将牌分发给各玩家; note=手牌开始，荷官正在发底牌\nt=0.5s [other] gaze=看向左侧戴黑帽的玩家; posture=坐在座位上，身体前倾; hands=右手抬起，掌心向上做出手势; speech=开口说话，持续约10秒; chips=左手放在自己的筹码堆旁; note=戴黑帽穿黑外套的玩家在发牌阶段与邻座玩家交谈\nt=4.0s [other] gaze=看向戴迷彩帽的玩家; hands=右手食指指向戴迷彩帽的玩家，随后收回做手势; speech=持续说话; note=戴黑帽玩家边说话边用手势指向对面玩家\nt=7.5s [other] gaze=看向右侧光头玩家; hands=右手指向光头玩家，随后收回做摊手动作; speech=持续说话; note=戴黑帽玩家说话时指向光头玩家\nt=13.0s [other] gaze=低头看向自己面前的底牌; posture=身体前倾，双肘撑在桌沿; hands=双手将自己的底牌向自己方向拖动约2厘米; speech=停止说话; note=戴黑帽玩家查看自己的底牌\nt=15.0s [other] gaze=看向自己面前的黄色按钮筹码; hands=右手拿起黄色按钮筹码，随后放回原位; chips=右手拨动自己面前的筹码堆，将一枚筹码向前推出; note=戴黑帽玩家调整按钮位置并放入盲注筹码\nt=17.0s [other] gaze=看向光头玩家; hands=右手连续将3枚筹码向前推出; chips=向前推出3枚筹码; note=戴黑帽玩家完成加注动作，放入加注筹码\nt=19.5s [other] gaze=转头看向右侧白衣头巾女玩家; posture=坐在座位上，身体转向右侧; hands=右手摊开，掌心向上放在筹码堆旁; speech=开口与女玩家说话，持续约3秒; face=嘴角上扬; note=光头玩家加注后转头和邻座女玩家交谈\nt=24.5s [other] gaze=低头看向自己面前的筹码; posture=坐在座位上，身体前倾; hands=右手从自己的筹码堆中拿起2枚筹码，向前推出; chips=向前推出2枚筹码; note=穿深蓝色T恤的玩家放入跟注筹码\nt=28.5s [other] gaze=看向左侧戴眼镜荷官; hands=双手交握放在自己面前的牌桌上; speech=开口说话，持续约2秒; face=嘴角上扬; note=戴白帽子的玩家跟注后和荷官交谈\nt=32.5s [other] gaze=看向牌桌中央; posture=坐在座位上，左手撑住左脸颊; hands=左手手指搭在脸颊上，右手放在自己的底牌旁; note=穿白衬衫的玩家撑脸等待行动\nt=34.5s [other] gaze=转头看向左侧白衬衫玩家; hands=右手拿起一枚筹码，向白衬衫玩家方向示意，随后将筹码向前推出; speech=开口说话，持续约3秒; chips=向前推出1枚筹码; note=戴迷彩帽的玩家放入筹码并和白衬衫玩家说话\nt=38.5s [other] gaze=低头看向自己面前的牌桌; posture=左肘撑在桌沿，左手放在嘴边; hands=左手手指放在嘴唇上; speech=停止说话; note=戴迷彩帽玩家完成下注后撑住嘴部\nt=42.0s [other] gaze=低头看向自己面前的筹码; hands=右手从筹码堆中拿起数枚筹码，向前推出; chips=向前推出一摞共6枚筹码; note=戴黑帽玩家放入跟注筹码\nt=48.0s [other] gaze=低头看向自己面前的底牌; hands=右手将自己的底牌向前推，弃入牌堆; note=光头玩家弃掉自己的底牌\nt=51.0s [other] gaze=看向左侧荷官; hands=右手手指搭在自己的底牌上; speech=开口大笑，持续约3秒; face=嘴角大幅上扬，露出牙齿; note=戴白帽子玩家看到其他玩家弃牌后大笑\nt=54.0s [other] gaze=低头看向自己面前的筹码; hands=右手从筹码堆中拿起1枚筹码，向前推出; chips=向前推出1枚筹码; face=停止大笑; note=深蓝色T恤玩家放入跟注筹码\nt=59.0s [other] gaze=看向光头玩家; hands=右手抬起，掌心朝向光头玩家做出手势; speech=开口说话，持续约2秒; note=戴黑帽玩家和光头玩家说话\nt=60.5s [other] hands=右手从牌堆中依次拿出三张公共牌，翻开摆到桌面公共牌区; note=荷官发出翻牌三张公共牌\nt=66.0s [villain] gaze=看向牌桌中央的公共牌; posture=左肘撑在桌沿，左手搭在自己的筹码堆上; hands=右手放在自己的底牌旁，手指轻敲桌面2次; note=翻牌发出后，戴迷彩帽的villain轻敲桌面\nt=67.0s [villain] gaze=低头看向自己面前的底牌; posture=身体前倾; hands=右手拿起自己面前的一摞筹码，向前推出; chips=向前推出6枚筹码; note=翻牌圈villain下注，推出筹码\nt=73.0s [villain] gaze=看向自己推出的筹码; hands=右手将剩余的筹码向前推齐; chips=将下注筹码整理整齐; note=villain整理自己的下注筹码\nt=79.0s [hero] gaze=低头看向自己面前的筹码堆; hands=右手从自己的筹码堆中拿起一摞筹码，向前推出; chips=向前推出一摞共12枚筹码，包含1枚黄色筹码; note=翻牌圈hero跟注，推出跟注筹码\nt=83.0s [other] gaze=低头看向自己面前的筹码; posture=身体前倾，右手撑住下巴; hands=右手手指放在下巴处，左手搭在筹码堆上; note=深蓝色T恤玩家撑住下巴，随后弃牌\nt=86.0s [villain] gaze=看向牌桌中央; posture=双肘撑在桌沿，双手交握放在身前; hands=双手手指交叉相握; speech=开口说话，持续约2秒; note=转牌前villain双手交握说话\nt=89.0s [other] gaze=转头看向右侧女玩家; posture=左手放在腰后，右手搭在桌沿; hands=右手手指放在自己的底牌上; speech=开口和女玩家说话，持续约10秒; note=光头玩家转牌阶段和女玩家交谈\nt=92.0s [other] gaze=看向光头玩家; posture=身体靠向椅背，左手搭在椅背上; hands=右手放在自己的筹码堆旁; face=嘴角上扬; note=戴黑帽玩家靠在椅背上，面带笑意\nt=101.5s [other] hands=右手从牌堆中拿出一张转牌，翻开摆到公共牌区; note=荷官发出转牌公共牌\nt=104.0s [villain] gaze=看向对面的hero方向; posture=双肘撑在桌沿，双手交握; hands=双手手指交叉，拇指互相摩挲; speech=开口说话，持续约3秒; note=转牌发出后villain说话，拇指持续摩挲\nt=107.5s [other] gaze=低头看向桌面; posture=左手撑在左脸颊上，左肘撑桌; hands=左手手指按压左侧眼角位置; note=光头玩家转牌阶段撑住脸颊，按压眼角\nt=115.5s [other] hands=右手从牌堆中拿出一张河牌，翻开摆到公共牌区; note=锚点t=117s河牌发出，荷官翻开河牌公共牌\nt=118.0s [other] gaze=看向荷官方向; posture=右手撑住下巴; hands=右手手指放在嘴唇上; speech=开口说话，持续约2秒; note=河牌发出后戴白帽子玩家说话\nt=122.0s [other] gaze=低头看向桌面; posture=左手放在腰后; hands=右手手指搭在自己的底牌上，轻轻敲击底牌2次; speech=停止和女玩家交谈; note=光头玩家停止交谈，轻敲自己的底牌\nt=125.0s [villain] gaze=低头看向自己面前的筹码堆; posture=左肘撑在桌沿，左手搭在右肩上; hands=右手伸向自己的筹码堆，将两摞筹码向前推出; chips=将面前剩余的所有筹码向前推出，共约3100; note=锚点t=131s villain全下，单手推出全部剩余筹码\nt=131.5s [villain] gaze=看向对面的hero; posture=左肘撑桌，左手搭肩; hands=右手收回，放在桌沿; chips=全下筹码已全部推至底池区; note=villain完成全下动作，等待hero决定\nt=132.0s [hero] gaze=看向villain推出的全下筹码; posture=坐在座位上，右手放在自己的底牌旁; hands=右手将自己的底牌向前推出，弃入牌堆; note=锚点t=132s hero宣布弃牌，将底牌向前推离自己\nt=133.0s [other] hands=双手将底池中的筹码全部推向villain方向; chips=将底池所有筹码收拢推给villain; note=锚点t=133s 荷官将底池授予获胜的villain",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_hided_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 133.4,
+      "clip_full_fps": "clip_hided.mp4",
+      "precut_masked_full_fps": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 131.0,
+    "announce_t": 132.0,
+    "clip_duration": 133.4
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "colleague_hided_recut",
+  "table_players": [
+    {
+      "role": "hero",
+      "stack": 4900.0
+    },
+    {
+      "role": "other_1",
+      "stack": 5175.0
+    },
+    {
+      "role": "other_2",
+      "stack": 4075.0
+    },
+    {
+      "role": "other_3",
+      "stack": 14900.0
+    }
+  ],
+  "internal_names": {
+    "hero": "PHILLIP",
+    "other_1": "ROB",
+    "other_2": "HELLMUTH",
+    "other_3": "KALAS"
+  },
+  "table_players_source": "doubao_raw_frame（待人工确认）"
+}

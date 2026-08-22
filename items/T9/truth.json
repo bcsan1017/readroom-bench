@@ -1,0 +1,31 @@
+{
+  "item_id": "T9",
+  "hero_cards": "7h7c",
+  "villain_cards": "KcQh",
+  "board": "9h4h3c9c",
+  "hero_equity": 0.8636363636363636,
+  "win": 0.8636363636363636,
+  "tie": 0.0,
+  "lose": 0.13636363636363635,
+  "method": "enumerate",
+  "n": 44,
+  "street": "turn",
+  "required_equity": 0.2585278276481149,
+  "correct_call": true,
+  "ev_call_bb": 168.52272727272728,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 6725,
+  "pot_after_allin": 10325,
+  "to_call": 3600,
+  "bb": 50,
+  "actual": {
+    "hero_action": "fold",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=fold（错——弃掉最好牌，Kelly 诈唬得手）; think=unknown（recap 无时长词）; allin_type=chips（看片确认：推筹码 check-raise）"
+  },
+  "players": {
+    "hero": "John Cerasani",
+    "villain": "Kelly Lucas"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)"
+}

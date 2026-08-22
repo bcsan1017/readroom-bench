@@ -1,0 +1,61 @@
+{
+  "hand_id": "T4",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 22,
+    "youtube_id": "5ZOUgMDKYTs",
+    "youtube_url": "https://www.youtube.com/watch?v=5ZOUgMDKYTs",
+    "recap_url": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-22-recap-51199.htm",
+    "chapter": "recap section 'Hellmuth Impressed' (3rd hand of episode; episode title = 'Kelly Stuns table with Hero Call')",
+    "note": "'Picked him off with a ten' - Hellmuth"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": null,
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 1283.0,
+    "clip_end": 1460.0,
+    "villain_allin": 1441.0,
+    "hero_announce": 1445.0
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手全下额盖过你的剩余筹码"
+  },
+  "players": {
+    "hero": "Kelly Lucas (=Kelly Minkin)",
+    "villain": "DJ Washburn"
+  },
+  "hero_cards": "QsTh",
+  "villain_cards": "Qd9d",
+  "board": "Td4dKs8c3s",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "river",
+      "board": "Td 4d Ks 8c 3s",
+      "actions": "Villain(Washburn) tanks then jams the river; Hero faces $11,825；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 9775,
+  "allin_amount": 11825,
+  "hero_to_call": 11825,
+  "hero_stack_behind": 11825,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (won); think=short (hero quick; villain tanked); allin_type=unknown"
+  },
+  "recap_pot_bet": "Washburn tanks then jams; hero calls off $11,825; pot $33,425"
+}

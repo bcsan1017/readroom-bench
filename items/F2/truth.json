@@ -1,0 +1,37 @@
+{
+  "item_id": "F2",
+  "hero_cards": "As8c",
+  "villain_cards": "KcQs",
+  "board": "Ad8hQdQh4c",
+  "hero_equity": 0.0,
+  "win": 0.0,
+  "tie": 0.0,
+  "lose": 1.0,
+  "method": "showdown",
+  "n": 1,
+  "street": "river",
+  "required_equity": 0.41877637130801687,
+  "correct_call": false,
+  "ev_call_bb": -397.0,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 7700,
+  "pot_after_allin": 27550,
+  "to_call": 19850,
+  "bb": 50,
+  "actual": {
+    "hero_action": "fold",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=fold (correct); think=long (shot back in chair, asked exact count, tanked); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Jennifer Tilly",
+    "villain": "'Texas' Mike Moncek"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)",
+  "prefill_source": {
+    "table_size": "doubao",
+    "players_in_hand": "doubao"
+  },
+  "table_size": 2,
+  "players_in_hand": 3
+}

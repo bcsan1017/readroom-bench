@@ -1,0 +1,2565 @@
+{
+  "meta": {
+    "generated": "2026-08-21",
+    "title": "Hellmuth's Home Game Ep1-30 选手行为统计（自建，基于 PokerNews recap 全量 29 篇）",
+    "source": "PokerNews 'Hellmuth's Home Game Episode N recap' 全部 29 篇文章（Ep1-30，Ep3&4 合刊），逐篇人工精读抽取，严格只计 recap 明文事件",
+    "recap_urls": {
+      "1": "https://www.pokernews.com/news/2025/07/hellmuths-home-game-episode-1-recap-49026.htm",
+      "2": "https://www.pokernews.com/news/2025/07/hellmuths-home-game-episode-2-recap-49128.htm",
+      "3-4": "https://www.pokernews.com/news/2025/07/hellmuths-home-game-episodes-3-4-recap-49270.htm",
+      "5": "https://www.pokernews.com/news/2025/08/hellmuths-home-game-episodes-5-recap-49334.htm",
+      "6": "https://www.pokernews.com/news/2025/08/hellmuths-home-game-episodes-6-recap-49432.htm",
+      "7": "https://www.pokernews.com/news/2025/08/hellmuths-home-game-episodes-7-recap-49447.htm",
+      "8": "https://www.pokernews.com/news/2025/09/hellmuths-home-game-episodes-8-recap-49596.htm",
+      "9": "https://www.pokernews.com/news/2025/09/hellmuths-home-game-episodes-9-recap-49640.htm",
+      "10": "https://www.pokernews.com/news/2025/09/hellmuths-home-game-episodes-10-recap-49678.htm",
+      "11": "https://www.pokernews.com/news/2025/09/hellmuths-home-game-episodes-11-recap-49725.htm",
+      "12": "https://www.pokernews.com/news/2025/10/hellmuths-home-game-episodes-12-recap-49773.htm",
+      "13": "https://www.pokernews.com/news/2025/10/hellmuths-home-game-episodes-13-recap-49830.htm",
+      "14": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-14-recap-50756.htm",
+      "15": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-15-recap-50774.htm",
+      "16": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-16-recap-50784.htm",
+      "17": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-17-recap-50857.htm",
+      "18": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-18-recap-50912.htm",
+      "19": "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-19-recap-50925.htm",
+      "20": "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-20-recap-51082.htm",
+      "21": "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-21-recap-51142.htm",
+      "22": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-22-recap-51199.htm",
+      "23": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-23-recap-51241.htm",
+      "24": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-24-recap-51248.htm",
+      "25": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-25-recap-51295.htm",
+      "26": "https://www.pokernews.com/news/2026/06/hellmuths-home-game-episode-26-recap-51715.htm",
+      "27": "https://www.pokernews.com/news/2026/07/hellmuths-home-game-episode-27-recap-51789.htm",
+      "28": "https://www.pokernews.com/news/2026/07/hellmuths-home-game-episode-28-recap-52024.htm",
+      "29": "https://www.pokernews.com/news/2026/08/hellmuths-home-game-episode-29-recap-52042.htm",
+      "30": "https://www.pokernews.com/news/2026/08/hellmuths-home-game-episode-30-recap-52106.htm"
+    },
+    "episodes_total": 30,
+    "recap_articles": 29,
+    "field_definitions": {
+      "episodes_played": "出场集数（座位表或正文可见其打牌；Ep3&4 合刊按 2 集计）",
+      "hands_reported": "recap 逐手描述的手牌中该人作为行动参与者出现的手数（下界）",
+      "allin_made": "自己全下次数（move all in / jam / shove / check-raise all in）",
+      "allin_faced": "面对对手全下（或覆盖性下注）需做 call/fold 决定的次数",
+      "bluffs_caught": "诈唬被 call/被抓次数（recap 明示弱牌）",
+      "bluffs_successful": "诈唬得手且 recap 亮明的次数（对手弃牌但未亮牌的不计）",
+      "hero_calls": "面对大注/全下用边缘牌正确跟注（赢下）的次数",
+      "big_folds": "大注/全下压力下 recap 着重描写的弃牌（无论对错）",
+      "tanks": "recap 明文提到长考的次数",
+      "showdowns_won/lost": "进入摊牌赢/输的次数（run-it-twice 平分不计）",
+      "notable_swings": "单集明确大额输赢（|≥$10,000|，多取自 recap 筹码表 Profit 列；续局集为跨集累计口径）",
+      "sources": "每项统计的出处集数列表（该集该项计数>0）",
+      "evidence": "逐集逐条一句话证据（小节名+事件）"
+    },
+    "caveat": "recap 只报道每集精选手牌（每集 4-7 手），是有偏样本：偏向大池、all-in 对抗与戏剧性手牌，常规小池与无摊牌手基本不被记录。因此所有计数均为【下界】而非全量；『无记录』只说明 recap 未报道，不能推断该行为不存在。松紧度/入池率等频率类指标无法由本数据估计。续局集（Ep15/24/27/29/30 等）的 Profit 列为跨集累计口径，swing 记录时已尽量在证据中注明。所有统计严格取 recap 明文，不做推断。"
+  },
+  "players": {
+    "phil_hellmuth": {
+      "name": "Phil Hellmuth",
+      "episodes_played": 30,
+      "episodes_list": [
+        "1",
+        "2",
+        "3-4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "hands_reported": 56,
+      "allin_made": 12,
+      "allin_faced": 17,
+      "bluffs_caught": 1,
+      "bluffs_successful": 1,
+      "hero_calls": 0,
+      "big_folds": 2,
+      "tanks": 2,
+      "showdowns_won": 17,
+      "showdowns_lost": 14,
+      "sources": {
+        "hands_reported": [
+          "1",
+          "2",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "29",
+          "30"
+        ],
+        "allin_made": [
+          "1",
+          "6",
+          "7",
+          "16",
+          "18",
+          "23",
+          "25",
+          "27",
+          "29",
+          "30"
+        ],
+        "allin_faced": [
+          "1",
+          "2",
+          "5",
+          "6",
+          "7",
+          "12",
+          "13",
+          "14",
+          "19",
+          "20",
+          "23",
+          "24",
+          "26",
+          "27",
+          "29"
+        ],
+        "bluffs_caught": [
+          "29"
+        ],
+        "bluffs_successful": [
+          "2"
+        ],
+        "hero_calls": [],
+        "big_folds": [
+          "1",
+          "24"
+        ],
+        "tanks": [
+          "12",
+          "24"
+        ],
+        "showdowns_won": [
+          "1",
+          "2",
+          "5",
+          "6",
+          "7",
+          "11",
+          "12",
+          "19",
+          "20",
+          "23",
+          "24",
+          "27",
+          "29"
+        ],
+        "showdowns_lost": [
+          "6",
+          "12",
+          "14",
+          "16",
+          "25",
+          "26",
+          "27",
+          "29",
+          "30"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "5",
+          "amount": "+$17,575"
+        },
+        {
+          "episode": "7",
+          "amount": "+$10,825"
+        },
+        {
+          "episode": "8",
+          "amount": "+$25,525"
+        },
+        {
+          "episode": "16",
+          "amount": -20225
+        },
+        {
+          "episode": "22",
+          "amount": 15275
+        },
+        {
+          "episode": "23",
+          "amount": 12150
+        },
+        {
+          "episode": "24",
+          "amount": 24600
+        },
+        {
+          "episode": "27",
+          "amount": -20225
+        },
+        {
+          "episode": "30",
+          "amount": -20000
+        }
+      ],
+      "evidence": {
+        "1": [
+          "The Tone Had Been Set: Hellmuth said 'Alright, I'm all in' and slid in his stack of $4,100 with pocket nines (allin_made).",
+          "The Tone Had Been Set: Cates called and they ran it twice; both runouts were good for Hellmuth, who scooped the $8,950 pot (showdowns_won).",
+          "Hellmuth Insta-Mucks Flush: facing Washburn's river all-in for $6,675, Hellmuth folded his flush face up without hesitating (allin_faced, big_folds).",
+          "hands_reported=3: The Tone Had Been Set (raise/all-in), Hellmuth Insta-Mucks Flush (calls then fold), Jungleman Takes on Hellmuth's Son (limped 4-4 then folded)."
+        ],
+        "2": [
+          "Cates Gets Called F-ing Around: Hellmuth snap-raised to $900 with 8-6 high, Cates folded, and Hellmuth showed the bluff (bluffs_successful).",
+          "50 Cent Loves the Club: Nevada moved all in for $3,550 and Hellmuth snap-called off for $2,000 with the nuts (allin_faced), winning the $6,175 pot (showdowns_won).",
+          "hands_reported=2: Cates Gets Called F-ing Around, 50 Cent Loves the Club."
+        ],
+        "3-4": [
+          "Present in the stack tables of both episodes; the recap only quotes his table talk ('You can't fold there, Phil') and describes no hand in which he acts."
+        ],
+        "5": [
+          "Early Double for the Poker Brat: Cates' $4,000 river bet covered Hellmuth, who called off his remaining $2,125 (allin_faced) and took down the $11,975 pot with the nuts (showdowns_won).",
+          "Hellmuth Overbets River: Hellmuth bet $2,375 into $2,200 with a flush, Washburn called with two pair, and Hellmuth won the $6,950 pot (showdowns_won).",
+          "We're Still Friends?: Hellmuth bet $3,000 on the river with two pair, Alex called, and the $9,650 pot was pushed to Hellmuth (showdowns_won).",
+          "Swing: end-of-game results table lists Phil Hellmuth +$17,575.",
+          "hands_reported=4: Early Double for the Poker Brat, Hellmuth Overbets River, We're Still Friends?, This Game Had Lost Its Mind (limped then folded)."
+        ],
+        "6": [
+          "Hellmuth Moves All In Dark: Hellmuth announced he was moving all in dark for $2,800 before the turn (allin_made); 3Coin called with a king-high straight and Hellmuth lost the $10,650 pot run once (showdowns_lost).",
+          "'I Have the Easiest Call Though': Alex moved all in with the covering stack and Hellmuth called off for $3,250 with quad threes (allin_faced), winning the $10,150 pot (showdowns_won).",
+          "hands_reported=2: Hellmuth Moves All In Dark, 'I Have the Easiest Call Though'."
+        ],
+        "7": [
+          "'You Either Have a Set or Nothing': Hellmuth moved all in for his last $4,275 on the turn with a flopped set (allin_made) and Cates folded.",
+          "'He's Not Evil': Hellmuth snap-called Cates' $4,100 river bet with nines full and won the $11,450 pot (showdowns_won).",
+          "3Coin Felted Part 1: Hellmuth called the flop and then folded to 3Coin's $8,750 all-in (allin_faced).",
+          "Swing: end-of-episode table Profit/Loss column lists Phil Hellmuth +$10,825."
+        ],
+        "8": [
+          "Hellmuth Flops the Joint: Hellmuth flopped the nut flush, bet $3,700 on the river, and both opponents folded (hands_reported).",
+          "You Just Got Trapped By Hellmuth: Hellmuth rivered a full house and raised Xuan's $3,000 to $8,000; she folded (hands_reported=2 total).",
+          "Swing: end-of-episode table Profit column lists Phil Hellmuth +$25,525; the start-of-episode table already showed +$10,575, so the column appears to be a running total (episode change by profit column ~ +$14,950)."
+        ],
+        "9": [
+          "Kill Phil: Hellmuth raised to $300 with AdTh, bet $500 on the Js3sAs flop, then checked and quickly folded when Nevada bet $700 on the turn."
+        ],
+        "10": [
+          "Hellmuth Limp-Raises with Pocket Rockets: Hellmuth limped AsAh then limp-raised to $2,100; everyone folded and he won without showdown."
+        ],
+        "11": [
+          "Wimpiest Call I've Ever Made: Hellmuth called with AcJc, bet the flop with trip aces, and called Nevada's $1,000 river bet ('the wimpiest call I've ever made') to take down the $4,300 pot at showdown."
+        ],
+        "12": [
+          "Xuan Takes on Hellmuth: Hellmuth raised 8d8c, 'hit the tank before calling' Xuan's $2,000 three-bet (tank), called flop and turn bets, and lost the $13,200 pot when the river checked through (showdown lost).",
+          "3Coin Gets $3,000 Out of Hellmuth: Hellmuth led the turn and river with 9d9c and called 3Coin's $3,000 river raise, losing the $8,900 pot (showdown lost).",
+          "Hellmuth Goes to Broadway: Hellmuth called off his last $2,600 with an open-ended straight draw facing 3Coin's $3,000 flop bet that covered him (all-in faced), rivered the nut straight, and more than doubled to $10,475 (showdown won)."
+        ],
+        "13": [
+          "Fold the Unfoldable: Hellmuth called the $2,000 four-bet with KcQc ('I'm trying to find a way to fold the unfoldable') and folded on the flop facing Cates' all-in (all-in faced)."
+        ],
+        "14": [
+          "Hellmuth vs Hellmuth: Phil three-bet to $2,400 ('I hate to raise my own son'), then called Nick's $3,100 all-in (all-in faced); they ran it twice and Nick won both runs of the $6,850 pot (showdown lost)."
+        ],
+        "15": [
+          "In seat 4 per the stack table but no hand in this recap describes him acting. Anomaly: his stack fell $14,275 to $5,000 while his Profit rose +$9,275 to +$10,075."
+        ],
+        "16": [
+          "Hellmuth Slow-Rolled: Hellmuth check-raised all in for $4,975 with pocket jacks (allin_made, hands_reported).",
+          "Hellmuth Slow-Rolled: ran it twice vs Kelly's KK and lost both runs, Kelly claimed the $10,575 pot (showdowns_lost).",
+          "Hellmuth Shoves Last Hand: moved all in for $3,525 on the turn with a flush draw (allin_made).",
+          "Hellmuth Shoves Last Hand: Washburn called and both runouts were good for him, Hellmuth lost the $11,100 pot (showdowns_lost).",
+          "swing: end-of-episode Profit table lists Phil Hellmuth -$20,225."
+        ],
+        "17": [
+          "Texas Mike Picks a Bad Time: called $1,200 preflop with pocket deuces and got out of the way on the flop (hands_reported).",
+          "swing: start Profit -$20,225 to end Profit -$21,450 = -$1,225, below $10,000 so null."
+        ],
+        "18": [
+          "Three Players All in on 1st Hand: moved all in for $2,200 with KcJh; the five-spade board chopped the pot (allin_made; chop, no showdown counted)."
+        ],
+        "19": [
+          "Quads for Hellmuth: called Nick's $2,200 all in with trip fours, made quads on the turn and felted his son, winning at showdown (allin_faced, showdowns_won, hands_reported)."
+        ],
+        "20": [
+          "Click It Back: limped 22, called the raise, and folded during the flop raising war (hands_reported).",
+          "Hellmuth & 3Coin Collide: turned a straight, min-check-raised, and called off $3,675 total vs 3Coin's all in; the river missed 3Coin and Hellmuth doubled with the $8,050 pot (allin_faced, showdowns_won).",
+          "Quads for Hellmuth: rivered quad eights and called off $5,625 total after Sadler snap-jammed, winning the $14,750 pot (allin_faced, showdowns_won).",
+          "swing: end Profit +$9,275, below $10,000 so null."
+        ],
+        "21": [
+          "Cerasani Closes Out Night with a Double: limped 66, called 3Coin's raise, then got out of the way on the flop (hands_reported)."
+        ],
+        "22": [
+          "Kelly's All-In Bluff: called preflop with Qs10c and checked/folded on the flop (hands_reported).",
+          "Quads for the Mouth: committed $600 preflop then ditched his 9s6s on the flop (hands_reported).",
+          "swing: start Profit -$6,150 to end Profit +$9,125 = +$15,275 for the episode (no big hand of his was described)."
+        ],
+        "23": [
+          "What Was 3Coin Thinking?/It Gonna Do What It Do/3Coin Felts P3/3Coin Tries to Bust Hellmuth/3Coin Gets Sticky: 五手均有下注/跟注/弃牌等行动 (hands_reported=5)",
+          "3Coin Tries to Bust Hellmuth: 面对 3Coin min check-raise, Hellmuth 持 KK 'moved all in for $2,525' (allin_made)",
+          "It Gonna Do What It Do: 3Coin 河牌全下 $3,100, Hellmuth 'thought for a bit before folding' (allin_faced)",
+          "3Coin Tries to Bust Hellmuth: 3Coin 跟注后 run it once, KK 拿下 $6,475 底池 (showdowns_won)",
+          "结尾筹码表: Phil Hellmuth Profit +$12,150 (swing)"
+        ],
+        "24": [
+          "Lucky Sevens for Hellmuth / 8+ Minute Tank / Last Hand to Hellmuth: 三手有行动 (hands_reported=3)",
+          "8+ Minute Tank: 3Coin 'instantly moving all in for $12,950' 使 Hellmuth 面临决定 (allin_faced)",
+          "8+ Minute Tank: 'More than eight minutes passed with Hellmuth in the tank' (tanks)",
+          "8+ Minute Tank: 长考后 'he folded trips', 事后证明本可获胜, recap 着重描写 (big_folds)",
+          "Lucky Sevens for Hellmuth: Rob 河牌 call, '$8,000 pot pushed to the 17-time gold bracelet winner' (showdowns_won 1)",
+          "Last Hand to Hellmuth: 河牌 check-check, Hellmuth AJ 拿下 $3,700 底池 (showdowns_won 2)",
+          "结尾筹码表 Profit +$24,600 (swing; 注意 ep24 为续局, Profit 为整局累计口径)"
+        ],
+        "25": [
+          "Both Hellmuth's At-Risk / The Brutal Slowroll: 两手有行动 (hands_reported=2)",
+          "Both Hellmuth's At-Risk: 'Hellmuth jammed all in for $2,325' (allin_made 1)",
+          "The Brutal Slowroll: 'Hellmuth moved all in for $4,750' (allin_made 2)",
+          "Both Hellmuth's At-Risk: P3 两次 runout 全收 $8,050 侧池外, Hellmuth AQ 落败 (showdowns_lost 1)",
+          "The Brutal Slowroll: run twice 均未中 A, Kelly 收 $11,425 (showdowns_lost 2)",
+          "结尾 Profit +$1,625 (swing=null)"
+        ],
+        "26": [
+          "Big Slick Does the Trick / Xuan Felts Hellmuth / Tilly Has a Kicker Problem: 三手有行动 (hands_reported=3)",
+          "Big Slick Does the Trick for P3: P3 limp-jam $3,750 后 'Hellmuth folded' (allin_faced 1)",
+          "Xuan Felts Hellmuth: 河牌下注剩 $1,350 后 'Xuan moved all in, and Hellmuth called' (allin_faced 2)",
+          "Xuan Felts Hellmuth: call 后 '$11,475 pot pushed to his opponent' (showdowns_lost)",
+          "结尾 Profit -$525 (swing=null)"
+        ],
+        "27": [
+          "Jungleman Straightens Out Hellmuth / Cates Felts Hellmuth Again / Big Slick Doesn't Do the Trick: 三手有行动 (hands_reported=3)",
+          "Big Slick Doesn't Do the Trick for Tilly: 'Hellmuth then jammed for $3,875' (allin_made)",
+          "Cates Felts Hellmuth Again: Cates 全下, 'Hellmuth snap-called off his remaining $1,750' (allin_faced)",
+          "Big Slick Doesn't Do the Trick: run twice 两次均 hold, 99 赢 $8,175 底池 (showdowns_won)",
+          "Jungleman Straightens Out Hellmuth: 小顺 call $2,500, 输 $8,025 底池 (showdowns_lost 1)",
+          "Cates Felts Hellmuth Again: run twice 'bricked out and was left to rebuy' (showdowns_lost 2)",
+          "结尾筹码表 Profit -$20,225 (swing; 续局累计口径)"
+        ],
+        "28": [
+          "Phil Hellmuth 在开场座位表(Seat 5), 但本集逐手描述中无其行动, 仅在 Deeb Pushes Around Young Hellmuth 中被引用点评 ('I would not have folded that, Nick') (hands_reported=0)",
+          "结尾 Profit -$5,000 (swing=null)"
+        ],
+        "29": [
+          "Entertaining First Hand / Tilly the Pussy Cat / Running It Once: 三手有行动 (hands_reported=3)",
+          "Running It Once: 'Hellmuth then moved all in for $2,350' (allin_made)",
+          "Entertaining First Hand: Tilly five-bet all in, 'Hellmuth called off' (allin_faced)",
+          "Tilly the Pussy Cat: 转牌 'Hellmuth bluffed again, this time $1,400' 被 Tilly 三条跟注, 最终输掉底池 (bluffs_caught)",
+          "Running It Once: 翻牌两对, AQ 完胜 TT, 'Hellmuth double to $4,800' (showdowns_won)",
+          "Entertaining First Hand: run twice 第一次 Tilly 中 set 得半池 (showdowns_lost 1); 第二次 runout 平分, 按规范不计, 仅注明 chop",
+          "Tilly the Pussy Cat: K 高跟注 $1,200, 'Tilly took down a $7,475 pot' (showdowns_lost 2)",
+          "结尾 Profit -$7,650 (swing=null; 续局累计口径)"
+        ],
+        "30": [
+          "Tilly Kicks Deeb / Hellmuth's Losing Ways: 两手有行动 (hands_reported=2)",
+          "Hellmuth's Losing Ways: 'Hellmuth moved all in for $5,825' (allin_made)",
+          "Hellmuth's Losing Ways: run twice 两半均归 Deeb (showdowns_lost); 自嘲 'I've lost more in these two sessions than in a long, long time'",
+          "结尾筹码表 Profit -$20,000 (swing; 续局累计口径)"
+        ]
+      }
+    },
+    "nick_hellmuth": {
+      "name": "Nick Hellmuth",
+      "episodes_played": 5,
+      "episodes_list": [
+        "14",
+        "19",
+        "28",
+        "29",
+        "30"
+      ],
+      "hands_reported": 7,
+      "allin_made": 4,
+      "allin_faced": 1,
+      "bluffs_caught": 0,
+      "bluffs_successful": 0,
+      "hero_calls": 0,
+      "big_folds": 1,
+      "tanks": 0,
+      "showdowns_won": 2,
+      "showdowns_lost": 3,
+      "sources": {
+        "hands_reported": [
+          "14",
+          "19",
+          "28",
+          "29",
+          "30"
+        ],
+        "allin_made": [
+          "14",
+          "19",
+          "28",
+          "30"
+        ],
+        "allin_faced": [
+          "28"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [],
+        "hero_calls": [],
+        "big_folds": [
+          "28"
+        ],
+        "tanks": [],
+        "showdowns_won": [
+          "14",
+          "28"
+        ],
+        "showdowns_lost": [
+          "19",
+          "28",
+          "30"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "30",
+          "amount": -10000
+        }
+      ],
+      "evidence": {
+        "14": [
+          "Hellmuth vs Hellmuth: Nick raised 9s9c and moved all in for $3,100 over his dad's three-bet (all-in made); Phil called and Nick scooped both runs of the $6,850 pot (showdown won)."
+        ],
+        "19": [
+          "Quads for Hellmuth: Nick (who replaced Tilly) moved all in for $2,200 total with two pair; his dad's quads felted him at showdown (allin_made, showdowns_lost, hands_reported)."
+        ],
+        "28": [
+          "Nick Hellmuth Tries to Set Up / Deeb Pushes Around Young Hellmuth / The Ladies Love Jungleman: 三手有行动 (hands_reported=3)",
+          "The Ladies Love Jungleman: 'Nick Hellmuth three-bet all in for $3,200' (allin_made)",
+          "Deeb Pushes Around Young Hellmuth: Deeb 河牌全下, Nick 有 $5,450 面临决定 (allin_faced)",
+          "Deeb Pushes Around Young Hellmuth: 顶对对全下 'opted to fold before showing his dad', recap 着重描写并有父子讨论 (big_folds)",
+          "Nick Hellmuth Tries to Set Up Opponents: 河牌 set 无人下注跟进, 收 $4,350 底池 (showdowns_won)",
+          "The Ladies Love Jungleman: 99 撞 QQ, run twice 均未中, 'left to reload for another $5,000' (showdowns_lost)",
+          "结尾 Profit -$4,750 (swing=null)"
+        ],
+        "29": [
+          "Monster Pot in Final Hand: Nick KTs hijack 跟注, 对 Cates $600 加注弃牌 (hands_reported=1)",
+          "结尾 Profit -$1,925 (swing=null)"
+        ],
+        "30": [
+          "Jungleman Stacks Nick Hellmuth: lead-out 后 'Nick moved all in for $7,725' (allin_made; hands_reported=1)",
+          "Jungleman Stacks Nick Hellmuth: run twice 两次均输给 KK, 'Nick exited the game' (showdowns_lost)",
+          "结尾筹码表 Profit -$10,000, 恰达 |$10,000| 门槛 (swing; 续局累计口径)"
+        ]
+      }
+    },
+    "p3_hellmuth": {
+      "name": "Phillip Hellmuth III (P3)",
+      "episodes_played": 21,
+      "episodes_list": [
+        "1",
+        "2",
+        "3-4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27"
+      ],
+      "hands_reported": 29,
+      "allin_made": 7,
+      "allin_faced": 7,
+      "bluffs_caught": 0,
+      "bluffs_successful": 0,
+      "hero_calls": 0,
+      "big_folds": 2,
+      "tanks": 2,
+      "showdowns_won": 5,
+      "showdowns_lost": 8,
+      "sources": {
+        "hands_reported": [
+          "1",
+          "2",
+          "3-4",
+          "6",
+          "7",
+          "10",
+          "11",
+          "12",
+          "13",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26"
+        ],
+        "allin_made": [
+          "1",
+          "6",
+          "12",
+          "20",
+          "26"
+        ],
+        "allin_faced": [
+          "3-4",
+          "20",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [],
+        "hero_calls": [],
+        "big_folds": [
+          "3-4",
+          "23"
+        ],
+        "tanks": [
+          "22",
+          "23"
+        ],
+        "showdowns_won": [
+          "20",
+          "25",
+          "26"
+        ],
+        "showdowns_lost": [
+          "3-4",
+          "6",
+          "12",
+          "22",
+          "23",
+          "24",
+          "26"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "3-4",
+          "amount": "-$10,000"
+        },
+        {
+          "episode": "20",
+          "amount": 27925
+        }
+      ],
+      "evidence": {
+        "1": [
+          "Jungleman Takes on Hellmuth's Son: Hellmuth III moved all in for $2,625 total with pocket queens and Cates mucked (allin_made, hands_reported=1)."
+        ],
+        "2": [
+          "50 Cent Loves the Club: Hellmuth III checked his option in the big blind with K-3 and folded on the flop (hands_reported=1)."
+        ],
+        "3-4": [
+          "Hellmuth III Can Get Away from Bullets, Baby: facing 3Coin's raise to $3,000 on a Q-J-J flop, 'Hellmuth III folded the aces' (big_folds).",
+          "Hellmuth III Felted in Final Hand: snap-called off his last $2,175 after 3Coin moved all in (allin_faced) and lost the $12,425 pot with trip aces vs. 3Coin's full house (showdowns_lost).",
+          "Swing: 'At the end of Episode 4, Hellmuth III was down $10,000' (recap prose; figure appears to be a running total since Episode 1)."
+        ],
+        "5": [
+          "Listed in the starting stack table ($4,975) but acts in no hand described in the recap; results table shows -$6,950 (under $10,000, so swing null)."
+        ],
+        "6": [
+          "Like Father, Like Son: Phillip check-raised all in for $3,950 on the turn with a flopped straight (allin_made); Alex called with a turned flush and Phillip missed on both run-it-twice rivers, losing the $9,975 pot (showdowns_lost).",
+          "hands_reported=2: Like Father, Like Son, 'I Have the Easiest Call Though' (came along from the small blind then folded to Alex's raise)."
+        ],
+        "7": [
+          "3Coin Felted Part 2: Phillip limped with jack-ten and folded to 3Coin's three-bet (hands_reported=1)."
+        ],
+        "8": [
+          "Listed in both stack tables (start $6,225, end $5,850, profit -$9,150) but acts in no hand described in the recap; profit under $10,000 so swing null."
+        ],
+        "9": [
+          "In seat 1 per the stack table but no hand in this recap describes him acting."
+        ],
+        "10": [
+          "Hellmuth Limp-Raises with Pocket Rockets: Hellmuth III called 3Coin's $300 raise from the big blind with Qs9c and folded to the $2,100 limp-raise."
+        ],
+        "11": [
+          "3Coin vs. Jungleman: Hellmuth III called from the small blind with Kc9h, checked the flop, and was out when action folded back to 3Coin."
+        ],
+        "12": [
+          "See If You Can Run the $75 Up: Hellmuth III bet the river with KsTd, faced 3Coin's check-raise to $1,500, thought for a bit and called, losing the $5,100 pot ('Terrible call') (showdown lost).",
+          "Hellmuth Goes to Broadway: Hellmuth III was all in for his last $100 with 7s7h (counted as all-in made); he was ahead in the main pot with bottom set but lost when Phil Hellmuth rivered the nut Broadway straight (showdown lost)."
+        ],
+        "13": [
+          "3Coin vs. Jungleman in Cooler Hand: Hellmuth III raised to $350 with KdJd and got out of the way after Cates' three-bet.",
+          "Fold the Unfoldable: Hellmuth III opened for $150 with KsJh and folded to Xuan's $2,000 four-bet."
+        ],
+        "20": [
+          "Click It Back: limped Jd10d, called the raise, checked and folded on the flop (hands_reported).",
+          "Action Flop: with top set of jacks he moved all in for $7,775 over Matusow's check-raise and scooped both runs of the $26,100 pot (allin_made, showdowns_won).",
+          "Quads for Hellmuth: called preflop with Ad6s and folded on the flop (hands_reported).",
+          "P3 Sets Up 3Coin: reraised to $3,600 with a set of jacks and snap-called 3Coin's $6,750 jam, felting him (allin_faced, showdowns_won).",
+          "swing: end-of-episode Profit table lists P3 +$27,925."
+        ],
+        "21": [
+          "Cerasani Picks a Bad Time to Shove: limped 9d8h from the hijack and folded to Washburn's raise (hands_reported)."
+        ],
+        "22": [
+          "P3 Felted in First Hand: facing 3Coin's river all in with QQ and $4,750 behind he thought long and hard before calling off, and lost the $13,425 pot (allin_faced, tanks, showdowns_lost).",
+          "swing: start Profit +$1,700 to end Profit -$4,800 = -$6,500, below $10,000 so null."
+        ],
+        "23": [
+          "It Gonna Do What It Do / 3Coin Felts P3 / 3Coin Tries to Bust Hellmuth: 三手有行动 (hands_reported=3)",
+          "It Gonna Do What It Do: 面对 3Coin 河牌全下 $3,100 (allin_faced 1)",
+          "3Coin Felts P3: 河牌 'P3 called off his last $875', 下注覆盖其剩余筹码 (allin_faced 2)",
+          "It Gonna Do What It Do: 'P3 thought even longer ... I need to think about this' (tanks)",
+          "It Gonna Do What It Do: 'P3 ended up folding the best hand', recap 着重描写 (big_folds)",
+          "3Coin Felts P3: call off 后 '$5,000 pot pushed to 3Coin' (showdowns_lost)",
+          "结尾 Profit -$6,700, 未达 $10,000 (swing=null)"
+        ],
+        "24": [
+          "Lucky Sevens for Hellmuth: 跟注后 'got out of the way'; Aces Again for the Mouth: 3-bet 后 call off (hands_reported=2)",
+          "Aces Again for the Mouth: Matusow 全下, 'prompted P3 to call off' $1,975 (allin_faced)",
+          "Aces Again for the Mouth: run twice, 'P3 missed on both' (showdowns_lost)",
+          "结尾 Profit -$5,000, 未达 $10,000 (swing=null)"
+        ],
+        "25": [
+          "Both Hellmuth's At-Risk: P3 KK 加注并 call off (hands_reported=1)",
+          "Both Hellmuth's At-Risk: Hellmuth jam $2,325 后 'His son, P3, called off for $2,050' (allin_faced)",
+          "Both Hellmuth's At-Risk: run twice 首次锁半池后 'he scooped it all' (showdowns_won)",
+          "结尾 Profit +$925 (swing=null)"
+        ],
+        "26": [
+          "Big Slick Does the Trick / Big Three-Way All In / Tilly Has a Kicker Problem / Flush Cooler: 四手有行动 (hands_reported=4)",
+          "Big Slick Does the Trick for P3: 'P3 then limp-jammed for $3,750 total' (allin_made 1)",
+          "Big Three-Way All In: 'P3 moved all in for $3,675' (allin_made 2)",
+          "Flush Cooler: Kelly 全下后 'P3 jammed over the top' (allin_made 3)",
+          "Big Slick Does the Trick for P3: 干净 runout, AK 赢 $8,050 底池 (showdowns_won 1)",
+          "Flush Cooler: Kelly drawing dead, 'Ship the $11,950 pot to P3' (showdowns_won 2)",
+          "Big Three-Way All In: run twice 两半分别归 Cates 与 Tilly, 'left P3 to rebuy' (showdowns_lost)",
+          "结尾 Profit +$2,325 (swing=null)"
+        ],
+        "27": [
+          "P3 在开场座位表中(Seat 1), 但本集无任何逐手描述包含其行动 (hands_reported=0)",
+          "结尾 Profit +$3,900 (swing=null)"
+        ]
+      }
+    },
+    "jennifer_tilly": {
+      "name": "Jennifer Tilly",
+      "episodes_played": 11,
+      "episodes_list": [
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "hands_reported": 33,
+      "allin_made": 3,
+      "allin_faced": 14,
+      "bluffs_caught": 0,
+      "bluffs_successful": 0,
+      "hero_calls": 3,
+      "big_folds": 1,
+      "tanks": 2,
+      "showdowns_won": 9,
+      "showdowns_lost": 5,
+      "sources": {
+        "hands_reported": [
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "allin_made": [
+          "28",
+          "29",
+          "30"
+        ],
+        "allin_faced": [
+          "14",
+          "15",
+          "17",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [],
+        "hero_calls": [
+          "14",
+          "15"
+        ],
+        "big_folds": [
+          "17"
+        ],
+        "tanks": [
+          "17",
+          "30"
+        ],
+        "showdowns_won": [
+          "14",
+          "15",
+          "29",
+          "30"
+        ],
+        "showdowns_lost": [
+          "14",
+          "26",
+          "27",
+          "28",
+          "30"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "14",
+          "amount": 15075
+        },
+        {
+          "episode": "15",
+          "amount": 43275
+        },
+        {
+          "episode": "16",
+          "amount": 10075
+        },
+        {
+          "episode": "17",
+          "amount": -11325
+        },
+        {
+          "episode": "26",
+          "amount": 11925
+        },
+        {
+          "episode": "28",
+          "amount": -14450
+        },
+        {
+          "episode": "30",
+          "amount": 85125
+        }
+      ],
+      "evidence": {
+        "14": [
+          "I'm Just Doing It for Fun: Tilly called Texas Mike's $3,850 three-bet jam with Qh8h ('It's not really a $3,800 hand... I'm just doing it for fun') (all-in faced; hero call with a marginal hand that won), rivered a flush, and won the $8,200 pot (showdown won).",
+          "I'm Just Doing It for Fun (next hand): Tilly called Texas Mike's $5,000 jam with KcJc (all-in faced) and felted him back-to-back (showdown won).",
+          "The Jennifer Tilly Show: Tilly bet $2,000 on a scary paired three-heart river with her flopped straight and called 3Coin's $5,075 all-in (all-in faced; hero call on a scary board that won), taking down the $12,350 pot (showdown won).",
+          "Ladies Do Battle: Tilly led the turn for $3,000 and called Minkin's $4,675 all-in (all-in faced); Minkin won the first run and they chopped the second, so Tilly got quartered and lost the pot on net (showdown lost; second run was a chop).",
+          "Swing: end-of-episode Profit column shows +$15,075 (fresh $5,000 starting stacks this session)."
+        ],
+        "15": [
+          "Tilly Gets It in Against Texas Mike: Tilly called off $18,600 with AcKh against Texas Mike's $23,500 all-in (all-in faced), flopped top pair, and doubled through the $40,450 pot (showdown won).",
+          "I'm Not Happy About This: Tilly snap three-bet AcKd to $6,000, and on the river faced Texas Mike's $19,500 all-in bluff ('I'm not happy about this... Are you just like crazy and desperate') before eventually calling to win the $53,350 pot (all-in faced; hero call with top pair that caught the bluff; showdown won).",
+          "Texas Mike vs. Cates in $94K Pot!: Tilly called the open with KsTc and got out of the way after the four-bet.",
+          "Swing: Profit column went from +$20,625 (start) to +$63,900 (end), a +$43,275 change for this episode."
+        ],
+        "16": [
+          "All In on the First Hand: Tilly called Kelly's preflop raise and folded on the flop (hands_reported).",
+          "swing: end-of-episode Profit table lists Jennifer Tilly +$10,075."
+        ],
+        "17": [
+          "Cates Gets There on River: opened 88, bet the flop, released her pair to Cates' $9,500 river bet (hands_reported).",
+          "Texas Mike Picks a Bad Time: called $1,200 preflop with As7s and folded on the flop (hands_reported).",
+          "It's My Birthday!: facing Texas Mike's $19,850 river all in with two pair she hit the tank before releasing her hand (allin_faced, tanks, big_folds).",
+          "The Final Hand: folded her straight draw to Cates' turn check-raise to $9,000 (hands_reported).",
+          "swing: start Profit +$10,075 to end Profit -$1,250 = -$11,325 for the episode (both tables in recap)."
+        ],
+        "18": [
+          "I Want It to Sting if I Get There: opened Qh5h for $300 and folded to Cates' three-bet (hands_reported).",
+          "What a Turn!: bet $1,000 on the flop with two pair, then smelled something fishy and released on the turn (hands_reported)."
+        ],
+        "19": [
+          "Texas Mike Just Can't Resist: called from her straddle and folded to Cates' $1,500 turn bet (hands_reported).",
+          "Left the game mid-episode (replaced by Nick Hellmuth); not in the end-of-episode table."
+        ],
+        "26": [
+          "Big Three-Way All In / Tilly Has a Kicker Problem / Flush Cooler: 三手有行动 (hands_reported=3)",
+          "Big Three-Way All In: Cates jam $16,550 后 'Tilly called while saying Easy come, easy go' (allin_faced 1)",
+          "Flush Cooler: Kelly 全下且 P3 再 jam 后 'Tilly folded' (allin_faced 2)",
+          "Big Three-Way All In: run twice 第二次 runout 中同花得半池, 与 Cates 各半 (chop, 摊牌胜负不计, 仅注明)",
+          "Tilly Has a Kicker Problem: 踢脚更小仍 call $4,000, 输 $11,650 底池 (showdowns_lost)",
+          "结尾筹码表 Profit +$11,925 (swing)"
+        ],
+        "27": [
+          "Cates Felts Hellmuth Again(limp 后弃牌) / Big Slick Doesn't Do the Trick(3-bet 后 call): 两手有行动 (hands_reported=2)",
+          "Big Slick Doesn't Do the Trick: Hellmuth jam $3,875, 'Tilly, who called' (allin_faced)",
+          "Big Slick Doesn't Do the Trick: AK 两次 runout 均未中, 输 $8,175 底池 (showdowns_lost)",
+          "结尾 Profit +$7,825 (swing=null)"
+        ],
+        "28": [
+          "Nick Hellmuth Tries to Set Up / I Have Held Over You / Xuan vs Lindgren AIPF / The Ladies Love Jungleman: 四手有行动 (hands_reported=4)",
+          "I Have Held Over You: 'Tilly responded by moving all in for $4,150 total' (allin_made)",
+          "The Ladies Love Jungleman: Nick 3-bet 全下 $3,200 后 'Tilly got out of the way' (allin_faced)",
+          "I Have Held Over You: run once bricked, 输 $9,675 底池 (showdowns_lost)",
+          "结尾筹码表 Profit -$14,450 (swing)"
+        ],
+        "29": [
+          "Entertaining First Hand / Tilly the Pussy Cat / Running It Once / Diamonds are Tilly's Best Friend: 四手有行动 (hands_reported=4)",
+          "Entertaining First Hand: 'Tilly then five-bet all in' (allin_made)",
+          "Running It Once: Hellmuth 全下 $2,350 后 'Tilly folded from the big blind' (allin_faced)",
+          "Entertaining First Hand: TT 首次 runout 中 set 得半池 (showdowns_won 1); 第二次 runout chop, 不计, 仅注明",
+          "Tilly the Pussy Cat: 三条三 value bet 被 call, 'took down a $7,475 pot' (showdowns_won 2)",
+          "Diamonds are Tilly's Best Friend: check-raise $10,000 逼 Cates 放弃 $17,475 底池 (未摊牌, 不计摊牌)",
+          "结尾 Profit +$7,975 (swing=null)"
+        ],
+        "30": [
+          "Fireworks in First Hand / Jungleman Stacks Nick / Tilly Kicks Deeb / Tilly Clashes with Cates / Tilly Felts Deeb: 五手有行动 (hands_reported=5)",
+          "Tilly Clashes with Cates: 'Tilly moved all in for $49,700' (allin_made)",
+          "Tilly Kicks Deeb: 'Deeb responded by moving all in, and Tilly called off the $6,700 she had behind' (allin_faced 1)",
+          "Tilly Felts Deeb in Monster Pot: Deeb check-jam $23,400, 'Tilly snap-called' (allin_faced 2)",
+          "Fireworks in First Hand: 河牌对 $12,500 'Tilly thought long and hard before making the call' (tanks)",
+          "Tilly Kicks Deeb: run once, 河牌对 Deeb 是砖, 赢 $39,000 底池 (showdowns_won 1)",
+          "Tilly Felts Deeb in Monster Pot: AA 拿下 $68,400 底池 (showdowns_won 2)",
+          "Fireworks in First Hand: call 后 Cates TPTK 亮牌, 输 $36,675 底池 (showdowns_lost)",
+          "Tilly Clashes with Cates: Cates 弃牌后 'Tilly showed the goods'(set, 非诈唬, 不计 bluffs)",
+          "结尾筹码表 Profit +$85,125 (swing; 续局累计口径)"
+        ]
+      }
+    },
+    "dan_cates": {
+      "name": "Dan 'Jungleman' Cates",
+      "episodes_played": 23,
+      "episodes_list": [
+        "1",
+        "2",
+        "3-4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "hands_reported": 78,
+      "allin_made": 11,
+      "allin_faced": 29,
+      "bluffs_caught": 3,
+      "bluffs_successful": 1,
+      "hero_calls": 2,
+      "big_folds": 3,
+      "tanks": 7,
+      "showdowns_won": 19,
+      "showdowns_lost": 13,
+      "sources": {
+        "hands_reported": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "allin_made": [
+          "3-4",
+          "9",
+          "10",
+          "11",
+          "13",
+          "16",
+          "19",
+          "26",
+          "27",
+          "29"
+        ],
+        "allin_faced": [
+          "1",
+          "5",
+          "7",
+          "8",
+          "10",
+          "13",
+          "15",
+          "17",
+          "18",
+          "19",
+          "27",
+          "28",
+          "30"
+        ],
+        "bluffs_caught": [
+          "5",
+          "16"
+        ],
+        "bluffs_successful": [
+          "3-4"
+        ],
+        "hero_calls": [
+          "1",
+          "19"
+        ],
+        "big_folds": [
+          "8",
+          "18",
+          "30"
+        ],
+        "tanks": [
+          "1",
+          "3-4",
+          "5",
+          "10",
+          "15",
+          "19",
+          "30"
+        ],
+        "showdowns_won": [
+          "1",
+          "7",
+          "10",
+          "11",
+          "15",
+          "17",
+          "18",
+          "19",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "showdowns_lost": [
+          "1",
+          "5",
+          "7",
+          "8",
+          "13",
+          "15",
+          "16",
+          "19"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "3-4",
+          "amount": "+$19,600"
+        },
+        {
+          "episode": "5",
+          "amount": "-$26,700"
+        },
+        {
+          "episode": "8",
+          "amount": "-$24,425"
+        },
+        {
+          "episode": "9",
+          "amount": 16525
+        },
+        {
+          "episode": "11",
+          "amount": 14350
+        },
+        {
+          "episode": "13",
+          "amount": -32275
+        },
+        {
+          "episode": "17",
+          "amount": 53275
+        },
+        {
+          "episode": "18",
+          "amount": 12350
+        },
+        {
+          "episode": "19",
+          "amount": 94400
+        },
+        {
+          "episode": "27",
+          "amount": 32475
+        },
+        {
+          "episode": "28",
+          "amount": -18000
+        },
+        {
+          "episode": "29",
+          "amount": -13650
+        }
+      ],
+      "evidence": {
+        "1": [
+          "The Tone Had Been Set: Cates called Hellmuth's $4,100 all-in (allin_faced) and lost both run-it-twice boards with jack-ten suited (showdowns_lost).",
+          "Jungleman Takes on Hellmuth's Son: Cates looked as if he was going to call Hellmuth III's $2,625 all-in but sent his cards to the muck (allin_faced).",
+          "Eccentric Super Pro: Cates 'hit the tank' on the river (tanks), called $2,500 with a self-described 'bluff catcher' bottom pair and claimed the $11,825 pot (hero_calls, showdowns_won).",
+          "hands_reported=5: The Tone Had Been Set, Washburn Flops the Nuts on 3Coin, Jungleman Takes on Hellmuth's Son, Eccentric Super Pro, Xuan Gets Revenge."
+        ],
+        "2": [
+          "hands_reported=3: First Hand to 3Coin (three-bet, called check-raise, folded to $3,000 turn bet), Check to the Better Player (called preflop, folded flop), Cates Gets Called F-ing Around (three-bet then folded to Hellmuth's raise)."
+        ],
+        "3-4": [
+          "Xuan Flips a Coin: Cates moved all in on the river (allin_made) and immediately tabled the bluff after Xuan folded (bluffs_successful).",
+          "'I Feel Offended': Cates 'thought long and hard' before betting $12,000 on the river with top two pair (tanks); Alex folded without much hesitation.",
+          "Swing: recap states Cates was the second biggest winner at the end of Episode 4 with a profit of $19,600 (figure appears to be a running total since Episode 1).",
+          "hands_reported=2: Xuan Flips a Coin, 'I Feel Offended'."
+        ],
+        "5": [
+          "Early Double for the Poker Brat: Cates 'thought long and hard' before betting $4,000 on the river (tanks) holding only bottom pair with 6-4; Hellmuth called off with the nuts and won (bluffs_caught, showdowns_lost).",
+          "This Game Had Lost Its Mind: facing Alex's $16,025 all-in and 3Coin's $26,150 five-bet jam, Cates eventually called with ace-jack (allin_faced) and lost the $68,675 pot to 3Coin (showdowns_lost).",
+          "Swing: end-of-game results table lists Cates -$26,700.",
+          "hands_reported=4: Early Double for the Poker Brat, Hellmuth Overbets River (folded river), We're Still Friends? (folded flop), This Game Had Lost Its Mind."
+        ],
+        "6": [
+          "Jungleman Gets in the Game: Cates bet $1,900 on the river with bottom pair and let it go when Alex check-raised to $5,700 (hands_reported=1)."
+        ],
+        "7": [
+          "'You Either Have a Set or Nothing': Cates faced Hellmuth's $4,275 turn all-in with an open-ended straight draw and folded (allin_faced).",
+          "Cates Sets Up Alex: Alex moved all in on the turn and Cates snap-called off for $11,075 with a flopped set of tens (allin_faced); Alex was drawing dead and Cates won the $35,375 pot (showdowns_won).",
+          "'He's Not Evil': Cates' $4,100 river bet was snap-called by Hellmuth, who won the $11,450 pot while Cates mucked (showdowns_lost).",
+          "3Coin Felted Part 1: Cates called the flop bet then folded to 3Coin's $8,750 all-in (allin_faced).",
+          "3Coin Felted Part 2: Cates insta-called 3Coin's $5,600 turn all-in with a turned flush (allin_faced) and won the $19,925 pot (showdowns_won).",
+          "hands_reported=6: the five hands above plus 3Coin Gets It All Back (bluffed $5,000 on the river then quickly folded to Xuan's raise)."
+        ],
+        "8": [
+          "'I'm Gonna Put My Phone Down': facing 3Coin's re-raise to $9,000, Cates put his head in his hands, said 'What am I doing? I feel like a fish right now,' and folded pocket nines (big_folds).",
+          "Aces Cracked: after raising to $6,000, Cates faced Alex's all-in for $14,525 and called $8,525 more (allin_faced), losing the $34,525 pot to Alex's full house (showdowns_lost).",
+          "hands_reported=3: 'I'm Gonna Put My Phone Down', Aces Cracked, You Just Got Trapped By Hellmuth (raised preflop, got out of the way on the turn).",
+          "Swing: end-of-episode table Profit column lists Cates -$24,425; the start-of-episode table showed +$350, so the column appears to be a running total (episode change by profit column ~ -$24,775)."
+        ],
+        "9": [
+          "Kill Phil: Cates limped the big blind with Kd7s and folded to Hellmuth's $300 raise.",
+          "Pocket Rockets for Jungleman: Cates three-bet AA to $1,500, bet the flop, called the min-raise, then moved all in for $16,625 on the turn; 3Coin folded and Cates won without showdown.",
+          "Swing: stack-table Profit went from -$24,425 (start) to -$7,900 (end), a +$16,525 change for this episode (Profit column is season-cumulative; per-episode value computed as end minus start)."
+        ],
+        "10": [
+          "Jungleman Calls Xuan's Hand: Cates three-bet Td8d, check-called the flop, then check-raised all in for $36,475 on the turn with the nut straight.",
+          "Jungleman Calls Xuan's Hand: Cates was 'hitting the tank in silence' before emerging with the all-in check-raise (tank).",
+          "Jungleman Calls Xuan's Hand: Xuan called; they ran it twice and Cates won both runs, scooping the $78,875 pot, the largest in show history (showdown won).",
+          "Nevada Hooks Himself a Triple: Cates called Nevada's $2,425 all-in with TdTc to create a side pot (all-in faced), later folding the river to 3Coin's $15,000 raise.",
+          "Give a Thug a Hug: Cates put out a $400 blind raise and folded to Xuan's $1,500 four-bet."
+        ],
+        "11": [
+          "How Bad Does Chris Run?: Cates came along from the small blind with 7c4c preflop (his action after 3Coin's shove is not described).",
+          "3Coin vs. Jungleman: Cates raised 6d6c, flopped bottom set, moved all in for $11,375 (all-in made), was called by 3Coin, and won the $24,550 pot at showdown.",
+          "Swing: end-of-episode Profit column shows +$14,350 for this fresh-lineup session."
+        ],
+        "12": [
+          "First Blood to 3Coin: Cates called with 6d4d, bet the flop, and got out of the way after 3Coin's check-raise.",
+          "Xuan Takes on Hellmuth: Cates came along with 4d3d and folded to Xuan's three-bet.",
+          "3Coin Gets $3,000 Out of Hellmuth: Cates raised to $500 with Kh8h and got out of the way on the turn.",
+          "Hellmuth Goes to Broadway: Cates made it $1,200 with 8h8c and folded to 3Coin's $3,000 flop bet."
+        ],
+        "13": [
+          "3Coin vs. Jungleman in Cooler Hand: Cates three-bet AhKc, called the check-raise, and called 3Coin's covering all-in with his remaining $11,375 (all-in faced), losing the $32,525 pot and reloading (showdown lost).",
+          "I'm Gonna Call But I Don't Like It: Cates raised to $300 with 7c2h and got out of the way on the turn.",
+          "Xuan Picks the Wrong Time to Move All In: Cates three-bet Tc9c and quickly got out of the way when Xuan moved all in (all-in faced).",
+          "3Coin Stabs at It on the River: Cates flatted with bottom set, took a while to decide, then moved all in over 3Coin's $3,000 river bet (all-in made); 3Coin folded.",
+          "Fold the Unfoldable: Cates moved all in for $16,675 with a set (all-in made) but 3Coin turned a straight and Cates lost the $39,150 pot, dropping to $1,350 (showdown lost).",
+          "Swing: Profit column went from +$8,950 (start) to -$23,325 (end), a -$32,275 change for this episode."
+        ],
+        "15": [
+          "What a Flop!: Cates raised to $300 with Td8c and got out of the way after Texas Mike's four-bet.",
+          "Cooler River: Cates check-called down with 8d3d, said 'I am going to just call' to the $4,400 river bet, and lost the $11,875 pot with bottom two pair (showdown lost).",
+          "Tilly Gets It in Against Texas Mike: Cates four-bet KdQc to $3,050 and folded when Texas Mike moved all in for $23,500 (all-in faced).",
+          "Texas Mike Getting Wrecked: Cates bet $6,000 with top two pair and quickly called Texas Mike's $22,875 all-in (all-in faced), winning the $60,100 pot run once (showdown won).",
+          "Texas Mike vs. Cates in $94K Pot!: facing Texas Mike's $30,350 river all-in, Cates 'hit the tank before calling' (all-in faced; tank), only to lose the $94,475 pot to a runner-runner boat (showdown lost).",
+          "Note: the recap also briefly mentions Cates later made quads to double back through Texas Mike, but that hand is not described action-by-action and is not counted."
+        ],
+        "16": [
+          "All In on the First Hand: Cates check-raised all in on the turn with a flush/wheel draw (allin_made); neither run helped him and Kelly doubled up (showdowns_lost).",
+          "Measly Pair: Cates bluffed the river with a $6,700 bet holding 9d7s and Pink called to win the $17,925 pot (bluffs_caught, showdowns_lost).",
+          "Jungleman Puts Texas Mike to the Test: Cates bluffed $8,000 on the river with 10d8h and Texas Mike picked it off (bluffs_caught, showdowns_lost).",
+          "Hellmuth Shoves Last Hand: Cates folded 3c2c on the flop (hands_reported).",
+          "swing: end table lists Cates '-$8,80' (apparent typo, likely -$8,800), below $10,000 so null."
+        ],
+        "17": [
+          "Cates Gets There on River: rivered two pair and his $9,500 bet folded out both opponents for the $19,225 pot (hands_reported).",
+          "Texas Mike Picks a Bad Time: called Texas Mike's $19,550 river all in with two pair and won the $55,400 pot (allin_faced, showdowns_won).",
+          "Should Not Have Paid That Off: turned a full house and Washburn paid off the river, Cates won the $15,125 pot (showdowns_won).",
+          "The Final Hand: check-raised the turn to $9,000 and took the last pot of the episode (hands_reported).",
+          "swing: start Profit -$8,800 to end Profit +$44,475 = +$53,275 for the episode."
+        ],
+        "18": [
+          "Three Players All in on 1st Hand: called with 10d8d putting three opponents at risk; pot chopped by the board flush (allin_faced; chop, no showdown counted).",
+          "I Want It to Sting if I Get There: made a crying call of Kelly's $3,725 all in with 7c2d and won the $7,875 pot (allin_faced, showdowns_won).",
+          "What a Turn!: folded to Texas Mike's $11,425 river all in (allin_faced).",
+          "This is the Play of the Day: folded a rivered pair of tens to Texas Mike's $14,925 check-raise all in, calling it 'the play of the day' (allin_faced, big_folds).",
+          "Texas Mike Getting Lucky: raised 8h2s from the button and folded to Texas Mike's three-bet (hands_reported).",
+          "swing: end-of-episode Profit table lists Cates +$12,350."
+        ],
+        "19": [
+          "Will Texas Mike Set the Record?: five-bet all in for $26,775 with AcQc and lost the $54,350 flip to Texas Mike's set (allin_made, showdowns_lost).",
+          "Texas Mike Just Can't Resist: bet $20,000 on the river with aces full and called Texas Mike's all in to win the $64,700 pot (allin_faced, showdowns_won).",
+          "Cates & Texas Mike Clash Again: snap-called Texas Mike's $46,000 turn all in with trips plus the same straight draw; they chopped the $103,475 pot (allin_faced; chop, no showdown counted).",
+          "That Hand's Going Viral: facing Texas Mike's river all in with $58,775 behind he hit the tank, then called with JJ to win the $162,850 pot (allin_faced, tanks, hero_calls, showdowns_won).",
+          "Quads for Hellmuth: check-raised the flop with a flush draw, called Nick Hellmuth's all in, then snap-folded to Hellmuth's $6,000 river bet (allin_faced, hands_reported).",
+          "swing: end-of-episode Profit table lists Cates +$94,400."
+        ],
+        "26": [
+          "Big Three-Way All In / Tilly Has a Kicker Problem / Flush Cooler: 三手有行动 (hands_reported=3)",
+          "Big Three-Way All In: 'jammed over the top for $16,550' (allin_made)",
+          "Big Three-Way All In: run twice 首次 runout 得半池, 与 Tilly 各半 (chop, 按规范摊牌胜负不计, 仅注明)",
+          "Tilly Has a Kicker Problem: 河牌 $4,000 被 call, '$11,650 pot pushed to her opponent'(即 Cates) (showdowns_won)",
+          "结尾 Profit -$4,150 (swing=null)"
+        ],
+        "27": [
+          "Jungleman vs. Edog / Jungleman Straightens Out Hellmuth / Cates Felts Hellmuth Again / Big Slick Doesn't Do the Trick: 四手有行动 (hands_reported=4)",
+          "Cates Felts Hellmuth Again: 翻牌中坚果顺 'moved all in' (allin_made)",
+          "Jungleman vs. Edog: Lindgren 全下 $5,725, 'Cates snapped him off' (allin_faced 1)",
+          "Big Slick Doesn't Do the Trick: Hellmuth jam $3,875 后 action folded back(Cates 弃牌) (allin_faced 2)",
+          "Jungleman vs. Edog: 转牌成葫芦赢 $16,300 底池 (showdowns_won 1)",
+          "Jungleman Straightens Out Hellmuth: 更大顺子赢 $8,025 底池 (showdowns_won 2)",
+          "Cates Felts Hellmuth Again: run twice Hellmuth bricked, 赢 $10,275 底池 (showdowns_won 3)",
+          "结尾筹码表 Profit +$32,475 (swing; 续局累计口径)"
+        ],
+        "28": [
+          "Nick Hellmuth Tries to Set Up / Xuan vs Lindgren AIPF / The Ladies Love Jungleman: 三手有行动 (hands_reported=3)",
+          "Xuan vs Lindgren in Big AIPF Cash: Lindgren 全下 $5,500 后 'Cates quickly folded' (allin_faced 1)",
+          "The Ladies Love Jungleman: Nick 3-bet 全下 $3,200, Cates 持 QQ call (allin_faced 2)",
+          "The Ladies Love Jungleman: run twice 两次均胜, Nick 需重买 (showdowns_won)",
+          "结尾筹码表 Profit -$18,000 (swing)"
+        ],
+        "29": [
+          "Diamonds are Tilly's Best Friend / Monster Pot in Final Hand: 两手有行动 (hands_reported=2)",
+          "Monster Pot in Final Hand: 河牌 'Cates move all in for $14,025' (allin_made)",
+          "Monster Pot in Final Hand: KK 拿下 $46,350 底池 (showdowns_won)",
+          "Diamonds are Tilly's Best Friend: 七高下注 $3,850 被 check-raise 至 $10,000 后放弃 $17,475 底池 (弃牌未被 call, 不计 bluffs_caught)",
+          "结尾筹码表 Profit -$13,650 (swing; 续局累计口径)"
+        ],
+        "30": [
+          "Fireworks in First Hand / Jungleman Stacks Nick Hellmuth / Tilly Clashes with Cates: 三手有行动 (hands_reported=3)",
+          "Jungleman Stacks Nick Hellmuth: Nick 全下 $7,725, 'Cates snap-called' (allin_faced 1)",
+          "Tilly Clashes with Cates: Tilly 全下 $49,700, Cates 面临决定 (allin_faced 2)",
+          "Tilly Clashes with Cates: 'Cates hit the tank while lamenting that he had raised' (tanks)",
+          "Tilly Clashes with Cates: QQ 超对 'ultimately laid it down', recap 着重描写 (big_folds)",
+          "Fireworks in First Hand: TPTK 亮牌赢 $36,675 底池 (showdowns_won 1)",
+          "Jungleman Stacks Nick Hellmuth: run twice 两次均胜, scoop $16,600 (showdowns_won 2)",
+          "结尾 Profit +$4,625 (swing=null)"
+        ]
+      }
+    },
+    "shaun_deeb": {
+      "name": "Shaun Deeb",
+      "episodes_played": 3,
+      "episodes_list": [
+        "28",
+        "29",
+        "30"
+      ],
+      "hands_reported": 8,
+      "allin_made": 3,
+      "allin_faced": 4,
+      "bluffs_caught": 0,
+      "bluffs_successful": 1,
+      "hero_calls": 0,
+      "big_folds": 0,
+      "tanks": 0,
+      "showdowns_won": 2,
+      "showdowns_lost": 4,
+      "sources": {
+        "hands_reported": [
+          "28",
+          "29",
+          "30"
+        ],
+        "allin_made": [
+          "28",
+          "30"
+        ],
+        "allin_faced": [
+          "28",
+          "29",
+          "30"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [
+          "28"
+        ],
+        "hero_calls": [],
+        "big_folds": [],
+        "tanks": [],
+        "showdowns_won": [
+          "28",
+          "30"
+        ],
+        "showdowns_lost": [
+          "29",
+          "30"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "28",
+          "amount": 21950
+        },
+        {
+          "episode": "30",
+          "amount": -80000
+        }
+      ],
+      "evidence": {
+        "28": [
+          "Nick Hellmuth Tries to Set Up Opponents / Deeb Pushes Around Young Hellmuth / I Have Held Over You: 三手有行动 (hands_reported=3)",
+          "Deeb Pushes Around Young Hellmuth: 'went for the bluff by moving all in' (allin_made)",
+          "I Have Held Over You: Tilly 全下 $4,150, 'Deeb snap-called' (allin_faced)",
+          "Deeb Pushes Around Young Hellmuth: recap 明说 bluff 且亮出 T9 未中, Nick 弃牌 (bluffs_successful)",
+          "I Have Held Over You: run once, Tilly bricked, 'Deeb claimed the $9,675 pot' (showdowns_won)",
+          "结尾筹码表 Profit +$21,950 (swing)"
+        ],
+        "29": [
+          "Running It Once / Monster Pot in Final Hand: 两手有行动 (hands_reported=2)",
+          "Running It Once: Hellmuth 全下 $2,350, 'Deeb called, saying he only wanted to run it once' (allin_faced 1)",
+          "Monster Pot in Final Hand: Cates 河牌全下 $14,025, 'Deeb didn't take too long to call' (allin_faced 2)",
+          "Running It Once: TT 未追上, 目送 Hellmuth double (showdowns_lost 1)",
+          "Monster Pot in Final Hand: call 后 '$46,350 pot pushed to his opponent' (showdowns_lost 2)",
+          "结尾 Profit -$1,225 (swing=null)"
+        ],
+        "30": [
+          "Tilly Kicks Deeb / Hellmuth's Losing Ways / Tilly Felts Deeb in Monster Pot: 三手有行动 (hands_reported=3)",
+          "Tilly Kicks Deeb: 'Deeb responded by moving all in' (allin_made 1)",
+          "Tilly Felts Deeb in Monster Pot: 'Deeb check-jammed all in for $23,400' (allin_made 2)",
+          "Hellmuth's Losing Ways: Hellmuth 全下 $5,825 后 Deeb 'called' (allin_faced)",
+          "Hellmuth's Losing Ways: run twice 首次 K 河牌得半池, 第二次 scoop, 赢 $12,250 底池 (showdowns_won)",
+          "Tilly Kicks Deeb: run once 河牌砖, 输 $39,000 底池 (showdowns_lost 1)",
+          "Tilly Felts Deeb in Monster Pot: 'he came up empty', 输 $68,400 底池 (showdowns_lost 2)",
+          "结尾筹码表 Profit -$80,000 (swing; 续局累计口径)"
+        ]
+      }
+    },
+    "xuan_liu": {
+      "name": "Xuan Liu",
+      "episodes_played": 18,
+      "episodes_list": [
+        "1",
+        "2",
+        "3-4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "hands_reported": 32,
+      "allin_made": 3,
+      "allin_faced": 8,
+      "bluffs_caught": 1,
+      "bluffs_successful": 0,
+      "hero_calls": 0,
+      "big_folds": 3,
+      "tanks": 2,
+      "showdowns_won": 3,
+      "showdowns_lost": 7,
+      "sources": {
+        "hands_reported": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "26",
+          "27",
+          "28"
+        ],
+        "allin_made": [
+          "10",
+          "13",
+          "26"
+        ],
+        "allin_faced": [
+          "2",
+          "3-4",
+          "7",
+          "10",
+          "13",
+          "26",
+          "28"
+        ],
+        "bluffs_caught": [
+          "1"
+        ],
+        "bluffs_successful": [],
+        "hero_calls": [],
+        "big_folds": [
+          "2",
+          "3-4",
+          "8"
+        ],
+        "tanks": [
+          "3-4",
+          "7"
+        ],
+        "showdowns_won": [
+          "7",
+          "12",
+          "26"
+        ],
+        "showdowns_lost": [
+          "1",
+          "7",
+          "9",
+          "10",
+          "13",
+          "26",
+          "28"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "13",
+          "amount": -22125
+        }
+      ],
+      "evidence": {
+        "1": [
+          "Eccentric Super Pro: Xuan's $2,500 river bet with unimproved K-Q high (busted straight-flush draw) was called by Cates' bluff catcher and she lost the $11,825 pot (bluffs_caught, showdowns_lost).",
+          "hands_reported=4: The Tone Had Been Set (folded her straddle), Hellmuth Insta-Mucks Flush (called flop then out), Eccentric Super Pro, Xuan Gets Revenge (won when Cates folded to her $5,000 turn bet)."
+        ],
+        "2": [
+          "Who Can Bluff It Better?: 3Coin moved all in for $6,175 on the river and Liu 'had little recourse but to fold' her ten-high; they would have chopped (allin_faced).",
+          "50 Cent Loves the Club: facing Nevada's $3,550 all-in, 'Liu folded her two pair' (allin_faced, big_folds).",
+          "hands_reported=3: Check to the Better Player (called then folded flop), Who Can Bluff It Better?, 50 Cent Loves the Club."
+        ],
+        "3-4": [
+          "Xuan Flips a Coin: facing Cates' river all-in with $16,475 behind, Xuan 'hit the tank' (tanks), flipped a card protector to decide, and folded her top two pair (allin_faced, big_folds); Cates tabled the bluff.",
+          "hands_reported=2: Xuan Flips a Coin, Hellmuth III Felted in Final Hand (three-bet to $1,000 then got out of the way on the flop)."
+        ],
+        "5": [
+          "hands_reported=2: Early Double for the Poker Brat (opened 3-3, folded to Cates' turn raise), We're Still Friends? (called preflop, folded flop). Results table lists her as '$31,125' with no sign (reads as a stack, so swing null)."
+        ],
+        "6": [
+          "Hellmuth Moves All In Dark: Xuan called from the big blind and then released her top pair to Hellmuth's $1,900 flop raise (hands_reported=1)."
+        ],
+        "7": [
+          "3Coin Felted Part 1: Xuan check-raised to $2,900 and called 3Coin's $8,750 all-in with a flopped set of deuces (allin_faced), winning the $19,250 pot (showdowns_won).",
+          "3Coin Gets It All Back: Xuan 'hit the tank' before raising to $15,000 on the river (tanks); 3Coin called off with Broadway and she lost the $38,575 pot with top two pair (showdowns_lost).",
+          "hands_reported=3: 'You Either Have a Set or Nothing' (check-raised to $800 then quickly released to Hellmuth's $3,000), 3Coin Felted Part 1, 3Coin Gets It All Back."
+        ],
+        "8": [
+          "You Just Got Trapped By Hellmuth: facing Hellmuth's raise to $8,000, Xuan said 'You can get away with murder in this spot' but thought better of it and released her straight (big_folds, hands_reported=1). End-of-episode profit +$5,300 (under $10,000, swing null)."
+        ],
+        "9": [
+          "Is That Binding?: Xuan raised KdQh, flopped top pair with an open-ended straight draw, and paid off Alex's $600 river bet ('I can't [fold]'), losing the $3,725 pot at showdown."
+        ],
+        "10": [
+          "Jungleman Calls Xuan's Hand: Xuan faced Cates' $36,475 all-in check-raise with top set, quickly called, and lost both runs of the $78,875 pot (all-in faced, showdown lost).",
+          "Give a Thug a Hug: Xuan raised the flop to $7,000 then announced 'I guess I'm all-in in the dark' and slid in her chips (all-in made); the $37,300 pot was chopped when both made the same full house, so no showdown win/loss counted."
+        ],
+        "11": [
+          "Wimpiest Call I've Ever Made: Xuan came along from the small blind with 4d4c and folded to Hellmuth's flop bet.",
+          "3Coin vs. Jungleman: Xuan called preflop from the button with Jd4d."
+        ],
+        "12": [
+          "Xuan Takes on Hellmuth: Xuan three-bet AdAs to $2,000, bet flop and turn, and took down the $13,200 pot after the river checked through (showdown won).",
+          "Hellmuth Goes to Broadway: Xuan called Cates' $1,200 raise with 9s9d from the big blind and folded on the flop."
+        ],
+        "13": [
+          "Xuan Picks the Wrong Time to Move All In: Xuan raised KcQc then moved all in over Washburn's $3,900 four-bet (all-in made); Washburn called with AhAc, they ran it twice, and Washburn won both runs (showdown lost).",
+          "Fold the Unfoldable: Xuan four-bet AdKd to $2,000, checked the flop, and folded facing Cates' all-in (all-in faced).",
+          "Swing: Profit column went from -$1,125 (start) to -$23,250 (end), a -$22,125 change for this episode."
+        ],
+        "26": [
+          "Big Slick / Xuan Felts Hellmuth / Big Three-Way All In / Flush Cooler: 四手有行动 (hands_reported=4)",
+          "Xuan Felts Hellmuth: 河牌 'Xuan moved all in' (allin_made)",
+          "Big Slick Does the Trick for P3: P3 limp-jam 后 'Liu opted to call $2,850' (allin_faced)",
+          "Xuan Felts Hellmuth: 转牌成葫芦, 赢 $11,475 底池 (showdowns_won)",
+          "Big Slick Does the Trick for P3: KT 未追上 AK, 输 $8,050 底池 (showdowns_lost)",
+          "结尾 Profit +$8,125, 未达 $10,000 (swing=null)"
+        ],
+        "27": [
+          "Jungleman vs. Edog: Xuan 加注 $300、翻牌下注 $250 后退出该池 (hands_reported=1)",
+          "结尾 Profit -$7,000, 未达 $10,000 (swing=null)"
+        ],
+        "28": [
+          "I Have Held Over You / Xuan vs Lindgren AIPF: 两手有行动 (hands_reported=2)",
+          "Xuan vs Lindgren in Big AIPF Cash: Lindgren 全下 $5,500, 'Xuan opted to gamble'(call) (allin_faced)",
+          "Xuan vs Lindgren in Big AIPF Cash: 2-to-1 落后, run twice 两次均输 (showdowns_lost)",
+          "结尾 Profit -$1,650 (swing=null)"
+        ],
+        "29": [
+          "Xuan Liu 在开场筹码表中, 但本集无任何逐手描述包含其行动 (hands_reported=0)",
+          "结尾 Profit -$1,575 (swing=null)"
+        ],
+        "30": [
+          "Xuan Liu 在开场座位表(Seat 4), 但本集无任何逐手描述包含其行动 (hands_reported=0)",
+          "结尾 Profit +$3,850 (swing=null)"
+        ]
+      }
+    },
+    "erick_lindgren": {
+      "name": "Erick Lindgren",
+      "episodes_played": 4,
+      "episodes_list": [
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "hands_reported": 8,
+      "allin_made": 2,
+      "allin_faced": 1,
+      "bluffs_caught": 0,
+      "bluffs_successful": 0,
+      "hero_calls": 0,
+      "big_folds": 0,
+      "tanks": 0,
+      "showdowns_won": 2,
+      "showdowns_lost": 1,
+      "sources": {
+        "hands_reported": [
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "allin_made": [
+          "27",
+          "28"
+        ],
+        "allin_faced": [
+          "27"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [],
+        "hero_calls": [],
+        "big_folds": [],
+        "tanks": [],
+        "showdowns_won": [
+          "27",
+          "28"
+        ],
+        "showdowns_lost": [
+          "27"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "28",
+          "amount": 21700
+        },
+        {
+          "episode": "29",
+          "amount": 17675
+        },
+        {
+          "episode": "30",
+          "amount": 15200
+        }
+      ],
+      "evidence": {
+        "27": [
+          "Kelly Lucas Exits the Game / Jungleman vs. Edog: 两手有行动 (hands_reported=2)",
+          "Jungleman vs. Edog: 'Lindgren, who moved all in for $5,725' (allin_made)",
+          "Kelly Lucas Exits the Game: Kelly 翻牌全下 $2,350, 'Lindgren snap-called' (allin_faced)",
+          "Kelly Lucas Exits the Game: run twice 两次均胜, scoop $6,725 底池 (showdowns_won)",
+          "Jungleman vs. Edog: 'Lindgren was drawing dead', 输 $16,300 底池 (showdowns_lost)",
+          "结尾 Profit +$3,025 (swing=null)"
+        ],
+        "28": [
+          "Nick Hellmuth Tries to Set Up / Xuan vs Lindgren AIPF: 两手有行动 (hands_reported=2)",
+          "Xuan vs Lindgren in Big AIPF Cash: 'Lindgren moved all in for $5,500' (allin_made)",
+          "Xuan vs Lindgren in Big AIPF Cash: run twice 两次均胜, 'winning the $13,200 pot' (showdowns_won)",
+          "结尾筹码表 Profit +$21,700 (swing)"
+        ],
+        "29": [
+          "Tilly the Pussy Cat: Lindgren A2c 跟注, 翻牌 check 后弃牌 (hands_reported=1)",
+          "结尾筹码表 Profit +$17,675 (swing; 续局累计口径)"
+        ],
+        "30": [
+          "Jungleman Stacks Nick(跟注后翻牌弃牌) / Tilly Clashes with Cates(跟注后对 4-bet 弃牌) / Tilly Felts Deeb(加注 $1,200 后 'got away from his pocket jacks'): 三手有行动 (hands_reported=3)",
+          "结尾筹码表 Profit +$15,200 (swing; 续局累计口径)"
+        ]
+      }
+    },
+    "kelly_minkin": {
+      "name": "Kelly Minkin (Lucas)",
+      "episodes_played": 14,
+      "episodes_list": [
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27"
+      ],
+      "hands_reported": 22,
+      "allin_made": 7,
+      "allin_faced": 8,
+      "bluffs_caught": 0,
+      "bluffs_successful": 1,
+      "hero_calls": 1,
+      "big_folds": 0,
+      "tanks": 1,
+      "showdowns_won": 8,
+      "showdowns_lost": 4,
+      "sources": {
+        "hands_reported": [
+          "14",
+          "16",
+          "17",
+          "18",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27"
+        ],
+        "allin_made": [
+          "14",
+          "18",
+          "22",
+          "23",
+          "25",
+          "26",
+          "27"
+        ],
+        "allin_faced": [
+          "14",
+          "16",
+          "21",
+          "22",
+          "25"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [
+          "22"
+        ],
+        "hero_calls": [
+          "22"
+        ],
+        "big_folds": [],
+        "tanks": [
+          "22"
+        ],
+        "showdowns_won": [
+          "14",
+          "16",
+          "22",
+          "23",
+          "25"
+        ],
+        "showdowns_lost": [
+          "18",
+          "25",
+          "26",
+          "27"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "15",
+          "amount": -17850
+        },
+        {
+          "episode": "16",
+          "amount": 21025
+        },
+        {
+          "episode": "18",
+          "amount": -20250
+        },
+        {
+          "episode": "19",
+          "amount": 17450
+        },
+        {
+          "episode": "22",
+          "amount": 28200
+        },
+        {
+          "episode": "24",
+          "amount": -14400
+        },
+        {
+          "episode": "25",
+          "amount": -14275
+        },
+        {
+          "episode": "26",
+          "amount": -17700
+        },
+        {
+          "episode": "27",
+          "amount": -20000
+        }
+      ],
+      "evidence": {
+        "14": [
+          "All In on First Hand (very next hand): Minkin called Pink's turn jam with second pair (all-in faced); they ran it twice and Pink missed both (showdown won).",
+          "Ladies Do Battle: Minkin check-raised two pair to $2,500 and moved all in for $4,675 on the turn (all-in made); she won the first run and chopped the second, quartering Tilly in the $16,450 pot (counted as showdown won; second run was a chop)."
+        ],
+        "15": [
+          "In seat 5 per the stack table but no hand in this recap describes her acting.",
+          "Swing: Profit column went from +$6,775 (start) to -$11,075 (end), a -$17,850 change for this episode."
+        ],
+        "16": [
+          "All In on the First Hand: with JJ Kelly called off her last $3,175 vs Cates' check-raise all in and won both runs of the $14,275 pot (allin_faced, showdowns_won).",
+          "Hellmuth Slow-Rolled: called Hellmuth's all in with KK (slow-rolling him) and won both runs of the $10,575 pot (allin_faced, showdowns_won).",
+          "swing: end-of-episode Profit table lists Kelly Lucas +$21,025."
+        ],
+        "17": [
+          "The Final Hand: called from the second straddle with Kd8c and folded to Cates' flop bet (hands_reported).",
+          "swing: not in start table (joined late); end Profit +$20,950 nearly equals ep16 end +$21,025, so no clear single-episode swing; null."
+        ],
+        "18": [
+          "I Want It to Sting if I Get There: moved all in for $3,725 with Ah8h; Cates called and her flush draw bricked, losing the $7,875 pot (allin_made, showdowns_lost).",
+          "What a Turn!: put in an additional $300 from the straddle with 4h2h and folded on the flop (hands_reported).",
+          "swing: end-of-episode Profit table lists Kelly Lucas -$20,250 (value inconsistent with described action; column appears to carry over across episodes)."
+        ],
+        "19": [
+          "In both the start-of-episode and end-of-episode tables but no described hand involves her.",
+          "swing: end-of-episode Profit table lists Kelly Lucas +$17,450 (no supporting hand described in the recap)."
+        ],
+        "20": [
+          "Hellmuth & 3Coin Collide: limped Qh9s on the button and folded to 3Coin's flop bet (hands_reported).",
+          "P3 Sets Up 3Coin: called from the big blind with 5c3h and folded on the flop (hands_reported)."
+        ],
+        "21": [
+          "Cerasani Picks a Bad Time to Shove: flatted 44 from the small blind and ditched it to Washburn's flop raise (hands_reported).",
+          "Washburn Flops the Joint: called preflop with 6s5s and quickly got out of the way when Cerasani moved all in for $1,450 (allin_faced)."
+        ],
+        "22": [
+          "Kelly's All-In Bluff: with king-high KcQh she check-raised all in on the paired turn and Cerasani folded the best hand (allin_made, bluffs_successful).",
+          "Kelly's All-In Bluff (second hand): called Cerasani's $3,350 flop all in with top pair As9h and won both runs (Cerasani was 5%) (allin_faced, showdowns_won).",
+          "Hellmuth Impressed: thought long and hard before calling Washburn's $3,300 turn bet (tanks).",
+          "Hellmuth Impressed: called off $11,825 vs Washburn's river all in with just middle pair ('Picked him off with a ten') to claim the $33,425 pot (allin_faced, hero_calls, showdowns_won).",
+          "swing: start Profit -$3,000 to end Profit +$25,200 = +$28,200 for the episode."
+        ],
+        "23": [
+          "What Was 3Coin Thinking?: Kelly Lucas 持 KK 加注、跟注并全下 (hands_reported=1)",
+          "What Was 3Coin Thinking?: 'Kelly moved all in' (allin_made)",
+          "What Was 3Coin Thinking?: 3Coin call off 后两街未中, Kelly KK 获胜 (showdowns_won)",
+          "结尾 Profit -$2,675, 未达 $10,000 (swing=null)"
+        ],
+        "24": [
+          "Lucky Sevens for Hellmuth: Kelly 用 66 跟注, 后在河牌对 $3,000 raise 弃牌 (hands_reported=1)",
+          "结尾筹码表 Profit -$14,400 (swing; 续局累计口径)"
+        ],
+        "25": [
+          "Can Kelly Hold? / Both Hellmuth's At-Risk / The Brutal Slowroll: 三手有行动 (hands_reported=3)",
+          "Can Kelly Hold?: 转牌成同花 'moved all in for $5,875' (allin_made)",
+          "Both Hellmuth's At-Risk: Hellmuth 全下后 'both Kalas and Kelly folded' (allin_faced 1)",
+          "The Brutal Slowroll: Hellmuth 全下 $4,750, Kelly 'asked for a count and took her time before calling' (allin_faced 2)",
+          "The Brutal Slowroll: 慢亮三条六, run twice 两次 Hellmuth 均未中 A, 'Kelly scooped the $11,425 pot' (showdowns_won)",
+          "Can Kelly Hold?: 河牌被 3Coin 反超大同花, 输 $14,000 底池 (showdowns_lost)",
+          "结尾筹码表 Profit -$14,275 (swing; 与当集赢下大池矛盾, 应含表外输钱/重买, 照录)"
+        ],
+        "26": [
+          "Tilly Has a Kicker Problem / Flush Cooler: 两手有行动 (hands_reported=2)",
+          "Flush Cooler: 转牌同花成型后 'Kelly ... moved all in for $3,800' (allin_made)",
+          "Flush Cooler: 'Kelly was drawing dead to the river', 输 $11,950 底池给 P3 (showdowns_lost)",
+          "结尾筹码表 Profit -$17,700 (swing)"
+        ],
+        "27": [
+          "Kelly Lucas Exits the Game: 加注、跟注 3-bet 并翻牌全下 (hands_reported=1)",
+          "Kelly Lucas Exits the Game: 'Kelly moved all in for $2,350' (allin_made)",
+          "Kelly Lucas Exits the Game: run twice 两次均输给 AA (showdowns_lost); 'exiting the game down $20,000'",
+          "正文明说离场输 $20,000, 结尾筹码表 Profit -$20,000 (swing)"
+        ]
+      }
+    },
+    "mike_matusow": {
+      "name": "Mike Matusow",
+      "episodes_played": 6,
+      "episodes_list": [
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25"
+      ],
+      "hands_reported": 11,
+      "allin_made": 2,
+      "allin_faced": 3,
+      "bluffs_caught": 0,
+      "bluffs_successful": 0,
+      "hero_calls": 0,
+      "big_folds": 0,
+      "tanks": 0,
+      "showdowns_won": 5,
+      "showdowns_lost": 1,
+      "sources": {
+        "hands_reported": [
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "allin_made": [
+          "24",
+          "25"
+        ],
+        "allin_faced": [
+          "20",
+          "24",
+          "25"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [],
+        "hero_calls": [],
+        "big_folds": [],
+        "tanks": [],
+        "showdowns_won": [
+          "21",
+          "22",
+          "24",
+          "25"
+        ],
+        "showdowns_lost": [
+          "20"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "24",
+          "amount": 12725
+        }
+      ],
+      "evidence": {
+        "20": [
+          "Hellmuth & 3Coin Collide: checked his option, called the flop bet, and got out of the way on the turn (hands_reported).",
+          "Action Flop: check-raised to $2,100 with the nut-flush draw and called off $8,825 total vs two all ins; both runs bricked (allin_faced, showdowns_lost)."
+        ],
+        "21": [
+          "Pocket Rockets for the Mouth: raised AA, reraised to $5,000 over 3Coin's check-raise, and won the $9,075 pot at showdown with a rivered flush (showdowns_won, hands_reported)."
+        ],
+        "22": [
+          "Quads for the Mouth: flopped a set, turned quad deuces, slow-played, and got paid off by Washburn on the river to claim the $10,850 pot (showdowns_won, hands_reported).",
+          "swing: start Profit -$6,150 to end Profit +$1,475 = +$7,625, below $10,000 so null."
+        ],
+        "23": [
+          "It Gonna Do What It Do: Matusow 加注 $150 后弃牌; 3Coin Gets Sticky: 跟注 $200 后对 $2,800 弃牌 (hands_reported=2)",
+          "结尾 Profit +$7,475, 未达 $10,000 (swing=null)"
+        ],
+        "24": [
+          "Lucky Sevens for Hellmuth / Matusow vs. Rob / Aces Again for the Mouth: 三手有行动 (hands_reported=3)",
+          "Aces Again for the Mouth: 'he moved all in' 对 P3 (allin_made)",
+          "Matusow vs. Rob: 'Rob moved all in for $3,350, and Matusow snap-called' (allin_faced)",
+          "Matusow vs. Rob: run twice 两次均胜, 'Matusow scooped the $6,825 pot' (showdowns_won 1)",
+          "Aces Again for the Mouth: P3 两次 runout 均未中, Matusow AA 胜 (showdowns_won 2)",
+          "结尾筹码表 Profit +$12,725 (swing; 续局累计口径)"
+        ],
+        "25": [
+          "3Coin Needs to Reload / Can Kelly Hold?: 两手有行动 (hands_reported=2)",
+          "3Coin Needs to Reload: 转牌 'Matusow moved all in' (allin_made)",
+          "Can Kelly Hold?: Kelly 转牌全下 $5,875 后 'Matusow folded' (allin_faced)",
+          "3Coin Needs to Reload: AK 顶对拿下 $9,475 底池 (showdowns_won)",
+          "结尾 Profit -$7,000, 未达 $10,000 (swing=null)"
+        ]
+      }
+    },
+    "texas_mike_moncek": {
+      "name": "'Texas' Mike Moncek",
+      "episodes_played": 6,
+      "episodes_list": [
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "hands_reported": 26,
+      "allin_made": 14,
+      "allin_faced": 6,
+      "bluffs_caught": 4,
+      "bluffs_successful": 1,
+      "hero_calls": 1,
+      "big_folds": 0,
+      "tanks": 0,
+      "showdowns_won": 6,
+      "showdowns_lost": 9,
+      "sources": {
+        "hands_reported": [
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "allin_made": [
+          "14",
+          "15",
+          "17",
+          "18",
+          "19"
+        ],
+        "allin_faced": [
+          "14",
+          "15",
+          "16",
+          "18",
+          "19"
+        ],
+        "bluffs_caught": [
+          "15",
+          "17",
+          "19"
+        ],
+        "bluffs_successful": [
+          "18"
+        ],
+        "hero_calls": [
+          "16"
+        ],
+        "big_folds": [],
+        "tanks": [],
+        "showdowns_won": [
+          "14",
+          "15",
+          "16",
+          "18",
+          "19"
+        ],
+        "showdowns_lost": [
+          "14",
+          "15",
+          "17",
+          "19"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "14",
+          "amount": -47200
+        },
+        {
+          "episode": "15",
+          "amount": -63475
+        },
+        {
+          "episode": "17",
+          "amount": -38225
+        },
+        {
+          "episode": "18",
+          "amount": 29300
+        },
+        {
+          "episode": "19",
+          "amount": -64250
+        }
+      ],
+      "evidence": {
+        "14": [
+          "All In on First Hand: Texas Mike three-bet AdJc and called off Pink's all-in (all-in faced), flopped a hammerlock, and won the $10,150 pot (showdown won).",
+          "I'm Just Doing It for Fun: Texas Mike three-bet jammed $3,850 with KhTc (all-in made) and lost to Tilly's rivered flush (showdown lost).",
+          "I'm Just Doing It for Fun (next hand): Texas Mike jammed his fresh $5,000 with Ad2h (all-in made), Tilly called with KcJc, and he was felted again (showdown lost).",
+          "The Jennifer Tilly Show: Texas Mike called from the small blind with 4s2c and folded to 3Coin's flop raise.",
+          "Ladies Do Battle: Texas Mike raised Td2h, bet $800 on the flop, and folded to Minkin's check-raise.",
+          "Swing: end-of-episode Profit column shows -$47,200 (fresh $5,000 starting stacks this session)."
+        ],
+        "15": [
+          "What a Flop!: Texas Mike four-bet to $3,800, bet the flop with the nut-flush draw, and called off his last $5,300 against Pink's check-raise all-in (all-in faced), losing the $21,200 pot (showdown lost).",
+          "Cooler River: Texas Mike three-bet Ks8c, bet $4,400 on the river with the bigger two pair, and won the $11,875 pot when Cates called (showdown won).",
+          "Tilly Gets It in Against Texas Mike: Texas Mike moved all in for $23,500 with Ah4h (all-in made) and lost the $40,450 pot to Tilly's AcKh (showdown lost).",
+          "Texas Mike Getting Wrecked: Texas Mike moved all in for $22,875 with a flush draw (all-in made), Cates called, and he was stacked again in the $60,100 pot (showdown lost).",
+          "I'm Not Happy About This: Texas Mike 'bluffed at it by moving all in for $19,500' on the river (all-in made); Tilly called and won the $53,350 pot, so his bluff was caught (bluffs_caught; showdown lost).",
+          "Texas Mike vs. Cates in $94K Pot!: Texas Mike rivered a runner-runner boat and moved all in for $30,350 (all-in made); Cates called and Texas Mike won the $94,475 pot (showdown won).",
+          "Swing: Profit column went from -$54,600 (start) to -$118,075 (end), a -$63,475 change for this episode; recap notes he was in for $188,000 after his 18th rebuy.",
+          "Note: brief one-line mentions of him doubling through 3Coin and later doubling through Cates ('flopping a flush draw and riving it') are not described action-by-action and are not counted."
+        ],
+        "16": [
+          "Hellmuth Slow-Rolled: raised with Ac3s and folded when Hellmuth check-raised all in for $4,975 (allin_faced).",
+          "Jungleman Puts Texas Mike to the Test: with top set on a four-club board he called Cates' $8,000 river bluff to claim the $25,175 pot (hero_calls, showdowns_won).",
+          "Hellmuth Shoves Last Hand: called the flop with middle pair then folded to Hellmuth's $3,525 turn shove (allin_faced)."
+        ],
+        "17": [
+          "Cates Gets There on River: three-bet to $1,200 preflop and folded to Cates' $9,500 river bet (hands_reported).",
+          "Texas Mike Picks a Bad Time: moved all in for $19,550 on the river with just a pair of nines (Q9, missed gutshot) and Cates called to win (allin_made, bluffs_caught, showdowns_lost).",
+          "It's My Birthday!: moved all in for $19,850 on the river with trips and showed the goods after Tilly folded (allin_made).",
+          "Should Not Have Paid That Off: quickly folded Kh7h on the flop (hands_reported).",
+          "swing: start Profit -$5,150 to end Profit -$43,375 = -$38,225 for the episode."
+        ],
+        "18": [
+          "Three Players All in on 1st Hand: moved all in over the top for $4,225 with 10c7h; a five-spade board meant everyone got their money back (allin_made; chop pot, no showdown counted).",
+          "What a Turn!: with a rivered board and a full house he moved all in for $11,425 and Cates folded (allin_made).",
+          "This is the Play of the Day: check-raised all in for $14,925 with just a pair of fives and showed the bluff after Cates folded (allin_made, bluffs_successful).",
+          "Texas Mike Getting Lucky: quickly called Washburn's $16,550 all in with AdQd and won the $33,725 pot (allin_faced, showdowns_won).",
+          "swing: end-of-episode Profit table lists Texas Mike +$29,300."
+        ],
+        "19": [
+          "Will Texas Mike Set the Record?: four-bet with 99 then called Cates' five-bet all in for $26,775 and won with a flopped set (allin_faced, showdowns_won).",
+          "Texas Mike Just Can't Resist: 'didn't have much' with J7 but moved all in over Cates' $20,000 river bet; Cates called with aces full (allin_made, bluffs_caught, showdowns_lost).",
+          "Cates & Texas Mike Clash Again: moved all in for $46,000 on the turn with a straight draw; the river gave both players the straight and they chopped the $103,475 pot (allin_made; chop, no showdown counted).",
+          "That Hand's Going Viral: moved all in on the river with busted AcQc high and Cates called to win the $162,850 pot (allin_made, bluffs_caught, showdowns_lost).",
+          "swing: end-of-episode Profit table lists Texas Mike -$64,250."
+        ]
+      }
+    },
+    "randy_3coin_sadler": {
+      "name": "Randy '3Coin' Sadler",
+      "episodes_played": 24,
+      "episodes_list": [
+        "1",
+        "2",
+        "3-4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25"
+      ],
+      "hands_reported": 66,
+      "allin_made": 20,
+      "allin_faced": 16,
+      "bluffs_caught": 0,
+      "bluffs_successful": 5,
+      "hero_calls": 0,
+      "big_folds": 2,
+      "tanks": 1,
+      "showdowns_won": 14,
+      "showdowns_lost": 19,
+      "sources": {
+        "hands_reported": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "allin_made": [
+          "2",
+          "3-4",
+          "5",
+          "7",
+          "10",
+          "11",
+          "13",
+          "14",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24"
+        ],
+        "allin_faced": [
+          "5",
+          "6",
+          "7",
+          "9",
+          "10",
+          "11",
+          "13",
+          "14",
+          "18",
+          "21",
+          "23",
+          "25"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [
+          "2",
+          "9",
+          "11",
+          "20",
+          "23"
+        ],
+        "hero_calls": [],
+        "big_folds": [
+          "9",
+          "23"
+        ],
+        "tanks": [
+          "9"
+        ],
+        "showdowns_won": [
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "11",
+          "12",
+          "13",
+          "22",
+          "23",
+          "25"
+        ],
+        "showdowns_lost": [
+          "2",
+          "3-4",
+          "7",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "20",
+          "21",
+          "23",
+          "25"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "3-4",
+          "amount": "-$14,050"
+        },
+        {
+          "episode": "5",
+          "amount": "+$58,275"
+        },
+        {
+          "episode": "11",
+          "amount": -19600
+        },
+        {
+          "episode": "12",
+          "amount": 12000
+        },
+        {
+          "episode": "14",
+          "amount": -19225
+        },
+        {
+          "episode": "15",
+          "amount": -24375
+        },
+        {
+          "episode": "17",
+          "amount": -23500
+        },
+        {
+          "episode": "19",
+          "amount": -22175
+        },
+        {
+          "episode": "20",
+          "amount": -39000
+        },
+        {
+          "episode": "22",
+          "amount": 28875
+        },
+        {
+          "episode": "23",
+          "amount": -10425
+        },
+        {
+          "episode": "24",
+          "amount": -11725
+        },
+        {
+          "episode": "25",
+          "amount": 11475
+        }
+      ],
+      "evidence": {
+        "1": [
+          "hands_reported=4: The Tone Had Been Set (called then folded), Hellmuth Insta-Mucks Flush (called then folded), Washburn Flops the Nuts on 3Coin (check-raised to $3,000 then folded turn saying 'For my ego, I am folding'), Eccentric Super Pro (raised then folded to Xuan's three-bet)."
+        ],
+        "2": [
+          "Who Can Bluff It Better?: 3Coin moved all in for $6,175 with ten-high (allin_made); Liu folded and 3Coin showed the bluff (bluffs_successful).",
+          "Check to the Better Player: 3Coin quickly called Washburn's $3,000 river bet with pocket kings and lost the $14,850 pot (showdowns_lost).",
+          "hands_reported=3: First Hand to 3Coin (flopped a flush, bet Cates off the hand and showed), Check to the Better Player, Who Can Bluff It Better?."
+        ],
+        "3-4": [
+          "3Coin Picks Wrong Time to Jam: 3Coin moved all in for $7,175 with pocket tens (allin_made), was snap-called by Washburn's aces and lost the $22,650 pot (showdowns_lost).",
+          "Hellmuth III Felted in Final Hand: 3Coin moved all in on the turn with a flopped full house (allin_made) and won the $12,425 pot at showdown (showdowns_won).",
+          "Swing: 'both 3Coin and Alex had lost even more, down $14,050' at the end of Episode 4 (recap prose; running total — end-of-Episode-3 figure was -$22,450).",
+          "hands_reported=3: Hellmuth III Can Get Away from Bullets, Baby (raised flop to $3,000 with a flush draw, later folded river), 3Coin Picks Wrong Time to Jam, Hellmuth III Felted in Final Hand."
+        ],
+        "5": [
+          "Cooler Flop Results in Monster Pot: Alex moved all in for $12,325 drawing dead and 3Coin called with trip tens plus ace (allin_faced), claiming the $37,075 pot (showdowns_won).",
+          "This Game Had Lost Its Mind: facing Alex's $16,025 all-in (allin_faced), 3Coin five-bet jammed for $26,150 with ace-king (allin_made), Cates also called, and 3Coin won the $68,675 pot run once (showdowns_won).",
+          "Swing: end-of-game results table lists 3Coin +$58,275.",
+          "hands_reported=3: Early Double for the Poker Brat (bet turn, folded river with 'Check. Surrender'), Cooler Flop Results in Monster Pot, This Game Had Lost Its Mind."
+        ],
+        "6": [
+          "Hellmuth Moves All In Dark: 3Coin called Hellmuth's $2,800 dark all-in with a king-high straight ('My only regret is that he doesn't have enough money on the table. I call.') (allin_faced) and won the $10,650 pot run once (showdowns_won)."
+        ],
+        "7": [
+          "3Coin Felted Part 1: 3Coin moved all in for $8,750 with middle pair (allin_made); Xuan called with a set and 3Coin lost the $19,250 pot (showdowns_lost).",
+          "3Coin Felted Part 2: 3Coin moved all in for $5,600 on the turn, drawing dead (allin_made); Cates insta-called and 3Coin was felted again (showdowns_lost).",
+          "3Coin Gets It All Back: Xuan's raise to $15,000 covered him and he called off for $14,325 (allin_faced) with a rivered Broadway straight, scooping the $38,575 pot (showdowns_won).",
+          "hands_reported=4: 'He's Not Evil' (limped then got out of the way), 3Coin Felted Part 1, 3Coin Felted Part 2, 3Coin Gets It All Back. End-of-episode profit +$8,600 (under $10,000, swing null)."
+        ],
+        "8": [
+          "hands_reported=2: 'I'm Gonna Put My Phone Down' (led the flop with a set of eights, re-raised Cates to $9,000, both opponents folded and he showed the goods), Hellmuth Flops the Joint (called down, accidentally exposed his hand on the river then announced a fold). End-of-episode profit +$5,275 (under $10,000, swing null)."
+        ],
+        "9": [
+          "Pocket Rockets for Jungleman: 3Coin opened JsTs, min-raised the flop, bet the turn, then faced Cates' all-in of $16,625.",
+          "Pocket Rockets for Jungleman: 3Coin 'thought long and hard' about calling the additional $13,625 (tank).",
+          "Pocket Rockets for Jungleman: after the tank he released his hand facing the all-in (big fold, emphasized by the recap).",
+          "Bet with Your Heart: 3Coin four-bet As2c, bet $7,000 on the river, Alex folded, and 3Coin showed the bluff before stacking the $19,225 pot (successful shown bluff)."
+        ],
+        "10": [
+          "Hellmuth Limp-Raises with Pocket Rockets: 3Coin raised to $300 with QcTc and folded to Hellmuth's limp-raise.",
+          "Nevada Hooks Himself a Triple: 3Coin four-bet to $2,300, played the side pot vs Cates and raised the river to $15,000 taking the side pot, but Nevada won the main pot at showdown (showdown lost; Nevada's preflop all-in decision to 3Coin not counted as allin_faced since his call is not explicitly described).",
+          "Give a Thug a Hug: 3Coin called Xuan's dark all-in with top pair (all-in faced); the $37,300 pot was chopped with identical full houses, so no showdown win/loss counted.",
+          "Broadway for Nevada: 3Coin check-raised all in on the river with two pair (all-in made); Nevada called with the flopped nuts and 3Coin lost the $11,025 pot (showdown lost)."
+        ],
+        "11": [
+          "Wimpiest Call I've Ever Made: 3Coin called from the straddle with Kd7h and folded to Hellmuth's flop bet.",
+          "Not the King of Nevada: 3Coin took his time before moving all in on the river with 7s6h (all-in made); 'The bluff worked' as Nevada tanked and folded (successful bluff, explicitly called a bluff by the recap).",
+          "How Bad Does Chris Run?: 3Coin moved all in for $8,800 over Washburn's three-bet (all-in made); Nevada called off with kings and 3Coin's AhQd spiked an ace to win the showdown and felt Nevada (showdown won).",
+          "3Coin vs. Jungleman: 3Coin bet $4,000 on the flop with top pair, then called off Cates' $11,375 all-in (all-in faced) and lost the $24,550 pot when Cates' set held (showdown lost).",
+          "Swing: end-of-episode Profit column shows -$19,600 for this fresh-lineup session."
+        ],
+        "12": [
+          "First Blood to 3Coin: 3Coin check-raised top two pair to $2,000, bet the river, and Nevada called; 3Coin took down the $7,325 pot (showdown won).",
+          "Xuan Takes on Hellmuth: 3Coin limped TsTc and folded to Xuan's three-bet.",
+          "3Coin Gets $3,000 Out of Hellmuth: 3Coin rivered a call-then-raise to $3,000 ('My brand is $3,000') with a full house and won the $8,900 pot when Hellmuth called (showdown won).",
+          "See If You Can Run the $75 Up: 3Coin check-raised the river with top two pair and won the $5,100 pot when Hellmuth III called (showdown won).",
+          "Hellmuth Goes to Broadway: 3Coin bet $3,000 on the flop with two pair but lost the pot at showdown to Hellmuth's rivered Broadway (showdown lost).",
+          "Swing: Profit column went from -$19,600 (start) to -$7,600 (end), a +$12,000 change for this episode."
+        ],
+        "13": [
+          "3Coin vs. Jungleman in Cooler Hand: 3Coin check-raised his set to $3,000 then announced 'All in' with a covering stack on the turn (all-in made); Cates called and 3Coin's full house busted him in the $32,525 pot (showdown won).",
+          "I'm Gonna Call But I Don't Like It: 3Coin led the turn with two pair and called Nevada's $600 river bet ('I'm gonna call but I don't like it'), losing the $3,375 pot (showdown lost).",
+          "3Coin Stabs at It on the River: 3Coin bluffed $3,000 at the river, Cates moved all in, and 3Coin folded, sliding his cards over to show the failed bluff (all-in faced; bluff was raised, not called, so not counted as bluffs_caught).",
+          "Fold the Unfoldable: 3Coin bet $5,000 with an open-ended straight draw, called off $15,325 against Cates' all-in (all-in faced), and won the $39,150 pot when the turn gave him the straight (showdown won).",
+          "Swing: null — the tables are contradictory: stack went from $20,475 to $37,900 (+$17,425) yet the Profit column went from -$7,625 to -$12,800 (-$5,175); no clear single-episode figure (anomaly)."
+        ],
+        "14": [
+          "All In on First Hand: 3Coin called with Qd6d from the small blind and quickly got out of the way when Pink moved all in (all-in faced).",
+          "The Jennifer Tilly Show: 3Coin raised his top pair to $1,000 on the flop and moved all in for $5,075 on the river (all-in made); Tilly called with her straight and 3Coin lost the $12,350 pot (showdown lost).",
+          "Swing: end-of-episode Profit column shows -$19,225 (fresh $5,000 starting stacks this session)."
+        ],
+        "15": [
+          "I'm Not Happy About This: 3Coin called the $400 straddle with AhTh and got out of the way after Tilly's $6,000 three-bet.",
+          "Swing: Profit column went from -$20,625 (start) to -$45,000 (end, stack $0 after going bust), a -$24,375 change for this episode.",
+          "Note: the recap's one-line mentions that Texas Mike doubled through 3Coin and that 3Coin went bust in the final quads hand are not described action-by-action and are not counted."
+        ],
+        "17": [
+          "It's My Birthday!: limped 9d4d from the cutoff and got out of the way after Texas Mike's three-bet (hands_reported).",
+          "swing: start Profit Even to end Profit -$23,500 (ended with $0 stack) = -$23,500 for the episode."
+        ],
+        "18": [
+          "Three Players All in on 1st Hand: called off $3,850 with 4c2c facing the multi-way all in; board flush chopped the $14,550 pot (allin_faced; chop, no showdown counted).",
+          "What a Turn!: called preflop with Jd9d and got out of the way on the flop (hands_reported).",
+          "This is the Play of the Day: limped 9s3s then folded to Cates' raise (hands_reported)."
+        ],
+        "19": [
+          "Will Texas Mike Set the Record?: called with 9s8c and got out of the way after Texas Mike's four-bet (hands_reported).",
+          "Quads for Hellmuth: called preflop with Ac7h and folded to the flop betting (hands_reported).",
+          "swing: end-of-episode Profit table lists 3Coin -$22,175."
+        ],
+        "20": [
+          "Click It Back: moved all in for $3,875 total on the turn and Cerasani folded the best hand; '3Coin's bluff got through' (allin_made, bluffs_successful).",
+          "Hellmuth & 3Coin Collide: took his time before moving all in with two pair; Hellmuth called and the river missed him, losing the $8,050 pot (allin_made, showdowns_lost).",
+          "Action Flop: moved all in with a pair and flush draw; P3's set held on both runs (allin_made, showdowns_lost).",
+          "Quads for Hellmuth: rivered a full house and snap-jammed all in, but Hellmuth's quads won the $14,750 pot (allin_made, showdowns_lost).",
+          "P3 Sets Up 3Coin: jammed for $6,750 total with top pair into P3's set and was felted (allin_made, showdowns_lost).",
+          "swing: end-of-episode Profit table lists 3Coin -$39,000."
+        ],
+        "21": [
+          "Cerasani Picks a Bad Time to Shove: limped Jc9c and folded to the flop action (hands_reported).",
+          "Pocket Rockets for the Mouth: check-raised the flop and called off $3,600 total vs Matusow's covering reraise to $5,000; no help came and Matusow's aces won (allin_faced, showdowns_lost).",
+          "Cerasani Closes Out Night with a Double: moved all in on the turn with AdKc; Cerasani called off and rivered trips to double through him (allin_made, showdowns_lost)."
+        ],
+        "22": [
+          "P3 Felted in First Hand: with top pair he moved all in on the river and P3 called off; 3Coin won the $13,425 pot (allin_made, showdowns_won).",
+          "Quads for the Mouth: checked Jh10d, called the flop bet, and simply mucked on the river (hands_reported).",
+          "swing: start Profit -$1,675 to end Profit +$27,200 = +$28,875 for the episode (both tables in recap)."
+        ],
+        "23": [
+          "五个小节 3Coin 均为行动参与者 (hands_reported=5)",
+          "It Gonna Do What It Do: 河牌 '3Coin moved all in for $3,100' (allin_made)",
+          "What Was 3Coin Thinking?: Kelly 全下后 '3Coin called off the $3,225 he had behind' (allin_faced 1)",
+          "3Coin Tries to Bust Hellmuth: Hellmuth 全下 $2,525, 3Coin 补 $1,525 跟注 (allin_faced 2)",
+          "It Gonna Do What It Do: 3Coin 持 A8 高牌全下, 'P3 ended up folding the best hand', recap 亮明其为弱牌 (bluffs_successful)",
+          "3Coin Gets Sticky: 转牌面对 Hellmuth $2,800 下注 '3Coin finally released his cards' (big_folds)",
+          "3Coin Felts P3: 转牌成葫芦, 河牌 P3 call off 后 '$5,000 pot pushed to 3Coin' (showdowns_won)",
+          "What Was 3Coin Thinking?: 只 run 一次, turn/river 未中, 输给 Kelly KK (showdowns_lost 1)",
+          "3Coin Tries to Bust Hellmuth: 'he missed out on the $6,475 pot' (showdowns_lost 2)",
+          "结尾筹码表: Randy 3Coin Sadler Profit -$10,425 (swing)"
+        ],
+        "24": [
+          "8+ Minute Tank: 3Coin 小盲跟注并主导下注 (hands_reported=1)",
+          "8+ Minute Tank: 'instantly moving all in for $12,950' (allin_made); Hellmuth 弃牌, 3Coin 收池 (未摊牌, recap 明说 'He wasn't bluffing')",
+          "结尾筹码表 Profit -$11,725 (swing; 续局累计口径)"
+        ],
+        "25": [
+          "3Coin Needs to Reload / Can Kelly Hold?: 两手有行动 (hands_reported=2)",
+          "3Coin Needs to Reload: Matusow 转牌全下, 3Coin 'didn't take long to call off his remaining $3,375' (allin_faced 1)",
+          "Can Kelly Hold?: Kelly 全下 $5,875, '3Coin opted to call' (allin_faced 2)",
+          "Can Kelly Hold?: 河牌 Kc 中更大同花, 赢 $14,000 底池 (showdowns_won)",
+          "3Coin Needs to Reload: 河牌 Th 无用, 输 $9,475 底池给 Matusow (showdowns_lost)",
+          "结尾筹码表 Profit +$11,475 (swing)"
+        ]
+      }
+    },
+    "dj_washburn": {
+      "name": "DJ Washburn",
+      "episodes_played": 15,
+      "episodes_list": [
+        "1",
+        "2",
+        "3-4",
+        "5",
+        "11",
+        "12",
+        "13",
+        "16",
+        "17",
+        "18",
+        "19",
+        "21",
+        "22",
+        "25"
+      ],
+      "hands_reported": 31,
+      "allin_made": 4,
+      "allin_faced": 9,
+      "bluffs_caught": 1,
+      "bluffs_successful": 0,
+      "hero_calls": 0,
+      "big_folds": 1,
+      "tanks": 3,
+      "showdowns_won": 7,
+      "showdowns_lost": 7,
+      "sources": {
+        "hands_reported": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "11",
+          "12",
+          "13",
+          "16",
+          "17",
+          "18",
+          "19",
+          "21",
+          "22",
+          "25"
+        ],
+        "allin_made": [
+          "1",
+          "18",
+          "22",
+          "25"
+        ],
+        "allin_faced": [
+          "3-4",
+          "11",
+          "13",
+          "16",
+          "17",
+          "21",
+          "25"
+        ],
+        "bluffs_caught": [
+          "22"
+        ],
+        "bluffs_successful": [],
+        "hero_calls": [],
+        "big_folds": [
+          "11"
+        ],
+        "tanks": [
+          "11",
+          "17",
+          "25"
+        ],
+        "showdowns_won": [
+          "2",
+          "3-4",
+          "13",
+          "16",
+          "21",
+          "25"
+        ],
+        "showdowns_lost": [
+          "5",
+          "17",
+          "18",
+          "22",
+          "25"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "3-4",
+          "amount": "+$41,750"
+        },
+        {
+          "episode": "13",
+          "amount": 14600
+        },
+        {
+          "episode": "17",
+          "amount": 21850
+        },
+        {
+          "episode": "19",
+          "amount": -26175
+        },
+        {
+          "episode": "21",
+          "amount": 15250
+        },
+        {
+          "episode": "22",
+          "amount": -47025
+        }
+      ],
+      "evidence": {
+        "1": [
+          "Hellmuth Insta-Mucks Flush: Washburn moved all in for $6,675 on the river with queens full and Hellmuth folded (allin_made).",
+          "hands_reported=3: The Tone Had Been Set (called then folded), Hellmuth Insta-Mucks Flush, Washburn Flops the Nuts on 3Coin (flopped nuts, bet flop and turn, 3Coin folded)."
+        ],
+        "2": [
+          "Check to the Better Player: Washburn's $3,000 river bet with sevens full was quickly called by 3Coin and the $14,850 pot was pushed to Washburn (showdowns_won).",
+          "hands_reported=2: Check to the Better Player, 50 Cent Loves the Club (limped in, folded on the flop)."
+        ],
+        "3-4": [
+          "3Coin Picks Wrong Time to Jam: 3Coin moved all in for $7,175 on the flop and Washburn snap-called with pocket aces (allin_faced), winning the $22,650 pot (showdowns_won).",
+          "Swing: 'Washburn was the big winner, up $41,750' at the end of Episode 4 (recap prose; running total since Episode 1 — the end-of-Episode-3 figure was +$42,075)."
+        ],
+        "5": [
+          "Hellmuth Overbets River: Washburn called Hellmuth's $2,375 river overbet with two pair and lost the $6,950 pot (showdowns_lost).",
+          "hands_reported=2: Hellmuth Overbets River, This Game Had Lost Its Mind (limped, folded to the raising war). Results table lists him as '$52,075' with no sign (reads as a stack, so swing null)."
+        ],
+        "11": [
+          "How Bad Does Chris Run?: Washburn three-bet to $1,800 with AhJd and then faced 3Coin's $8,800 all-in (all-in faced).",
+          "How Bad Does Chris Run?: Washburn 'hit the tank for a good bit' (tank) before releasing his hand facing the all-in (big fold, emphasized by the recap).",
+          "3Coin vs. Jungleman: Washburn called Cates' raise preflop with 4s2s."
+        ],
+        "12": [
+          "Xuan Takes on Hellmuth: Washburn called Hellmuth's $400 raise with 9d7d and got out of the way after Xuan's three-bet."
+        ],
+        "13": [
+          "Xuan Picks the Wrong Time to Move All In: Washburn four-bet AhAc to $3,900, then rapidly shoved his chips in to call Xuan's all-in (all-in faced) and won both runs of the roughly $28,400 pot for a big double (showdown won).",
+          "Fold the Unfoldable: Washburn came along with Jc3c and folded to Xuan's four-bet.",
+          "Swing: Profit column went from +$10,650 (start) to +$25,250 (end), a +$14,600 change for this episode."
+        ],
+        "16": [
+          "Jungleman Puts Texas Mike to the Test: limped ace-three suited then got out of the way after a three-bet (hands_reported).",
+          "Hellmuth Shoves Last Hand: called Hellmuth's $3,525 turn shove with top pair and won both runs to scoop the $11,100 pot (allin_faced, showdowns_won)."
+        ],
+        "17": [
+          "Texas Mike Picks a Bad Time: bet $3,000 on the flop, then folded when Texas Mike moved all in for $19,550 on the river (allin_faced, hands_reported).",
+          "Should Not Have Paid That Off: hit the tank before calling Cates' $3,000 river bet and losing the $15,125 pot ('I should not have paid that off') (tanks, showdowns_lost).",
+          "swing: start Profit -$5,025 to end Profit +$16,825 = +$21,850 for the episode."
+        ],
+        "18": [
+          "Texas Mike Getting Lucky: moved all in for $16,550 with AsKs; Texas Mike called with AdQd and held, Washburn lost the $33,725 pot and was felted (allin_made, showdowns_lost)."
+        ],
+        "19": [
+          "Will Texas Mike Set the Record?: limped 22 then folded to the preflop raising war (hands_reported).",
+          "Cates & Texas Mike Clash Again: raised to $300 with 55 and folded to Cates' four-bet (hands_reported).",
+          "Quads for Hellmuth: called preflop with QcJh and folded to the flop action (hands_reported).",
+          "swing: end-of-episode Profit table lists DJ Washburn -$26,175."
+        ],
+        "21": [
+          "Cerasani Picks a Bad Time to Shove: raised with Jh5s, rivered a flush and called Cerasani's $3,500 all in to win the $11,525 pot (allin_faced, showdowns_won).",
+          "Pocket Rockets for the Mouth: defended his straddle with Kc4h and folded to the flop check-raise war (hands_reported).",
+          "Washburn Flops the Joint: flopped a full boat and had an easy call of Cerasani's $1,450 all in; Cerasani was drawing dead (allin_faced, showdowns_won).",
+          "swing: end-of-episode Profit table lists DJ Washburn +$15,250."
+        ],
+        "22": [
+          "Kelly's All-In Bluff: called $900 preflop with Kd10h from the straddle and folded on the flop (hands_reported).",
+          "Hellmuth Impressed: with busted flush and straight draws he took his time before moving all in on the river; Kelly called with a ten and won the $33,425 pot (allin_made, bluffs_caught, showdowns_lost).",
+          "Quads for the Mouth: bet the flop with 5d3d and paid off Matusow's $2,200 river bet with quads (showdowns_lost).",
+          "swing: start Profit +$18,425 to end Profit -$28,600 = -$47,025 for the episode."
+        ],
+        "25": [
+          "Both Hellmuth's At-Risk / A Gorjess Hand / Running It Twice / The Brutal Slowroll: 四手有行动 (hands_reported=4)",
+          "Running It Twice: 转牌全下 $7,225 入 $8,750 底池 (allin_made; 原文主语笔误作 Kalas, 按牌面 Washburn 76h 转牌成同花为全下方)",
+          "Both Hellmuth's At-Risk: Hellmuth jam 后 'Washburn called the additional $925' (allin_faced 1)",
+          "A Gorjess Hand: Gorjess check-raise 全下 $3,975, Washburn 面临决定 (allin_faced 2)",
+          "A Gorjess Hand: 'Washburn thought long and hard before calling' (tanks)",
+          "Running It Twice: run twice Kalas 两次均未中, 'Washburn took down the biggest pot of the day' $23,200 (showdowns_won)",
+          "Both Hellmuth's At-Risk: P3 两次 runout 全收, Washburn AQ 落败 (showdowns_lost 1)",
+          "A Gorjess Hand: 河牌 Qd 砖, 输给 Gorjess 顶两对 (showdowns_lost 2)",
+          "结尾 Profit +$6,625, 未达 $10,000 (swing=null)"
+        ]
+      }
+    },
+    "kane_kalas": {
+      "name": "Kane Kalas",
+      "episodes_played": 3,
+      "episodes_list": [
+        "23",
+        "24",
+        "25"
+      ],
+      "hands_reported": 4,
+      "allin_made": 0,
+      "allin_faced": 2,
+      "bluffs_caught": 0,
+      "bluffs_successful": 0,
+      "hero_calls": 0,
+      "big_folds": 0,
+      "tanks": 0,
+      "showdowns_won": 0,
+      "showdowns_lost": 1,
+      "sources": {
+        "hands_reported": [
+          "23",
+          "24",
+          "25"
+        ],
+        "allin_made": [],
+        "allin_faced": [
+          "25"
+        ],
+        "bluffs_caught": [],
+        "bluffs_successful": [],
+        "hero_calls": [],
+        "big_folds": [],
+        "tanks": [],
+        "showdowns_won": [],
+        "showdowns_lost": [
+          "25"
+        ]
+      },
+      "notable_swings": [
+        {
+          "episode": "25",
+          "amount": -12675
+        }
+      ],
+      "evidence": {
+        "23": [
+          "3Coin Felts P3: Kalas 小盲用 QJ 跟注, 翻牌 'got out of the way' (hands_reported=1)",
+          "结尾 Profit -$500 (swing=null)"
+        ],
+        "24": [
+          "8+ Minute Tank: Kalas 大盲跟注, 翻牌对 $300 弃牌 (hands_reported=1)",
+          "结尾 Profit -$175 (swing=null)"
+        ],
+        "25": [
+          "Both Hellmuth's At-Risk / Running It Twice: 两手有行动 (hands_reported=2)",
+          "Both Hellmuth's At-Risk: Hellmuth 全下后 'both Kalas and Kelly folded' (allin_faced 1)",
+          "Running It Twice: 对手转牌全下 $7,225, Kalas 'thought for a bit before making the call' (allin_faced 2)",
+          "Running It Twice: run twice 两次均未中红桃, 输 $23,200 底池 (showdowns_lost)",
+          "结尾筹码表 Profit -$12,675 (swing)"
+        ]
+      }
+    }
+  }
+}

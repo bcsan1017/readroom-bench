@@ -1,0 +1,76 @@
+{
+  "item_id": "T8",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "0eoRd7AvZbY",
+    "clip_abs_sec": [
+      138.0,
+      372.0
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "preflop",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手 jam $4,100 total，小于你的筹码）。\n你的底牌：Js Ts。\n下注线：\n  - preflop：Preflop: Hero 3-bets to $1,800; Villain(Hellmuth) jams $4,100 total; Hero faces $2,300 more；前序街完整下注线 recap 未提供\n当前无公共牌（preflop 全下）。\n对手全下前底池：$4,350；对手全下额：$4,100；你需跟注：$2,300。\n跟注后总底池：$8,950；所需胜率（跟注额 ÷ (底池+跟注额)）= 25.7%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] hands=双手拇指与食指捏住两张底牌边缘，将牌微微掀起; note=发牌阶段，近景展示底牌被掀起查看的动作\nt=6.5s [villain] gaze=低头看向自己面前的底牌; posture=坐在牌桌右侧，身体朝向牌桌; hands=右手放在自己的底牌旁，左手搭在桌沿; note=镜头切到牌桌全景，可见villain位于画面右侧戴黑色帽子\nt=9.0s [villain] hands=右手从桌沿抬起，向前推出数枚筹码; chips=将数枚筹码推到桌面前方的下注区; note=preflop阶段，villain完成下注动作\nt=13.0s [other] hands=穿彩色花衬衫的玩家右手向前推出筹码; chips=将筹码推入底池; note=其他玩家跟注\nt=16.0s [villain] hands=左手拿起身侧的白色纸杯; note=其他玩家行动期间，villain拿起纸杯\nt=16.5s [villain] hands=将纸杯举到嘴边喝了一口，随后放下纸杯; note=villain喝水后放下杯子\nt=17.5s [other] hands=穿白色连帽衫的玩家右手抬起，用食指蹭了一下鼻子; note=其他玩家做出小动作\nt=24.5s [other] hands=戴黑色帽子留长白胡须的玩家双手抬起，掌心向上摊开，手指做出比划动作; note=其他玩家在行动间隙做手势\nt=28.0s [hero] gaze=看向自己右侧的女玩家; posture=坐在牌桌左侧，身穿绿白拼色夹克，身体朝向牌桌; hands=双手抬到脸前，掌心相对做出鼓掌的预备姿势，随后右手向外摊开; note=hero位于画面左侧，此时和邻座玩家互动\nt=31.0s [hero] hands=双手合十放在脸前; note=hero保持坐姿，手部动作变化\nt=34.5s [hero] hands=右手再次向外摊开; note=hero继续做手势\nt=39.0s [hero] gaze=低头看向自己面前的底牌; hands=右手向前伸出，将自己的底牌向前推出少许; note=hero调整自己的底牌位置\nt=43.0s [hero] hands=右手抬起，用指节蹭了一下鼻子，随后将右臂横放在桌沿; note=hero做出摸鼻子的小动作\nt=53.0s [hero] hands=右手从桌沿抬起，向前推出筹码; chips=将一摞筹码推入底池; note=锚点：hero 3-bet到$1800\nt=55.5s [other] posture=坐在hero和villain之间的女玩家身体前倾; hands=右手从桌沿抬起，将面前的筹码向前拨出; speech=开口说话，持续约2秒; chips=将数枚筹码拨入底池后收回手; note=中间女玩家弃牌，将筹码推出\nt=58.5s [hero] gaze=转头看向右侧的女玩家; hands=右手抬起，掌心向上摊开; speech=开口说话; note=hero和邻座女玩家交流\nt=62.0s [other] posture=中间女玩家转头看向villain; hands=双手交握放在桌沿; speech=持续和同桌玩家说话; note=女玩家和villain互动\nt=68.5s [other] posture=中间女玩家双臂交叉抱在胸前; note=女玩家改变姿态\nt=71.5s [villain] gaze=低头看向自己面前的筹码; posture=身体微微前倾，左肘搭在桌沿; hands=左手从筹码堆上拿起数枚筹码，在手中摆弄; chips=手指反复搓动手中的筹码; note=hero 3-bet后，villain开始摆弄筹码思考\nt=79.0s [other] posture=中间女玩家右手抬起，手指抵在下巴处; note=女玩家做出托下巴的动作\nt=84.0s [villain] hands=右手将面前的一大摞筹码向前推，整摞筹码滑到下注区; chips=将身前大部分筹码一次性推入底池; note=锚点：villain全下$4100，推出筹码\nt=102.5s [villain] gaze=转头看向左侧的hero方向; posture=身体靠回椅背，左手抬到嘴边，手指碰了一下鼻子; note=villain全下后看向hero，等待决定\nt=104.0s [other] posture=穿彩色花衬衫的玩家将自己的底牌向前推出，交给dealer; note=其他玩家弃牌\nt=106.0s [other] posture=戴黑帽留长白胡须的玩家身体前倾，看向底池方向; hands=左手放在自己的底牌上，右手拨弄面前的筹码; chips=右手手指拨动筹码，发出声响; note=小盲位玩家思考是否跟注\nt=113.5s [other] hands=戴黑帽留长白胡须的玩家将自己的底牌向前推出弃牌; note=小盲位玩家弃牌，行动回到hero\nt=117.0s [hero] hands=右手向前推出筹码; chips=将跟注所需的筹码推入底池; note=锚点：hero call $2300，完成跟注\nt=117.5s [villain] hands=左手抬起，手肘撑在桌沿，手掌托住左侧脸颊; note=hero跟注后，villain做出托脸的动作\nt=122.0s [other] posture=中间女玩家身体前倾，低头看向桌面; hands=右手抬起扶着自己的头发，左手放在桌沿; note=女玩家调整姿态看牌桌\nt=127.0s [villain] gaze=低头看向自己面前的底牌; hands=右手拿起自己的两张底牌，看了一眼后将牌面朝上甩到桌面对应自己的位置; note=hero跟注后，villain亮出自己的底牌\nt=130.0s [hero] hands=右手拿起自己的两张底牌，看了一眼后将牌面朝上放到桌面对应自己的位置; note=hero亮出自己的底牌\nt=132.0s [villain] gaze=转头看向dealer方向; posture=身体向后靠回椅背; hands=右手从脸侧放下，搭在桌沿; note=双方亮牌后，villain靠回椅背等待发公共牌\nt=134.0s [hero] hands=双手抬起，用手掌捂住自己的脸，停留约2秒后放下; note=hero做出捂脸的动作\nt=146.5s [other] hands=dealer左手按住牌堆，右手依次将三张翻牌发到公共牌区; note=dealer发出翻牌三张公共牌\nt=150.5s [hero] gaze=看向公共牌区; posture=身体前倾，双肘撑在桌沿; hands=右手手指捏着一枚筹码，反复转动; chips=手指间转动单枚筹码; note=翻牌发出后，hero盯着公共牌，转动手中筹码\nt=153.5s [other] hands=dealer右手发出转牌（第一次跑马转牌）放到公共牌区; note=dealer发出第一次跑马转牌\nt=155.5s [villain] hands=右手抬起拍了一下自己的大腿，随后抬到身前做出摊手的动作; speech=开口说话; note=转牌发出后，villain做出手势说话\nt=160.5s [hero] hands=右手抬起，用指节蹭了一下鼻子，随后放回桌沿继续捏着筹码; note=hero做出摸鼻子的小动作\nt=162.0s [other] hands=dealer右手发出河牌（第一次跑马河牌）放到公共牌区; note=dealer发出第一次跑马河牌\nt=164.5s [villain] hands=双手握拳，快速向下挥动了一下，随后伸手整理自己面前的筹码堆; chips=双手将面前散落的筹码拢成整齐的一摞; note=第一次跑马河牌发出后，villain整理筹码\nt=173.0s [hero] posture=身体向左侧倾斜，右手手肘撑在桌沿，手掌托住右侧太阳穴; note=hero改变姿态，托着头等待第二次跑马\nt=174.5s [other] hands=dealer右手依次发出第二次跑马的三张翻牌到公共牌区; note=dealer发出第二次跑马翻牌\nt=182.0s [hero] gaze=转头看向villain方向; posture=身体坐直，不再托头; hands=双手在身前交握，随后右手摊开做出手势; speech=开口说话; note=第二次跑马翻牌发出后，hero对着villain说话做手势\nt=185.5s [other] hands=dealer右手发出第二次跑马转牌放到公共牌区; note=dealer发出第二次跑马转牌\nt=188.0s [villain] posture=身体向后靠，离开桌沿; hands=双手放在筹码堆旁，停止整理筹码; note=第二次跑马转牌发出后，villain靠后坐好\nt=194.0s [other] hands=dealer右手发出第二次跑马河牌放到公共牌区; note=dealer发出第二次跑马河牌\nt=195.0s [villain] hands=双手握拳，快速向上挥动两次，随后抬手调整了一下自己的帽子; note=锚点：dealer将底池判给hero，villain做出挥拳动作后调整帽子\nt=196.0s [hero] posture=身体向后靠在椅背上，仰头停顿约1秒后坐直; hands=双手握拳在身前轻敲了一下桌面; note=hero收池，做出轻敲桌面的动作\nt=197.5s [other] posture=中间女玩家身体转向hero方向，伸出右手握住hero的左手; speech=开口说话; note=女玩家和hero握手致意\nt=200.0s [hero] posture=身体前倾，看向桌面前方; hands=右手伸出，将dealer推过来的筹码向自己身前拨拢; chips=将底池中的筹码逐摞拢到自己的筹码堆旁; note=hero开始收拢赢下的筹码\nt=204.5s [other] posture=穿彩色花衬衫的玩家身体转向villain; hands=右手抬起，做出拇指指向自己的手势，随后将手托在下巴处; speech=开口和villain说话; note=邻座玩家和villain交流\nt=209.0s [hero] hands=双手抬起，用双手手掌捂住自己的脸，停留约3秒后放下; note=hero再次做出捂脸的动作\nt=212.0s [hero] gaze=低头看向桌面; hands=右手拿起桌上的笔，在纸上开始书写; chips=左手继续将筹码整理成摞; note=hero一边记录，一边整理筹码\nt=214.5s [other] posture=中间女玩家身体向右侧转，左手伸到身后的椅背上拿东西; note=女玩家转身拿身后的物品\nt=217.0s [other] hands=女玩家拿起白色纸杯，举到嘴边; note=女玩家拿起水杯准备喝水\nt=220.0s [other] hands=女玩家用白色纸杯喝了一口水，持续约2秒; note=女玩家喝水\nt=223.0s [other] hands=穿彩色花衬衫的玩家将手中的筹码放到桌上，和白衣玩家说话; speech=持续说话; note=其他玩家在牌局结束后交流\nt=229.0s [hero] hands=右手握着笔在纸上书写，左手放在桌沿; chips=面前的筹码已经整理成整齐的多摞; note=hero完成筹码整理，继续记录\nt=231.0s [other] posture=中间女玩家身体转回牌桌方向; hands=双手合十放在身前; note=女玩家转回正面，双手交握",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_automask_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 234.0,
+      "clip_full_fps": "clip_automask.mp4",
+      "raw_full_fps_ref": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 102.0,
+    "announce_t": 117.0,
+    "clip_duration": 234.0
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "automask_v1"
+}

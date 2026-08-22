@@ -1,0 +1,31 @@
+{
+  "item_id": "F10",
+  "hero_cards": "KsTc",
+  "villain_cards": "AhKh",
+  "board": "",
+  "hero_equity": 0.249475,
+  "win": 0.2446,
+  "tie": 0.00975,
+  "lose": 0.74565,
+  "method": "monte_carlo",
+  "n": 20000,
+  "street": "preflop",
+  "required_equity": 0.35403726708074534,
+  "correct_call": false,
+  "ev_call_bb": -16.834525000000003,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 2350,
+  "pot_after_allin": 5200,
+  "to_call": 2850,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call（错——board 7dQh8s3d4s 干净，P3 70% favorite 拿下）; think=medium（实测 Xuan tank ~25s 后 call；recap 仅 'opted to call'）; allin_type=verbal（看片确认：P3 口头 'all in'，HUD 62）"
+  },
+  "players": {
+    "hero": "Xuan Liu",
+    "villain": "Phillip 'P3' Hellmuth III"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)"
+}

@@ -1,0 +1,20 @@
+{
+  "model": "doubao-seed-2-1-pro-260628",
+  "generated_at": "2026-08-21T18:54:53",
+  "human_verified": false,
+  "n_events": 64,
+  "banned_hits": [],
+  "usage": {
+    "completion_tokens": 4412,
+    "prompt_tokens": 85886,
+    "total_tokens": 90298,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "video_fps": 2.0,
+  "clip_duration": 263.5
+}

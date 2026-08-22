@@ -1,0 +1,31 @@
+{
+  "item_id": "T8",
+  "hero_cards": "JsTs",
+  "villain_cards": "9s9h",
+  "board": "",
+  "hero_equity": 0.485375,
+  "win": 0.48305,
+  "tie": 0.00465,
+  "lose": 0.5123,
+  "method": "monte_carlo",
+  "n": 20000,
+  "street": "preflop",
+  "required_equity": 0.2569832402234637,
+  "correct_call": true,
+  "ev_call_bb": 40.882125,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 4350,
+  "pot_after_allin": 6650,
+  "to_call": 2300,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call（正确；两次跑牌均输，Hellmuth 收 $8,950）; think=short（recap 无停顿描述）; allin_type=verbal（看片确认：'All right, I'm all in'，VTT 4:01 对时一致）"
+  },
+  "players": {
+    "hero": "Dan 'Jungleman' Cates",
+    "villain": "Phil Hellmuth"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)"
+}

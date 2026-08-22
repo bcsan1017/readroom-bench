@@ -1,0 +1,17 @@
+{"t": 0.0, "street": "preflop", "actor": "dealer", "action": "deal", "amount": null, "source": "doubao", "human_verified": false}
+{"t": 5.0, "street": "preflop", "actor": "other", "action": "call", "amount": 50.0, "source": "doubao", "human_verified": false}
+{"t": 18.0, "street": "preflop", "actor": "villain", "action": "raise", "amount": 200.0, "source": "doubao", "human_verified": false}
+{"t": 28.0, "street": "preflop", "actor": "other", "action": "call", "amount": 125.0, "source": "doubao", "human_verified": false}
+{"t": 38.0, "street": "preflop", "actor": "other", "action": "call", "amount": 300.0, "source": "doubao", "human_verified": false}
+{"t": 47.0, "street": "preflop", "actor": "hero", "action": "call", "amount": 300.0, "source": "doubao", "human_verified": false}
+{"t": 54.0, "street": "preflop", "actor": "other", "action": "call", "amount": 200.0, "source": "doubao", "human_verified": false}
+{"t": 62.0, "street": "flop", "actor": "dealer", "action": "deal", "amount": null, "source": "doubao", "human_verified": false}
+{"t": 74.0, "street": "flop", "actor": "other", "action": "bet", "amount": 600.0, "source": "doubao", "human_verified": false}
+{"t": 82.0, "street": "flop", "actor": "hero", "action": "raise", "amount": 1200.0, "source": "doubao", "human_verified": false}
+{"t": 86.0, "street": "flop", "actor": "other", "action": "call", "amount": 600.0, "source": "doubao", "human_verified": false}
+{"t": 89.0, "street": "flop", "actor": "villain", "action": "fold", "amount": null, "source": "doubao", "human_verified": false}
+{"t": 102.0, "street": "turn", "actor": "dealer", "action": "deal", "amount": null, "source": "doubao", "human_verified": false}
+{"t": 117.0, "street": "river", "actor": "dealer", "action": "deal", "amount": null, "source": "doubao", "human_verified": false}
+{"t": 131.0, "street": "river", "actor": "villain", "action": "allin", "amount": 3100.0, "source": "doubao", "human_verified": false}
+{"t": 133.0, "street": "river", "actor": "hero", "action": "fold", "amount": null, "source": "doubao", "human_verified": false}
+{"t": 133.0, "street": "river", "actor": "villain", "action": "pot_awarded", "amount": null, "source": "doubao", "human_verified": false}

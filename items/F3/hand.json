@@ -1,0 +1,61 @@
+{
+  "hand_id": "F3",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 10,
+    "youtube_id": "0KBnOFtBXwg",
+    "youtube_url": "https://www.youtube.com/watch?v=0KBnOFtBXwg",
+    "recap_url": "https://www.pokernews.com/news/2025/09/hellmuths-home-game-episodes-10-recap-49678.htm",
+    "chapter": "recap section 'Jungleman Calls Xuan's Hand' (1st hand of episode)",
+    "note": "Largest pot in Hellmuth's Home Game history"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero 剩余筹码未知；pot_before 含双方各 $8,000 转牌下注",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 0,
+    "clip_end": 337,
+    "villain_allin": 285,
+    "hero_announce": 298
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手 check-raise 全下 $36,475（盖过你已下注 $8,000 后需再跟 $28,475）"
+  },
+  "players": {
+    "hero": "Xuan Liu",
+    "villain": "Dan 'Jungleman' Cates"
+  },
+  "hero_cards": "JhJc",
+  "villain_cards": "Td8d",
+  "board": "Js2h9h7s",
+  "street_at_allin": "turn",
+  "betting_line": [
+    {
+      "street": "turn",
+      "board": "Js 2h 9h 7s",
+      "actions": "Hero bets $8,000 on the turn; Villain(Cates) check-raises all-in $36,475; Hero faces $28,475；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 21925,
+  "allin_amount": 36475,
+  "hero_to_call": 28475,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost both runs); think=short ('quickly called'); allin_type=unknown"
+  },
+  "recap_pot_bet": "Cates check-raise all-in $36,475 over $8,000 bet; call ~$28,475; pot $78,875"
+}

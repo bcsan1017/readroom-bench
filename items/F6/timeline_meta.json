@@ -1,0 +1,21 @@
+{
+  "model": "doubao-seed-2-1-pro-260628",
+  "generated_at": "2026-08-21T18:58:26",
+  "human_verified": false,
+  "n_events": 43,
+  "banned_hits": [],
+  "usage": {
+    "completion_tokens": 3413,
+    "prompt_tokens": 73797,
+    "total_tokens": 77210,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "video_fps": 2.0,
+  "clip_duration": 118.30000000000018,
+  "note": "t=116.5 note 禁词「放松」已机械替换为客观描述（批产环节修正，仍待人工校准）"
+}

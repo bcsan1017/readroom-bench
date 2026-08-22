@@ -1,0 +1,91 @@
+{
+  "item_id": "F3",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "0KBnOFtBXwg",
+    "clip_abs_sec": [
+      0,
+      337
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "turn",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手 check-raise 全下 $36,475（盖过你已下注 $8,000 后需再跟 $28,475））。\n你的底牌：Jh Jc。\n下注线：\n  - turn（Js 2h 9h 7s）：Hero bets $8,000 on the turn; Villain(Cates) check-raises all-in $36,475; Hero faces $28,475；前序街完整下注线 recap 未提供\n当前公共牌：Js 2h 9h 7s（turn）。\n对手全下前底池：$21,925；对手全下额：$36,475；你需跟注：$28,475。\n跟注后总底池：$78,875；所需胜率（跟注额 ÷ (底池+跟注额)）= 36.1%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=1.5s [other] hands=右手放在桌沿，左手放在腰侧; note=镜头切到牌桌全景，戴黑帽穿黑黄条纹外套的男子起身离座\nt=2.0s [hero] gaze=视线看向自己面前的筹码; posture=左手撑住左脸颊，手肘搭在桌沿; hands=右手放在自己面前的筹码堆上; chips=右手拨动面前的筹码; note=翻前阶段，hero在整理自己的筹码\nt=3.5s [other] posture=右手撑住额头，手肘搭在桌沿; hands=右手从额头移开，整理自己的头发; note=hero左侧穿黑皮衣的男子调整手部动作\nt=4.0s [other] gaze=视线看向牌桌中央; posture=坐在椅上，双手放在桌沿; hands=双手手指搭在自己面前的牌边; note=镜头切到牌桌另一侧，两名男子坐在桌前\nt=7.0s [other] gaze=视线看向自己面前的牌; hands=右手将自己面前的两张底牌向前推出; note=穿深灰上衣的男子弃牌\nt=8.0s [other] gaze=视线看向牌桌中央; posture=左手搭在桌沿，右手拿起桌上的易拉罐; hands=右手握住银色易拉罐，左手放在桌沿; note=镜头切回，穿黑皮衣的男子拿起饮料罐\nt=9.5s [other] gaze=视线看向自己面前的牌; hands=右手将自己面前的两张底牌向前推出; note=戴浅色帽子的男子弃牌\nt=11.0s [other] hands=手放在牌桌中央的底牌区域; note=镜头切到牌桌近景，发牌员的手在整理底牌\nt=13.5s [villain] gaze=视线看向牌桌中央; posture=坐在椅上，双手交叠放在桌沿; hands=双手交叠放在自己面前的筹码堆前; note=镜头切回，villain坐回座位\nt=15.5s [villain] gaze=视线看向自己面前的筹码; posture=身体前倾，左手臂搭在桌沿; hands=右手伸向自己面前的筹码堆，拿起一枚筹码; chips=右手拿起一枚筹码向前推出; note=翻前villain放入筹码入池\nt=17.0s [other] posture=从座位站起，身体转向画面右侧; hands=左手扶着椅背，右手自然下垂; note=戴黑帽穿黑黄条纹外套的男子再次起身离座\nt=19.0s [hero] gaze=视线看向左侧的villain; posture=身体坐直，双手放在桌沿; hands=双手平放在自己面前的桌沿上; speech=开口说话，持续约3秒; note=hero看向villain，开口说话\nt=20.5s [hero] gaze=视线低头看向自己面前的牌; posture=身体前倾，手肘搭在桌沿; hands=双手放在自己面前的底牌两侧; note=hero低头看向自己的底牌\nt=22.5s [hero] gaze=视线转向左侧的villain; posture=身体转向左侧，左手撑住左脸颊; hands=左手抬起撑住左脸颊，右手放在桌沿; speech=继续说话; note=hero转头看向villain，继续说话\nt=25.5s [hero] gaze=视线看向自己面前的筹码; hands=右手拿起一枚筹码，在桌面反复拨动; speech=持续说话; chips=右手反复拨动单枚筹码; note=hero一边说话一边用右手把玩筹码\nt=34.5s [hero] gaze=视线看向牌桌中央; hands=右手拿起一摞黄色筹码，向前推出; chips=将一摞黄色筹码推入底池; note=翻前hero下注，将筹码推入底池\nt=40.0s [other] posture=坐回自己的座位; hands=右手拿着透明水瓶，左手扶着桌沿; note=戴黑帽穿黑黄条纹外套的男子坐回座位\nt=41.5s [other] gaze=视线看向牌桌中央; hands=右手拧开透明水瓶的瓶盖; note=该男子拧开手中的水瓶\nt=43.5s [other] hands=右手将水瓶举到嘴边喝水; note=该男子开始喝水\nt=44.0s [hero] gaze=视线低头看向自己面前的牌; posture=身体前倾，双手放在桌沿; hands=双手放在自己面前的底牌上; speech=停止说话; note=hero低头看自己的底牌\nt=46.0s [other] gaze=视线看向自己手中的牌; posture=坐在桌后; hands=双手在桌面整理牌堆; note=镜头切到发牌员，发牌员准备发翻牌\nt=49.0s [other] hands=右手将三张公共牌依次摊开在桌面中央; note=发牌员发出翻牌\nt=51.0s [other] hands=右手将水瓶举到嘴边继续喝水; note=翻牌发出后，戴黑帽的男子继续喝水\nt=53.0s [other] gaze=视线看向牌桌中央; hands=右手将水瓶从嘴边拿开，拧上瓶盖; note=该男子喝完水，拧上瓶盖\nt=57.5s [other] gaze=视线看向自己身侧的地面; posture=身体向右侧倾斜; hands=右手将水瓶放到自己身侧的地面; note=该男子将水瓶放到地上\nt=58.5s [villain] gaze=视线看向自己面前的筹码; posture=身体前倾，左手臂搭在桌沿; hands=右手放在自己面前的筹码堆上，手指拨动筹码; speech=开口说话; chips=右手手指反复拨动面前的筹码; note=翻牌圈，villain一边拨筹码一边说话\nt=62.0s [other] gaze=视线转向牌桌中央; posture=坐直身体; hands=双手交叠放在桌沿; note=戴黑帽的男子坐直，看向牌桌中央\nt=67.0s [hero] gaze=视线看向牌桌中央; posture=左手撑住左脸颊; hands=右手将数枚筹码向前推出; chips=将数枚筹码推入底池; note=翻牌圈hero下注，推出筹码\nt=69.0s [other] gaze=视线看向hero推出的筹码; hands=右手从口袋里拿出一个黑色小物件，捏在手中; note=戴黑帽的男子拿出小物件看向hero的下注\nt=72.0s [other] gaze=视线转向牌桌中央; hands=右手将黑色小物件放回口袋，随后放在桌沿; speech=开口说话; note=该男子放回物件，开口说话\nt=74.5s [hero] gaze=视线转向左侧的戴黑帽男子; hands=左手从脸颊移开，搭在桌沿; speech=开口回应; note=hero转头看向该男子，开口回应\nt=77.5s [other] gaze=视线转向hero; posture=身体转向hero，靠近hero; hands=右手搭在桌沿; speech=持续和hero说话; note=戴黑帽的男子侧身靠近hero，和hero交谈\nt=84.0s [villain] gaze=视线看向牌桌中央; hands=右手将银色易拉罐举到嘴边; note=villain拿起饮料罐准备喝\nt=85.0s [other] hands=右手拿起地上的水瓶，拧开瓶盖; note=戴黑帽的男子再次拿起水瓶拧开\nt=86.0s [villain] hands=右手举着易拉罐喝饮料; note=villain喝饮料\nt=86.5s [other] hands=右手举着水瓶喝水; note=戴黑帽的男子同时喝水\nt=98.0s [other] hands=右手将水瓶从嘴边拿开，拧上瓶盖; note=戴黑帽的男子喝完水，拧上瓶盖\nt=100.0s [other] posture=身体向右侧转; hands=右手将水瓶放到身侧地面; note=该男子再次将水瓶放到地上\nt=102.0s [other] hands=右手抬到嘴边，用手背擦嘴; note=该男子用手擦嘴\nt=103.5s [other] gaze=视线看向hero; posture=坐直身体; hands=右手放在桌沿; note=该男子坐直，看向hero\nt=106.0s [hero] gaze=视线转向自己的右侧; posture=左手抬到脸颊边，手指碰了下眼镜; hands=左手手指触碰自己的眼镜框; note=hero抬手调整眼镜\nt=107.5s [villain] gaze=视线看向牌桌中央; hands=右手将数枚筹码向前推出; chips=将数枚筹码推入底池; note=翻牌圈villain跟注，放入筹码\nt=113.0s [other] hands=右手将一张转牌摊开在桌面公共牌区域; note=转牌发出，对应锚点t=113.0s dealer deal turn\nt=114.5s [villain] gaze=视线看向刚发出的转牌; hands=左手拿着易拉罐，右手抬起做手势; speech=开口说话; note=转牌发出后villain抬手说话\nt=115.5s [villain] gaze=视线转向hero; hands=右手放下，搭在桌沿; speech=持续说话; note=villain看向hero，继续说话\nt=126.0s [hero] gaze=视线转向villain; posture=身体坐直; hands=右手放在桌沿，左手搭在自己的右臂上; speech=开口说话; note=hero看向villain，开口说话\nt=128.5s [hero] gaze=视线转向牌桌中央; hands=双手交叠放在桌沿; speech=持续说话; note=hero看向牌桌中央，继续说话\nt=137.0s [villain] gaze=视线看向hero; hands=右手抬起，拿起易拉罐举到嘴边; speech=持续说话; note=villain拿起饮料罐，继续和hero交谈\nt=148.5s [villain] hands=右手举着易拉罐喝饮料; speech=停止说话; note=villain喝饮料，停止说话\nt=151.0s [villain] gaze=视线看向牌桌中央; hands=右手将易拉罐从嘴边拿开，放到桌沿; note=villain放下饮料罐\nt=156.0s [villain] gaze=视线看向hero; hands=右手抬起，掌心向上做手势; speech=再次开口说话; note=villain对着hero做手势，再次说话\nt=161.0s [villain] hands=右手拿起易拉罐，握在手中; speech=持续说话; note=villain拿起易拉罐，继续说话\nt=164.0s [hero] gaze=视线看向自己面前的筹码; posture=身体前倾; hands=右手从筹码堆中拿起一摞黄色筹码; chips=右手拿起一摞黄色筹码; note=转牌圈hero准备下注，对应锚点t=166.0s hero bet $8000前的动作\nt=165.5s [hero] hands=右手将拿起的黄色筹码向前推出; chips=将一摞黄色筹码推入底池; note=hero推出下注筹码，对应锚点t=166.0s hero bet $8000\nt=167.0s [hero] gaze=视线转向villain; hands=右手放回桌沿; speech=开口说话; note=hero下注后看向villain，开口说话\nt=174.0s [villain] gaze=视线看向hero推出的筹码; posture=身体前倾; hands=右手放在桌沿，手指轻敲桌面; speech=停止说话; note=villain看向hero的下注筹码，停止说话\nt=180.0s [villain] gaze=视线看向自己面前的底牌; hands=右手放在自己的底牌边缘，手指摩挲牌边; note=villain低头看自己的底牌，手指碰牌边\nt=193.0s [other] hands=右手抬到鼻子处，用手指碰了下鼻子; note=戴黑帽的男子抬手碰鼻子\nt=196.0s [other] gaze=视线看向自己面前的桌沿; hands=右手放下，手指捏在一起搓动; note=该男子放下手，搓动手指\nt=200.5s [other] posture=身体向后靠向椅背; hands=右手放到自己的腰侧; note=该男子身体后靠，手放到腰侧\nt=224.0s [villain] gaze=视线看向自己面前的筹码堆; posture=身体大幅前倾; hands=右手伸向自己面前的筹码堆，拨出多摞筹码; chips=右手将面前的多摞筹码向前推出; note=villain推出全下筹码，对应锚点t=286.0s villain allin $36475\nt=286.5s [hero] gaze=视线看向villain推出的全下筹码; posture=身体前倾，看向底池; note=villain全下后，hero看向底池的筹码\nt=287.0s [hero] speech=开口宣布跟注; note=hero宣布跟注，对应锚点t=287.0s hero call $28475，随后底池被收回",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_hided_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 287.7,
+      "clip_full_fps": "clip_hided.mp4",
+      "precut_masked_full_fps": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 286.0,
+    "announce_t": 287.0,
+    "clip_duration": 287.7
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "colleague_hided_recut",
+  "table_players": [
+    {
+      "role": "hero",
+      "stack": 39825.0
+    },
+    {
+      "role": "villain",
+      "stack": 39275.0
+    }
+  ],
+  "internal_names": {
+    "hero": "XUAN",
+    "villain": "JUNGLEMAN"
+  },
+  "table_players_source": "doubao_raw_frame（待人工确认）"
+}

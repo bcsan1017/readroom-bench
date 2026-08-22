@@ -1,0 +1,45 @@
+{
+  "item_id": "F4",
+  "hero_cards": "QhQc",
+  "villain_cards": "Ac7d",
+  "board": "Ah6d5h8h3c",
+  "hero_equity": 0.0,
+  "win": 0.0,
+  "tie": 0.0,
+  "lose": 1.0,
+  "method": "showdown",
+  "n": 1,
+  "street": "river",
+  "required_equity": 0.3538175046554935,
+  "correct_call": false,
+  "ev_call_bb": -95.0,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 3925,
+  "pot_after_allin": 8675,
+  "to_call": 4750,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost, felted); think=long ('thought long and hard'); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Phillip 'P3' Hellmuth III",
+    "villain": "Randy '3Coin' Sadler"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)",
+  "prefill_source": {
+    "table_size": "doubao",
+    "players_in_hand": "doubao",
+    "hero_stack_start": "doubao",
+    "villain_stack_start": "doubao",
+    "hero_position": "doubao",
+    "villain_position": "doubao"
+  },
+  "table_size": 2,
+  "players_in_hand": 4,
+  "hero_stack_start": 6550.0,
+  "villain_stack_start": 8325.0,
+  "hero_position": "UG",
+  "villain_position": "+1"
+}

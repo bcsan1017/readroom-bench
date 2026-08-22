@@ -1,0 +1,76 @@
+{
+  "hand_id": "T10",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 19,
+    "youtube_id": "Cs1ftCcWLng",
+    "youtube_url": "https://www.youtube.com/watch?v=Cs1ftCcWLng",
+    "recap_url": "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-19-recap-50925.htm",
+    "chapter": "recap section 'Will Texas Mike Set the Record?'（当集报道第 1 手；在 T2 手【abs~1155s】之前）",
+    "note": "villain Cates 配额放宽第 4 手（显式记录，见 meta.revision_note）；$54K 大池；面板读数疑义：切片组读到 AQs 51% vs 99 49%，牌理应为 99 ~53:47 领先，疑似胜率条读反；truth 以 MC 53.0% 为准"
+  },
+  "generated_from": "data/candidates.json（换血版）+ data/clips_manifest_merged.json（C/D 组），批量生产，字段待人工核对",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero 剩余筹码未知（recap 未给）",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（C/D 组核对）",
+    "clip_start": 16.0,
+    "clip_end": 175.0,
+    "villain_allin": 112.0,
+    "hero_announce": 116.0
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手 5-bet jam $26,775 total（你 4-bet $6,300 后需再跟 $20,475）"
+  },
+  "players": {
+    "hero": "'Texas' Mike Moncek",
+    "villain": "Dan 'Jungleman' Cates"
+  },
+  "hero_cards": "9h9c",
+  "villain_cards": "AcQc",
+  "board": "",
+  "street_at_allin": "preflop",
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "Preflop: Hero raises (4-bet) to $6,300; Villain(Cates) 5-bet jams $26,775 total; Hero faces $20,475 more；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "recap_pot_bet": "TM 4-bet $6,300，Cates 5-bet jam $26,775 total；call $20,475 争 $54,350 池",
+  "pot_before_allin": 13400,
+  "allin_amount": 26775,
+  "hero_to_call": 20475,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call（正确；board Kh2c9d-Qs-5d 中 set 获胜）; think=short（实测决策窗仅 2s，秒 call）; allin_type=verbal（看片确认：Cates 口头 'Hmm, I'll go all in' 后推入，HUD 98）"
+  },
+  "mask_windows": {
+    "_doc": "automask_v1（2026-08-22）：left_panel_rows 由 2fps 白卡/灰条特征检测自动生成（margin±1s，宁多勿漏）；winner_banner 为收池姓名横幅时段。同事精遮罩版到货整体替换时可忽略。",
+    "left_panel_rows": [
+      [
+        6.0,
+        75.0
+      ]
+    ],
+    "winner_banner": [
+      [
+        139.5,
+        148.0
+      ]
+    ]
+  }
+}

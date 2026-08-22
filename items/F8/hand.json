@@ -1,0 +1,78 @@
+{
+  "hand_id": "F8",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 18,
+    "youtube_id": "PAm_ci_ohz4",
+    "youtube_url": "https://www.youtube.com/watch?v=PAm_ci_ohz4",
+    "recap_url": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-18-recap-50912.htm",
+    "chapter": "recap section 'Texas Mike Getting Lucky' (final hand of episode)",
+    "note": "Incorrect call that won - outcome/decision divergence item"
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": null,
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 2424,
+    "clip_end": 2544,
+    "villain_allin": 2489,
+    "hero_announce": 2501
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手 4-bet 全下 $16,550 盖过你（你再跟 $14,350）"
+  },
+  "players": {
+    "hero": "'Texas' Mike Moncek",
+    "villain": "DJ Washburn"
+  },
+  "hero_cards": "AdQd",
+  "villain_cards": "AsKs",
+  "board": "",
+  "street_at_allin": "preflop",
+  "betting_line": [
+    {
+      "street": "preflop",
+      "board": "",
+      "actions": "Preflop: Hero 3-bets; Villain(Washburn) jams $16,550; Hero faces $14,350；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 5025,
+  "allin_amount": 16550,
+  "hero_to_call": 14350,
+  "hero_stack_behind": 14350,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (got lucky, won); think=short ('quickly called'); allin_type=unknown"
+  },
+  "recap_pot_bet": "Washburn jams $16,550 over 3-bet; quick call $14,350; pot $33,725",
+  "mask_windows": {
+    "_doc": "automask_v1（2026-08-22）：left_panel_rows 由 2fps 白卡/灰条特征检测自动生成（margin±1s，宁多勿漏）；winner_banner 为收池姓名横幅时段。同事精遮罩版到货整体替换时可忽略。",
+    "left_panel_rows": [
+      [
+        37.5,
+        47.0
+      ],
+      [
+        48.0,
+        59.5
+      ],
+      [
+        68.5,
+        72.0
+      ]
+    ]
+  }
+}

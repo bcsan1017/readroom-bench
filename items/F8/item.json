@@ -1,0 +1,76 @@
+{
+  "item_id": "F8",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "PAm_ci_ohz4",
+    "clip_abs_sec": [
+      2424,
+      2544
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "preflop",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手 4-bet 全下 $16,550 盖过你（你再跟 $14,350））。\n你的底牌：Ad Qd。\n下注线：\n  - preflop：Preflop: Hero 3-bets; Villain(Washburn) jams $16,550; Hero faces $14,350；前序街完整下注线 recap 未提供\n当前无公共牌（preflop 全下）。\n对手全下前底池：$5,025；对手全下额：$16,550；你需跟注：$14,350（跟注后你剩 $0）。\n跟注后总底池：$33,725；所需胜率（跟注额 ÷ (底池+跟注额)）= 42.6%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=0.0s [other] hands=右手放在自己面前的牌上，左手整理自己面前的筹码; note=发牌开始，荷官整理筹码\nt=1.0s [other] posture=双臂交叉放在身前，身体转向左侧; hands=双臂交叉放在身前; note=戴黑帽穿黑黄条纹外套的玩家看向左侧\nt=1.5s [other] posture=身体坐正，双肘撑在桌沿; hands=双手放在自己面前的两张牌上; note=戴黑帽穿黑黄条纹外套的玩家坐正，手放在牌上\nt=2.0s [hero] posture=双肘撑在桌沿; hands=双手放在自己面前的两张牌上; note=preflop发牌阶段，hero双手放在自己的牌上\nt=5.5s [other] hands=左手抬起放在自己的下巴处; note=戴橙色帽子的玩家抬手摸下巴\nt=7.0s [other] hands=右手从筹码堆上移开，抬起做出手势; speech=持续说话; note=荷官右手离开筹码，开始说话\nt=8.5s [other] hands=右手将一枚筹码推到桌中间; speech=持续说话; chips=将一枚筹码推到桌中间; note=荷官推出一枚筹码\nt=9.0s [hero] gaze=转头看向左侧的玩家; note=hero转头看向左侧玩家\nt=10.5s [other] posture=双臂交叉放在身前; hands=双臂交叉放在身前; note=戴黑帽穿黑黄条纹外套的玩家再次双臂交叉\nt=11.0s [other] posture=身体前倾，低头看向桌面; hands=双臂交叉放在身前; note=戴黑帽穿黑黄条纹外套的玩家低头看桌面\nt=13.5s [other] hands=左手抬起，手指碰了一下自己的嘴唇; speech=持续说话; note=荷官左手碰嘴唇，继续说话\nt=15.0s [other] gaze=转头看向hero; hands=左手摊开，掌心向上做出手势; speech=持续说话; note=荷官转头看向hero，摊开左手说话\nt=16.5s [hero] gaze=低头看向自己面前的牌; hands=右手捏起自己面前牌的一角，看了一眼后放回; note=hero低头看自己的底牌\nt=19.0s [hero] hands=右手伸向自己面前的筹码堆，拿起数枚筹码; chips=拿起数枚筹码; note=hero伸手拿筹码，准备加注\nt=20.5s [hero] posture=左臂横放在桌沿，右手放在桌沿上; hands=左臂横放在桌沿，右手放在桌沿上; note=hero将筹码推出后，手臂放在桌沿\nt=25.0s [other] posture=身体前倾，低头看向桌面; hands=右手放在自己面前的筹码堆上; note=戴黑帽穿黑黄条纹外套的玩家前倾，手放在筹码上\nt=27.0s [other] hands=双手将自己面前的两张牌合在一起; speech=持续说话; note=荷官双手合上牌，继续说话\nt=28.5s [other] posture=坐直身体; hands=右手放在自己面前的筹码堆上; note=戴黑帽穿黑黄条纹外套的玩家坐直\nt=31.0s [other] hands=右手抬起，食指指向前方; speech=说话; note=戴黑帽穿黑黄条纹外套的玩家抬手指向前方说话\nt=32.5s [hero] hands=右手将数枚筹码向前推出; chips=将数枚筹码推到桌中间; note=hero完成raise动作，推出加注筹码\nt=34.0s [other] hands=右手抬起，掌心朝向hero做出停止手势; speech=说话; note=戴黑帽穿黑黄条纹外套的玩家抬手做停止手势说话\nt=34.5s [other] hands=右手食指指向上方; speech=持续说话; note=荷官右手食指指向上方说话\nt=37.0s [other] hands=右手将自己面前的牌向前推出; speech=持续说话; note=荷官推出自己面前的牌，弃牌\nt=39.5s [other] hands=右手将自己面前的牌向前推出; note=长发黑衣女玩家推出自己的牌，弃牌\nt=43.0s [other] gaze=转头看向右侧的长发黑衣女玩家; hands=左手放在自己面前的筹码堆上，右手整理筹码; speech=持续说话; chips=整理自己面前的筹码堆; note=荷官转头看向右侧女玩家，整理筹码说话\nt=46.5s [hero] hands=右手抬起，碰了一下自己的墨镜; note=hero抬手碰墨镜\nt=48.5s [other] hands=左手撑在脸颊处，手肘撑在桌沿; note=光头白胡子玩家左手撑脸\nt=50.5s [other] hands=左手从脸颊处移开，将两枚黄色筹码向前推出; chips=将两枚黄色筹码推到桌中间; note=光头白胡子玩家推出筹码，完成3bet\nt=53.5s [hero] hands=双手放在自己面前的牌上; note=hero双手放回自己的牌上\nt=55.5s [hero] hands=双手将自己面前的牌拿起，随后向前推出; note=hero拿起自己的牌，向前推出弃牌\nt=56.5s [hero] posture=身体向后靠在椅背上; hands=左手放在自己的腰侧，右手放在桌沿; note=hero弃牌后向后靠在椅背上\nt=60.5s [villain] gaze=看向自己面前的牌; hands=右手放在自己面前的牌上，左手捏着一枚筹码; chips=左手捏着一枚筹码; note=villain看向自己的牌，左手捏着筹码\nt=66.5s [villain] hands=右手将一枚筹码向前抛出; speech=说话; chips=将一枚筹码抛到桌中间; note=villain抛出一枚筹码，说话\nt=67.0s [villain] hands=右手抬起，撑在自己的右侧脸颊处，手肘撑在桌沿; speech=持续说话; note=villain右手撑脸，继续说话\nt=69.5s [villain] hands=右手将一整摞筹码向前推出; chips=将一整摞筹码推到桌中间; note=villain推出全下筹码，完成all in动作\nt=72.0s [other] hands=右手将数枚筹码向前推出; chips=将数枚筹码推到桌中间; note=戴橙色帽子的玩家推出筹码，准备跟注\nt=76.0s [other] hands=右手将三张公共牌依次发到桌中间; note=荷官发出翻牌三张公共牌\nt=79.0s [hero] hands=右手抬起，碰了一下自己的墨镜; note=hero再次抬手碰墨镜\nt=81.5s [other] hands=右手将第四张公共牌发到桌中间; note=荷官发出转牌公共牌\nt=83.0s [hero] hands=右手抬起，扶着自己的帽子，手肘撑在桌沿; note=hero扶着自己的帽子，手肘撑桌\nt=88.5s [other] hands=右手将第五张公共牌发到桌中间; note=荷官发出河牌公共牌\nt=92.0s [other] hands=右手拿起一枚筹码，在指间转动; speech=说话; note=戴橙色帽子的玩家拿起筹码转动，说话\nt=94.0s [villain] hands=右手握拳抬起，随后放下; speech=持续说话; note=villain右手握拳抬起又放下，说话\nt=97.0s [villain] posture=身体坐直; hands=双手放在桌沿，手指敲击桌面; speech=持续说话; note=villain坐直，手指敲桌面说话\nt=109.0s [other] hands=右手将桌中间的筹码向戴橙色帽子的玩家方向推去; chips=将底池筹码推向获胜玩家; note=荷官将底池筹码推给获胜玩家，完成收池\nt=111.0s [other] hands=右手将桌中间的筹码拉到自己面前的筹码堆旁; chips=将筹码拉到自己面前; note=戴橙色帽子的玩家将赢下的筹码拉到自己面前\nt=113.5s [villain] hands=右手抬起，放在自己的脖颈处，手肘撑在桌沿; note=villain右手放在脖颈处，手肘撑桌\nt=115.5s [other] hands=双手整理桌中间的筹码，将筹码码齐; chips=整理码齐筹码; note=荷官开始整理筹码，为下一手牌做准备",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_automask_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 120,
+      "clip_full_fps": "clip_automask.mp4",
+      "raw_full_fps_ref": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 65,
+    "announce_t": 77,
+    "clip_duration": 120
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "automask_v1"
+}

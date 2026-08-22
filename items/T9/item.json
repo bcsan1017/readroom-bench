@@ -1,0 +1,76 @@
+{
+  "item_id": "T9",
+  "schema_version": "0.2",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "youtube_id": "5ZOUgMDKYTs",
+    "clip_abs_sec": [
+      654.75,
+      777.6
+    ],
+    "note": "只分发时间戳与打码产物，不分发原片；切片=整手（发牌→收池）"
+  },
+  "street_at_allin": "turn",
+  "layers": {
+    "L0": {
+      "text": "牌局：NLHE cash，人数未知，盲注 $25/$50 with big-blind ante（默认口径，未逐集核实）（1 bb = $50）。\n你（Hero）位置：未知，本手开始筹码 未知。对手（Villain）位置：未知，本手开始筹码 未知（对手 check-raise 至 $4,600 覆盖你（再跟 $3,600 即全下））。\n你的底牌：7h 7c。\n下注线：\n  - turn（9h 4h 3c 9c）：Hero bets $1,000 on the turn; Villain(Kelly Lucas) check-raises to $4,600, covering; Hero faces $3,600 more (his entire stack)；前序街完整下注线 recap 未提供\n当前公共牌：9h 4h 3c 9c（turn）。\n对手全下前底池：$6,725；对手全下额：$4,600；你需跟注：$3,600（跟注后你剩 $0）。\n跟注后总底池：$13,925；所需胜率（跟注额 ÷ (底池+跟注额)）= 25.9%。"
+    },
+    "L1-text": {
+      "timeline_text": "t=1.5s [other] ; note=开场全景，荷官正在整理牌桌中央的牌\nt=2.0s [other] hands=放下手中的水瓶; note=+1位玩家弃牌\nt=5.5s [other] ; note=镜头切至HJ位女玩家（villain）与CO位玩家（other）\nt=7.0s [other] chips=HJ位女玩家推出筹码加注至300; note=HJ位加注\nt=8.5s [other] chips=CO位玩家推出筹码跟注300; note=CO位跟注\nt=10.0s [other] ; note=镜头切至庄位玩家（hero，黑衣粗项链）\nt=11.0s [other] gaze=看向自己面前的筹码; posture=双肘撑在桌沿; hands=右手手指拨弄面前的筹码; note=庄位行动前整理筹码\nt=16.0s [other] chips=推出一摞筹码3bet至900; note=庄位3bet\nt=17.0s [other] hands=荷官伸手将庄位推出的筹码收拢至底池; note=荷官收筹\nt=21.0s [other] ; note=镜头切至小盲位白帽白胡子玩家与UTG位花衬衫玩家，小盲弃牌\nt=23.0s [other] hands=双手将自己的底牌向前推出弃牌; note=大盲位白帽玩家弃牌\nt=28.5s [other] chips=花衬衫玩家推出筹码跟注800; note=UTG位花衬衫玩家跟注\nt=31.0s [other] chips=HJ位女玩家推出筹码跟注600; note=HJ位跟注\nt=35.0s [other] chips=CO位玩家扔出一枚筹码跟注; note=CO位跟注，翻前行动结束\nt=44.0s [other] hands=荷官左手持牌，右手依次发出三张翻牌; note=发翻牌\nt=47.0s [other] ; note=UTG位花衬衫玩家过牌\nt=48.5s [other] ; note=HJ位女玩家过牌，CO位玩家过牌\nt=50.0s [other] gaze=看向自己面前的筹码; posture=左肘撑桌，左手托住左侧脸颊; hands=右手手指拨弄面前的筹码; note=翻牌轮庄位行动前整理筹码\nt=54.0s [other] chips=推出筹码下注500; note=庄位翻牌下注500\nt=55.0s [other] posture=双臂交叉抱于胸前; note=UTG位花衬衫玩家弃牌\nt=62.0s [other] chips=HJ位女玩家推出筹码跟注500; note=HJ位跟注\nt=64.0s [other] chips=CO位玩家将自己的底牌向前推出弃牌; note=CO位弃牌\nt=67.5s [other] hands=荷官右手发出转牌; note=发转牌，锚点t=68.0s dealer deal\nt=70.0s [other] ; note=镜头切至HJ位女玩家与庄位玩家\nt=74.5s [other] ; note=HJ位女玩家过牌，锚点t=79.0s villain check\nt=75.0s [other] posture=放下托脸的左手，身体坐直; hands=右手拨弄面前的筹码; note=转牌轮庄位行动前调整姿态\nt=78.5s [other] chips=分两次推出筹码，下注1000; note=庄位转牌下注1000，锚点t=79.0s hero bet $1000\nt=86.0s [other] gaze=转头看向右侧的庄位玩家; hands=右手拿起一块食物送入口中; note=庄位下注后，CO位玩家看向庄位并进食\nt=88.5s [other] posture=双臂交叉抱于胸前; note=CO位玩家抱臂旁观\nt=90.0s [other] gaze=低头看向自己面前的底牌区域; posture=右手手肘撑桌，右手托住右侧脸颊; hands=左手手指反复拨弄面前的一枚筹码; note=HJ位女玩家面对下注开始长考，持续拨弄筹码\nt=103.0s [other] speech=开口说话约1秒; chips=推出多摞筹码加注至4600; note=HJ位女玩家加注，随后庄位全下，锚点t≈103s villain全下\nt=106.5s [other] gaze=看向荷官方向; posture=双臂交叉抱于胸前; speech=开口说话; note=庄位全下后开口说话\nt=111.5s [other] hands=左手抬起，手指放在嘴前; note=庄位说话时手部动作\nt=112.0s [other] gaze=低头看向牌桌; posture=左肘撑桌，左手托住左侧太阳穴; note=庄位停止说话，撑头思考\nt=119.0s [other] chips=将自己的底牌向前推出弃牌; note=庄位弃牌，锚点t=120.0s hero fold\nt=120.5s [other] posture=身体向后靠向椅背; note=庄位弃牌后靠回椅背\nt=121.0s [other] hands=荷官将底池筹码推给HJ位女玩家; note=荷官将底池授予HJ位，锚点t=121.0s dealer pot_awarded",
+      "timeline_file": "timeline.jsonl",
+      "is_mock": false,
+      "human_verified": false
+    },
+    "L1-video": {
+      "clip": "clip_automask_2fps.mp4",
+      "fps": 2.0,
+      "duration_sec": 122.85000000000002,
+      "clip_full_fps": "clip_automask.mp4",
+      "raw_full_fps_ref": "clip_masked.mp4"
+    }
+  },
+  "timing": {
+    "allin_t": 103.0,
+    "announce_t": 120.0,
+    "clip_duration": 122.85000000000002
+  },
+  "output_schema": {
+    "p_call": "float 0..1",
+    "action": "call|fold",
+    "cues": [
+      {
+        "t": "float",
+        "who": "villain|hero|other",
+        "type": "gaze|posture|hands|speech|chips|face",
+        "observed": "str",
+        "direction": "strong|weak|neutral",
+        "weight": "float 0..1"
+      }
+    ],
+    "rationale": "str ≤150字",
+    "recognized": "bool"
+  },
+  "layer_model_matrix": {
+    "L0": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-text": [
+      "claude",
+      "gpt",
+      "qwen",
+      "kimi",
+      "deepseek"
+    ],
+    "L1-video": [
+      "qwen",
+      "kimi",
+      "doubao (provisional)"
+    ]
+  },
+  "truth_file": "truth.json",
+  "video_variant": "automask_v1"
+}

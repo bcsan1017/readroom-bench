@@ -1,0 +1,37 @@
+{"t": 1.5, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "开场全景，荷官正在整理牌桌中央的牌", "source": "doubao", "human_verified": false}
+{"t": 2.0, "who": "other", "gaze": "-", "posture": "-", "hands": "放下手中的水瓶", "speech": "-", "chips": "-", "face": "-", "note": "+1位玩家弃牌", "source": "doubao", "human_verified": false}
+{"t": 5.5, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "镜头切至HJ位女玩家（villain）与CO位玩家（other）", "source": "doubao", "human_verified": false}
+{"t": 7.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "HJ位女玩家推出筹码加注至300", "face": "-", "note": "HJ位加注", "source": "doubao", "human_verified": false}
+{"t": 8.5, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "CO位玩家推出筹码跟注300", "face": "-", "note": "CO位跟注", "source": "doubao", "human_verified": false}
+{"t": 10.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "镜头切至庄位玩家（hero，黑衣粗项链）", "source": "doubao", "human_verified": false}
+{"t": 11.0, "who": "other", "gaze": "看向自己面前的筹码", "posture": "双肘撑在桌沿", "hands": "右手手指拨弄面前的筹码", "speech": "-", "chips": "-", "face": "-", "note": "庄位行动前整理筹码", "source": "doubao", "human_verified": false}
+{"t": 16.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "推出一摞筹码3bet至900", "face": "-", "note": "庄位3bet", "source": "doubao", "human_verified": false}
+{"t": 17.0, "who": "other", "gaze": "-", "posture": "-", "hands": "荷官伸手将庄位推出的筹码收拢至底池", "speech": "-", "chips": "-", "face": "-", "note": "荷官收筹", "source": "doubao", "human_verified": false}
+{"t": 21.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "镜头切至小盲位白帽白胡子玩家与UTG位花衬衫玩家，小盲弃牌", "source": "doubao", "human_verified": false}
+{"t": 23.0, "who": "other", "gaze": "-", "posture": "-", "hands": "双手将自己的底牌向前推出弃牌", "speech": "-", "chips": "-", "face": "-", "note": "大盲位白帽玩家弃牌", "source": "doubao", "human_verified": false}
+{"t": 28.5, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "花衬衫玩家推出筹码跟注800", "face": "-", "note": "UTG位花衬衫玩家跟注", "source": "doubao", "human_verified": false}
+{"t": 31.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "HJ位女玩家推出筹码跟注600", "face": "-", "note": "HJ位跟注", "source": "doubao", "human_verified": false}
+{"t": 35.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "CO位玩家扔出一枚筹码跟注", "face": "-", "note": "CO位跟注，翻前行动结束", "source": "doubao", "human_verified": false}
+{"t": 44.0, "who": "other", "gaze": "-", "posture": "-", "hands": "荷官左手持牌，右手依次发出三张翻牌", "speech": "-", "chips": "-", "face": "-", "note": "发翻牌", "source": "doubao", "human_verified": false}
+{"t": 47.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "UTG位花衬衫玩家过牌", "source": "doubao", "human_verified": false}
+{"t": 48.5, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "HJ位女玩家过牌，CO位玩家过牌", "source": "doubao", "human_verified": false}
+{"t": 50.0, "who": "other", "gaze": "看向自己面前的筹码", "posture": "左肘撑桌，左手托住左侧脸颊", "hands": "右手手指拨弄面前的筹码", "speech": "-", "chips": "-", "face": "-", "note": "翻牌轮庄位行动前整理筹码", "source": "doubao", "human_verified": false}
+{"t": 54.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "推出筹码下注500", "face": "-", "note": "庄位翻牌下注500", "source": "doubao", "human_verified": false}
+{"t": 55.0, "who": "other", "gaze": "-", "posture": "双臂交叉抱于胸前", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "UTG位花衬衫玩家弃牌", "source": "doubao", "human_verified": false}
+{"t": 62.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "HJ位女玩家推出筹码跟注500", "face": "-", "note": "HJ位跟注", "source": "doubao", "human_verified": false}
+{"t": 64.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "CO位玩家将自己的底牌向前推出弃牌", "face": "-", "note": "CO位弃牌", "source": "doubao", "human_verified": false}
+{"t": 67.5, "who": "other", "gaze": "-", "posture": "-", "hands": "荷官右手发出转牌", "speech": "-", "chips": "-", "face": "-", "note": "发转牌，锚点t=68.0s dealer deal", "source": "doubao", "human_verified": false}
+{"t": 70.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "镜头切至HJ位女玩家与庄位玩家", "source": "doubao", "human_verified": false}
+{"t": 74.5, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "HJ位女玩家过牌，锚点t=79.0s villain check", "source": "doubao", "human_verified": false}
+{"t": 75.0, "who": "other", "gaze": "-", "posture": "放下托脸的左手，身体坐直", "hands": "右手拨弄面前的筹码", "speech": "-", "chips": "-", "face": "-", "note": "转牌轮庄位行动前调整姿态", "source": "doubao", "human_verified": false}
+{"t": 78.5, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "分两次推出筹码，下注1000", "face": "-", "note": "庄位转牌下注1000，锚点t=79.0s hero bet $1000", "source": "doubao", "human_verified": false}
+{"t": 86.0, "who": "other", "gaze": "转头看向右侧的庄位玩家", "posture": "-", "hands": "右手拿起一块食物送入口中", "speech": "-", "chips": "-", "face": "-", "note": "庄位下注后，CO位玩家看向庄位并进食", "source": "doubao", "human_verified": false}
+{"t": 88.5, "who": "other", "gaze": "-", "posture": "双臂交叉抱于胸前", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "CO位玩家抱臂旁观", "source": "doubao", "human_verified": false}
+{"t": 90.0, "who": "other", "gaze": "低头看向自己面前的底牌区域", "posture": "右手手肘撑桌，右手托住右侧脸颊", "hands": "左手手指反复拨弄面前的一枚筹码", "speech": "-", "chips": "-", "face": "-", "note": "HJ位女玩家面对下注开始长考，持续拨弄筹码", "source": "doubao", "human_verified": false}
+{"t": 103.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "开口说话约1秒", "chips": "推出多摞筹码加注至4600", "face": "-", "note": "HJ位女玩家加注，随后庄位全下，锚点t≈103s villain全下", "source": "doubao", "human_verified": false}
+{"t": 106.5, "who": "other", "gaze": "看向荷官方向", "posture": "双臂交叉抱于胸前", "hands": "-", "speech": "开口说话", "chips": "-", "face": "-", "note": "庄位全下后开口说话", "source": "doubao", "human_verified": false}
+{"t": 111.5, "who": "other", "gaze": "-", "posture": "-", "hands": "左手抬起，手指放在嘴前", "speech": "-", "chips": "-", "face": "-", "note": "庄位说话时手部动作", "source": "doubao", "human_verified": false}
+{"t": 112.0, "who": "other", "gaze": "低头看向牌桌", "posture": "左肘撑桌，左手托住左侧太阳穴", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "庄位停止说话，撑头思考", "source": "doubao", "human_verified": false}
+{"t": 119.0, "who": "other", "gaze": "-", "posture": "-", "hands": "-", "speech": "-", "chips": "将自己的底牌向前推出弃牌", "face": "-", "note": "庄位弃牌，锚点t=120.0s hero fold", "source": "doubao", "human_verified": false}
+{"t": 120.5, "who": "other", "gaze": "-", "posture": "身体向后靠向椅背", "hands": "-", "speech": "-", "chips": "-", "face": "-", "note": "庄位弃牌后靠回椅背", "source": "doubao", "human_verified": false}
+{"t": 121.0, "who": "other", "gaze": "-", "posture": "-", "hands": "荷官将底池筹码推给HJ位女玩家", "speech": "-", "chips": "-", "face": "-", "note": "荷官将底池授予HJ位，锚点t=121.0s dealer pot_awarded", "source": "doubao", "human_verified": false}

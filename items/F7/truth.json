@@ -1,0 +1,31 @@
+{
+  "item_id": "F7",
+  "hero_cards": "Jc9d",
+  "villain_cards": "AdKc",
+  "board": "3d5sAs9c",
+  "hero_equity": 0.11363636363636363,
+  "win": 0.11363636363636363,
+  "tie": 0.0,
+  "lose": 0.8863636363636364,
+  "method": "enumerate",
+  "n": 44,
+  "street": "turn",
+  "required_equity": 0.3562005277044855,
+  "correct_call": false,
+  "ev_call_bb": -45.96590909090909,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 2725,
+  "pot_after_allin": 6100,
+  "to_call": 3375,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call（错——river Th 无救，输）; think=short（'didn't take long to call off'）; allin_type=chips（看片确认：Matusow turn bet $3,375 恰覆盖 hero）"
+  },
+  "players": {
+    "hero": "Randy '3Coin' Sadler",
+    "villain": "Mike Matusow"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)"
+}

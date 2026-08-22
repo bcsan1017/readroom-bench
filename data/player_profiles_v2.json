@@ -1,0 +1,2977 @@
+{
+  "meta": {
+    "generated": "2026-08-21",
+    "version": "v2",
+    "based_on": "player_profiles.json (v1，原样保留未动) + hhg_behavior_stats.json（自建 HHG recap 行为统计）",
+    "purpose": "读人 Bench 选手公开画像库（14 人），配套 candidates.json main 20 手牌；v2 统一 schema：每人新增 model_profile（喂模型的匿名化五维）、stats（HHG 行为统计）、profile_depth（画像厚度评级）",
+    "source_policy": "只用公开信息；风格评价必须带来源 URL；信源分级 A=本人访谈/官方数据, B=扑克媒体报道, C=论坛/社区/粉丝站印象；C 级单独存放于 style_community_C 不与 A/B 混写；新增 source_tier 'stats' = 本仓库自建 HHG recap 统计（hhg_behavior_stats.json，下界口径），混合标记如 'A/stats' 表示评价源+统计共同支撑",
+    "hendon_note": "Hendon Mob 有 Cloudflare，所有 URL 与数字经搜索引擎快照/媒体引用交叉佐证，未直接抓取，数字可能滞后",
+    "anonymization_rule": "anonymized_profile 去姓名、去可反查独特成就（手链数→'多次世界级冠军'，演员出身→'娱乐行业背景'），保留风格标签与量级，80-150 字中文；model_profile 同样遵守匿名化约束，evidence 一句话中不出现姓名与可反查成就",
+    "model_profile_schema": "五维固定：looseness（松紧）/ aggression（激进度）/ emotional_expressiveness（情绪外露）/ table_talk（话痨程度）/ bluff_tendency（诈唬倾向）；每维 {level: low|mid|high|unknown, evidence: 一句话, source_tier: A|B|C|stats|混合}；有统计支撑的维度优先引用数字",
+    "profile_depth_rules": "rich = A/B 级 style_public 评价 ≥5 条 且 stats.hands_reported ≥20；thin = A/B 评价 ≤4 条 且 hands_reported <10；其余为 medium。含义：rich 可直接喂模型做读人推断；medium 需注明置信度；thin 仅作背景参考、外推需谨慎",
+    "stats_caveat": "recap 只报道每集精选手牌（每集 4-7 手），是有偏样本：偏向大池、all-in 对抗与戏剧性手牌，常规小池与无摊牌手基本不被记录。因此所有计数均为【下界】而非全量；『无记录』只说明 recap 未报道，不能推断该行为不存在。松紧度/入池率等频率类指标无法由本数据估计。续局集（Ep15/24/27/29/30 等）的 Profit 列为跨集累计口径，swing 记录时已尽量在证据中注明。所有统计严格取 recap 明文，不做推断。"
+  },
+  "players": [
+    {
+      "id": "phil_hellmuth",
+      "identity": {
+        "full_name": "Phillip Jerome Hellmuth Jr.",
+        "aliases": [
+          "Phil Hellmuth",
+          "The Poker Brat",
+          "Lumestackin"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=117",
+        "hendon_status": "confirmed",
+        "category": "职业牌手（扑克名人堂成员，节目主人）"
+      },
+      "record": {
+        "summary": "现场总奖金约 $30.5M-31.6M；WSOP 手链 17 条（历史纪录）；1989 WSOP 主赛冠军（击败 Johnny Chan）；2012 WSOPE 主赛冠军（唯一两大洲主赛双冠）；2005 NBC 全国单挑赛冠军；唯一在 5 个年代均夺手链者；2026 WSOP $5K 8-Handed 亚军 $464,286",
+        "sources": [
+          "https://www.wsop.com/players/phil-hellmuth/",
+          "https://www.pokernews.com/poker-players/phil-hellmuth/",
+          "https://en.wikipedia.org/wiki/Phil_Hellmuth",
+          "https://www.pokernews.com/news/2026/07/hellmuth-not-deterred-from-wsop-bracelet-goal-51906.htm"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "松紧/激进度",
+          "tier": "B",
+          "claim": "极紧、剥削型、read-based（'White Magic'）：前期只玩极少手数建立石头形象，small-ball、频繁 limp、极端耐心，被同行讥为'恐龙打法'但长期成立",
+          "source": "https://www.poker-player-profiles.com/phil-hellmuth/"
+        },
+        {
+          "dimension": "打法细节",
+          "tier": "B",
+          "claim": "几乎总走被动线、极少 donk bet、爱 check dark 以纯化对手 timing tell 并腾出注意力观察；小注、min-raise、trappy line 把对手带进不熟悉的博弈树分支（tell 研究者 Zachary Elwood 分析）",
+          "source": "https://www.readingpokertells.com/2021/08/what-is-phil-hellmuths-white-magic-can-we-define-it/"
+        },
+        {
+          "dimension": "诈唬倾向",
+          "tier": "A",
+          "claim": "本人自述 2012 WSOPE 主赛'翻前翻后诈唬了几百次''几个小时不看底牌，感觉对手跟不了大 reraise 就直接打'",
+          "source": "https://www.poker.org/latest-news/the-white-magic-run-that-won-phil-hellmuth-the-2012-wsope-main-event-a3ybV8e1oR3C"
+        },
+        {
+          "dimension": "读人实例",
+          "tier": "B",
+          "claim": "对 Scott Seiver $800K 单挑河牌 check-raise 诈唬成功，Jonathan Little 认为体现其非常规但有效的 read 能力",
+          "source": "https://www.pokernews.com/strategy/phil-hellmuth-poker-reads-42630.htm"
+        },
+        {
+          "dimension": "话痨程度",
+          "tier": "B",
+          "claim": "Hellmuth's Home Game 不设解说，'由 Phil Hellmuth 的 table talk 撑起整档节目'",
+          "source": "https://www.pokernews.com/news/2026/08/hellmuths-home-game-episode-30-recap-52106.htm"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "B",
+          "claim": "WSOP 官方简介直书其'脾气几乎和牌技一样出名'，因 bad beat 咒骂、贬损对手得名 Poker Brat；节目中长考 8 分钟弃掉三条并当场拍掉 Matusow 直播手机",
+          "source": "https://www.wsop.com/players/phil-hellmuth/ ; https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-24-recap-51248.htm"
+        },
+        {
+          "dimension": "tell 轶事",
+          "tier": "B",
+          "claim": "Elwood 论证其'好斗人设'本身是读牌工具——大注诈唬者通常不敢激怒对手，故对手被激怒后的反应反而泄露强弱",
+          "source": "https://www.readingpokertells.com/2021/08/what-is-phil-hellmuths-white-magic-can-we-define-it/"
+        }
+      ],
+      "style_community_C": [
+        {
+          "claim": "GTO Wizard 复盘发现其某些 ICM 判断'意外地与 solver 一致'（对'恐龙打法'嘲讽的反方参照，B/C 交叉）",
+          "source": "https://www.pokernews.com/news/2026/03/phil-hellmuth-plays-gto-poker-50921.htm"
+        }
+      ],
+      "anonymized_profile": "资深顶级职业牌手，多次世界级冠军，锦标赛战绩历史级。打法极紧且剥削型：前期只玩极少手牌，偏好小注、被动线与慢速节奏，把对手引入不熟悉的博弈分支后靠读人做非常规决定，自信读人能力极强。话极多，情绪外露到标志性程度，bad beat 后常当场发作、贬损对手；其好斗人设本身被分析者视为读牌工具——对手被激怒后的反应会泄露牌力。",
+      "bench_relevance": {
+        "hands": [
+          "T1",
+          "T7",
+          "T8"
+        ],
+        "as_hero": [
+          "T1"
+        ],
+        "as_villain": [
+          "T7",
+          "T8"
+        ],
+        "hero_count": 1,
+        "villain_count": 2
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "low",
+          "evidence": "极紧剥削型，前期只玩极少手数建立石头形象，被同行讥为'恐龙打法'",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "low",
+          "evidence": "几乎总走被动线、小注、min-raise、极少 donk bet 的 trappy 风格",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "high",
+          "evidence": "官方简介直书'脾气几乎和牌技一样出名'，bad beat 后当场发作是标志",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "high",
+          "evidence": "无解说节目'由其 table talk 撑起整档'",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "mid",
+          "evidence": "本人自述曾单赛事'诈唬几百次'，但 HHG 30 集 recap 仅明文记录其诈唬 2 次（1 得手 1 被抓）",
+          "source_tier": "A/stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 30,
+        "episodes_list": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "hands_reported": 56,
+        "allin_made": 12,
+        "allin_faced": 17,
+        "bluffs_caught": 1,
+        "bluffs_successful": 1,
+        "hero_calls": 0,
+        "big_folds": 2,
+        "tanks": 2,
+        "showdowns_won": 17,
+        "showdowns_lost": 14,
+        "sources": {
+          "hands_reported": [
+            "1",
+            "2",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "29",
+            "30"
+          ],
+          "allin_made": [
+            "1",
+            "6",
+            "7",
+            "16",
+            "18",
+            "23",
+            "25",
+            "27",
+            "29",
+            "30"
+          ],
+          "allin_faced": [
+            "1",
+            "2",
+            "5",
+            "6",
+            "7",
+            "12",
+            "13",
+            "14",
+            "19",
+            "20",
+            "23",
+            "24",
+            "26",
+            "27",
+            "29"
+          ],
+          "bluffs_caught": [
+            "29"
+          ],
+          "bluffs_successful": [
+            "2"
+          ],
+          "hero_calls": [],
+          "big_folds": [
+            "1",
+            "24"
+          ],
+          "tanks": [
+            "12",
+            "24"
+          ],
+          "showdowns_won": [
+            "1",
+            "2",
+            "5",
+            "6",
+            "7",
+            "11",
+            "12",
+            "19",
+            "20",
+            "23",
+            "24",
+            "27",
+            "29"
+          ],
+          "showdowns_lost": [
+            "6",
+            "12",
+            "14",
+            "16",
+            "25",
+            "26",
+            "27",
+            "29",
+            "30"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "5",
+            "amount": "+$17,575"
+          },
+          {
+            "episode": "7",
+            "amount": "+$10,825"
+          },
+          {
+            "episode": "8",
+            "amount": "+$25,525"
+          },
+          {
+            "episode": "16",
+            "amount": -20225
+          },
+          {
+            "episode": "22",
+            "amount": 15275
+          },
+          {
+            "episode": "23",
+            "amount": 12150
+          },
+          {
+            "episode": "24",
+            "amount": 24600
+          },
+          {
+            "episode": "27",
+            "amount": -20225
+          },
+          {
+            "episode": "30",
+            "amount": -20000
+          }
+        ]
+      },
+      "profile_depth": "rich"
+    },
+    {
+      "id": "nick_hellmuth",
+      "identity": {
+        "full_name": "Nicholas Hellmuth",
+        "aliases": [
+          "Nick Hellmuth"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=1474981",
+        "hendon_status": "confirmed（约 $31K、8 次 cash，非 no_record）",
+        "category": "半公众人物（Phil 幼子，2025 年辞职转职业，BetRivers 大使）",
+        "caveat": "年龄口径冲突：Pokerfuse 称 23 岁 vs Phil 节目原话 'Nick's in his 30s'，公开资料无法裁决；公开资料稀少"
+      },
+      "record": {
+        "summary": "生涯总奖金约 $31K（8 次 cash）；2025-09 官宣转职业；2026 WSOP cash 了 $10K 主赛（Day 3 曾 9BB 短码坚持）和 $1K Super Turbo；首个记录 cash 于 Venetian $3,533",
+        "sources": [
+          "https://www.cardplayer.com/poker-news/phil-hellmuth-nick-hellmuth-pro-poker",
+          "https://www.pokernews.com/news/2026/06/nicholas-hellmuth-talks-about-famous-father-51509.htm",
+          "https://www.pokernews.com/news/2026/07/father-son-combos-wsop-main-event-51803.htm"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "赛制偏好",
+          "tier": "A",
+          "claim": "本人受访称'100% 更喜欢锦标赛而非现金局'，目标是拿下冠军/戒指/手链里程碑",
+          "source": "https://www.pokernews.com/news/2026/06/nicholas-hellmuth-talks-about-famous-father-51509.htm"
+        },
+        {
+          "dimension": "激进度（节目侧写）",
+          "tier": "B",
+          "claim": "敢于浅码全下（99 对父亲 3-bet 直接推入双跑全收）；也有 UTG limp AK、中对领打后全下撞 KK 被清空等偏新手激进操作",
+          "source": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-14-recap-50756.htm ; https://www.pokernews.com/news/2026/08/hellmuths-home-game-episode-30-recap-52106.htm"
+        },
+        {
+          "dimension": "弃牌倾向",
+          "tier": "B",
+          "claim": "会做大弃牌并当桌向父亲求教：顶对面对 Deeb 河牌诈唬全下弃掉后问'你怎么看'，Phil 答'换我不弃，但弃了也 fine'",
+          "source": "https://www.pokernews.com/news/2026/07/hellmuths-home-game-episode-28-recap-52024.htm"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "B",
+          "claim": "低调温和，输光离场前拥抱父亲，无 Brat 式发作记录",
+          "source": "https://www.pokernews.com/news/2026/08/hellmuths-home-game-episode-30-recap-52106.htm"
+        }
+      ],
+      "style_community_C": [],
+      "anonymized_profile": "转职业不久的年轻牌手，公开战绩尚浅，明确偏好锦标赛胜过现金局。节目样本有限：敢于浅码全下，也出现过偏新手的激进操作（如中对领打后全下撞上超对被清空）；同时能在压力下做出大弃牌，且会当桌向更资深的牌手求教复盘。情绪低调温和，无失控记录，桌上话不多，输光离场时风度良好。风格画像整体样本量小，外推需谨慎。",
+      "bench_relevance": {
+        "hands": [
+          "T6"
+        ],
+        "as_hero": [
+          "T6"
+        ],
+        "as_villain": [],
+        "hero_count": 1,
+        "villain_count": 0
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "unknown",
+          "evidence": "公开样本过小，无松紧口径评价",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "mid",
+          "evidence": "敢浅码全下（99 对 3-bet 直接推入），也有中对领打后全下撞超对的偏新手激进操作",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "低调温和，输光离场前拥抱对手，无失控记录",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "low",
+          "evidence": "桌上话不多，会当桌向资深者求教而非斗嘴",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "unknown",
+          "evidence": "5 集样本无明文诈唬记录，样本不足定级",
+          "source_tier": "stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 5,
+        "episodes_list": [
+          "14",
+          "19",
+          "28",
+          "29",
+          "30"
+        ],
+        "hands_reported": 7,
+        "allin_made": 4,
+        "allin_faced": 1,
+        "bluffs_caught": 0,
+        "bluffs_successful": 0,
+        "hero_calls": 0,
+        "big_folds": 1,
+        "tanks": 0,
+        "showdowns_won": 2,
+        "showdowns_lost": 3,
+        "sources": {
+          "hands_reported": [
+            "14",
+            "19",
+            "28",
+            "29",
+            "30"
+          ],
+          "allin_made": [
+            "14",
+            "19",
+            "28",
+            "30"
+          ],
+          "allin_faced": [
+            "28"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [],
+          "hero_calls": [],
+          "big_folds": [
+            "28"
+          ],
+          "tanks": [],
+          "showdowns_won": [
+            "14",
+            "28"
+          ],
+          "showdowns_lost": [
+            "19",
+            "28",
+            "30"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "30",
+            "amount": -10000
+          }
+        ]
+      },
+      "profile_depth": "thin"
+    },
+    {
+      "id": "p3_hellmuth",
+      "identity": {
+        "full_name": "Phillip Hellmuth III（非 Junior，其父才是 Jr.）",
+        "aliases": [
+          "P3"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=428256",
+        "hendon_status": "confirmed（缓存陈旧仅显示 2 条，实际 ≥9 条记录）",
+        "category": "半公众人物（Phil 长子，银行业 8 年被裁后转型期牌手，BetRivers 大使）",
+        "caveat": "公开资料稀少（2025 年起快速增多）；style 评价大量依赖节目手牌记录，属行为侧写而非定评"
+      },
+      "record": {
+        "summary": "生涯总奖金约 $35K+（截至 2026-01）；PGT Texas Poker Open 主赛 61 名 $7,000；2025 WSOP 3 次 cash；WSOPC Planet Hollywood $600 Monster Stack 第 10/541（与父亲同日双入决赛桌）；2025/2026 两届 WSOP 主赛均进 Day 2/3",
+        "sources": [
+          "https://www.poker.org/latest-news/team-hellmuth-scores-father-son-final-tables-on-same-day-ahvEd8l22xd1/",
+          "https://www.pokernews.com/news/2025/05/phil-hellmuth-son-playing-2025-wsop-poker-48670.htm",
+          "https://www.pokernews.com/news/2026/01/phil-hellmuth-son-wsop-circuit-50339.htm"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "情绪外露",
+          "tier": "B",
+          "claim": "与父相反：PokerNews 现场观察其'牌桌风格明显更冷静'，主赛 Day 2 '没有任何他父亲的招牌做派'；本人承认极端 bad beat 下'也可能被诱发一次 meltdown'",
+          "source": "https://www.pokernews.com/news/2025/05/phil-hellmuth-son-playing-2025-wsop-poker-48670.htm ; https://www.pokernews.com/news/2025/07/phil-hellmuth-and-son-play-wsop-main-event-49076.htm"
+        },
+        {
+          "dimension": "激进度（节目侧写）",
+          "tier": "B",
+          "claim": "敢打大 pot：JJ 顶 set 三人全下扫双跑成当集最大赢家（+$27,925）；limp-jam AK、KK 撞 AA 等",
+          "source": "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-20-recap-51082.htm ; https://www.pokernews.com/news/2026/06/hellmuths-home-game-episode-26-recap-51715.htm"
+        },
+        {
+          "dimension": "抓诈/受话术影响",
+          "tier": "B",
+          "claim": "当桌自嘲'我又要对 3Coin 做一次 horrible call 了'，随后反被 3Coin 话术说动弃掉最好的牌；QQ 在 A 高面顶到底被清空",
+          "source": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-23-recap-51241.htm ; https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-22-recap-51199.htm"
+        },
+        {
+          "dimension": "话痨/性格",
+          "tier": "A",
+          "claim": "亲上 PokerNews Podcast #993，标题即其原话 'F*** the Markup Police'（回应卖份额 markup 争议），性格直率",
+          "source": "https://www.pokernews.com/podcast/pokernews-podcast/pokernews-podcast-993-phillip-p3-hellmuth-iii-51938.htm"
+        },
+        {
+          "dimension": "现金局背景",
+          "tier": "B",
+          "claim": "在北加州自己组局、常打私局",
+          "source": "https://www.pokernews.com/news/2025/05/phil-hellmuth-son-playing-2025-wsop-poker-48670.htm"
+        }
+      ],
+      "style_community_C": [],
+      "anonymized_profile": "金融行业多年后转型的牌手，公开战绩尚浅。敢打大池，有 limp-jam、超对顶到底等偏激进的操作记录；抓诈判断不稳定，既有自嘲式'我又要做一次可怕的 call'的倾向，也曾被对手桌面话术说动弃掉最好的牌。情绪整体克制冷静，媒体观察其无标志性发作做派，但本人承认极端 bad beat 下可能失控一次。性格直率敢言，有私局现金背景。",
+      "bench_relevance": {
+        "hands": [
+          "T3",
+          "F4",
+          "F7",
+          "F9"
+        ],
+        "as_hero": [
+          "T3",
+          "F4",
+          "F7"
+        ],
+        "as_villain": [
+          "F9"
+        ],
+        "hero_count": 3,
+        "villain_count": 1
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "mid",
+          "evidence": "敢打大池，有 limp-jam、超对顶到底记录，但非全场乱入型",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "mid",
+          "evidence": "JJ 顶 set 三人全下扫双跑成当集最大赢家，敢于主动做大底池",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "媒体现场观察其'牌桌风格明显更冷静'，无标志性发作做派",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "mid",
+          "evidence": "性格直率敢言，会当桌自嘲'我又要做一次可怕的 call'",
+          "source_tier": "A"
+        },
+        "bluff_tendency": {
+          "level": "unknown",
+          "evidence": "21 集/29 手无明文主动诈唬记录（有被对手话术唬走的记录），偏样本下不定级",
+          "source_tier": "stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 21,
+        "episodes_list": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27"
+        ],
+        "hands_reported": 29,
+        "allin_made": 7,
+        "allin_faced": 7,
+        "bluffs_caught": 0,
+        "bluffs_successful": 0,
+        "hero_calls": 0,
+        "big_folds": 2,
+        "tanks": 2,
+        "showdowns_won": 5,
+        "showdowns_lost": 8,
+        "sources": {
+          "hands_reported": [
+            "1",
+            "2",
+            "3-4",
+            "6",
+            "7",
+            "10",
+            "11",
+            "12",
+            "13",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26"
+          ],
+          "allin_made": [
+            "1",
+            "6",
+            "12",
+            "20",
+            "26"
+          ],
+          "allin_faced": [
+            "3-4",
+            "20",
+            "22",
+            "23",
+            "24",
+            "25"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [],
+          "hero_calls": [],
+          "big_folds": [
+            "3-4",
+            "23"
+          ],
+          "tanks": [
+            "22",
+            "23"
+          ],
+          "showdowns_won": [
+            "20",
+            "25",
+            "26"
+          ],
+          "showdowns_lost": [
+            "3-4",
+            "6",
+            "12",
+            "22",
+            "23",
+            "24",
+            "26"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "3-4",
+            "amount": "-$10,000"
+          },
+          {
+            "episode": "20",
+            "amount": 27925
+          }
+        ]
+      },
+      "profile_depth": "rich"
+    },
+    {
+      "id": "jennifer_tilly",
+      "identity": {
+        "full_name": "Jennifer Ellen Chan（艺名 Jennifer Tilly）",
+        "aliases": [
+          "Jennifer Tilly"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=46190",
+        "hendon_status": "confirmed",
+        "category": "半公众人物（奥斯卡提名演员跨界职业牌手，2022 入选 Women in Poker Hall of Fame）"
+      },
+      "record": {
+        "summary": "现场总奖金约 $1.06M（63 次入钱）；WSOP 手链 1 条（2005 $1K Ladies NLHE，史上首位夺 WSOP 手链的名人）；2005 WPT Ladies Invitational 冠军；2010 Bellagio Cup $5K 公开赛冠军 $124,455",
+        "sources": [
+          "https://pokerdb.thehendonmob.com/player.php?a=r&n=46190",
+          "https://www.wsop.com/news/wsop-report-event-26-ladies-championship-june-29-2005/",
+          "https://en.wikipedia.org/wiki/Jennifer_Tilly"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "松紧/激进度",
+          "tier": "A",
+          "claim": "自称 action player，偏爱现金局和 six-max，不喜欢锦标赛的紧张感",
+          "source": "https://www.cardplayer.com/poker-news/17669-a-poker-life-jennifer-tilly"
+        },
+        {
+          "dimension": "诈唬倾向",
+          "tier": "A",
+          "claim": "诈唬与表演训练直接挂钩：'扑克全是 bluffing，bluffing 全是 believing。我 bluff 时让自己真的相信手里是 AA，就不会出现紧张 tell'",
+          "source": "https://www.dispatch.com/story/entertainment/movies/2015/01/29/acting-skill-asset-for-jennifer/23937225007/"
+        },
+        {
+          "dimension": "读人",
+          "tier": "A",
+          "claim": "读人来自演员训练：'人说谎时捂嘴、不安时摸脸，这些我多年下意识吸收'",
+          "source": "https://www.dispatch.com/story/entertainment/movies/2015/01/29/acting-skill-asset-for-jennifer/23937225007/"
+        },
+        {
+          "dimension": "情绪外露/弱点自认",
+          "tier": "A",
+          "claim": "自嘲'我对输钱很焦虑……别人知道可以砸钱把我 bluff 走'（自认的 exploitable 点）",
+          "source": "https://www.dispatch.com/story/entertainment/movies/2015/01/29/acting-skill-asset-for-jennifer/23937225007/"
+        },
+        {
+          "dimension": "tell 管理",
+          "tier": "A",
+          "claim": "锦标赛必戴墨镜/帽子'进洞穴不给 tell'，现金局（好莱坞邀请局）则不戴",
+          "source": "https://www.cardplayer.com/poker-news/17669-a-poker-life-jennifer-tilly"
+        },
+        {
+          "dimension": "话痨程度",
+          "tier": "B",
+          "claim": "Nolan Dalla（前 WSOP 媒体总监）：'能匹敌游戏中任何 talker，还经常反压过去，妙语连珠堪比顶级喜剧演员'",
+          "source": "https://www.nolandalla.com/observations-jennifer-tilly/"
+        },
+        {
+          "dimension": "自省轶事",
+          "tier": "A",
+          "claim": "2006 CardPlayer 专栏亲述 $5K PLH 决赛桌因强行改打激进风格而崩盘：'我犯了竞技大忌——抛弃了让我走到这里的打法'",
+          "source": "https://www.cardplayer.com/cardplayer-poker-magazines/65570-jennifer-tilly-18-16/articles/14920-my-time-at-the-final-table-world-series-of-poker-style-first-time-appearance-at-a-world-series-final-table"
+        }
+      ],
+      "style_community_C": [
+        {
+          "claim": "论坛二十年拿她的演员履历当否定其牌技的证据，但战绩说明相反；风格标注 Loose-aggressive, instinct-led（画像站对社区印象的转述）",
+          "source": "https://www.poker-player-profiles.com/jennifer-tilly/"
+        }
+      ],
+      "anonymized_profile": "娱乐行业背景跨界的成名女牌手，有世界级赛事冠军头衔。自称行动型松凶玩家，偏爱现金局；把职业表演训练用于诈唬——诈唬时让自己'相信'手里是好牌以消除紧张 tell，读人依赖对肢体语言的长期职业观察。桌上话多且反击能力强，妙语连珠。公开自认弱点：对输大钱焦虑，可被大注压走；也曾自省因强行改打激进风格在关键局崩盘。",
+      "bench_relevance": {
+        "hands": [
+          "T9",
+          "F2"
+        ],
+        "as_hero": [
+          "T9",
+          "F2"
+        ],
+        "as_villain": [],
+        "hero_count": 2,
+        "villain_count": 0
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "high",
+          "evidence": "自称 action player，偏爱现金局与 six-max",
+          "source_tier": "A"
+        },
+        "aggression": {
+          "level": "high",
+          "evidence": "画像口径 loose-aggressive、instinct-led，曾自省强行加档激进在决赛桌崩盘",
+          "source_tier": "A"
+        },
+        "emotional_expressiveness": {
+          "level": "mid",
+          "evidence": "自认'对输钱焦虑、别人可以砸钱把我 bluff 走'，但受表演训练管理 tell",
+          "source_tier": "A"
+        },
+        "table_talk": {
+          "level": "high",
+          "evidence": "被评'能匹敌游戏中任何 talker 还经常反压过去'",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "mid",
+          "evidence": "自述把表演训练直接用于诈唬（'bluff 时让自己相信手里是 AA'），但 HHG recap 33 手未记录其任何亮明诈唬（另有 3 次 hero call）——两源折中",
+          "source_tier": "A/stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 11,
+        "episodes_list": [
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "hands_reported": 33,
+        "allin_made": 3,
+        "allin_faced": 14,
+        "bluffs_caught": 0,
+        "bluffs_successful": 0,
+        "hero_calls": 3,
+        "big_folds": 1,
+        "tanks": 2,
+        "showdowns_won": 9,
+        "showdowns_lost": 5,
+        "sources": {
+          "hands_reported": [
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"
+          ],
+          "allin_made": [
+            "28",
+            "29",
+            "30"
+          ],
+          "allin_faced": [
+            "14",
+            "15",
+            "17",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [],
+          "hero_calls": [
+            "14",
+            "15"
+          ],
+          "big_folds": [
+            "17"
+          ],
+          "tanks": [
+            "17",
+            "30"
+          ],
+          "showdowns_won": [
+            "14",
+            "15",
+            "29",
+            "30"
+          ],
+          "showdowns_lost": [
+            "14",
+            "26",
+            "27",
+            "28",
+            "30"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "14",
+            "amount": 15075
+          },
+          {
+            "episode": "15",
+            "amount": 43275
+          },
+          {
+            "episode": "16",
+            "amount": 10075
+          },
+          {
+            "episode": "17",
+            "amount": -11325
+          },
+          {
+            "episode": "26",
+            "amount": 11925
+          },
+          {
+            "episode": "28",
+            "amount": -14450
+          },
+          {
+            "episode": "30",
+            "amount": 85125
+          }
+        ]
+      },
+      "profile_depth": "rich"
+    },
+    {
+      "id": "dan_cates",
+      "identity": {
+        "full_name": "Daniel Cates",
+        "aliases": [
+          "Dan 'Jungleman' Cates",
+          "jungleman12",
+          "w00ki3z."
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=147438",
+        "hendon_status": "confirmed",
+        "category": "职业牌手（高额桌/线上传奇级）"
+      },
+      "record": {
+        "summary": "现场总奖金 $18M+；WSOP 手链 2 条，均为 $50K Poker Players Championship（2021、2022），史上首位 PPC 两连冠；线上现金桌盈利超 $11M，2010 单年 $5M+ 为当年全球最大赢家；2023 Triton London $125K 第 3 $1.94M",
+        "sources": [
+          "https://www.pokernews.com/news/2022/07/cates-makes-history-wins-back-to-back-50k-ppc-41551.htm",
+          "https://en.wikipedia.org/wiki/Daniel_Cates",
+          "https://www.pokernews.com/poker-players/dan-cates/"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "松紧/激进度",
+          "tier": "A",
+          "claim": "极度激进，自述 heads-up 策略就是'尽量赢下所有能赢的底池'、爱用 65s/53s 这类'最佳诈唬牌'3-bet；数据驱动、决策树记忆力强",
+          "source": "https://paulphuapoker.com/dan-jungleman-cates/"
+        },
+        {
+          "dimension": "诈唬倾向",
+          "tier": "A",
+          "claim": "高；有专门讲'如何更好地诈唬'的自制教学视频，但也强调'主要还是大牌打大池'",
+          "source": "https://www.poker.org/latest-news/watch-dan-jungleman-cates-on-bluffing-tells-and-poker-as-a-mind-sport-aaLN87Z4czyl/"
+        },
+        {
+          "dimension": "读人/tell",
+          "tier": "A",
+          "claim": "关注对手的身体静止度、话量变化、可见脉搏，但认为物理 tell 不可靠，需结合下注尺度与时序",
+          "source": "https://www.poker.org/latest-news/watch-dan-jungleman-cates-on-bluffing-tells-and-poker-as-a-mind-sport-aaLN87Z4czyl/"
+        },
+        {
+          "dimension": "table presence",
+          "tier": "B",
+          "claim": "怪异 table presence：2021 扮街霸 Akuma、2022 扮 Macho Man 夺 PPC 并全程入戏受访；曾扮狮子现身 WSOP 主赛",
+          "source": "https://www.pokernews.com/news/2022/07/cates-makes-history-wins-back-to-back-50k-ppc-41551.htm"
+        },
+        {
+          "dimension": "绰号来源",
+          "tier": "A",
+          "claim": "'因为我打牌像个疯子、毛发又多，牌友嘲讽式地叫我 Jungleman，结果叫开了'",
+          "source": "https://paulphuapoker.com/jungleman/"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "B",
+          "claim": "低：对输赢淡然，标志性事件是发推自嘲'马尼拉输了 3800 万港币（约 $5M）而已'",
+          "source": "https://en.wikipedia.org/wiki/Daniel_Cates"
+        },
+        {
+          "dimension": "垃圾话",
+          "tier": "B",
+          "claim": "赛前放话式自信：2022 PPC 决赛前宣称'基本已经赢了'，随后兑现",
+          "source": "https://www.pokernews.com/news/2022/07/cates-makes-history-wins-back-to-back-50k-ppc-41551.htm"
+        }
+      ],
+      "style_community_C": [
+        {
+          "claim": "HHG Ep28 被 Deeb 桌评'打了 70% 的手牌'（同行桌面吐槽，经媒体 recap 转述）",
+          "source": "https://www.pokernews.com/news/2026/07/hellmuths-home-game-episode-28-recap-52024.htm"
+        }
+      ],
+      "anonymized_profile": "高额桌传奇职业牌手，线上线下均为顶级赢家，多次世界级冠军。极度激进，偏爱用投机连张 3-bet 诈唬，单挑风格是抢下一切可抢的底池；数据驱动、决策树记忆力极强。桌面形象怪异，曾多次角色扮演出镜；情绪外露极低，对巨额输赢淡然自嘲。会放话式垃圾话并兑现。读人重下注尺度与时序，认为物理 tell 不可靠但会观察对手的静止度、话量与脉搏变化。",
+      "bench_relevance": {
+        "hands": [
+          "T2",
+          "F1",
+          "T5",
+          "F3",
+          "F6"
+        ],
+        "as_hero": [
+          "T2",
+          "F1"
+        ],
+        "as_villain": [
+          "T5",
+          "F3",
+          "F6"
+        ],
+        "hero_count": 2,
+        "villain_count": 3
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "high",
+          "evidence": "自述爱用投机连张 3-bet；同桌职业选手当面吐槽其'打了 70% 的手牌'",
+          "source_tier": "A"
+        },
+        "aggression": {
+          "level": "high",
+          "evidence": "自述单挑策略就是'尽量赢下所有能赢的底池'，极度激进",
+          "source_tier": "A"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "对巨额输赢淡然，输 $5M 仅发推自嘲",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "mid",
+          "evidence": "赛前放话式垃圾话与角色扮演式桌面形象，但非持续性话痨",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "high",
+          "evidence": "有专门讲诈唬的教学视频；HHG recap 明文记录其诈唬 4 次（1 得手 3 被抓），tank 7 次为全场最多",
+          "source_tier": "A/stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 23,
+        "episodes_list": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "hands_reported": 78,
+        "allin_made": 11,
+        "allin_faced": 29,
+        "bluffs_caught": 3,
+        "bluffs_successful": 1,
+        "hero_calls": 2,
+        "big_folds": 3,
+        "tanks": 7,
+        "showdowns_won": 19,
+        "showdowns_lost": 13,
+        "sources": {
+          "hands_reported": [
+            "1",
+            "2",
+            "3-4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"
+          ],
+          "allin_made": [
+            "3-4",
+            "9",
+            "10",
+            "11",
+            "13",
+            "16",
+            "19",
+            "26",
+            "27",
+            "29"
+          ],
+          "allin_faced": [
+            "1",
+            "5",
+            "7",
+            "8",
+            "10",
+            "13",
+            "15",
+            "17",
+            "18",
+            "19",
+            "27",
+            "28",
+            "30"
+          ],
+          "bluffs_caught": [
+            "5",
+            "16"
+          ],
+          "bluffs_successful": [
+            "3-4"
+          ],
+          "hero_calls": [
+            "1",
+            "19"
+          ],
+          "big_folds": [
+            "8",
+            "18",
+            "30"
+          ],
+          "tanks": [
+            "1",
+            "3-4",
+            "5",
+            "10",
+            "15",
+            "19",
+            "30"
+          ],
+          "showdowns_won": [
+            "1",
+            "7",
+            "10",
+            "11",
+            "15",
+            "17",
+            "18",
+            "19",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"
+          ],
+          "showdowns_lost": [
+            "1",
+            "5",
+            "7",
+            "8",
+            "13",
+            "15",
+            "16",
+            "19"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "3-4",
+            "amount": "+$19,600"
+          },
+          {
+            "episode": "5",
+            "amount": "-$26,700"
+          },
+          {
+            "episode": "8",
+            "amount": "-$24,425"
+          },
+          {
+            "episode": "9",
+            "amount": 16525
+          },
+          {
+            "episode": "11",
+            "amount": 14350
+          },
+          {
+            "episode": "13",
+            "amount": -32275
+          },
+          {
+            "episode": "17",
+            "amount": 53275
+          },
+          {
+            "episode": "18",
+            "amount": 12350
+          },
+          {
+            "episode": "19",
+            "amount": 94400
+          },
+          {
+            "episode": "27",
+            "amount": 32475
+          },
+          {
+            "episode": "28",
+            "amount": -18000
+          },
+          {
+            "episode": "29",
+            "amount": -13650
+          }
+        ]
+      },
+      "profile_depth": "rich"
+    },
+    {
+      "id": "shaun_deeb",
+      "identity": {
+        "full_name": "Shaun Frank Deeb",
+        "aliases": [
+          "Shaun Deeb"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=78490",
+        "hendon_status": "confirmed（$18.7M、326 次 cash）",
+        "category": "职业牌手（WSOP 全能型/混合游戏专家）"
+      },
+      "record": {
+        "summary": "总奖金约 $18.7M-19.6M；WSOP 手链 9 条（2015-2026，含 2025 $100K PLO $2,957,229 生涯最大 cash）；WSOP Player of the Year 两届（2018、2025）；3 次 WCOOP 年度最佳；公开目标超越 Hellmuth 的 17 条手链",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Shaun_Deeb",
+          "https://www.cardplayer.com/poker-news/1676147-shaun-deeb-seizes-ninth-wsop-bracelet-with-eight-game-win",
+          "https://www.poker.org/poker-players/shaun-deeb/"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "话痨/needle 自认",
+          "tier": "A",
+          "claim": "'I am a cocky asshole. I am always needling, always shit-talking, always making jokes… Even if you are better than me, I will find my way to reduce your edge.'（本人受访原话）",
+          "source": "http://www.cigaraficionado.com/article/the-poker-provocateur"
+        },
+        {
+          "dimension": "slowroll 轶事",
+          "tier": "A",
+          "claim": "以慢摇激怒对手著称：PNIA 录制中 slowroll Matusow 致其威胁挥拳，自称'制作组感谢我贡献了名场面'",
+          "source": "http://www.cigaraficionado.com/article/the-poker-provocateur"
+        },
+        {
+          "dimension": "松紧/激进度",
+          "tier": "B",
+          "claim": "hyper-aggressive、剥削型混合游戏专家；量大管饱（play every event, every buy-in）",
+          "source": "https://www.poker-player-profiles.com/shaun-deeb/"
+        },
+        {
+          "dimension": "垃圾话/结仇",
+          "tier": "B",
+          "claim": "与 Sean Perry 公开骂战（称其 scammer），2025 WSOP 桌上桌下持续互怼；公开 needle Hellmuth'再也拿不到手链''他太想生存而不想赢'",
+          "source": "https://www.pokernews.com/news/2025/06/shaun-deeb-taunts-sean-perry-2025-wsop-48727.htm ; https://www.pokernews.com/news/2025/12/shaun-deeb-critical-of-phil-hellmuth-50186.htm"
+        },
+        {
+          "dimension": "读人自信",
+          "tier": "A",
+          "claim": "自称 Razz 巅峰期'三年内地球最强'，靠 reading ability；'对手 pair 了你就是知道'（HHG Ep28 桌面原话）",
+          "source": "https://www.youtube.com/watch?v=7uTMKGaG0Aw"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "B",
+          "claim": "输赢淡定、自嘲式：夺第 9 条手链后仍称'这仍是个糟糕的夏天，手链只是垫脚石'，领完奖直接赶下一场",
+          "source": "https://www.poker.org/latest-news/too-many-seconds-shaun-deeb-wins-9th-wsop-bracelet-after-string-of-near-misses-aOprE2p9UQT6"
+        }
+      ],
+      "style_community_C": [],
+      "anonymized_profile": "多次世界级冠军的全能型职业牌手，混合牌种专家，参赛量极大。超高强度激进加剥削型打法。话痨与挖苦是自我认证的武器：'永远在 needle、垃圾话、开玩笑'，公开宣称以此削减更强对手的优势；有慢摇激怒对手的著名场面，也与多名同行公开结仇互怼。读人自信极高，敢用极弱牌做英雄 call，自称巅峰期某牌种'地球最强'。输赢本身情绪淡定，表达偏自嘲。",
+      "bench_relevance": {
+        "hands": [
+          "T8",
+          "F6",
+          "T6"
+        ],
+        "as_hero": [
+          "T8",
+          "F6"
+        ],
+        "as_villain": [
+          "T6"
+        ],
+        "hero_count": 2,
+        "villain_count": 1
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "mid",
+          "evidence": "hyper-aggressive 剥削型混合游戏专家，松紧随对手调整",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "high",
+          "evidence": "媒体口径 hyper-aggressive，敢持续对新手施压",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "输赢淡定自嘲式，夺冠后称'手链只是垫脚石'转身赶场",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "high",
+          "evidence": "本人自述'永远在 needle、垃圾话、开玩笑'以削减对手优势",
+          "source_tier": "A"
+        },
+        "bluff_tendency": {
+          "level": "high",
+          "evidence": "3 集样本即有 1 次亮明诈唬得手（河牌全下唬走顶对顶踢）",
+          "source_tier": "A/stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 3,
+        "episodes_list": [
+          "28",
+          "29",
+          "30"
+        ],
+        "hands_reported": 8,
+        "allin_made": 3,
+        "allin_faced": 4,
+        "bluffs_caught": 0,
+        "bluffs_successful": 1,
+        "hero_calls": 0,
+        "big_folds": 0,
+        "tanks": 0,
+        "showdowns_won": 2,
+        "showdowns_lost": 4,
+        "sources": {
+          "hands_reported": [
+            "28",
+            "29",
+            "30"
+          ],
+          "allin_made": [
+            "28",
+            "30"
+          ],
+          "allin_faced": [
+            "28",
+            "29",
+            "30"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [
+            "28"
+          ],
+          "hero_calls": [],
+          "big_folds": [],
+          "tanks": [],
+          "showdowns_won": [
+            "28",
+            "30"
+          ],
+          "showdowns_lost": [
+            "29",
+            "30"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "28",
+            "amount": 21950
+          },
+          {
+            "episode": "30",
+            "amount": -80000
+          }
+        ]
+      },
+      "profile_depth": "medium"
+    },
+    {
+      "id": "xuan_liu",
+      "identity": {
+        "full_name": "Xuan Liu（刘璇）",
+        "aliases": [
+          "xx23",
+          "xxl23"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=128791",
+        "hendon_status": "confirmed",
+        "category": "职业牌手（现偏电视现金桌+内容/大使转型）"
+      },
+      "record": {
+        "summary": "现场总奖金约 $3.5M，女子历史奖金榜前 20；2025 Triton Montenegro $25K 冠军 $860,000（史上首位 Triton 冠军女性）；2011 EPT San Remo 主赛第 3 $524,705；2012 PCA 主赛第 4 $600,000（首位打入 PCA 主赛决赛桌的女性）；2017 WPT Fallsview 冠军；无 WSOP 手链",
+        "sources": [
+          "https://www.pokernews.com/news/2025/09/xuan-liu-triton-one-jeju-49584.htm",
+          "https://www.pokernews.com/poker-players/xuan-liu/",
+          "https://en.wikipedia.org/wiki/Xuan_Liu_(poker_player)"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "松紧/激进度",
+          "tier": "A",
+          "claim": "'我不是被动型玩家'，但自省 San Remo 三人桌时'以攻对攻卷入了不舒服的战斗'是败因——能打激进但有纪律自觉",
+          "source": "https://www.cardplayer.com/cardplayer-poker-magazines/66193-marvin-rettenmaier-9-3/articles/20518-getting-to-know-liu"
+        },
+        {
+          "dimension": "心态",
+          "tier": "A",
+          "claim": "公开鼓励女性玩家打得激进：'You can be competitive without compromising your integrity—taking chips doesn't make you a bad person.'",
+          "source": "https://en.wikipedia.org/wiki/Xuan_Liu_(poker_player)"
+        },
+        {
+          "dimension": "职业心态",
+          "tier": "A",
+          "claim": "自述职业生涯 very draining，重视身体管理（巅峰期每天健身备赛）",
+          "source": "https://www.businessinsider.com/job-diary-pro-poker-player-millionaire-draining-career-2021-7"
+        },
+        {
+          "dimension": "现役定位",
+          "tier": "B",
+          "claim": "锦标赛量已减，主打电视现金桌，拓展播客/演讲（MIT Sloan 分析会议与 Nate Silver 同台）",
+          "source": "https://www.pokernews.com/news/2025/09/xuan-liu-triton-one-jeju-49584.htm"
+        }
+      ],
+      "style_community_C": [],
+      "style_gap_note": "话痨程度/tell 类评价未检索到有 URL 支撑的公开来源（其公开形象偏冷静低调，无 trash talk 报道），按'宁缺毋滥'未写",
+      "anonymized_profile": "多个国际大赛深码战绩与冠军头衔的女性职业牌手。自述'不是被动型玩家'，能打激进但有纪律自觉，曾公开自省因以攻对攻卷入不适的战斗而失利；公开鼓励竞争性打法，'拿走筹码不代表你是坏人'。职业心态成熟，重视身心管理，自认这一行非常消耗。公开形象冷静低调，无垃圾话相关报道，情绪外露程度低。近年重心转向电视现金局与内容输出。",
+      "bench_relevance": {
+        "hands": [
+          "T5",
+          "F3"
+        ],
+        "as_hero": [
+          "T5",
+          "F3"
+        ],
+        "as_villain": [],
+        "hero_count": 2,
+        "villain_count": 0
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "mid",
+          "evidence": "自述'不是被动型玩家'但有纪律自觉，非乱入型",
+          "source_tier": "A"
+        },
+        "aggression": {
+          "level": "mid",
+          "evidence": "能打激进，曾自省'以攻对攻卷入不舒服的战斗'是败因",
+          "source_tier": "A"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "公开形象冷静低调，无情绪失控报道",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "low",
+          "evidence": "无垃圾话相关报道（宁缺毋滥口径下未检索到反例）",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "low",
+          "evidence": "18 集/32 手仅 1 次明文诈唬记录（被抓），无亮明得手",
+          "source_tier": "stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 18,
+        "episodes_list": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "hands_reported": 32,
+        "allin_made": 3,
+        "allin_faced": 8,
+        "bluffs_caught": 1,
+        "bluffs_successful": 0,
+        "hero_calls": 0,
+        "big_folds": 3,
+        "tanks": 2,
+        "showdowns_won": 3,
+        "showdowns_lost": 7,
+        "sources": {
+          "hands_reported": [
+            "1",
+            "2",
+            "3-4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "26",
+            "27",
+            "28"
+          ],
+          "allin_made": [
+            "10",
+            "13",
+            "26"
+          ],
+          "allin_faced": [
+            "2",
+            "3-4",
+            "7",
+            "10",
+            "13",
+            "26",
+            "28"
+          ],
+          "bluffs_caught": [
+            "1"
+          ],
+          "bluffs_successful": [],
+          "hero_calls": [],
+          "big_folds": [
+            "2",
+            "3-4",
+            "8"
+          ],
+          "tanks": [
+            "3-4",
+            "7"
+          ],
+          "showdowns_won": [
+            "7",
+            "12",
+            "26"
+          ],
+          "showdowns_lost": [
+            "1",
+            "7",
+            "9",
+            "10",
+            "13",
+            "26",
+            "28"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "13",
+            "amount": -22125
+          }
+        ]
+      },
+      "profile_depth": "medium"
+    },
+    {
+      "id": "erick_lindgren",
+      "identity": {
+        "full_name": "Erick Allan Lindgren",
+        "aliases": [
+          "E-Dog"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=534",
+        "hendon_status": "confirmed（$11.0M+，179 条记录）",
+        "category": "职业牌手（boom 时代 Young Guns 代表；后因债务丑闻形象受损）"
+      },
+      "record": {
+        "summary": "总奖金 $11.0M+；WSOP 手链 2 条（2008 $5K Mixed Hold'em、2013 $5K NLHE 6-Handed）；2008 WSOP Player of the Year；WPT 冠军 2 个 + 2004 WPT Player of the Year；2007 Aussie Millions $100K 冠军 A$1M",
+        "sources": [
+          "https://www.pokernews.com/poker-players/erick-lindgren/",
+          "https://en.wikipedia.org/wiki/Erick_Lindgren",
+          "https://www.worldpokertour.com/article/bounty-spotlight-vol-9"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "松紧/激进度",
+          "tier": "B",
+          "claim": "松凶为注册商标：'favoring a loose and aggressive style that would become his trademark'",
+          "source": "https://www.pokerlistings.com/poker-player/erick-lindgren"
+        },
+        {
+          "dimension": "打法自述",
+          "tier": "A",
+          "claim": "'我通常打 small-ball、经常 limp……偷小锅、打很多手牌，慢慢堆积筹码，等好牌时找机会被支付'；2008 手链决胜时刻意换挡",
+          "source": "http://www.pokerplayer365.com/poker-players/player-interviews-poker-players/erick-lindgren-talks-exclusively-to-pokerplayer-about-his-poker-journey-i-spent-so-much-time-in-front-of-computer-screens-that-i-wouldnt-say-i-was-having-a-great-life/"
+        },
+        {
+          "dimension": "诈唬/适应",
+          "tier": "A",
+          "claim": "反向适应型：'对手打得慢就乱溅筹码推人出局；对手激进就耐心设陷阱'；自称'不 bluff 掉整个筹码、不过早摊牌'",
+          "source": "http://www.pokerplayer365.com/poker-players/player-interviews-poker-players/erick-lindgren-talks-exclusively-to-pokerplayer-about-his-poker-journey-i-spent-so-much-time-in-front-of-computer-screens-that-i-wouldnt-say-i-was-having-a-great-life/"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "A",
+          "claim": "内敛：2008 夺冠自述'我本以为没事，因为我情绪从来不高不低，结果眼泪差点出来'",
+          "source": "http://www.pokerplayer365.com/poker-players/player-interviews-poker-players/erick-lindgren-talks-us-through-his-heads-up-bracelet-battle-with-justin-bonomo-i-played-as-tight-as-ive-ever-played-in-no-limit-and-played-every-hand-in-the-limit/"
+        },
+        {
+          "dimension": "赌性/prop bet",
+          "tier": "A",
+          "claim": "极端赌性名人：一天 4 轮高温背包高尔夫赢 $350K prop bet；自称'输 $20,000 高尔夫也是完美的一天''没有赌性成不了最伟大牌手'",
+          "source": "https://en.wikipedia.org/wiki/Erick_Lindgren"
+        },
+        {
+          "dimension": "债务史",
+          "tier": "B",
+          "claim": "2012 起被起底欠债、赌瘾康复、被 PokerStars 起诉 Full Tilt $2.5M 债、2015 破产（负债超 $10M）——公开画像不可回避",
+          "source": "https://upswingpoker.com/who-is-erick-lindgren/ ; https://www.pokernews.com/news/2015/02/pokerstars-sues-lindgren-20536.htm"
+        }
+      ],
+      "style_community_C": [
+        {
+          "claim": "社区口碑转变：从'人气最高牌手之一'到因欠债口碑崩塌，起点即 2+2 论坛讨债帖（Upswing 对论坛线程的转述）",
+          "source": "https://upswingpoker.com/who-is-erick-lindgren/"
+        }
+      ],
+      "anonymized_profile": "成名于扑克黄金年代的职业牌手，多项巡回赛冠军与年度最佳头衔。注册商标是松凶，但自述实际打 small-ball：常 limp、偷小池、以多手数慢慢积累，等强牌被支付，关键时刻会刻意换挡；擅长针对对手类型反向调整——对被动者施压、对激进者设陷阱，自称不会把整个筹码 bluff 出去。情绪内敛，'从来不高不低'。场外赌性极重，有巨额 prop bet 与公开的债务破产史。",
+      "bench_relevance": {
+        "hands": [
+          "T10"
+        ],
+        "as_hero": [
+          "T10"
+        ],
+        "as_villain": [],
+        "hero_count": 1,
+        "villain_count": 0
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "mid",
+          "evidence": "注册商标是松凶，但自述实际打 small-ball：常 limp、偷小池、以多手数慢慢积累",
+          "source_tier": "A"
+        },
+        "aggression": {
+          "level": "mid",
+          "evidence": "反向适应型——对被动者施压、对激进者设陷阱，关键时刻刻意换挡",
+          "source_tier": "A"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "自述'我情绪从来不高不低'，夺冠才险些落泪",
+          "source_tier": "A"
+        },
+        "table_talk": {
+          "level": "unknown",
+          "evidence": "公开资料无桌面话量评价",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "low",
+          "evidence": "自称'不把整个筹码 bluff 出去、不过早摊牌'",
+          "source_tier": "A"
+        }
+      },
+      "stats": {
+        "episodes_played": 4,
+        "episodes_list": [
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "hands_reported": 8,
+        "allin_made": 2,
+        "allin_faced": 1,
+        "bluffs_caught": 0,
+        "bluffs_successful": 0,
+        "hero_calls": 0,
+        "big_folds": 0,
+        "tanks": 0,
+        "showdowns_won": 2,
+        "showdowns_lost": 1,
+        "sources": {
+          "hands_reported": [
+            "27",
+            "28",
+            "29",
+            "30"
+          ],
+          "allin_made": [
+            "27",
+            "28"
+          ],
+          "allin_faced": [
+            "27"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [],
+          "hero_calls": [],
+          "big_folds": [],
+          "tanks": [],
+          "showdowns_won": [
+            "27",
+            "28"
+          ],
+          "showdowns_lost": [
+            "27"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "28",
+            "amount": 21700
+          },
+          {
+            "episode": "29",
+            "amount": 17675
+          },
+          {
+            "episode": "30",
+            "amount": 15200
+          }
+        ]
+      },
+      "profile_depth": "medium"
+    },
+    {
+      "id": "kelly_minkin",
+      "identity": {
+        "full_name": "Kelly Minkin（婚后节目用名 Kelly Lucas）",
+        "aliases": [
+          "Kelly Lucas",
+          "The Chillest",
+          "The Illest",
+          "MachineGunKelly"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=287722",
+        "hendon_status": "confirmed（约 $1.59M）",
+        "category": "半公众人物（执业医疗事故辩护律师 + 职业级牌手双轨）"
+      },
+      "record": {
+        "summary": "总奖金约 $1.5-1.6M；WSOP 手链 0；2015 与 2018 两届 WSOP 主赛 Last Woman Standing（29 名 $211,821 / 50 名 $156,265）；2015 WPT Lucky Hearts 第 3 $262,912；2016 GPI 年度女性最佳",
+        "sources": [
+          "https://www.pokernews.com/poker-players/kelly-minkin/",
+          "https://www.cardplayer.com/poker-news/19066-kelly-minkin-becomes-last-woman-standing-at-2015-world-series-of-poker-main-event",
+          "https://www.pokernews.com/news/2018/07/throwback-thursday-getting-to-know-kelly-minkin-31464.htm"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "读人/hero call",
+          "tier": "B",
+          "claim": "以无畏 call-down 著称：HHG Ep22 用中对 QT call 掉河牌全下赢 $33,425（Hellmuth：'What a call'），同集还用 KQ 高牌 check-raise 全下诈唬；官方剪辑标题'Kelly Reads Souls'",
+          "source": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-22-recap-51199.htm ; https://www.yardbarker.com/poker/articles/watch_kelly_reads_souls_as_cerasani_crashes_hellmuths_home_game_ep_22/s1_16031_43845121"
+        },
+        {
+          "dimension": "松紧/激进度",
+          "tier": "B",
+          "claim": "偏松凶：敢用 64s call 3-bet、straddle 位宽防守，'notoriously feared at the table'；2018 主赛直播桌亮诈唬、再用第二对大注 call-down",
+          "source": "https://www.pokernews.com/news/2018/07/women-of-the-wsop-kelly-minkin-running-deep-main-event-31434.htm"
+        },
+        {
+          "dimension": "slowroll/戏剧性",
+          "tier": "B",
+          "claim": "多次在国家电视台 slowroll Hellmuth（KK 慢摇其 JJ；暗三 6 慢摇其 AA 并说'You do deserve it'）——针对性娱乐 needle 而非恶意",
+          "source": "https://www.cardplayer.com/poker-news/watch-kelly-minkin-slowrolls-phil-hellmuth ; https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-25-recap-51295.htm"
+        },
+        {
+          "dimension": "形象利用自认",
+          "tier": "A",
+          "claim": "'女性被刻板印象为弱玩家，所以当你不是弱玩家时这是优势……现在很多玩家反而怕我'",
+          "source": "https://abovethelaw.com/2018/07/last-woman-standing-at-world-series-of-poker-tournament-is-a-lawyer/"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "A",
+          "claim": "偏低调，自述'不喜欢聚光灯，不知道如何回应大量关注'",
+          "source": "https://www.reviewjournal.com/sports/female-poker-star-wants-to-stay-out-of-spotlight/"
+        },
+        {
+          "dimension": "律师-扑克互哺",
+          "tier": "A",
+          "claim": "'The better I am at poker, the better I am as an attorney'（谈两职业读人的共通性）",
+          "source": "https://www.pokernews.com/news/2018/07/women-of-the-wsop-kelly-minkin-running-deep-main-event-31434.htm"
+        }
+      ],
+      "style_community_C": [],
+      "anonymized_profile": "法律行业与扑克双轨的女性牌手，大型主赛多次深码战绩。以无畏英雄 call 和读人著称：敢用中对抓下大额诈唬全下，也敢用高牌 check-raise 全下反诈唬；整体偏松凶，宽范围防守，被评'桌上令人生畏'。对特定资深对手有多次戏剧性慢摇名场面，属娱乐性挖苦而非恶意。日常低调不喜聚光灯，公开自认利用'被低估'的形象优势，称本职工作与扑克的读人能力互相成就。",
+      "bench_relevance": {
+        "hands": [
+          "T4",
+          "T7",
+          "T9",
+          "T10",
+          "F10"
+        ],
+        "as_hero": [
+          "T4",
+          "T7"
+        ],
+        "as_villain": [
+          "T9",
+          "T10",
+          "F10"
+        ],
+        "hero_count": 2,
+        "villain_count": 3
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "mid",
+          "evidence": "偏松凶：敢用小连张 call 3-bet、straddle 位宽防守",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "mid",
+          "evidence": "敢用高牌 check-raise 全下反诈唬，被评'桌上令人生畏'",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "自述不喜聚光灯、日常低调",
+          "source_tier": "A"
+        },
+        "table_talk": {
+          "level": "mid",
+          "evidence": "对特定资深对手有多次戏剧性慢摇与娱乐性挖苦名场面",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "mid",
+          "evidence": "22 手样本有 1 次亮明诈唬得手（高牌 check-raise 全下）+ 1 次 hero call，抓诈比主动诈唬更突出",
+          "source_tier": "B/stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 14,
+        "episodes_list": [
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27"
+        ],
+        "hands_reported": 22,
+        "allin_made": 7,
+        "allin_faced": 8,
+        "bluffs_caught": 0,
+        "bluffs_successful": 1,
+        "hero_calls": 1,
+        "big_folds": 0,
+        "tanks": 1,
+        "showdowns_won": 8,
+        "showdowns_lost": 4,
+        "sources": {
+          "hands_reported": [
+            "14",
+            "16",
+            "17",
+            "18",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27"
+          ],
+          "allin_made": [
+            "14",
+            "18",
+            "22",
+            "23",
+            "25",
+            "26",
+            "27"
+          ],
+          "allin_faced": [
+            "14",
+            "16",
+            "21",
+            "22",
+            "25"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [
+            "22"
+          ],
+          "hero_calls": [
+            "22"
+          ],
+          "big_folds": [],
+          "tanks": [
+            "22"
+          ],
+          "showdowns_won": [
+            "14",
+            "16",
+            "22",
+            "23",
+            "25"
+          ],
+          "showdowns_lost": [
+            "18",
+            "25",
+            "26",
+            "27"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "15",
+            "amount": -17850
+          },
+          {
+            "episode": "16",
+            "amount": 21025
+          },
+          {
+            "episode": "18",
+            "amount": -20250
+          },
+          {
+            "episode": "19",
+            "amount": 17450
+          },
+          {
+            "episode": "22",
+            "amount": 28200
+          },
+          {
+            "episode": "24",
+            "amount": -14400
+          },
+          {
+            "episode": "25",
+            "amount": -14275
+          },
+          {
+            "episode": "26",
+            "amount": -17700
+          },
+          {
+            "episode": "27",
+            "amount": -20000
+          }
+        ]
+      },
+      "profile_depth": "rich"
+    },
+    {
+      "id": "mike_matusow",
+      "identity": {
+        "full_name": "Michael Matusow",
+        "aliases": [
+          "Mike 'The Mouth' Matusow"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=170",
+        "hendon_status": "confirmed（$10.48M 快照；PokerNews 记 $10.78M）",
+        "category": "职业牌手（boom 时代标志性人物，前 Full Tilt 签约 pro）"
+      },
+      "record": {
+        "summary": "总奖金 $10.4-10.8M；WSOP 手链 4 条（史上第一位在 4 个不同牌种夺手链）；2005 WSOP Tournament of Champions 冠军 $1M + 同年主赛第 9（单年两个百万奖）；2013 NBC 全国单挑赛冠军（决赛胜 Hellmuth）；主赛两次决赛桌",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Mike_Matusow",
+          "https://www.pokernews.com/poker-players/mike-matusow/",
+          "https://www.poker.org/poker-players/mike-matusow/"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "情绪外露/blowup",
+          "tier": "B",
+          "claim": "'Mike Matusow Blowup/Meltdown'是著名词条（ESPN 转播字幕造词）：'误判一手或连续几手，在关键节点自爆出局'；bad beat 后容易失去专注",
+          "source": "https://www.pokerlistings.com/poker-player/mike-matusow ; https://somuchpoker.com/poker-player/mike-matusow"
+        },
+        {
+          "dimension": "话痨程度",
+          "tier": "B",
+          "claim": "绰号 The Mouth 即来源于顶级 trash-talk，最著名事件为 2004 主赛怒喷最终冠军 Greg Raymer",
+          "source": "https://www.pokernews.com/poker-players/mike-matusow/"
+        },
+        {
+          "dimension": "读人/换挡",
+          "tier": "B",
+          "claim": "策略高度依赖读对手物理 tell 与心理状态（发牌员出身练就），用 gears 系统在紧凶间切换；风格 highly intuitive, adaptive, talkative",
+          "source": "https://somuchpoker.com/poker-player/mike-matusow"
+        },
+        {
+          "dimension": "技术底色",
+          "tier": "B",
+          "claim": "混合牌种（Omaha/8、Stud）顶尖专家，早年被称'最令人生畏的 Omaha/8 现金局玩家'——技术被公众形象低估",
+          "source": "https://www.poker.org/poker-players/mike-matusow/"
+        },
+        {
+          "dimension": "自我认知",
+          "tier": "A",
+          "claim": "反复公开宣称自己'比任何牌手 run 得都差'；2009 自传坦承毒瘾/抑郁/tilt 史",
+          "source": "https://www.pokerlistings.com/poker-player/mike-matusow ; https://toppokerstreamers.com/player/mike-matusow/"
+        },
+        {
+          "dimension": "赌性轶事",
+          "tier": "B",
+          "claim": "2005 主赛 $1M 奖金一个月内在线上输光（本人承认）",
+          "source": "https://www.poker.org/poker-players/mike-matusow/"
+        }
+      ],
+      "style_community_C": [],
+      "anonymized_profile": "老牌职业牌手，多次世界级冠军，多牌种技术底子公认被其公众形象低估。绰号直指其顶级话痨：垃圾话成名，曾在最高舞台怒喷对手。情绪极度外露，有以其名字命名的'崩盘'词条——关键节点容易因情绪连锁自爆，bad beat 后失去专注。策略高度依赖读对手物理 tell 与心理状态，在紧凶之间换挡。长期公开自认'run 得比谁都差'，并坦承过成瘾与心理健康史，公众形象两极。",
+      "bench_relevance": {
+        "hands": [
+          "F9",
+          "F7"
+        ],
+        "as_hero": [
+          "F9"
+        ],
+        "as_villain": [
+          "F7"
+        ],
+        "hero_count": 1,
+        "villain_count": 1
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "mid",
+          "evidence": "用 gears 系统在紧凶间切换，highly adaptive",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "mid",
+          "evidence": "换挡型：依对手心理状态在紧凶间切换而非恒定高压",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "high",
+          "evidence": "有以其名字命名的'崩盘'词条，bad beat 后失去专注、关键节点情绪连锁自爆",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "high",
+          "evidence": "绰号即来自顶级 trash-talk，曾在最高舞台怒喷对手",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "unknown",
+          "evidence": "6 集/11 手无明文诈唬记录，样本不足定级",
+          "source_tier": "stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 6,
+        "episodes_list": [
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "hands_reported": 11,
+        "allin_made": 2,
+        "allin_faced": 3,
+        "bluffs_caught": 0,
+        "bluffs_successful": 0,
+        "hero_calls": 0,
+        "big_folds": 0,
+        "tanks": 0,
+        "showdowns_won": 5,
+        "showdowns_lost": 1,
+        "sources": {
+          "hands_reported": [
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25"
+          ],
+          "allin_made": [
+            "24",
+            "25"
+          ],
+          "allin_faced": [
+            "20",
+            "24",
+            "25"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [],
+          "hero_calls": [],
+          "big_folds": [],
+          "tanks": [],
+          "showdowns_won": [
+            "21",
+            "22",
+            "24",
+            "25"
+          ],
+          "showdowns_lost": [
+            "20"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "24",
+            "amount": 12725
+          }
+        ]
+      },
+      "profile_depth": "medium"
+    },
+    {
+      "id": "texas_mike_moncek",
+      "identity": {
+        "full_name": "Michael J Moncek",
+        "aliases": [
+          "'Texas' Mike Moncek",
+          "Texas Mike"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=511811",
+        "hendon_status": "confirmed（$5.18M 快照；2026-07 媒体引 Hendon 已超 $8M；WSOP.com 记 $7.27M）",
+        "category": "半公众人物（富商出身的高调娱乐型半职业；自称 recreational 但有 2 条 WSOP 手链）",
+        "caveat": "并非得州人：芝加哥出生、伊利诺伊居民，绰号来自本科母校 UT Austin（burnt orange 帽）；家族生意为包装批发"
+      },
+      "record": {
+        "summary": "锦标赛奖金 $5M-8M 口径；WSOP 手链 2 条（2022 $1,500 LHE、次年 $5,000 NLH/PLO）+ 4 枚 WSOPC 戒指；2024 WSOP Paradise $500K Triton Million 第 9 名 $1.2M；HCL Million Dollar Game 累计输约 $2.4M；2026-06 WSOP High Stakes Live 单场输 $1.47M",
+        "sources": [
+          "https://www.cardplayer.com/poker-news/28954-watch-texas-mike-s-huge-bluff-with-doyle-brunson-poker-hand",
+          "https://www.pokernews.com/news/2025/05/texas-mike-hustler-casino-live-poker-48491.htm",
+          "https://www.poker.org/latest-news/moncek-blasts-conceited-superpros-after-losing-1.4m-on-high-stakes-live-aOY5R5R7llgn",
+          "https://somuchpoker.com/poker-player/michael-moncek"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "松紧",
+          "tier": "A",
+          "claim": "自述'直播时有义务娱乐观众，不想当 nit，要 make moves'；不用 solver 靠临场直觉，'unorthodox can throw everything off'；签名 'all gas, no brakes'",
+          "source": "https://www.cardplayer.com/poker-news/30128-all-gas-no-brakes-texas-mike-is-on-a-mission"
+        },
+        {
+          "dimension": "松度数据",
+          "tier": "B",
+          "claim": "HCL 单场 VPIP 89%（PFR 50%）赢 $263K；另一场 VPIP 99%（只有一手没入池），用 53o 三 bet 反超口袋 A 赢 $113K",
+          "source": "https://www.pokernews.com/news/2024/04/poker-pro-vpip-hustler-casino-live-45778.htm ; https://www.pokernews.com/news/2024/09/texas-mike-vpips-99-and-cracks-aces-with-5-3-offsuit-46896.htm"
+        },
+        {
+          "dimension": "诈唬倾向",
+          "tier": "B",
+          "claim": "极强：MDG 用 10-2 在 $1.3M 深码把对手唬走；HHG 中输急后对 Tilly 全下诈唬被抓，被当面问'你是不是因为今天输太多而 crazy and desperate'",
+          "source": "https://www.cardplayer.com/poker-news/28954-watch-texas-mike-s-huge-bluff-with-doyle-brunson-poker-hand ; https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-15-recap-50774.htm"
+        },
+        {
+          "dimension": "变速/慢打",
+          "tier": "B",
+          "claim": "也会变速偷鸡式慢打：Ep18 check-raise 全下逼 Cates 弃牌，Cates 原话 'That's as sneaky as they come. I just got Texas Mike-ed'",
+          "source": "https://www.pokernews.com/news/2026/03/hellmuths-home-game-episode-18-recap-50912.htm"
+        },
+        {
+          "dimension": "媒体定性",
+          "tier": "B",
+          "claim": "'extremely loose and aggressive''reckless playing style / apparent lack of interest in money'，获 Global Poker Awards 'Most Entertaining Player' 提名",
+          "source": "https://pokerati.com/2025/02/texas-mike-makes-back-to-back-final-tables-at-pokergo-cup/"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "A",
+          "claim": "输 $1.4M 后社交媒体炮轰 'conceited superpros' 只会 snipe，声称高额局只打自己挑的",
+          "source": "https://www.poker.org/latest-news/moncek-blasts-conceited-superpros-after-losing-1.4m-on-high-stakes-live-aOY5R5R7llgn"
+        },
+        {
+          "dimension": "生理性 tell 自述",
+          "tier": "A",
+          "claim": "本人自述患心肌病，大底池时会手冷、胸痛，'担心在直播里心脏病发作'",
+          "source": "https://www.cardplayer.com/poker-news/30128-all-gas-no-brakes-texas-mike-is-on-a-mission"
+        },
+        {
+          "dimension": "读牌/抓鸡",
+          "tier": "B",
+          "claim": "SHRB 2-7 单换决赛桌用一对 4 抓 Dzivielevski 的 snow 诈唬，自述'赌一个传奇 call'",
+          "source": "https://www.cardplayer.com/poker-news/30128-all-gas-no-brakes-texas-mike-is-on-a-mission"
+        }
+      ],
+      "style_community_C": [],
+      "anonymized_profile": "富商出身的高调娱乐型选手，也持有正规世界级赛事冠军头衔。极松极凶：直播现金局入池率曾达九成以上，自称'有义务娱乐观众、不当 nit'；诈唬倾向极强，深码大诈唬成名，也会变速偷鸡式慢打让对手直呼被偷袭。不用理论工具，纯靠直觉与临场感。情绪外露：输急后会出现绝望式全下，输大后公开炮轰职业圈；自述大底池时有明显的生理紧张反应。单日多次 rebuy 的巨亏场面是其标志。",
+      "bench_relevance": {
+        "hands": [
+          "F8",
+          "T2",
+          "F1",
+          "F2"
+        ],
+        "as_hero": [
+          "F8"
+        ],
+        "as_villain": [
+          "T2",
+          "F1",
+          "F2"
+        ],
+        "hero_count": 1,
+        "villain_count": 3
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "high",
+          "evidence": "直播现金局单场 VPIP 89%-99%，自称'有义务娱乐观众、不当 nit'",
+          "source_tier": "A"
+        },
+        "aggression": {
+          "level": "high",
+          "evidence": "签名 'all gas, no brakes'，53o 三 bet 反超口袋 A 式打法",
+          "source_tier": "A"
+        },
+        "emotional_expressiveness": {
+          "level": "high",
+          "evidence": "输急后绝望式全下、输大后公开炮轰职业圈，自述大底池有生理紧张反应",
+          "source_tier": "A"
+        },
+        "table_talk": {
+          "level": "high",
+          "evidence": "高调娱乐型，直播局以表演性互动为卖点，获'最具娱乐性玩家'提名",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "high",
+          "evidence": "HHG recap 明文记录其诈唬 5 次（1 得手 4 被抓），主动全下 14 次、6 集内 26 手为超高频出镜",
+          "source_tier": "B/stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 6,
+        "episodes_list": [
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "hands_reported": 26,
+        "allin_made": 14,
+        "allin_faced": 6,
+        "bluffs_caught": 4,
+        "bluffs_successful": 1,
+        "hero_calls": 1,
+        "big_folds": 0,
+        "tanks": 0,
+        "showdowns_won": 6,
+        "showdowns_lost": 9,
+        "sources": {
+          "hands_reported": [
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+          ],
+          "allin_made": [
+            "14",
+            "15",
+            "17",
+            "18",
+            "19"
+          ],
+          "allin_faced": [
+            "14",
+            "15",
+            "16",
+            "18",
+            "19"
+          ],
+          "bluffs_caught": [
+            "15",
+            "17",
+            "19"
+          ],
+          "bluffs_successful": [
+            "18"
+          ],
+          "hero_calls": [
+            "16"
+          ],
+          "big_folds": [],
+          "tanks": [],
+          "showdowns_won": [
+            "14",
+            "15",
+            "16",
+            "18",
+            "19"
+          ],
+          "showdowns_lost": [
+            "14",
+            "15",
+            "17",
+            "19"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "14",
+            "amount": -47200
+          },
+          {
+            "episode": "15",
+            "amount": -63475
+          },
+          {
+            "episode": "17",
+            "amount": -38225
+          },
+          {
+            "episode": "18",
+            "amount": 29300
+          },
+          {
+            "episode": "19",
+            "amount": -64250
+          }
+        ]
+      },
+      "profile_depth": "rich"
+    },
+    {
+      "id": "randy_3coin_sadler",
+      "identity": {
+        "full_name": "Randy Sadler",
+        "aliases": [
+          "3Coin",
+          "3 Coin"
+        ],
+        "hendon_mob": null,
+        "hendon_status": "no_record（搜索未见任何 Hendon 结果页，媒体从不引用其锦标赛成绩）",
+        "category": "网红业余（超高净值直播现金局人物；Sadler's Smokehouse 前联合所有人，据报 2020 年以 $2.79 亿出售；另经营 3Coin Clothing）"
+      },
+      "record": {
+        "summary": "纯现金/直播局履历：HCL、The Lodge、No Gamble No Future、Champions Poker Live 常客；HighRollPoker 追踪其直播现金局累计亏损接近 $800,000；Hellmuth's Home Game 常驻（Ep1-Ep25，多次单场 -$20K~-$45K）；也打 Bobby's Room 高额",
+        "sources": [
+          "https://www.cardplayer.com/poker-news/watch-180000-blind-luck-for-corey-eyring-in-texas",
+          "https://www.pokernews.com/news/2025/07/hellmuths-home-game-episode-1-recap-49026.htm",
+          "https://www.cardplayer.com/poker-news/1627764-michael-kaplan-randy-3coin-sadler-brings-old-school-charm-to-live-streams"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "诈唬倾向",
+          "tier": "B",
+          "claim": "'a love of bluffing. Some might call it an addiction to bluffing'（Michael Kaplan 专栏）；曾用 A 高全下同时唬走 Hellmuth 父子，曾让 Hellmuth 拿两对弃掉三条（原文如此，指弃掉更好牌）",
+          "source": "https://www.cardplayer.com/poker-news/1627764-michael-kaplan-randy-3coin-sadler-brings-old-school-charm-to-live-streams ; https://www.pokernews.com/news/2025/08/phil-hellmuth-mike-matusow-phone-incident-49450.htm"
+        },
+        {
+          "dimension": "松紧",
+          "tier": "B",
+          "claim": "松凶且黏：Lodge 大局 VPIP 65% 单场输 $185,000；A 高 check-raise 后 call off 全部（自评 '3Coin just 3Coined himself. That was a bad play.'）",
+          "source": "https://www.poker.org/latest-news/poker-vlogger-corey-eyring-faces-85k-all-in-for-entire-net-worth-in-wild-lodge-hand-a8Clo8a6Jx2P/ ; https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-23-recap-51241.htm"
+        },
+        {
+          "dimension": "话痨/table talk",
+          "tier": "B",
+          "claim": "table talk 是武器：Ep23 用话术让 P3 弃掉最好的牌，口头禅 'It's gonna do what it do'；面对 Hellmuth 全下名言 'My only regret is that he doesn't have enough money on the table. I call.'",
+          "source": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-23-recap-51241.htm ; https://www.pokernews.com/news/2025/08/hellmuths-home-game-episodes-6-recap-49432.htm"
+        },
+        {
+          "dimension": "标志性习惯",
+          "tier": "B",
+          "claim": "只 run 一次（'As usual, 3Coin only runs it once'，多集 recap 重复提及）；超额全下：Lodge 一手底池仅 ~$10K 时用 J 高顺几乎瞬间全下 $84.7K",
+          "source": "https://www.pokernews.com/news/2026/05/hellmuths-home-game-episode-23-recap-51241.htm ; https://www.cardplayer.com/poker-news/watch-180000-blind-luck-for-corey-eyring-in-texas"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "B",
+          "claim": "outrageous table demeanor 但输了从不失态（good-natured, never a bad loser），爱镜头，主动找最强对手练级",
+          "source": "https://www.cardplayer.com/poker-news/1627764-michael-kaplan-randy-3coin-sadler-brings-old-school-charm-to-live-streams"
+        }
+      ],
+      "style_community_C": [
+        {
+          "claim": "Doug Polk 视频复盘画像：'extremely capable and has made really big moves…an aggressive player that is quite loose'，因此面对他 8 倍底池超额全下也该 call（YouTube 内容创作者复盘，C→B 交叉）",
+          "source": "https://www.youtube.com/watch?v=J39AjqvIK4I"
+        }
+      ],
+      "anonymized_profile": "出售企业致富的高龄网红业余玩家，纯现金直播局人物，无锦标赛记录，直播局累计亏损近百万美元量级。公开评价称其'对诈唬上瘾'：松凶且黏，入池率六成以上，惯用数倍底池的超额全下与桌面话术施压，曾用话术让对手弃掉更好的牌，也曾用高牌全下同时唬走两名对手。有'只跑一次'的标志性习惯与多句口头禅。做派夸张爱镜头，但输钱从不失态、自嘲式复盘，主动找强手过招。",
+      "bench_relevance": {
+        "hands": [
+          "F10",
+          "T1",
+          "T3",
+          "F4",
+          "F9"
+        ],
+        "as_hero": [
+          "F10"
+        ],
+        "as_villain": [
+          "T1",
+          "T3",
+          "F4",
+          "F9(secondary all-in)"
+        ],
+        "hero_count": 1,
+        "villain_count": 4
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "high",
+          "evidence": "松凶且黏，大局 VPIP 65%，A 高也 call off 全部",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "high",
+          "evidence": "惯用数倍底池的超额全下施压（$10K 池全下 $84.7K）",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "mid",
+          "evidence": "做派夸张爱镜头，但输钱从不失态、自嘲式复盘",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "high",
+          "evidence": "话术是武器：曾用桌面话术让对手弃掉更好的牌，口头禅成节目梗",
+          "source_tier": "B"
+        },
+        "bluff_tendency": {
+          "level": "high",
+          "evidence": "被专栏评'对诈唬上瘾'；HHG recap 明文记录 5 次亮明诈唬得手（0 被抓），主动全下 20 次全场最多",
+          "source_tier": "B/stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 24,
+        "episodes_list": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "hands_reported": 66,
+        "allin_made": 20,
+        "allin_faced": 16,
+        "bluffs_caught": 0,
+        "bluffs_successful": 5,
+        "hero_calls": 0,
+        "big_folds": 2,
+        "tanks": 1,
+        "showdowns_won": 14,
+        "showdowns_lost": 19,
+        "sources": {
+          "hands_reported": [
+            "1",
+            "2",
+            "3-4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25"
+          ],
+          "allin_made": [
+            "2",
+            "3-4",
+            "5",
+            "7",
+            "10",
+            "11",
+            "13",
+            "14",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+          ],
+          "allin_faced": [
+            "5",
+            "6",
+            "7",
+            "9",
+            "10",
+            "11",
+            "13",
+            "14",
+            "18",
+            "21",
+            "23",
+            "25"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [
+            "2",
+            "9",
+            "11",
+            "20",
+            "23"
+          ],
+          "hero_calls": [],
+          "big_folds": [
+            "9",
+            "23"
+          ],
+          "tanks": [
+            "9"
+          ],
+          "showdowns_won": [
+            "3-4",
+            "5",
+            "6",
+            "7",
+            "11",
+            "12",
+            "13",
+            "22",
+            "23",
+            "25"
+          ],
+          "showdowns_lost": [
+            "2",
+            "3-4",
+            "7",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "20",
+            "21",
+            "23",
+            "25"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "3-4",
+            "amount": "-$14,050"
+          },
+          {
+            "episode": "5",
+            "amount": "+$58,275"
+          },
+          {
+            "episode": "11",
+            "amount": -19600
+          },
+          {
+            "episode": "12",
+            "amount": 12000
+          },
+          {
+            "episode": "14",
+            "amount": -19225
+          },
+          {
+            "episode": "15",
+            "amount": -24375
+          },
+          {
+            "episode": "17",
+            "amount": -23500
+          },
+          {
+            "episode": "19",
+            "amount": -22175
+          },
+          {
+            "episode": "20",
+            "amount": -39000
+          },
+          {
+            "episode": "22",
+            "amount": 28875
+          },
+          {
+            "episode": "23",
+            "amount": -10425
+          },
+          {
+            "episode": "24",
+            "amount": -11725
+          },
+          {
+            "episode": "25",
+            "amount": 11475
+          }
+        ]
+      },
+      "profile_depth": "rich"
+    },
+    {
+      "id": "dj_washburn",
+      "identity": {
+        "full_name": "Chris Washburn（'DJ' 为职业前缀；CardPlayer 写作 DJ 'Chris' Washburn）",
+        "aliases": [
+          "DJ Washburn"
+        ],
+        "hendon_mob": null,
+        "hendon_status": "no_record（未见任何 Hendon 页面或锦标赛成绩引用）",
+        "category": "网红业余（celebrity amateur：全国巡回 DJ、Washburn Entertainment 创始人，多扑克品牌 ambassador，直播现金局常客）"
+      },
+      "record": {
+        "summary": "HCL 常客：粉丝追踪站记录累计 -$145,065，VPIP 46% / PFR 21%；Hellmuth's Home Game 元老班底（Ep1 即当场最大赢家 +$4,350；Ep21 +$15,250 上标题 'DJ Washburn Crushes'）；官方定位 'fan favorite celebrity poker player'",
+        "sources": [
+          "https://highrollpoker.com/tracker/players/1412",
+          "https://www.pokernews.com/news/2025/07/hellmuths-home-game-episode-1-recap-49026.htm",
+          "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-21-recap-51142.htm",
+          "https://www.djwashburn.com/"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "价值/稳健面",
+          "tier": "B",
+          "claim": "价值抓 call 能力可见于剧集：Ep21 用坚果同花 call 下河牌乱全下、坚果葫芦 snap-call；在这桌整体打得偏稳健价值型",
+          "source": "https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-21-recap-51142.htm"
+        }
+      ],
+      "style_community_C": [
+        {
+          "claim": "偏松但比同桌娱乐型玩家克制：HCL 粉丝统计 VPIP 46% / PFR 21%（对比 Texas Mike 89-99%、3Coin 65%）",
+          "source": "https://highrollpoker.com/tracker/players/1412"
+        },
+        {
+          "claim": "有跑桌式激进日：Ep3 官方宣传语 'Can anyone stop DJ Washburn from running over the table?!'；同集 Hellmuth 名嘲 'I'm Phil Hellmuth. He's just a DJ!'",
+          "source": "https://www.pokertube.com/video/i-m-phil-hellmuth-he-s-just-a-dj-hellmuth-s-home-game-episode-3"
+        },
+        {
+          "claim": "自信外露 tell 轶事：粉丝站复盘 2023-11 HCL 一手，其拿三条'越下注表情越自信（confident bet → smile）'，被河牌加注后'笑容变皱眉'勉强 call",
+          "source": "https://toppokerstreamers.com/dj-washburns-confidence-gets-knocked-down-by-sia/"
+        }
+      ],
+      "style_gap_note": "公开风格评价稀少，无 A 级本人谈打法访谈（官方 EPK 只谈 DJ 事业）",
+      "anonymized_profile": "演艺/夜场行业背景的名人业余玩家，直播现金局常客，无锦标赛记录，累计小幅亏损量级。数据侧写偏松但比同桌娱乐型玩家克制（入池率四成多、加注率两成）；有跑桌式的激进日，也常打稳健价值路线，对乱全下的价值抓 call 能力在节目中多次可见。社区复盘提及其自信程度写在脸上——下注时表情随牌力变化，可能构成 tell。公开风格资料整体稀少，画像置信度较低。",
+      "bench_relevance": {
+        "hands": [
+          "T4",
+          "F5",
+          "F8"
+        ],
+        "as_hero": [],
+        "as_villain": [
+          "T4",
+          "F5",
+          "F8"
+        ],
+        "hero_count": 0,
+        "villain_count": 3
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "mid",
+          "evidence": "粉丝站数据 VPIP 46%/PFR 21%——偏松但比同桌娱乐型玩家克制",
+          "source_tier": "C"
+        },
+        "aggression": {
+          "level": "mid",
+          "evidence": "有跑桌式激进日，也常打稳健价值路线",
+          "source_tier": "C"
+        },
+        "emotional_expressiveness": {
+          "level": "mid",
+          "evidence": "社区复盘称其自信写在脸上，下注表情随牌力变化（潜在 tell）",
+          "source_tier": "C"
+        },
+        "table_talk": {
+          "level": "unknown",
+          "evidence": "公开资料无桌面话量评价",
+          "source_tier": "C"
+        },
+        "bluff_tendency": {
+          "level": "unknown",
+          "evidence": "15 集/31 手仅 1 次明文诈唬（被抓），样本不足定级",
+          "source_tier": "stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 15,
+        "episodes_list": [
+          "1",
+          "2",
+          "3-4",
+          "5",
+          "11",
+          "12",
+          "13",
+          "16",
+          "17",
+          "18",
+          "19",
+          "21",
+          "22",
+          "25"
+        ],
+        "hands_reported": 31,
+        "allin_made": 4,
+        "allin_faced": 9,
+        "bluffs_caught": 1,
+        "bluffs_successful": 0,
+        "hero_calls": 0,
+        "big_folds": 1,
+        "tanks": 3,
+        "showdowns_won": 7,
+        "showdowns_lost": 7,
+        "sources": {
+          "hands_reported": [
+            "1",
+            "2",
+            "3-4",
+            "5",
+            "11",
+            "12",
+            "13",
+            "16",
+            "17",
+            "18",
+            "19",
+            "21",
+            "22",
+            "25"
+          ],
+          "allin_made": [
+            "1",
+            "18",
+            "22",
+            "25"
+          ],
+          "allin_faced": [
+            "3-4",
+            "11",
+            "13",
+            "16",
+            "17",
+            "21",
+            "25"
+          ],
+          "bluffs_caught": [
+            "22"
+          ],
+          "bluffs_successful": [],
+          "hero_calls": [],
+          "big_folds": [
+            "11"
+          ],
+          "tanks": [
+            "11",
+            "17",
+            "25"
+          ],
+          "showdowns_won": [
+            "2",
+            "3-4",
+            "13",
+            "16",
+            "21",
+            "25"
+          ],
+          "showdowns_lost": [
+            "5",
+            "17",
+            "18",
+            "22",
+            "25"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "3-4",
+            "amount": "+$41,750"
+          },
+          {
+            "episode": "13",
+            "amount": 14600
+          },
+          {
+            "episode": "17",
+            "amount": 21850
+          },
+          {
+            "episode": "19",
+            "amount": -26175
+          },
+          {
+            "episode": "21",
+            "amount": 15250
+          },
+          {
+            "episode": "22",
+            "amount": -47025
+          }
+        ]
+      },
+      "profile_depth": "medium"
+    },
+    {
+      "id": "kane_kalas",
+      "identity": {
+        "full_name": "Kane Christopher Kalas",
+        "aliases": [
+          "NASCAR_1949（线上 ID）"
+        ],
+        "hendon_mob": "https://pokerdb.thehendonmob.com/player.php?a=r&n=165510",
+        "hendon_status": "confirmed（$2,179,147）",
+        "category": "职业牌手（高额现金局为主）+ 扑克解说员（WSOP/Triton/WPT）+ 歌手；近年兼对冲基金经理"
+      },
+      "record": {
+        "summary": "总奖金约 $2.18M（CardPlayer 含实名线上记 $2.43M）；WSOP 手链 0；2014 WPT Borgata Poker Open 主赛亚军 $500,364；电视扑克史上最大彩池纪录保持者（2018 Triton Montenegro 现金局 $2,178,770 一锅，set of tens 秒 call Jason Koon）；Black Friday 前常驻 Full Tilt 'Rail Heaven' $500/$1000",
+        "sources": [
+          "https://www.pokernews.com/news/2014/09/darren-elias-wins-wpt-borgata-poker-open-19334.htm",
+          "https://en.wikipedia.org/wiki/Kane_Kalas",
+          "https://upswingpoker.com/jason-koon-vs-kane-kalas/",
+          "https://www.cardplayer.com/poker-players/130484-kane-kalas"
+        ]
+      },
+      "style_public": [
+        {
+          "dimension": "风格定位",
+          "tier": "B",
+          "claim": "理论派/GTO 型专家：Upswing 聘其制作 Short Deck 旗舰课程，评价其 clear, theory-oriented teaching style，亲手制作全套翻前 range 表——公众形象是技术分析型而非表演型",
+          "source": "https://upswingpoker.com/short-deck-poker-course/ ; https://www.pokernews.com/strategy/upswing-poker-short-deck-hold-em-kane-kalas-35756.htm"
+        },
+        {
+          "dimension": "纪律/陷阱",
+          "tier": "B",
+          "claim": "史上最大电视彩池一手：顶 set 全程 check-call 放对手开火、河牌 snap-call；Upswing 拆解称其翻前 flat 保护 range 思路'对抗强手正确'",
+          "source": "https://upswingpoker.com/jason-koon-vs-kane-kalas/"
+        },
+        {
+          "dimension": "职业心态",
+          "tier": "A",
+          "claim": "'我对输赢的刺激不感兴趣，着迷的是持续、可盈利地击败游戏''我一直把扑克当工作：我的时薪多少？'；game selection 谨慎",
+          "source": "https://www.cardplayer.com/poker-news/18313-a-poker-life-kane-kalas"
+        },
+        {
+          "dimension": "情绪外露",
+          "tier": "B",
+          "claim": "低：媒体画像集中于 workman-like attitude / strategically aggressive online，无公开 tilt/情绪失控报道",
+          "source": "https://www.cardplayer.com/poker-news/18313-a-poker-life-kane-kalas"
+        },
+        {
+          "dimension": "话痨维度",
+          "tier": "A",
+          "claim": "解说出身、口才是职业资产（继承其父播音传统），但桌上偏观察者形象（Minkin slowroll Hellmuth 一手中他是爆笑围观者而非参与者）",
+          "source": "https://www.cardplayer.com/poker-news/watch-kelly-minkin-slowrolls-phil-hellmuth"
+        }
+      ],
+      "style_community_C": [
+        {
+          "claim": "赌性以 prop bet 形式偶露：Poker Stories 播客提到输掉 $60,000 网球 prop bet（播客内容转述）",
+          "source": "https://podcasts.apple.com/us/podcast/poker-stories-kane-kalas/id1193725606?i=1000558096375"
+        }
+      ],
+      "anonymized_profile": "播音与声乐背景的职业牌手兼赛事解说，高额现金局为主，曾参与创纪录量级的电视彩池。理论派技术型：公开形象是分析型而非表演型，制作过系统化教学内容。风格纪律性强、擅长设陷阱——强牌走被动线放对手开火、河牌快速 call；自述极度理性，把扑克当工作核算时薪、严格选桌，对输赢刺激本身不感兴趣。情绪外露低，无失控报道。口才是职业资产但桌上偏观察者，场外偶有大额 prop bet。",
+      "bench_relevance": {
+        "hands": [
+          "F5"
+        ],
+        "as_hero": [
+          "F5"
+        ],
+        "as_villain": [],
+        "hero_count": 1,
+        "villain_count": 0
+      },
+      "model_profile": {
+        "looseness": {
+          "level": "low",
+          "evidence": "理论派 GTO 型，game selection 谨慎、把扑克当工作核算时薪",
+          "source_tier": "B"
+        },
+        "aggression": {
+          "level": "low",
+          "evidence": "纪律性强、擅长设陷阱：强牌走被动线放对手开火",
+          "source_tier": "B"
+        },
+        "emotional_expressiveness": {
+          "level": "low",
+          "evidence": "workman-like attitude，无公开 tilt/情绪失控报道",
+          "source_tier": "B"
+        },
+        "table_talk": {
+          "level": "mid",
+          "evidence": "解说出身口才是职业资产，但桌上偏观察者形象",
+          "source_tier": "A"
+        },
+        "bluff_tendency": {
+          "level": "unknown",
+          "evidence": "3 集/4 手无诈唬记录，样本极小",
+          "source_tier": "stats"
+        }
+      },
+      "stats": {
+        "episodes_played": 3,
+        "episodes_list": [
+          "23",
+          "24",
+          "25"
+        ],
+        "hands_reported": 4,
+        "allin_made": 0,
+        "allin_faced": 2,
+        "bluffs_caught": 0,
+        "bluffs_successful": 0,
+        "hero_calls": 0,
+        "big_folds": 0,
+        "tanks": 0,
+        "showdowns_won": 0,
+        "showdowns_lost": 1,
+        "sources": {
+          "hands_reported": [
+            "23",
+            "24",
+            "25"
+          ],
+          "allin_made": [],
+          "allin_faced": [
+            "25"
+          ],
+          "bluffs_caught": [],
+          "bluffs_successful": [],
+          "hero_calls": [],
+          "big_folds": [],
+          "tanks": [],
+          "showdowns_won": [],
+          "showdowns_lost": [
+            "25"
+          ]
+        },
+        "notable_swings": [
+          {
+            "episode": "25",
+            "amount": -12675
+          }
+        ]
+      },
+      "profile_depth": "medium"
+    }
+  ]
+}

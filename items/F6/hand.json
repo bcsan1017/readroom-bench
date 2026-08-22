@@ -1,0 +1,82 @@
+{
+  "hand_id": "F6",
+  "source": {
+    "show": "Poker Night in America - Hellmuth's Home Game",
+    "episode": 29,
+    "youtube_id": "hyQuR-r-Owg",
+    "youtube_url": "https://www.youtube.com/watch?v=hyQuR-r-Owg",
+    "recap_url": "https://www.pokernews.com/news/2026/08/hellmuths-home-game-episode-29-recap-52042.htm",
+    "chapter": "recap section 'Monster Pot in Final Hand' (final hand of episode)",
+    "note": ""
+  },
+  "generated_from": "data/candidates.json + data/clips_manifest_merged.json（批量生产，字段待人工核对）",
+  "mask_status": "raw_unmasked（打码待做，标注阶段先看原片核对）",
+  "data_gaps": "hero 剩余筹码未知（recap 未给）",
+  "timing_abs_sec": {
+    "_doc": "相对原视频的秒数，来自 clips_manifest_merged.json（首尾帧已核对）",
+    "clip_start": 2434.7,
+    "clip_end": 2553.0,
+    "villain_allin": 2535.7,
+    "hero_announce": 2539.7
+  },
+  "camera": {
+    "layout": "unknown"
+  },
+  "table": {
+    "game": "NLHE cash",
+    "blinds": "$25/$50 with big-blind ante（默认口径，未逐集核实）",
+    "bb": 50,
+    "players": null,
+    "hero_position": null,
+    "villain_position": null,
+    "hero_stack_start": null,
+    "villain_stack_start": null,
+    "cover_note": "对手全下 $14,025"
+  },
+  "players": {
+    "hero": "Shaun Deeb",
+    "villain": "Dan 'Jungleman' Cates"
+  },
+  "hero_cards": "Ac7d",
+  "villain_cards": "KhKd",
+  "board": "Qd7s4hTdQh",
+  "street_at_allin": "river",
+  "betting_line": [
+    {
+      "street": "river",
+      "board": "Qd 7s 4h Td Qh",
+      "actions": "Villain(Cates) jams $14,025 on the river after the board pairs; Hero faces $14,025；前序街完整下注线 recap 未提供"
+    }
+  ],
+  "pot_before_allin": 18300,
+  "allin_amount": 14025,
+  "hero_to_call": 14025,
+  "hero_stack_behind": null,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost); think=medium ('didn't take too long'); allin_type=unknown"
+  },
+  "recap_pot_bet": "Cates jams $14,025 after board pairs; pot $46,350",
+  "mask_windows": {
+    "_doc": "automask_v1（2026-08-22）：left_panel_rows 由 2fps 白卡/灰条特征检测自动生成（margin±1s，宁多勿漏）；winner_banner 为收池姓名横幅时段。同事精遮罩版到货整体替换时可忽略。",
+    "left_panel_rows": [
+      [
+        7.0,
+        10.0
+      ],
+      [
+        11.5,
+        35.0
+      ],
+      [
+        42.5,
+        46.0
+      ],
+      [
+        97.0,
+        104.5
+      ]
+    ]
+  }
+}

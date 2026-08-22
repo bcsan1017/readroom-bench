@@ -1,0 +1,31 @@
+{
+  "item_id": "F6",
+  "hero_cards": "Ac7d",
+  "villain_cards": "KhKd",
+  "board": "Qd7s4hTdQh",
+  "hero_equity": 0.0,
+  "win": 0.0,
+  "tie": 0.0,
+  "lose": 1.0,
+  "method": "showdown",
+  "n": 1,
+  "street": "river",
+  "required_equity": 0.30258899676375406,
+  "correct_call": false,
+  "ev_call_bb": -280.5,
+  "ev_fold_bb": 0.0,
+  "pot_before_allin": 18300,
+  "pot_after_allin": 32325,
+  "to_call": 14025,
+  "bb": 50,
+  "actual": {
+    "hero_action": "call",
+    "villain_showed": null,
+    "note": "recap: hero_actual_action=call (lost); think=medium ('didn't take too long'); allin_type=unknown"
+  },
+  "players": {
+    "hero": "Shaun Deeb",
+    "villain": "Dan 'Jungleman' Cates"
+  },
+  "difficulty_tier": "TBD (按 L0 基线分档)"
+}
